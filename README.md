@@ -8,7 +8,17 @@ preprocessing, pemodelan, dan evaluasi.
 
 Repository sudah memiliki konfigurasi awal. Dataset, daftar aspek, metode,
 dan library belum ditentukan; belum ada hasil eksperimen.
-Daftar anggota diisi setelah informasinya tersedia.
+
+| Anggota | NRP | Peran awal |
+|---|---|---|
+| Bambang Herlambang | 5803024019 | Preprocessing dan anotasi |
+| Efraim Melvyn Rafelino Lahai | 5803024009 | Pengumpulan dan eksplorasi data |
+| Jap Robertus Kurniawan Setiabudi | 5803024004 | Pemodelan ABSA |
+| Robertus Geraldyn Alexandro Gabeler | 5803024025 | Evaluasi dan analisis |
+
+Rincian [pembagian per minggu](docs/project/collaboration-plan.md#pembagian-pekerjaan-per-minggu)
+menjelaskan kontribusi berempat setiap minggu sesuai peran. Subtugas dapat
+disesuaikan berdasarkan beban nyata; week 14 hanya jika diminta dosen.
 
 ## Tahap tugas
 
@@ -21,8 +31,10 @@ Daftar anggota diisi setelah informasinya tersedia.
 | 15 | Artikel bahasa Indonesia |
 | 16 | Presentasi |
 
-Tanggal kelas, tenggat, format BOD, dan template artikel mengikuti arahan
-dosen. Jadwal Data Mining tidak dijadikan jadwal Web Mining.
+Kelas setiap Rabu, dengan acuan week 11 pada 4 November 2026.
+Kalender lengkap ada di [timeline](docs/project/timeline.md).
+Tanggal kelas bukan otomatis tenggat pengumpulan; tenggat, format BOD,
+dan template artikel mengikuti arahan dosen.
 
 ## Struktur repository
 

@@ -8,7 +8,7 @@ pembaruan berikutnya mengikuti commit dan pekerjaan nyata.
 | Bagian | Hasil | Batas |
 |---|---|---|
 | Struktur kerja | data/raw, processed, annotations; notebooks; src; results; docs | Berisi petunjuk; belum ada dataset atau implementasi ABSA |
-| Kolaborasi | CONTRIBUTING, SECURITY, template issue/PR, dokumen kerja kelompok | Nama anggota dan pembagian personal belum diberikan |
+| Kolaborasi | CONTRIBUTING, SECURITY, template issue/PR, empat nama/NRP, peran dan rencana per minggu; kalender Rabu dengan acuan week 11 pada 4 November 2026 | Pembagian dapat disesuaikan dengan beban nyata; tanggal kelas bukan otomatis tenggat pengumpulan |
 | Python | Acuan 3.12, requirements.txt, format file dan ignore | Daftar library belum diisi karena metode belum ditentukan |
 | CI | Instalasi requirements, pip check, sintaks .py dalam src | Belum menjalankan scraping, notebook, ekstraksi aspek, atau sentimen |
 | Dependabot | Pembaruan pip/Actions bulanan; alerts dan PR perbaikan keamanan | PR perlu diperiksa; bukan audit dataset atau hasil model |
@@ -25,7 +25,7 @@ hasil ABSA. Status CI perubahan berikutnya diperiksa pada commit terkait.
 - Lingkup tugas aspek/sentimen, panduan anotasi, serta label acuan.
 - Metode, dependensi, kode preprocessing, analisis, dan evaluasi.
 - Eksperimen aktual, hasil per aspek bila relevan, serta analisis kesalahan.
-- Laporan pertama, artikel, slide, dan jadwal kalender dari dosen.
+- Laporan pertama, artikel, slide, dan ketentuan tenggat pengumpulan dari dosen.
 
 Belum ada klaim bahwa pengumpulan data, eksperimen, atau laporan selesai.
 
