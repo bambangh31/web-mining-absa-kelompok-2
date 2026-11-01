@@ -1,0 +1,50 @@
+name: Usulan perubahan
+description: Usulkan perbaikan atau pekerjaan baru untuk proyek Web Mining / ABSA.
+title: "[Usulan] "
+body:
+  - type: dropdown
+    id: bagian
+    attributes:
+      label: Bagian yang diusulkan
+      options:
+        - Pengumpulan data dan scraping
+        - Dataset, eksplorasi, dan anotasi
+        - Preprocessing
+        - Ekstraksi aspek dan sentimen per aspek
+        - Evaluasi dan visualisasi
+        - Laporan, artikel, atau presentasi
+        - Pengaturan repository
+        - Lainnya
+    validations:
+      required: true
+  - type: textarea
+    id: kebutuhan
+    attributes:
+      label: Kebutuhan atau masalah
+      description: Jelaskan alasan perubahan ini diperlukan.
+    validations:
+      required: true
+  - type: textarea
+    id: usulan
+    attributes:
+      label: Perubahan yang diusulkan
+      description: Jelaskan pekerjaan dan hasil yang ingin dibuat.
+    validations:
+      required: true
+  - type: textarea
+    id: selesai
+    attributes:
+      label: Kriteria selesai
+      description: Bagaimana kelompok dapat memeriksa bahwa hasilnya sudah sesuai?
+    validations:
+      required: true
+  - type: input
+    id: week
+    attributes:
+      label: Minggu atau target pengerjaan
+      placeholder: Contoh - week 12; sesuaikan dengan jadwal kelompok.
+  - type: textarea
+    id: referensi
+    attributes:
+      label: Alternatif atau referensi
+      description: Tambahkan tautan dataset, metode, atau masukan dosen jika relevan.

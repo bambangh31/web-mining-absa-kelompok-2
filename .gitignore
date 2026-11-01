@@ -1,0 +1,20 @@
+# File lokal dan hasil pembuatan dokumen
+/tmp/
+/output/
+.DS_Store
+Thumbs.db
+~$*
+
+# Kredensial lokal
+.env
+.env.*
+!.env.example
+
+# Environment dan cache jika menggunakan Python/Jupyter
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.ruff_cache/
