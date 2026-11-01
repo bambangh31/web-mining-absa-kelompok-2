@@ -1,0 +1,47 @@
+name: Laporan masalah
+description: Laporkan masalah pada data, notebook, kode, evaluasi, atau dokumen.
+title: "[Bug] "
+body:
+  - type: dropdown
+    id: bagian
+    attributes:
+      label: Bagian yang bermasalah
+      options:
+        - Pengumpulan data dan scraping
+        - Dataset dan anotasi
+        - Preprocessing
+        - Ekstraksi aspek dan sentimen per aspek
+        - Evaluasi dan hasil
+        - Laporan, artikel, atau presentasi
+        - Pengaturan repository
+        - Lainnya
+    validations:
+      required: true
+  - type: textarea
+    id: masalah
+    attributes:
+      label: Masalah yang terjadi
+      description: Jelaskan kejadian dan hasil yang seharusnya diperoleh.
+    validations:
+      required: true
+  - type: textarea
+    id: langkah
+    attributes:
+      label: Cara memeriksa atau mengulangi masalah
+      description: Cantumkan lokasi file, langkah, atau sel notebook yang terkait.
+      placeholder: |
+        File atau tautan:
+        Langkah untuk mengulangi:
+        Hasil aktual:
+    validations:
+      required: true
+  - type: textarea
+    id: bukti
+    attributes:
+      label: Pesan error atau bukti pendukung
+      description: Tambahkan pesan error, tangkapan layar, atau tautan hasil jika ada.
+  - type: textarea
+    id: lingkungan
+    attributes:
+      label: Versi data dan lingkungan
+      description: Jika terkait kode, catat versi data, library, dan lingkungan seperti Colab atau Jupyter.
