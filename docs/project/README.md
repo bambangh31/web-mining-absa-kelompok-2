@@ -1,5 +1,15 @@
 # Panduan kerja Web Mining Kelompok 2
 
+## Isi folder
+
+| Dokumen | Kegunaan |
+|---|---|
+| [collaboration-plan.md](collaboration-plan.md) | Paket kontribusi, ketergantungan, review dan pencatatan tugas |
+| [timeline.md](timeline.md) | Tahap week 10-16, keluaran, bukti dan target internal |
+| [publication-checklist.md](publication-checklist.md) | Pemeriksaan sebelum penyerahan dan publikasi jika diperlukan |
+| [implementation-status.md](implementation-status.md) | Status setup/implementasi, bukti dan batas pencapaian |
+| [review-setup.md](review-setup.md) | Perbandingan fondasi repo dengan kebutuhan ABSA |
+
 ## Prinsip kerja
 
 Semua anggota berkontribusi pada setiap tahap. Bagi pekerjaan berdasarkan
