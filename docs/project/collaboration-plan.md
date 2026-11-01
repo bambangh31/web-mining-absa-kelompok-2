@@ -1,55 +1,94 @@
 # Rencana kolaborasi Kelompok 2
 
-Status: usulan pembagian kerja ABSA. Nama anggota dan pembagian personal
-belum diberikan, sehingga dokumen ini tidak menetapkan penugasan nama.
-Semua anggota berkontribusi tiap minggu; beban dibagi menurut waktu,
-kesulitan, serta ketergantungan pekerjaan, tanpa PIC khusus.
+Topik tugas: Aspect Based Analysis, dengan rencana analisis sentimen berbasis
+aspek (ABSA). Empat peran mengikuti pilihan pengguna. Penempatan nama dan
+rincian mingguan berikut merupakan usulan pembagian awal, dapat disesuaikan
+berdasarkan beban nyata, tanpa PIC khusus.
 
-## Paket kontribusi
+## Anggota dan peran
 
-| Paket | Pekerjaan | Bahan untuk anggota lain |
+| Anggota | NRP | Peran | Pekerjaan |
+|---|---|---|---|
+| Bambang Herlambang | 5803024019 | Preprocessing dan anotasi | Membersihkan teks, memeriksa duplikasi, menentukan definisi aspek/sentimen, serta menyiapkan atau memeriksa label acuan. |
+| Efraim Melvyn Rafelino Lahai | 5803024009 | Pengumpulan dan eksplorasi data | Mencari dataset atau scraping ulasan, mencatat sumber, menampilkan contoh dan karakteristik data. |
+| Jap Robertus Kurniawan Setiabudi | 5803024004 | Pemodelan ABSA | Menerapkan metode untuk mengenali aspek dan menentukan sentimen pada setiap aspek. |
+| Robertus Geraldyn Alexandro Gabeler | 5803024025 | Evaluasi dan analisis | Membandingkan prediksi dengan label acuan, menghitung metrik, membuat grafik, dan menjelaskan kesalahan. |
+
+Nama singkat di bawah: Bambang, Efraim, Jap, dan Geraldyn. Peran menunjukkan
+fokus kontribusi, bukan seluruh pekerjaan harus dilakukan sendiri. Jika
+scraping, anotasi, atau model ternyata berat, bagi subtugas kepada anggota
+lain. Catatan metode dan referensi disiapkan saat pekerjaan berlangsung.
+
+## Pembagian pekerjaan per minggu
+
+Setiap minggu dikerjakan berempat sesuai peran. Kelas setiap Rabu;
+week 11 pada 4 November 2026 menjadi acuan. Week 10 dipetakan mundur,
+minggu berikutnya dipetakan per Rabu dan mengikuti perubahan jadwal dosen.
+Tanggal kelas bukan otomatis tenggat pengumpulan.
+
+| Week / kelas 2026 | Pembagian dan hasil |
+|---|---|
+| 10 / 28 Oktober | Efraim mencari kandidat/sumber, menyusun tujuan/BOD serta rancangan pengumpulan dan karakteristik data. Bambang memeriksa kualitas teks, kebutuhan preprocessing dan label/aspek yang tersedia. Jap mengkaji serta merencanakan metode/model ABSA dan kebutuhan masukan/keluaran. Geraldyn merancang metrik, protokol evaluasi dan kebutuhan label acuan. Dataset serta lingkup akhir disepakati berempat. |
+| 11 / 4 November | Efraim menulis pengambilan data dan eksplorasi. Bambang menulis pembersihan, panduan anotasi dan pembagian data. Jap menyiapkan model awal dengan masukan/keluaran yang disepakati. Geraldyn menyiapkan format prediksi-label, fungsi evaluasi dan pembanding awal bila relevan. |
+| 12 / 11 November | Efraim memeriksa kelengkapan/sumber dan keterulangan pengambilan. Bambang menyelesaikan data/label acuan serta catatan transformasi. Jap menjalankan analisis aspek dan sentimen. Geraldyn menghitung metrik, membuat grafik dan menjelaskan pola kesalahan. Semua menghubungkan pipeline serta memeriksa hasil. |
+| 13 / 18 November | Efraim menulis latar belakang, tujuan/BOD, sumber dan karakteristik data. Bambang menulis preprocessing, anotasi dan pembagian data. Jap menulis metode/model ABSA dan konfigurasi percobaan. Geraldyn menulis evaluasi, hasil, grafik, analisis kesalahan dan keterbatasan. Pembahasan, kesimpulan, referensi, penyatuan format dan pemeriksaan akhir dikerjakan bersama pada satu dokumen. |
+| 14 / 25 November | Jika diminta dosen, berempat membagi tindak lanjut sesuai peran: Efraim menangani pengumpulan/eksplorasi data, Bambang preprocessing/anotasi, Jap metode/model ABSA, dan Geraldyn evaluasi/analisis. Detail perubahan mengikuti masukan dosen; hasil dan keputusan diperiksa bersama. Jika tidak diminta, tidak ada percobaan tambahan wajib. |
+| 15 / 2 Desember | Efraim menulis latar/tujuan dan sumber data; Bambang menulis pengolahan data/anotasi; Jap menulis metode/model; Geraldyn menulis evaluasi dan hasil. Pembahasan, abstrak/kesimpulan bila diperlukan, referensi dan pemeriksaan akhir bersama. Artikel berbahasa Indonesia mengikuti template dosen. |
+| 16 / 9 Desember | Efraim membuat slide tujuan, sumber dan karakteristik data; Bambang membuat slide preprocessing dan anotasi; Jap membuat slide metode/model ABSA; Geraldyn membuat slide evaluasi, hasil dan keterbatasan. Identitas, kesimpulan dan referensi dirapikan bersama. Semua memeriksa alur/angka, latihan dan menyiapkan jawaban; presenter mengikuti arahan dosen. |
+
+## Alasan dan batas pembagian
+
+- Keempat anggota berkontribusi setiap minggu sesuai peran, termasuk
+  menyiapkan bahan week 10 dan menyusun laporan week 13 bersama.
+- Penyusunan presentasi dibagi berempat sesuai peran, menggunakan satu materi
+  bersama dengan format yang disepakati. Setiap anggota membuat dan merapikan
+  slide bagiannya; alur, kesimpulan dan referensi diperiksa bersama.
+- Bambang menangani preprocessing dan anotasi. Bila anotasi manual banyak
+  atau sulit, sebagian anotasi/pemeriksaannya dibagi agar bebannya seimbang.
+- Semua mendapat kontribusi coding sesuai peran dan menulis bagian artikel
+  yang paling dipahami. Berat aktual diperiksa setelah dataset/metode dipilih.
+- Setiap anggota menulis dan merapikan bagian laporannya dari catatan,
+  konfigurasi dan hasil pekerjaannya. Semua memeriksa konsistensi angka,
+  alur pembahasan dan format pada dokumen bersama.
+- Jika satu bagian lebih berat, bagi ulang subtugas agar beban seimbang.
+  Tidak ada tambahan
+  kewajiban metode atau format artikel yang tidak diberikan dosen.
+
+## Bahan dan urutan integrasi
+
+| Bagian | Bahan yang diserahkan | Waktu |
 |---|---|---|
-| Pengumpulan dan eksplorasi | Kandidat sumber, izin, scraping/unduhan bila dipilih, karakteristik dan contoh teks | Data asli, petunjuk pengambilan, kamus kolom, keterbatasan |
-| Preprocessing dan anotasi | Pembersihan teks, duplikasi, unit pembagian, panduan aspek/sentimen, label acuan | Data/prosedur olahan, panduan anotasi, definisi label dan split |
-| Aspek dan sentimen | Metode ekstraksi/kategori aspek dan sentimen per aspek sesuai lingkup | Kode, konfigurasi, hasil prediksi, alasan metode |
-| Evaluasi dan visualisasi | Metrik sesuai target, rekap, analisis kesalahan dan grafik | Angka sumber, penjelasan unit evaluasi, hasil per aspek bila relevan |
+| Efraim | Sumber/izin, versi data, kode/parameter pengambilan, contoh dan karakteristik | Week 10-12; siap sebelum laporan disusun |
+| Bambang | Aturan pembersihan, kamus label, pedoman anotasi, data/label acuan, skema pembagian | Week 11-12; siap sebelum hasil akhir dievaluasi |
+| Jap | Penjelasan metode, kode, konfigurasi dan prediksi dengan ID teks/aspek yang jelas | Week 11-12; siap untuk evaluasi dan laporan |
+| Geraldyn | Definisi metrik, set evaluasi, skor, angka sumber grafik dan analisis kesalahan | Week 11-12; menjadi bahan laporan week 13 |
+| Semua sesuai bagian | Naskah artikel dan hasil/gambar yang sudah diperiksa | Week 15; menjadi bahan slide masing-masing pada week 16 |
 
-Paket bukan jumlah anggota. Satu paket dapat dipecah atau dikerjakan bersama.
-Setiap pelaksana juga menulis penjelasan dan referensi bagiannya. Penulisan
-laporan, artikel, serta slide tidak dibebankan seluruhnya pada satu orang.
+1. Sepakati sumber, tujuan/BOD, unit analisis, aspek, dan lingkup ABSA.
+2. Tentukan format masukan/keluaran dan pembagian data sebelum menguji metode.
+   Pemeriksaan sumber, pembersihan/anotasi, kerangka model dan evaluasi dapat
+   berjalan paralel ketika bahan yang dibutuhkan sudah jelas.
+3. Cocokkan ID teks, aspek, label acuan dan prediksi. Pisahkan label manual
+   atau label dari sumber dengan prediksi model.
+4. Periksa teks duplikat dan pembagian ulasan agar satu teks tidak masuk
+   latih sekaligus uji melalui anotasi aspek yang berbeda.
+5. Simpan versi kode/data, parameter, hasil dan keterbatasan. Bedakan hasil
+   validasi/CV dari uji final; pilih konfigurasi melalui validasi.
 
-## Urutan dan pekerjaan paralel
+## Review, keputusan dan pencatatan
 
-1. Semua mengusulkan kandidat data dan memilih masalah/tujuan bersama.
-2. Sepakati unit analisis, aspek, ketersediaan label, serta bentuk hasil ABSA.
-3. Tentukan pembagian data dan format masukan/keluaran sebelum membandingkan
-   metode. Pembersihan, panduan anotasi, kerangka model, dan fungsi evaluasi
-   dapat dikerjakan bersamaan setelah batasnya jelas.
-4. Hubungkan pipeline dari data sampai hasil; cocokkan ID teks, aspek, dan
-   label agar keluaran tiap bagian dapat dievaluasi.
-5. Masing-masing menyerahkan kode, konfigurasi, penjelasan, serta bukti
-   hasil. Anggota lain melakukan pemeriksaan silang.
+Ikuti [CONTRIBUTING.md](../../CONTRIBUTING.md). Setelah anggota bergabung,
+usahakan satu review anggota lain sebelum merge. Periksa sumber serta
+kesesuaian tugas untuk dokumen; periksa perilaku, label, pembagian dan
+keterulangan untuk kode. CI sintaks belum menguji ketepatan ABSA.
 
-## Review dan keputusan
+Keputusan dataset, label, metode dan metrik dicatat pada dokumen tahap
+terkait. Jika berubah, catat alasan dan eksperimen yang perlu diulang.
+Gunakan issue atau satu tracker bersama:
 
-Ikuti [CONTRIBUTING.md](../../CONTRIBUTING.md) untuk branch, PR, dan CI.
-Usahakan satu review anggota lain sebelum merge setelah anggota bergabung.
-Review dokumen memeriksa sumber dan kesesuaian tugas; review kode memeriksa
-perilaku, pembagian data, dan keterulangan hasil. CI sintaks belum menguji
-ketepatan ekstraksi aspek atau hasil sentimen.
-
-Catat keputusan dataset, label, metode, dan metrik pada dokumen tahap
-terkait. Jika keputusan berubah, jelaskan perubahan, alasannya, dan hasil
-yang perlu dijalankan ulang. Jumlah metode mengikuti arahan Web Mining;
-ketentuan perbandingan algoritma Data Mining tidak otomatis dipindahkan.
-
-## Pencatatan kontribusi
-
-Gunakan Issues atau satu tracker bersama dengan kolom:
-
-| Tugas / week | Anggota | Hasil yang diharapkan | Target | Status | Bukti / kendala |
+| Tugas / week | Anggota | Hasil | Target | Status | Bukti / kendala |
 |---|---|---|---|---|---|
-| Diisi saat tugas dibagi | Diisi kelompok | Diisi | Disepakati | Sesuai progres nyata | Tautan hasil atau hambatan |
+| Diisi saat pembagian | Diisi | Diisi | Disepakati | Sesuai progres nyata | Tautan atau hambatan |
 
-Jika satu tugas lebih berat, bagi subtugas tersisa. Laporan kontribusi
-mengikuti pekerjaan nyata, bukan banyaknya commit atau jumlah berkas saja.
+Tahap dan ketentuan dosen ada di [timeline.md](timeline.md). Pembagian
+kontribusi tidak dianggap sebagai hasil pekerjaan yang sudah selesai.

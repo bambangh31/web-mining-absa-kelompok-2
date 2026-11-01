@@ -5,7 +5,7 @@ repo contoh UMKM Marketplace untuk Web Mining Kelompok 2 (ABSA).
 
 | Bagian | Penerapan |
 |---|---|
-| Identitas dan tugas | README, roadmap Web Mining week 10-16, tanpa mengarang anggota/tanggal |
+| Identitas dan tugas | Empat nama/NRP sesuai informasi pengguna, roadmap week 10-16; kelas Rabu dengan acuan week 11 pada 4 November 2026; tenggat pengumpulan mengikuti dosen |
 | Struktur proyek | data/raw, processed, annotations; notebooks; src; results; docs |
 | Panduan | CONTRIBUTING.md dan SECURITY.md, mencakup teks web serta anotasi ABSA |
 | Dokumen kerja | collaboration-plan, timeline, publication-checklist, implementation-status |
