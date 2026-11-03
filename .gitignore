@@ -18,3 +18,7 @@ __pycache__/
 .ipynb_checkpoints/
 .pytest_cache/
 .ruff_cache/
+
+# Ulasan hasil scraping tidak didistribusikan ulang (lihat data/README.md)
+data/raw/*.csv
+data/processed/*.csv

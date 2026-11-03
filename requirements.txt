@@ -1,2 +1,3 @@
 # Python 3.12. Tambahkan library dan versi yang sudah digunakan serta diuji.
-# Dependensi scraping, NLP, dan evaluasi belum ditentukan.
+# Dependensi NLP dan evaluasi ditambahkan saat kode model tersedia.
+google-play-scraper==1.2.7
