@@ -36,6 +36,23 @@ Tanggal kelas bukan otomatis tenggat pengumpulan.
 | 15 / 2 Desember | Efraim menulis latar/tujuan dan sumber data; Bambang menulis pengolahan data/anotasi; Jap menulis metode/model; Geraldyn menulis evaluasi dan hasil. Pembahasan, abstrak/kesimpulan bila diperlukan, referensi dan pemeriksaan akhir bersama. Artikel berbahasa Indonesia mengikuti template dosen. |
 | 16 / 9 Desember | Efraim membuat slide tujuan, sumber dan karakteristik data; Bambang membuat slide preprocessing dan anotasi; Jap membuat slide metode/model ABSA; Geraldyn membuat slide evaluasi, hasil dan keterbatasan. Identitas, kesimpulan dan referensi dirapikan bersama. Semua memeriksa alur/angka, latihan dan menyiapkan jawaban; presenter mengikuti arahan dosen. |
 
+## Rincian week 11-12 untuk topik SATUSEHAT Mobile
+
+Mengikuti [usulan week 10](../week-10/README.md) dan
+[keputusan metode](method-decisions.md). Urutan menunjukkan ketergantungan.
+
+| Week | Anggota | Tugas | Selesai jika |
+|---|---|---|---|
+| 11 | Efraim | Scraping 15.000 ulasan, `reviews_clean.csv`, `split.csv`, notebook eksplorasi | File dibagikan; jumlah baris dan tanggal scraping dicatat di `data/README.md` |
+| 11 | Bambang | Kalibrasi 50 ulasan berempat, revisi panduan anotasi, mulai anotasi gold | Panduan final; kappa kalibrasi dicatat |
+| 11 | Jap | Kunci API Gemini, prompt v1 dari contoh kalibrasi, uji Gemini dan model lokal pada 50 ulasan kalibrasi | Kedua LLM menghasilkan JSON valid; skor pada kalibrasi dicatat |
+| 11 | Geraldyn | Fungsi evaluasi (F1 aspek, F1 pasangan, macro-F1, kappa) dan uji dengan label buatan | Fungsi memberi hasil benar pada contoh kecil yang dihitung manual |
+| 11 | Semua | Anotasi gold, sekitar 275 ulasan per orang | `gold.csv` lengkap 800 ulasan |
+| 12 | Jap | Pilih LLM silver dengan set validasi, label silver, latih B1, B2, P1, P2 | Prediksi set uji untuk semua model tersimpan |
+| 12 | Geraldyn | Skor semua model, grafik, analisis kesalahan, analisis per versi | Tabel metrik dan grafik di `results/` |
+| 12 | Efraim | Statistik per versi dan konsistensi rating dari prediksi model terbaik | Grafik dan tabel per versi |
+| 12 | Bambang | Penyelesaian perbedaan anotasi set uji, kappa per aspek | Kappa per aspek dicatat |
+
 ## Alasan dan batas pembagian
 
 - Keempat anggota berkontribusi setiap minggu sesuai peran, termasuk

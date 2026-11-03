@@ -38,17 +38,41 @@ masing-masing di bawah 2% dan sementara digolongkan ke `umum`.
 
 - `umum` hanya diisi bila tidak ada aspek khusus yang disebut.
 - Sentimen dinilai dari teks, bukan dari rating bintang.
-- Saran atau pertanyaan tanpa keluhan diberi `netral`.
-- Keluhan yang menyebabkan aspek lain gagal dilabeli pada aspek penyebabnya
-  dan aspek yang terdampak, misalnya error saat login: `performa` dan
-  `akun_login` negatif.
+- `netral` hanya untuk aspek yang disebut tanpa penilaian, misalnya saran
+  atau pertanyaan. Aspek yang tidak disebut selalu `tidak_disebut`.
+- `performa` hanya diisi bila ada kegagalan teknis yang disebut: error,
+  force close, crash, lambat, loading, server, bug, atau tidak bisa dibuka.
+  "Susah login" atau "PIN salah terus" hanya `akun_login` negatif; "login
+  langsung error" adalah `akun_login` dan `performa` negatif.
+- `kemudahan_penggunaan` hanya diisi bila pengguna menilai alur atau
+  tampilan (ribet, bingung, mudah dipakai), bukan setiap kali ada fitur
+  yang gagal.
 
 ## Proses
 
 1. Kalibrasi: empat anggota melabeli 50 ulasan yang sama, bahas perbedaan,
-   lalu perbarui panduan ini.
+   lalu perbarui panduan ini. Ulasan kalibrasi tidak masuk set gold dan
+   menjadi sumber contoh few-shot untuk prompt LLM.
 2. Anotasi gold: 800 ulasan (400 latih, 100 validasi, 300 uji).
 3. Set uji dianotasi dua orang. Hitung Cohen's kappa per aspek; perbedaan
    diselesaikan oleh anotator ketiga.
 4. Label manual dan label LLM disimpan di file terpisah, dihubungkan dengan
    `reviewId`.
+
+Cara pengambilan sampel, format file, dan definisi metrik ada di
+[keputusan metode](../../docs/project/method-decisions.md).
+
+## File di folder ini
+
+File label hanya berisi `reviewId` dan label, tanpa teks ulasan, sehingga
+boleh diunggah.
+
+| File | Isi |
+|---|---|
+| `split.csv` | `reviewId`, `split` (`kalibrasi`, `gold_train`, `gold_val`, `gold_test`, `silver`) |
+| `gold_<nama>.csv` | Label satu anotator: `reviewId`, `annotator`, enam kolom aspek |
+| `gold.csv` | Label final setelah perbedaan diselesaikan, kolom sama tanpa `annotator` |
+| `llm_<model>.csv` | Label LLM: `reviewId`, `model`, `prompt_version`, enam kolom aspek |
+
+Enam kolom aspek memakai nama kategori di atas dan berisi salah satu dari
+empat label.

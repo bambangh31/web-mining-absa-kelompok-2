@@ -1,8 +1,10 @@
 # Bahan week 10: usulan topik dan metode
 
-Status: usulan Efraim, 3 November 2026. Topik dan metode ini perlu disepakati
-berempat dan dikonfirmasi dosen. Format BOD mengikuti arahan dosen; bagian
-tujuan di bawah disiapkan sebagai bahannya.
+Status: topik disetujui kelompok pada 3 November 2026; konfirmasi dosen
+masih ditunggu. Format BOD mengikuti arahan dosen; bagian tujuan di bawah
+disiapkan sebagai bahannya. Pilihan LLM, IndoBERT, preprocessing, pembagian
+data, dan format file ada di
+[keputusan metode](../project/method-decisions.md).
 
 ## Judul kerja
 
@@ -50,8 +52,9 @@ Versi Aplikasi.
 
 - Sumber: ulasan Google Play SATUSEHAT Mobile (`com.telkom.tracencare`),
   bahasa Indonesia, diambil dengan `src/scrape_reviews.py`.
-- Target: 15.000 ulasan terbaru. Setelah membuang duplikat dan ulasan kurang
-  dari 5 kata, diperkirakan tersisa 8.000-10.000 ulasan.
+- Target: 15.000 ulasan terbaru (17 Juli 2023 sampai 2 November 2026 saat
+  diuji). Setelah membuang duplikat dan ulasan kurang dari 3 kata, tersisa
+  12.297 ulasan.
 - Rincian sumber, kolom, dan hasil pilot ada di
   [data/README.md](../../data/README.md).
 
@@ -69,23 +72,22 @@ final ditetapkan setelah anotasi pilot week 11.
 ## Metode
 
 1. Pengumpulan: scraping ulasan dan metadata (rating, versi, tanggal).
-2. Preprocessing: buang duplikat dan ulasan sangat pendek, normalisasi
-   ringan (huruf kecil, URL, emoji, singkatan umum). Teks untuk IndoBERT
-   tidak di-stemming.
+2. Preprocessing: buang duplikat dan ulasan kurang dari 3 kata, samarkan
+   data pribadi, normalisasi ringan. Tanpa stopword removal dan stemming.
 3. Label acuan manual (gold), 800 ulasan diambil acak berstrata rating:
    400 latih, 100 validasi, 300 uji. Set uji dianotasi dua orang.
-4. Label LLM (silver): ulasan sisanya dilabeli LLM dengan prompt few-shot
-   dari panduan anotasi. Pilihan LLM diputuskan week 11: API dengan kuota
-   gratis, atau model terbuka lokal lewat Ollama.
+4. Label LLM (silver): sekitar 11.400 ulasan sisanya dilabeli LLM dengan
+   prompt few-shot dari panduan anotasi. Utama: Gemini Flash (kuota gratis);
+   cadangan: model lokal lewat Ollama.
 5. Model yang dibandingkan pada set uji manual yang sama:
 
 | Kode | Model | Data latih |
 |---|---|---|
 | B1 | TF-IDF + Logistic Regression per aspek | Gold latih (400) |
-| B2 | IndoBERT (`indobenchmark/indobert-base-p1`) | Gold latih (400) |
-| B3 | LLM langsung, zero-shot dan few-shot | Tanpa pelatihan |
-| P1 | IndoBERT | Silver (label LLM) |
-| P2 | IndoBERT | Silver, lalu dilanjutkan dengan gold latih |
+| B2 | IndoBERTweet sentence-pair | Gold latih (400) |
+| B3 | LLM langsung (Gemini dan model lokal), few-shot | Tanpa pelatihan |
+| P1 | IndoBERTweet sentence-pair | Silver (label LLM) |
+| P2 | IndoBERTweet sentence-pair | Silver, lalu dilanjutkan dengan gold latih |
 
 6. Analisis per versi dan konsistensi rating memakai prediksi model terbaik
    pada seluruh ulasan.
@@ -124,24 +126,33 @@ Pilot 3 November 2026 (2.000 ulasan terbaru):
 - Contoh keluhan berulang: login/PIN/OTP, data sudah terdaftar, hasil cek
   kesehatan gratis (CKG) tidak muncul, aplikasi force close.
 
+Uji 15.000 ulasan terbaru (3 November 2026):
+
+- Rentang 17 Juli 2023 sampai 2 November 2026, seluruhnya sesudah
+  PeduliLindungi menjadi SATUSEHAT Mobile (1 Maret 2023).
+- 12.297 ulasan tersisa setelah preprocessing.
+- 54 versi memiliki minimal 50 ulasan, cukup untuk RQ3.
+
 Beban kerja:
 
 - Anotasi 800 + 300 ulasan (set uji dua kali) dibagi berempat, kira-kira
-  275 ulasan per orang, 2-3 jam per orang.
-- IndoBERT base dapat di-fine-tune pada GPU 6 GB (RTX 4050) atau Google
-  Colab dengan panjang 128 token.
-- Pelabelan LLM untuk sekitar 10.000 ulasan: beberapa jam dengan model
-  lokal, lebih cepat melalui API.
+  275 ulasan per orang, ditambah 50 ulasan kalibrasi yang sama untuk semua.
+  Dengan sekitar 30 detik per ulasan, 2,5-3 jam per orang.
+- IndoBERTweet base dapat di-fine-tune pada GPU 6 GB (RTX 4050) atau
+  Google Colab dengan panjang 160 token.
+- Pelabelan LLM untuk sekitar 11.400 ulasan: perkiraan waktu dan kuota ada
+  di [keputusan metode](../project/method-decisions.md#llm-untuk-label-silver).
 
 ## Risiko dan mitigasi
 
 | Risiko | Mitigasi |
 |---|---|
-| Banyak ulasan pendek tanpa aspek ("bagus", "mantap") | Kategori `umum`, filter minimal 5 kata |
+| Banyak ulasan pendek tanpa aspek ("bagus", "mantap") | Kategori `umum`, filter minimal 3 kata |
+| Data sangat didominasi bintang 1 (76% setelah preprocessing) | Sampel gold berstrata rating; laporkan jumlah label per kelas |
 | Kategori aspek jarang sehingga F1 tidak stabil | Gabungkan kategori sesudah pilot, laporkan jumlah data per aspek |
 | Kuota atau biaya API LLM | Model terbuka lokal sebagai cadangan |
 | Kesepakatan anotator rendah | Kalibrasi 50 ulasan bersama sebelum anotasi penuh |
-| Ketentuan Google Play terkait distribusi ulasan | Data mentah tidak diunggah; repo berisi skrip dan ID ulasan |
+| Ketentuan distribusi ulasan Google Play belum diperiksa | Data mentah tidak diunggah; repo berisi skrip, ID ulasan, dan label |
 
 ## Pembagian peran
 

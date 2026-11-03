@@ -6,10 +6,11 @@ preprocessing, pemodelan, dan evaluasi.
 
 ## Status dan anggota
 
-Topik yang diusulkan (3 November 2026, menunggu persetujuan kelompok dan
-dosen): ABSA ulasan Google Play SATUSEHAT Mobile, dengan perbandingan label
-manual dan label LLM serta pelacakan sentimen aspek per versi aplikasi.
-Rincian ada di [usulan week 10](docs/week-10/README.md). Skrip scraping sudah
+Topik (disetujui kelompok 3 November 2026, menunggu konfirmasi dosen): ABSA
+ulasan Google Play SATUSEHAT Mobile, dengan perbandingan label manual dan
+label LLM serta pelacakan sentimen aspek per versi aplikasi. Rincian ada di
+[usulan week 10](docs/week-10/README.md) dan
+[keputusan metode](docs/project/method-decisions.md). Skrip scraping sudah
 tersedia; belum ada hasil eksperimen.
 
 | Anggota | NRP | Peran awal |
@@ -80,7 +81,7 @@ tautan dan prosedur pengambilan.
 
 ## Pengembangan
 
-Gunakan Python 3.12 sesuai `.python-version`. Cara membuat environment,
+Gunakan Python 3.14 sesuai `.python-version`. Cara membuat environment,
 menambah dependensi, mengerjakan branch/PR, dan mencatat eksperimen ada di
 [CONTRIBUTING.md](CONTRIBUTING.md). Perhatikan [SECURITY.md](SECURITY.md)
 untuk kredensial, sumber teks, dan data pribadi.

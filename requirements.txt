@@ -1,3 +1,4 @@
-# Python 3.12. Tambahkan library dan versi yang sudah digunakan serta diuji.
-# Dependensi NLP dan evaluasi ditambahkan saat kode model tersedia.
+# Python 3.14. Tambahkan library dan versi yang sudah digunakan serta diuji.
+# Library model ditambahkan saat kodenya tersedia; daftar rencana ada di
+# docs/project/method-decisions.md.
 google-play-scraper==1.2.7
