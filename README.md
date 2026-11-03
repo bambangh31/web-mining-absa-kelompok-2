@@ -98,6 +98,11 @@ Perangkat kalibrasi dan anotasi manusia sudah tersedia di
 dibagikan Efraim. Alat ini membuat lembar kosong dan memeriksa label, bukan
 memprediksi atau mengklaim label gold sudah tersedia.
 
+## Laporan PDF
+
+- [Week 10: dataset, karakteristik, BOD, dan algoritma](docs/laporan/Week_10_Dataset_BOD_Algoritma_ABSA.pdf).
+- [Week 11: progres coding, preprocessing, dan anotasi](docs/laporan/Week_11_Coding_Preprocessing_Anotasi_ABSA.pdf).
+
 ## CI dan Dependabot
 
 CI berjalan saat push ke `main`, pull request, atau melalui pemicu manual.

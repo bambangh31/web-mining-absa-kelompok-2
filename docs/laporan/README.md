@@ -1,4 +1,15 @@
-# Laporan pertama
+# Laporan proyek
+
+## PDF week 10 dan week 11
+
+- [Week 10: dataset, karakteristik data, BOD, dan algoritma](Week_10_Dataset_BOD_Algoritma_ABSA.pdf).
+- [Week 11: progres coding, preprocessing, dan anotasi](Week_11_Coding_Preprocessing_Anotasi_ABSA.pdf).
+
+Kedua PDF memakai cover akademik, isi hitam putih, tanpa header, serta
+nomor halaman di tengah bawah. Status hasil aktual dibedakan dari rancangan;
+PDF week 11 tidak mengklaim anotasi atau evaluasi model nyata sudah selesai.
+
+## Laporan pertama (week 13)
 
 Laporan week 13 disusun berempat pada satu dokumen bersama:
 
