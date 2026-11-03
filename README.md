@@ -92,14 +92,18 @@ Pengambilan ulasan:
 python src/scrape_reviews.py --app com.telkom.tracencare --count 15000
 ```
 
-Perintah tahap berikutnya ditambahkan setelah kodenya tersedia.
+Perangkat kalibrasi dan anotasi manusia sudah tersedia di
+[`src/annotation.py`](src/annotation.py). Ikuti
+[alur anotasi](docs/project/annotation-workflow.md) setelah clean + split
+dibagikan Efraim. Alat ini membuat lembar kosong dan memeriksa label, bukan
+memprediksi atau mengklaim label gold sudah tersedia.
 
 ## CI dan Dependabot
 
 CI berjalan saat push ke `main`, pull request, atau melalui pemicu manual.
 Pemeriksaannya: memasang `requirements.txt`, memeriksa kompatibilitas
-dependensi, dan sintaks `.py` di `src/`. CI belum menjalankan scraping,
-notebook, atau menguji ABSA.
+dependensi, sintaks `.py` di `src/`, serta tes alur anotasi dengan data buatan.
+CI belum menjalankan scraping, notebook, atau menguji kualitas model ABSA.
 
 Dependabot memeriksa library Python dan GitHub Actions setiap bulan.
 Pembaruan dibuat sebagai PR untuk diperiksa sebelum digabung; auto-merge

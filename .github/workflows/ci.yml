@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
   python-check:
-    name: Dependencies and Python syntax
+    name: Dependencies, annotation tests and Python syntax
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -32,6 +32,9 @@ jobs:
 
       - name: Check dependency compatibility
         run: python -m pip check
+
+      - name: Test human annotation workflow (synthetic data only)
+        run: python -m unittest discover -s tests -v
 
       - name: Check Python syntax
         run: |

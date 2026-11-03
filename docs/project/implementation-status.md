@@ -29,6 +29,22 @@ hasil ABSA. Status CI perubahan berikutnya diperiksa pada commit terkait.
 | Eksplorasi data | `src/pilot_stats.py`; statistik 2.000 dan 15.000 ulasan di [data/README.md](../../data/README.md) | Persentase aspek masih perkiraan kata kunci, bukan label |
 | Panduan anotasi | Kategori aspek, label, dan format file di [data/annotations](../../data/annotations/README.md) | Belum dikalibrasi |
 
+## Perangkat anotasi Bambang (3 November 2026)
+
+- `src/annotation.py`: lembar kalibrasi yang sama (50 ulasan per anggota),
+  pembagian gold 275 penugasan per anggota (800 ulasan unik; set uji ganda),
+  pemeriksaan label/ID/teks, kappa per aspek sebelum adjudikasi, dan ekspor
+  label tanpa teks setelah perbedaan diselesaikan.
+- [Alur penggunaan](annotation-workflow.md): bahan dari Efraim, kalibrasi,
+  format keputusan, dan penyelesaian perbedaan oleh pihak ketiga.
+- `tests/test_annotation.py`: delapan tes perilaku dengan 850 ulasan buatan
+  dalam folder sementara, bukan dataset atau hasil anotasi nyata.
+  CI ditambah untuk menjalankan tes pada Python 3.14.
+- Pengguna mengonfirmasi dataset belum dibagikan. Belum ada kalibrasi
+  manusia, kappa kelompok, gold aktual, atau pedoman yang diklaim final.
+  Preprocessing/model serta tugas Efraim, Jap, dan Geraldyn tetap mengikuti
+  keputusan yang ada.
+
 ## Menunggu pengerjaan
 
 - Konfirmasi topik dan format BOD dari dosen.

@@ -22,3 +22,6 @@ __pycache__/
 # Ulasan hasil scraping tidak didistribusikan ulang (lihat data/README.md)
 data/raw/*.csv
 data/processed/*.csv
+
+# Lembar anotasi berisi teks ulasan dan catatan; dibagikan secara privat.
+/data/annotation_workspace/

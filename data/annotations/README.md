@@ -76,3 +76,14 @@ boleh diunggah.
 
 Enam kolom aspek memakai nama kategori di atas dan berisi salah satu dari
 empat label.
+
+## Perangkat kalibrasi dan anotasi
+
+Gunakan [alur kalibrasi dan anotasi](../../docs/project/annotation-workflow.md)
+untuk membuat lembar kosong melalui `src/annotation.py`, memeriksa hasil
+empat anotator, dan mengekspor label setelah perbedaan diselesaikan.
+
+Lembar berisi teks disimpan di `data/annotation_workspace/` dan tidak
+diunggah. Hasil ekspor tanpa teks disimpan dalam subfolder berversi,
+misalnya `data/annotations/final_v1/gold.csv`. Dataset belum dibagikan saat
+perangkat dibuat; kalibrasi, label gold, dan kappa aktual belum tersedia.

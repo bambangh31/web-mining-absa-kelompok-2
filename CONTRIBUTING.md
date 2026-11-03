@@ -76,12 +76,14 @@ Bahasa Indonesia atau Inggris boleh digunakan secara konsisten.
 
 ## Pemeriksaan sebelum merge
 
-CI saat ini memasang dependensi, memeriksa kompatibilitasnya, dan memeriksa
-sintaks `.py` dalam `src/`. Pemeriksaan lokal dasar:
+CI memasang dependensi, memeriksa kompatibilitas, menjalankan tes anotasi
+dengan data buatan, dan memeriksa sintaks `.py` dalam `src/`.
+Pemeriksaan lokal:
 
 ```text
 python -m pip install -r requirements.txt
 python -m pip check
+python -m unittest discover -s tests -v
 python -m compileall -q src
 git diff --check
 ```
