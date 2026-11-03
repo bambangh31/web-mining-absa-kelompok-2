@@ -2,7 +2,9 @@
 
 ## Menyiapkan lingkungan
 
-Gunakan Python 3.12, sesuai `.python-version` dan CI. Buat environment lokal:
+Gunakan Python 3.14, sesuai `.python-version` dan CI. Google Colab memakai
+versinya sendiri; kode harus tetap berjalan di Colab bila training dilakukan
+di sana. Buat environment lokal:
 
 ```text
 python -m venv .venv
@@ -16,8 +18,9 @@ Python environment secara langsung tanpa aktivasi:
 ```
 
 Di Linux/macOS, gunakan `.venv/bin/python` sebagai pengganti path tersebut.
-`requirements.txt` saat ini belum memuat library proyek. Tambahkan versi
-yang benar-benar digunakan dan diuji ketika coding dimulai.
+Tambahkan ke `requirements.txt` hanya library dan versi yang benar-benar
+digunakan dan diuji. PyTorch dengan GPU NVIDIA dipasang terpisah, lihat
+[keputusan metode](docs/project/method-decisions.md#lingkungan).
 
 ## Alur kerja kelompok
 
