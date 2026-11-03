@@ -9,7 +9,7 @@ repo contoh UMKM Marketplace untuk Web Mining Kelompok 2 (ABSA).
 | Struktur proyek | data/raw, processed, annotations; notebooks; src; results; docs |
 | Panduan | CONTRIBUTING.md dan SECURITY.md, mencakup teks web serta anotasi ABSA |
 | Dokumen kerja | collaboration-plan, timeline, publication-checklist, implementation-status |
-| Format/versi | .editorconfig, .gitattributes, .gitignore, .python-version 3.12 |
+| Format/versi | .editorconfig, .gitattributes, .gitignore, .python-version 3.12, diganti 3.14 pada 3 November 2026 atas persetujuan kelompok |
 | Kolaborasi | Template issue dan PR bahasa Indonesia; issue kosong tersedia |
 | CI | Dependensi dan sintaks Python; belum mengeksekusi scraping/notebook/model |
 | Dependabot | pip dan GitHub Actions diperiksa bulanan, PR diperiksa sebelum merge |
