@@ -19,11 +19,20 @@ CI fondasi pada commit `43aa953` telah berhasil:
 Keberhasilan itu membuktikan setup awal dapat dijalankan, bukan kualitas
 hasil ABSA. Status CI perubahan berikutnya diperiksa pada commit terkait.
 
+## Usulan topik dan pilot data (3 November 2026)
+
+| Bagian | Hasil | Batas |
+|---|---|---|
+| Topik dan metode | [Usulan week 10](../week-10/README.md): ACSA ulasan SATUSEHAT Mobile, label manual vs label LLM, analisis per versi | Usulan Efraim; menunggu persetujuan kelompok dan dosen |
+| Pengambilan data | `src/scrape_reviews.py` diuji lokal (Python 3.14, `google-play-scraper` 1.2.7): 450 ulasan tersimpan dengan 9 kolom | Belum diuji dengan Python 3.12; dataset penuh belum diambil |
+| Pilot data | 2.000 ulasan terbaru, statistik di [data/README.md](../../data/README.md) | Persentase aspek masih perkiraan kata kunci, bukan label |
+| Panduan anotasi | Draf kategori aspek dan label di [data/annotations](../../data/annotations/README.md) | Belum dikalibrasi |
+
 ## Menunggu pengerjaan
 
-- Sumber/domain data, izin, cara pengumpulan, karakteristik dan tujuan/BOD.
-- Lingkup tugas aspek/sentimen, panduan anotasi, serta label acuan.
-- Metode, dependensi, kode preprocessing, analisis, dan evaluasi.
+- Persetujuan topik oleh kelompok dan dosen; format BOD dari dosen.
+- Scraping penuh, preprocessing, kalibrasi anotasi, serta label acuan.
+- Pemilihan LLM, dependensi pemodelan, kode model, dan evaluasi.
 - Eksperimen aktual, hasil per aspek bila relevan, serta analisis kesalahan.
 - Laporan pertama, artikel, slide, dan ketentuan tenggat pengumpulan dari dosen.
 
