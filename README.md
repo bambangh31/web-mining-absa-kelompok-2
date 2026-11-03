@@ -6,8 +6,11 @@ preprocessing, pemodelan, dan evaluasi.
 
 ## Status dan anggota
 
-Repository sudah memiliki konfigurasi awal. Dataset, daftar aspek, metode,
-dan library belum ditentukan; belum ada hasil eksperimen.
+Topik yang diusulkan (3 November 2026, menunggu persetujuan kelompok dan
+dosen): ABSA ulasan Google Play SATUSEHAT Mobile, dengan perbandingan label
+manual dan label LLM serta pelacakan sentimen aspek per versi aplikasi.
+Rincian ada di [usulan week 10](docs/week-10/README.md). Skrip scraping sudah
+tersedia; belum ada hasil eksperimen.
 
 | Anggota | NRP | Peran awal |
 |---|---|---|
@@ -82,14 +85,20 @@ menambah dependensi, mengerjakan branch/PR, dan mencatat eksperimen ada di
 [CONTRIBUTING.md](CONTRIBUTING.md). Perhatikan [SECURITY.md](SECURITY.md)
 untuk kredensial, sumber teks, dan data pribadi.
 
-Perintah menjalankan pipeline ditambahkan setelah kode awal tersedia.
+Pengambilan ulasan:
+
+```text
+python src/scrape_reviews.py --app com.telkom.tracencare --count 15000
+```
+
+Perintah tahap berikutnya ditambahkan setelah kodenya tersedia.
 
 ## CI dan Dependabot
 
 CI berjalan saat push ke `main`, pull request, atau melalui pemicu manual.
 Pemeriksaannya: memasang `requirements.txt`, memeriksa kompatibilitas
-dependensi, dan sintaks `.py` di `src/`. Saat ini belum ada dependensi proyek
-atau kode `.py`; CI belum menjalankan scraping, notebook, atau menguji ABSA.
+dependensi, dan sintaks `.py` di `src/`. CI belum menjalankan scraping,
+notebook, atau menguji ABSA.
 
 Dependabot memeriksa library Python dan GitHub Actions setiap bulan.
 Pembaruan dibuat sebagai PR untuk diperiksa sebelum digabung; auto-merge
