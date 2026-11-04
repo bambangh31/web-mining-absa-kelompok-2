@@ -152,7 +152,7 @@ Beban kerja:
 | Kategori aspek jarang sehingga F1 tidak stabil | Gabungkan kategori sesudah pilot, laporkan jumlah data per aspek |
 | Kuota atau biaya API LLM | Model terbuka lokal sebagai cadangan |
 | Kesepakatan anotator rendah | Kalibrasi 50 ulasan bersama sebelum anotasi penuh |
-| Ketentuan distribusi ulasan Google Play belum diperiksa | Data mentah tidak diunggah; repo berisi skrip, ID ulasan, dan label |
+| Ketentuan distribusi ulasan Google Play belum diperiksa | Data mentah hanya disimpan di repository privat untuk kelompok, tanpa nama dan foto pengguna; tidak dibagikan publik |
 
 ## Pembagian peran
 

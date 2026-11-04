@@ -13,3 +13,6 @@
 *.png binary
 *.jpg binary
 *.jpeg binary
+
+# Data mentah disimpan byte demi byte; teks ulasan memuat baris baru LF di dalam sel.
+data/raw/*.csv -text

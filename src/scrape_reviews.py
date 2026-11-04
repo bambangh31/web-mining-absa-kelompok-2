@@ -2,6 +2,7 @@
 
 Contoh:
     python src/scrape_reviews.py --app com.telkom.tracencare --count 15000
+    python src/scrape_reviews.py --since 2023-03-01 --count 1000000
 
 Kolom identitas pengguna (nama dan foto profil) tidak disimpan.
 """
@@ -9,6 +10,7 @@ Kolom identitas pengguna (nama dan foto profil) tidak disimpan.
 import argparse
 import csv
 import time
+from datetime import datetime
 from pathlib import Path
 
 from google_play_scraper import Sort, reviews
@@ -26,7 +28,7 @@ FIELDS = [
 ]
 
 
-def scrape(app_id, count, lang, country, batch=200, pause=1.0):
+def scrape(app_id, count, lang, country, since=None, batch=200, pause=1.0):
     rows, token = [], None
     while len(rows) < count:
         batch_rows, token = reviews(
@@ -40,10 +42,14 @@ def scrape(app_id, count, lang, country, batch=200, pause=1.0):
         if not batch_rows:
             break
         rows.extend({k: r.get(k) for k in FIELDS} for r in batch_rows)
-        print(f"{len(rows)} ulasan")
+        print(f"{len(rows)} ulasan, terlama {batch_rows[-1]['at']}")
         if token is None or token.token is None:
             break
+        if since and all(r["at"] < since for r in batch_rows):
+            break
         time.sleep(pause)
+    if since:
+        rows = [r for r in rows if r["at"] >= since]
     # continuation_token memakai ukuran batch awal, jadi batch terakhir bisa lebih.
     return rows[:count]
 
@@ -54,10 +60,12 @@ def main():
     parser.add_argument("--count", type=int, default=15000)
     parser.add_argument("--lang", default="id")
     parser.add_argument("--country", default="id")
+    parser.add_argument("--since", type=datetime.fromisoformat,
+                        help="Hanya ulasan pada/sesudah tanggal ini, misalnya 2023-03-01")
     parser.add_argument("--out", type=Path)
     args = parser.parse_args()
 
-    rows = scrape(args.app, args.count, args.lang, args.country)
+    rows = scrape(args.app, args.count, args.lang, args.country, args.since)
     out = args.out or Path("data/raw") / f"{args.app}_reviews.csv"
     out.parent.mkdir(parents=True, exist_ok=True)
     with out.open("w", newline="", encoding="utf-8") as f:

@@ -19,8 +19,8 @@ __pycache__/
 .pytest_cache/
 .ruff_cache/
 
-# Ulasan hasil scraping tidak didistribusikan ulang (lihat data/README.md)
-data/raw/*.csv
+# Data mentah hasil scraping disimpan di repo privat (lihat data/README.md).
+# Data hasil olahan dibuat ulang lewat kode.
 data/processed/*.csv
 
 # Lembar anotasi berisi teks ulasan dan catatan; dibagikan secara privat.
