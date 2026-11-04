@@ -10,9 +10,15 @@
 - [Week 10 PDF ringkas](Week_10_Dataset_BOD_Algoritma_ABSA.pdf): versi awal, digantikan
   oleh .docx di atas.
 
-## PDF week 11
+## Week 11
 
-- [Week 11: progres coding, preprocessing, dan anotasi](Week_11_Coding_Preprocessing_Anotasi_ABSA.pdf).
+- [Laporan week 11 (.docx)](Week_11_Laporan_ABSA_SATUSEHAT.docx): versi
+  terbaru, mengikuti cover, format bab, dan daftar isi otomatis week 10.
+  Memuat hasil preprocessing dataset lengkap, split aktual, persiapan
+  anotasi, dan 15 tes yang lulus. Label manusia dan skor model belum tersedia.
+- [Week 11 PDF awal](Week_11_Coding_Preprocessing_Anotasi_ABSA.pdf): versi
+  sebelum implementasi preprocessing lengkap; gunakan DOCX terbaru untuk
+  status hasil terkini.
 
 PDF week 10 ringkas dan PDF week 11 memakai cover akademik, isi hitam putih, tanpa header, serta
 nomor halaman di tengah bawah. Status hasil aktual dibedakan dari rancangan;
