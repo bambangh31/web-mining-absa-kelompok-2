@@ -88,9 +88,10 @@ Nama dan foto profil pengguna tidak disimpan.
 
 ## Eksplorasi awal (3 Nov 2026)
 
-Angka berikut berasal dari scraping uji 3 November 2026 dan dipakai di
-[laporan week 10](../docs/laporan/Week_10_Laporan_ABSA_SATUSEHAT.docx).
-Ke-15.000 ulasan itu adalah bagian dari dataset final di atas.
+Angka berikut berasal dari scraping uji 3 November 2026, sebelum dataset
+final diambil. Ke-15.000 ulasan itu adalah bagian dari dataset final di atas.
+[Laporan week 10](../docs/laporan/Week_10_Laporan_ABSA_SATUSEHAT.docx)
+memakai angka dataset final.
 
 | Ukuran | 2.000 terbaru | 15.000 terbaru |
 |---|---|---|

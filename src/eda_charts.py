@@ -3,8 +3,8 @@
 Contoh:
     python src/eda_charts.py data/raw/com.telkom.tracencare_reviews.csv results/figures
 
-Grafik pada laporan week 10 dibuat dari 15.000 ulasan yang diambil
-3 November 2026.
+Grafik pada laporan week 10 dibuat dari dataset final: 39.995 ulasan sejak
+1 Maret 2023, diambil 4 November 2026.
 """
 
 import csv
@@ -54,10 +54,11 @@ def main(csv_path, out_dir):
     labels = sorted(months)
     fig, ax = plt.subplots(figsize=(4.6, 2.6))
     ax.bar(range(len(labels)), [months[m] for m in labels], color=COLOR)
-    ticks = [i for i, m in enumerate(labels) if m.endswith("-01")]
+    ticks = [i for i, m in enumerate(labels) if m.endswith("-01") or i == 0]
     ax.set_xticks(ticks, [labels[i] for i in ticks])
+    ax.set_yscale("log")
     ax.set_xlabel("Bulan ulasan")
-    ax.set_ylabel("Jumlah ulasan")
+    ax.set_ylabel("Jumlah ulasan (skala log)")
     ax.spines[["top", "right"]].set_visible(False)
     save(fig, out_dir, "eda_per_bulan.png")
 
