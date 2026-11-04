@@ -16,3 +16,5 @@
 
 # Data mentah disimpan byte demi byte; teks ulasan memuat baris baru LF di dalam sel.
 data/raw/*.csv -text
+# Split berversi harus cocok dengan hash input anotasi pada semua platform.
+data/annotations/split.csv -text -whitespace

@@ -7,16 +7,20 @@ bukan klaim bahwa kalibrasi atau anotasi manusia sudah dilakukan.
 
 ## Batas pekerjaan
 
-- Efraim/Melvyn menyediakan `reviews_clean.csv`, `split.csv`, tanggal
-  scraping, jumlah baris, dan versi kode pengolah data melalui kanal privat.
+- Efraim/Melvyn menyediakan dataset mentah, sumber, dan catatan scraping.
+  Dataset lengkap tersedia sejak 4 November 2026. Preprocessing dan split
+  sekarang dibuat dengan `src/preprocess.py` untuk melanjutkan pekerjaan
+  Bambang. Seluruh tim menggunakan satu versi split yang sama.
 - Bambang menyiapkan lembar, memeriksa label, merangkum perbedaan, memperbarui
   pedoman setelah diskusi, dan mengekspor hasil kesepakatan.
 - Semua anggota memberi label secara mandiri sebelum melihat label lain.
 - Geraldyn dapat memakai laporan kappa sebelum adjudikasi; implementasi
   evaluasi model/F1 tetap terpisah. Jap memakai kalibrasi final untuk prompt.
 
-Pengguna mengonfirmasi dataset belum dibagikan. Karena itu belum tersedia
-lembar berisi ulasan nyata, gold, kappa kelompok, atau pedoman final.
+Lembar kosong dari data nyata sudah disiapkan lokal pada 4 November 2026:
+50 kalibrasi dan 275 penugasan gold per orang. Hasil preprocessing ada di
+[laporan preprocessing](../../results/preprocessing/v1/README.md).
+Label gold, kappa kelompok, dan pedoman final belum tersedia.
 Jangan mengambil sampel baru yang berbeda untuk tiap anggota. Kalibrasi
 tetap terpisah dari gold dan silver.
 

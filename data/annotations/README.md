@@ -85,5 +85,6 @@ empat anotator, dan mengekspor label setelah perbedaan diselesaikan.
 
 Lembar berisi teks disimpan di `data/annotation_workspace/` dan tidak
 diunggah. Hasil ekspor tanpa teks disimpan dalam subfolder berversi,
-misalnya `data/annotations/final_v1/gold.csv`. Dataset belum dibagikan saat
-perangkat dibuat; kalibrasi, label gold, dan kappa aktual belum tersedia.
+misalnya `data/annotations/final_v1/gold.csv`. Dataset sudah tersedia pada
+4 November 2026; lembar kosong kalibrasi/gold telah dibuat lokal.
+Kalibrasi manusia, label gold, dan kappa aktual belum tersedia.

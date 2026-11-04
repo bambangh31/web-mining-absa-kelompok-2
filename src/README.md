@@ -8,8 +8,11 @@ Buat modul yang diperlukan saat coding.
 - `pilot_stats.py`: statistik eksplorasi dari CSV hasil scraping.
 - `eda_charts.py`: grafik eksplorasi untuk laporan (rating, ulasan per bulan,
   panjang ulasan, versi) ke `results/figures/`.
+- `preprocess.py`: cleaning dua versi teks, pool unik dan split berstrata
+  rating. Menolak menimpa hasil. Lihat hasil di
+  [laporan preprocessing](../results/preprocessing/v1/README.md).
 - `annotation.py`: lembar kalibrasi/gold kosong, validasi label, audit
-  kesepakatan, dan ekspor label manusia. Memakai clean + split dari Efraim;
+  kesepakatan, dan ekspor label manusia. Memakai clean + split bersama;
   tidak menghasilkan label otomatis. Lihat
   [panduan penggunaan](../docs/project/annotation-workflow.md).
 

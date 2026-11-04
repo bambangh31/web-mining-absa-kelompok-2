@@ -1,0 +1,72 @@
+{
+  "source_sha256": "0a66aeb9650aee9cacdb603f36030c54d686b583d455302f244f762c4b337c38",
+  "code_sha256": "c23190b7645f1d7d0e366c948837b6915a28cc70f20f3a686851b9fdfe3b509e",
+  "python": "3.12.14",
+  "emoji": "2.15.0",
+  "seed": 42,
+  "since": "2023-03-01T00:00:00",
+  "counts": {
+    "short": 7152,
+    "duplicate_original": 808,
+    "raw": 39995,
+    "clean_for_version_analysis": 32843,
+    "pool": 32035
+  },
+  "redaction_matches": {
+    "url": 0,
+    "email": 0,
+    "nik": 0,
+    "telepon": 0
+  },
+  "split_counts": {
+    "gold_test": 300,
+    "silver": 31185,
+    "kalibrasi": 50,
+    "gold_train": 400,
+    "gold_val": 100
+  },
+  "rating_by_split": {
+    "kalibrasi": {
+      "1": 37,
+      "2": 4,
+      "3": 3,
+      "4": 1,
+      "5": 5
+    },
+    "gold_train": {
+      "1": 296,
+      "2": 33,
+      "3": 20,
+      "4": 10,
+      "5": 41
+    },
+    "gold_val": {
+      "1": 74,
+      "2": 8,
+      "3": 5,
+      "4": 3,
+      "5": 10
+    },
+    "gold_test": {
+      "1": 222,
+      "2": 25,
+      "3": 15,
+      "4": 7,
+      "5": 31
+    },
+    "silver": {
+      "1": 23060,
+      "2": 2580,
+      "3": 1533,
+      "4": 797,
+      "5": 3215
+    }
+  },
+  "outputs_sha256": {
+    "reviews_clean": "98c187400bc1e415ef9882c11286cfc2c4650e289d73db0a5dc83b14852fa0cb",
+    "split": "67036c5db3ceb2188e4c06c76df4eb1b48199aaa3802c1f323dc14e1b04254ea"
+  },
+  "human_labels_created": false,
+  "slang_normalization_B1": "belum diterapkan; bagian pipeline B1",
+  "privacy_limit": "Regex pola umum; tidak menjamin seluruh informasi pribadi terdeteksi."
+}
