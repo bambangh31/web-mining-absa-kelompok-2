@@ -4,7 +4,8 @@
 
 - [Laporan week 10 (.docx)](Week_10_Laporan_ABSA_SATUSEHAT.docx): versi lengkap dan terbaru.
   BOD mengikuti CRISP-DM business understanding, empat grafik eksplorasi
-  dari 15.000 ulasan (3 November 2026), alasan pemilihan algoritma, dan daftar
+  dari dataset final (39.995 ulasan sejak 1 Maret 2023, diambil 4 November
+  2026), alasan pemilihan algoritma, dan daftar
   pustaka APA 7. Grafik dibuat ulang dengan `src/eda_charts.py`.
 - [Week 10 PDF ringkas](Week_10_Dataset_BOD_Algoritma_ABSA.pdf): versi awal, digantikan
   oleh .docx di atas.
