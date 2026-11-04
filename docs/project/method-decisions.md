@@ -278,6 +278,7 @@ python -m pip install torch --index-url https://download.pytorch.org/whl/cu130
 | Tanggal | Perubahan | Alasan | Eksperimen yang perlu diulang |
 |---|---|---|---|
 | 3 Nov 2026 | Keputusan awal | Topik disetujui kelompok | - |
+| 4 Nov 2026 | Dataset final: semua ulasan sejak 1 Maret 2023 (39.995 baris, pool 32.035), menggantikan 15.000 ulasan uji | Permintaan kelompok untuk memakai seluruh data era SATUSEHAT | Belum ada eksperimen. Angka pool dan beban LLM di dokumen ini masih berdasarkan uji 15.000 ulasan; silver menjadi sekitar 31.000 ulasan (perkiraan sekitar 1.600 permintaan Gemini atau sekitar 20 jam dengan model lokal) |
 
 ## Rujukan
 

@@ -2,3 +2,4 @@
 # Library model ditambahkan saat kodenya tersedia; daftar rencana ada di
 # docs/project/method-decisions.md.
 google-play-scraper==1.2.7
+matplotlib==3.11.2

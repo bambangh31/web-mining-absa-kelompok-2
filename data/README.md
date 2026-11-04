@@ -1,8 +1,8 @@
 # Dataset ABSA
 
-Dataset yang diusulkan: ulasan Google Play SATUSEHAT Mobile. Alasan dan
-metode ada di [usulan week 10](../docs/week-10/README.md). Pilihan ini perlu
-disepakati kelompok.
+Dataset: ulasan Google Play SATUSEHAT Mobile, disetujui kelompok pada
+3 November 2026. Alasan dan metode ada di
+[usulan week 10](../docs/week-10/README.md).
 
 ## Sumber
 
@@ -16,15 +16,60 @@ disepakati kelompok.
 | Alat | `google-play-scraper` 1.2.7, skrip `src/scrape_reviews.py` |
 | Urutan | Terbaru (`Sort.NEWEST`) |
 
-Menjalankan pengambilan:
+## Dataset final
+
+File: [`raw/com.telkom.tracencare_reviews.csv`](raw/com.telkom.tracencare_reviews.csv).
+Isinya keluaran langsung `src/scrape_reviews.py` tanpa penyuntingan manual.
+
+| Item | Nilai |
+|---|---|
+| Perintah | `python src/scrape_reviews.py --since 2023-03-01 --count 1000000` |
+| Waktu pengambilan | 4 November 2026, 02:31-02:36 UTC |
+| Cakupan | Semua ulasan yang dikembalikan Google Play untuk bahasa `id` dan negara `id` sejak SATUSEHAT Mobile berganti nama (1 Maret 2023) |
+| Jumlah baris | 39.995 ulasan |
+| Rentang `at` | 1 Maret 2023 00:07 sampai 3 November 2026 08:09 |
+| Zona waktu `at`, `repliedAt` | Waktu lokal komputer pengambil (WIB, UTC+7); pustaka memakai `datetime.fromtimestamp` |
+| Ukuran / SHA-256 | 8.847.485 byte / `0a66aeb9650aee9cacdb603f36030c54d686b583d455302f244f762c4b337c38` |
+| Lingkungan | Python 3.14.6, `google-play-scraper` 1.2.7 |
+
+Pemeriksaan yang sudah dilakukan:
+
+- 9 kolom sesuai skrip; tidak ada kolom nama atau foto pengguna.
+- 39.995 `reviewId` unik dan tidak kosong; tidak ada `content` kosong.
+- `at` terurut menurun tanpa pelanggaran, sehingga pengambilan berhenti tepat
+  setelah melewati 1 Maret 2023.
+- Rating hanya bernilai 1-5.
+- Semua 15.000 ulasan dari scraping 3 November 2026 ada di file ini dengan
+  teks dan rating yang sama.
+- Tidak ditemukan NIK 16 digit, nomor telepon, atau email.
+
+Teks ulasan dapat memuat baris baru di dalam sel CSV. `.gitattributes`
+menandai file ini `-text` agar Git tidak mengubah akhir baris dan hash tetap
+sama. Periksa dengan:
 
 ```text
-python src/scrape_reviews.py --app com.telkom.tracencare --count 15000
+python -c "import hashlib; print(hashlib.sha256(open('data/raw/com.telkom.tracencare_reviews.csv','rb').read()).hexdigest())"
 ```
 
-Keluaran: `data/raw/com.telkom.tracencare_reviews.csv`. Catat tanggal
-pengambilan dan jumlah baris setiap kali menjalankan skrip, karena ulasan
-terbaru terus berubah.
+Menjalankan ulang perintah di atas pada tanggal lain menghasilkan file
+berbeda, karena ulasan baru terus masuk dan ulasan lama bisa dihapus.
+
+### Ringkasan dataset final
+
+| Ukuran | Nilai |
+|---|---|
+| Median kata | 9 |
+| Minimal 3 kata | 82,1% |
+| Minimal 8 kata | 57,6% |
+| Duplikat persis (huruf kecil, spasi dirapikan) | 5.527 |
+| Pool setelah preprocessing (minimal 3 kata, tanpa duplikat) | 32.035 |
+| Versi terisi | 78,9%; 130 versi, 73 dengan minimal 50 ulasan |
+| Bintang 1 / 2 / 3 / 4 / 5 | 25.998 / 2.845 / 1.820 / 1.344 / 7.988 |
+| Ulasan Maret 2023 (bulan perubahan nama) | 16.392 (41% dari seluruh data) |
+
+Lonjakan Maret 2023 perlu diperhatikan saat analisis per waktu dan per versi.
+Pada bulan itu 63,7% ulasan memberi bintang 1, 27% memuat kata kunci login,
+dan 9% menyebut PeduliLindungi (perkiraan kata kunci, bukan label).
 
 ## Kolom
 
@@ -41,10 +86,11 @@ terbaru terus berubah.
 
 Nama dan foto profil pengguna tidak disimpan.
 
-## Hasil eksplorasi (3 Nov 2026)
+## Eksplorasi awal (3 Nov 2026)
 
-Dihitung dengan `src/pilot_stats.py`. Ulasan terbaru terus bertambah, jadi
-angka berubah bila skrip dijalankan pada tanggal lain.
+Angka berikut berasal dari scraping uji 3 November 2026 dan dipakai di
+[laporan week 10](../docs/laporan/Week_10_Laporan_ABSA_SATUSEHAT.docx).
+Ke-15.000 ulasan itu adalah bagian dari dataset final di atas.
 
 | Ukuran | 2.000 terbaru | 15.000 terbaru |
 |---|---|---|
@@ -86,11 +132,12 @@ Contoh dari pilot, ditulis apa adanya. Label adalah contoh penerapan
 ## Penyimpanan dan izin
 
 Ulasan bersifat publik. Ketentuan distribusi ulang teks ulasan Google Play
-belum diperiksa, jadi kelompok mengambil sikap hati-hati: file CSV di
-`data/raw/` dan `data/processed/` tidak diunggah ke repository (lihat
-`.gitignore`). Bagikan antaranggota melalui kanal pribadi. Repository
-menyimpan skrip, ID ulasan, dan file label tanpa teks ulasan. Jika dosen meminta dataset,
-sertakan tanggal pengambilan dan langkah pengulangannya.
+belum diperiksa. Sejak 4 November 2026, kelompok menyimpan data mentah di
+repository ini karena repository bersifat privat dan hanya dipakai anggota
+kelompok. Jangan membagikan file mentah ke publik, dan periksa ulang
+ketentuan ini sebelum repository dibuat publik. File `data/processed/*.csv`
+tetap tidak diunggah karena dapat dibuat ulang dari kode. Jika dosen meminta
+dataset, sertakan tanggal pengambilan dan langkah pengulangannya.
 
 - `raw/`: hasil scraping asli, tidak diubah.
 - `processed/`: hasil pembersihan dan pembagian data.

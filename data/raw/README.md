@@ -1,5 +1,6 @@
 # Teks asli
 
-Simpan data asli yang diizinkan untuk dibagikan. Jangan mengubahnya langsung;
-lakukan pembersihan melalui kode. Sumber dan cara pengambilan ada di
-[../README.md](../README.md).
+`com.telkom.tracencare_reviews.csv` adalah keluaran langsung
+`src/scrape_reviews.py` dan tidak boleh diubah. Pembersihan dilakukan lewat
+kode ke `data/processed/`. Perintah, waktu pengambilan, SHA-256, dan hasil
+pemeriksaan ada di [../README.md](../README.md#dataset-final).

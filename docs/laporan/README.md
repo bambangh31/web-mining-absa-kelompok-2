@@ -1,11 +1,19 @@
 # Laporan proyek
 
-## PDF week 10 dan week 11
+## Week 10
 
-- [Week 10: dataset, karakteristik data, BOD, dan algoritma](Week_10_Dataset_BOD_Algoritma_ABSA.pdf).
+- [Laporan week 10 (.docx)](Week_10_Laporan_ABSA_SATUSEHAT.docx): versi lengkap dan terbaru.
+  BOD mengikuti CRISP-DM business understanding, empat grafik eksplorasi
+  dari 15.000 ulasan (3 November 2026), alasan pemilihan algoritma, dan daftar
+  pustaka APA 7. Grafik dibuat ulang dengan `src/eda_charts.py`.
+- [Week 10 PDF ringkas](Week_10_Dataset_BOD_Algoritma_ABSA.pdf): versi awal, digantikan
+  oleh .docx di atas.
+
+## PDF week 11
+
 - [Week 11: progres coding, preprocessing, dan anotasi](Week_11_Coding_Preprocessing_Anotasi_ABSA.pdf).
 
-Kedua PDF memakai cover akademik, isi hitam putih, tanpa header, serta
+PDF week 10 ringkas dan PDF week 11 memakai cover akademik, isi hitam putih, tanpa header, serta
 nomor halaman di tengah bawah. Status hasil aktual dibedakan dari rancangan;
 PDF week 11 tidak mengklaim anotasi atau evaluasi model nyata sudah selesai.
 
