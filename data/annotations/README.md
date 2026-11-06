@@ -14,7 +14,10 @@ Satu baris per ulasan. Untuk setiap kategori aspek, isi satu label:
 | `negatif` | Pengguna mengeluh atau melaporkan masalah pada aspek tersebut |
 | `netral` | Aspek dibahas tanpa penilaian, misalnya pertanyaan atau saran |
 
-Satu ulasan boleh memiliki beberapa aspek dengan sentimen berbeda.
+Anotasi bersifat multi-aspek: satu ulasan boleh memiliki beberapa aspek
+dengan sentimen berbeda. Contoh: "setiap mau login gangguan trus!
+sertifikat gabisa di download!" diberi `akun_login` negatif dan
+`fitur_kesehatan` negatif; aspek lain `tidak_disebut`.
 
 ## Kategori aspek awal
 
@@ -53,11 +56,17 @@ masing-masing di bawah 2% dan sementara digolongkan ke `umum`.
 1. Kalibrasi: empat anggota melabeli 50 ulasan yang sama, bahas perbedaan,
    lalu perbarui panduan ini. Ulasan kalibrasi tidak masuk set gold dan
    menjadi sumber contoh few-shot untuk prompt LLM.
-2. Anotasi gold: 800 ulasan (400 latih, 100 validasi, 300 uji).
-3. Set uji dianotasi dua orang. Hitung Cohen's kappa per aspek; perbedaan
-   diselesaikan oleh anotator ketiga.
-4. Label manual dan label LLM disimpan di file terpisah, dihubungkan dengan
-   `reviewId`.
+2. Latih dan validasi (400 + 100 ulasan): LLM memberi label lebih dulu,
+   lalu satu anggota memeriksa setiap ulasan dan menyetujui atau mengoreksi
+   labelnya. Panduan ini tetap menjadi acuan; label LLM bukan acuan.
+3. Uji (300 ulasan): dua anggota melabeli secara mandiri tanpa melihat label
+   LLM. Hitung Cohen's kappa per aspek; perbedaan diselesaikan oleh anotator
+   ketiga.
+4. Label LLM asli, label hasil verifikasi, dan label manual disimpan di file
+   terpisah, dihubungkan dengan `reviewId`.
+
+Alur ini mengikuti masukan dosen 6 November 2026. Alasannya ada di
+[keputusan metode](../../docs/project/method-decisions.md#alur-label).
 
 Cara pengambilan sampel, format file, dan definisi metrik ada di
 [keputusan metode](../../docs/project/method-decisions.md).
@@ -71,8 +80,9 @@ boleh diunggah.
 |---|---|
 | `split.csv` | `reviewId`, `split` (`kalibrasi`, `gold_train`, `gold_val`, `gold_test`, `silver`) |
 | `gold_<nama>.csv` | Label satu anotator: `reviewId`, `annotator`, enam kolom aspek |
-| `gold.csv` | Label final setelah perbedaan diselesaikan, kolom sama tanpa `annotator` |
+| `gold.csv` | Label manual final setelah perbedaan diselesaikan, kolom sama tanpa `annotator` |
 | `llm_<model>.csv` | Label LLM: `reviewId`, `model`, `prompt_version`, enam kolom aspek |
+| `verified.csv` | Label latih dan validasi setelah verifikasi: `reviewId`, `verifier`, `model`, `prompt_version`, enam kolom aspek |
 
 Enam kolom aspek memakai nama kategori di atas dan berisi salah satu dari
 empat label.

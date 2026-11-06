@@ -44,12 +44,12 @@ Mengikuti [usulan week 10](../week-10/README.md) dan
 | Week | Anggota | Tugas | Selesai jika |
 |---|---|---|---|
 | 11 | Efraim | Scraping 15.000 ulasan, `reviews_clean.csv`, `split.csv`, notebook eksplorasi | File dibagikan; jumlah baris dan tanggal scraping dicatat di `data/README.md` |
-| 11 | Bambang | Kalibrasi 50 ulasan berempat, revisi panduan anotasi, mulai anotasi gold | Panduan final; kappa kalibrasi dicatat |
-| 11 | Jap | Kunci API Gemini, prompt v1 dari contoh kalibrasi, uji Gemini dan model lokal pada 50 ulasan kalibrasi | Kedua LLM menghasilkan JSON valid; skor pada kalibrasi dicatat |
+| 11 | Bambang | Kalibrasi 50 ulasan berempat, revisi panduan anotasi, alat lembar verifikasi berisi label LLM untuk latih dan validasi | Panduan final; kappa kalibrasi dicatat; lembar verifikasi siap |
+| 11 | Jap | Kunci API Gemini, prompt v1 dari contoh kalibrasi, label Gemini dan `qwen3.5:4b` untuk 800 ulasan latih, validasi, dan uji | `llm_<model>.csv` tersimpan; JSON valid |
 | 11 | Geraldyn | Fungsi evaluasi (F1 aspek, F1 pasangan, macro-F1, kappa) dan uji dengan label buatan | Fungsi memberi hasil benar pada contoh kecil yang dihitung manual |
-| 11 | Semua | Anotasi gold, sekitar 275 ulasan per orang | `gold.csv` lengkap 800 ulasan |
-| 12 | Jap | Pilih LLM silver dengan set validasi, label silver, latih B1, B2, P1, P2 | Prediksi set uji untuk semua model tersimpan |
-| 12 | Geraldyn | Skor semua model, grafik, analisis kesalahan, analisis per versi | Tabel metrik dan grafik di `results/` |
+| 11 | Semua | Label manual 150 ulasan uji per orang tanpa label LLM; verifikasi 125 label LLM latih dan validasi per orang | `gold.csv` 300 ulasan uji dan `verified.csv` 500 ulasan lengkap |
+| 12 | Jap | Latih B1-LR, B1-SVM, B1-NB, B4 (BiLSTM + fastText), B2 (IndoBERT-p1 base), dan B2-L (IndoBERT-p1 large, di Colab) pada data latih terverifikasi; simpan prediksi B3-Gemini dan B3-Qwen | Prediksi set uji untuk kedelapan model tersimpan |
+| 12 | Geraldyn | Skor semua model keseluruhan dan per aspek, paired bootstrap, tingkat koreksi verifikasi, grafik, analisis kesalahan, analisis per versi | Tabel metrik dan grafik di `results/` |
 | 12 | Efraim | Statistik per versi dan konsistensi rating dari prediksi model terbaik | Grafik dan tabel per versi |
 | 12 | Bambang | Penyelesaian perbedaan anotasi set uji, kappa per aspek | Kappa per aspek dicatat |
 

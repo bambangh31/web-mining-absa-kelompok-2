@@ -5,6 +5,33 @@ Disiapkan 3 November 2026 untuk week 11-12. Mengikuti
 [panduan aspek](../../data/annotations/README.md). Ini perangkat kerja,
 bukan klaim bahwa kalibrasi atau anotasi manusia sudah dilakukan.
 
+## Perubahan 6 November 2026
+
+Mengikuti masukan dosen, label latih dan validasi tidak lagi dibuat manual
+dari nol. Rinciannya ada di
+[alur label](method-decisions.md#alur-label).
+
+| Bagian | Cara pelabelan | Status alat |
+|---|---|---|
+| Kalibrasi (50) | Manual oleh empat anggota, tidak berubah | Siap |
+| `gold_test` (300) | Manual oleh dua anggota tanpa label LLM, tidak berubah | Siap |
+| `gold_train` (400), `gold_val` (100) | LLM memberi label, lalu satu anggota memverifikasi dan mengoreksi | Belum ada; perlu lembar berisi label LLM |
+
+Kebutuhan alat verifikasi, dari [tinjauan pustaka](literature-review.md#1-pelabelan-dengan-bantuan-llm):
+
+- Untuk setiap aspek ada kolom label LLM, kolom `setuju`/`salah`, dan kolom
+  label pengganti yang hanya diisi bila `salah`.
+- Catat waktu mulai dan selesai per lembar, agar waktu verifikasi per ulasan
+  bisa dilaporkan.
+- Ekspor `verified.csv` dan ringkasan: tingkat koreksi per aspek dan
+  persentase ulasan yang diterima utuh.
+- Lembar `gold_test` tidak boleh berisi label LLM.
+
+Sampai alat verifikasi tersedia, isi hanya baris `gold_test` pada lembar
+`gold_<nama>.csv`. Baris latih dan validasi menunggu label LLM. Beban per
+orang tetap: 100 latih dan 25 validasi untuk diverifikasi, serta 150 uji
+untuk dilabeli. Split dan penugasan tidak berubah.
+
 ## Batas pekerjaan
 
 - Efraim/Melvyn menyediakan dataset mentah, sumber, dan catatan scraping.
@@ -69,8 +96,8 @@ dengan nama yang sama (UTF-8 dengan/tanpa BOM diterima).
 - Isi setiap aspek dengan `tidak_disebut`, `positif`, `negatif`, atau `netral`.
 - Aspek: `akun_login`, `registrasi_data`, `fitur_kesehatan`, `performa`,
   `kemudahan_penggunaan`, `umum`. Umum tidak boleh bersama aspek khusus.
-- Catat kasus ambigu untuk diskusi. Jangan mengisi gold memakai prediksi
-  LLM; gold dan silver adalah kondisi eksperimen yang berbeda.
+- Catat kasus ambigu untuk diskusi. Jangan mengisi kalibrasi atau
+  `gold_test` memakai prediksi LLM; set uji harus dilabeli tanpa label LLM.
 
 Setelah empat lembar lengkap:
 

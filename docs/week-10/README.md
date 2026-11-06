@@ -1,5 +1,10 @@
 # Bahan week 10: usulan topik dan metode
 
+> Catatan 6 November 2026: metode diubah setelah masukan dosen. Label latih
+> berasal dari label LLM yang diverifikasi, encoder memakai IndoBERT-p1, dan
+> P1/P2 dihapus. Dokumen ini disimpan sebagai usulan week 10; keputusan yang
+> berlaku ada di [keputusan metode](../project/method-decisions.md#masukan-dosen-6-november-2026).
+
 Status: topik disetujui kelompok pada 3 November 2026; konfirmasi dosen
 masih ditunggu. Format BOD mengikuti arahan dosen; bagian tujuan di bawah
 disiapkan sebagai bahannya. Pilihan LLM, IndoBERT, preprocessing, pembagian
