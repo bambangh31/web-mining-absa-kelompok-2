@@ -14,8 +14,8 @@ bagian [Riwayat](#riwayat) beserta eksperimen yang perlu diulang.
 | Label uji | 300 ulasan dilabeli manual oleh dua orang tanpa melihat label LLM |
 | Data latih | Sama untuk semua model: 400 ulasan latih terverifikasi |
 | LLM pra-label | Gemini Flash melalui kuota gratis Gemini API; cadangan model lokal `qwen3.5:4b` lewat Ollama |
-| Model yang dibandingkan | TF-IDF + Logistic Regression, Linear SVM, Naive Bayes; IndoBERT sentence-pair; Gemini dan `qwen3.5:4b` langsung |
-| Encoder | `indobenchmark/indobert-base-p1`, klasifikasi sentence-pair (ulasan, aspek) |
+| Model yang dibandingkan | TF-IDF + Logistic Regression, Linear SVM, Naive Bayes; BiLSTM + fastText; IndoBERT-p1 base dan large; Gemini dan `qwen3.5:4b` langsung |
+| Encoder | `indobenchmark/indobert-base-p1` (utama) dan `indobenchmark/indobert-large-p1`, klasifikasi sentence-pair (ulasan, aspek) |
 | Pelaporan | Semua metrik dilaporkan keseluruhan dan per aspek untuk setiap model |
 | Preprocessing | 13 aturan di bawah; tanpa stopword removal, tanpa stemming |
 | Pembagian data | 50 kalibrasi, 400 latih, 100 validasi, 300 uji, sisanya tanpa label; seed 42 |
@@ -28,7 +28,7 @@ bagian [Riwayat](#riwayat) beserta eksperimen yang perlu diulang.
 | Data latih disamakan; aspek dari LLM tetapi diverifikasi | Semua model dilatih pada data yang sama. Label latih dan validasi dibuat LLM lalu diverifikasi manusia. Set uji tetap dilabeli manual tanpa label LLM |
 | Pakai IndoBERT, bukan IndoBERTweet, karena IndoBERTweet khusus Twitter | Encoder diganti `indobenchmark/indobert-base-p1` |
 | Aspeknya single atau multi? | Multi-aspek. Lihat [bentuk tugas](#bentuk-tugas) |
-| Tambahan algoritma/LLM per aspek | (a) Hasil setiap model dilaporkan per aspek. (b) Pembanding ditambah: Linear SVM dan Naive Bayes di samping Logistic Regression, serta dua LLM |
+| Tambahan algoritma/LLM per aspek | (a) Hasil setiap model dilaporkan per aspek. (b) Pembanding ditambah: Linear SVM dan Naive Bayes di samping Logistic Regression, BiLSTM, IndoBERT large, serta dua LLM. Lihat [model yang dibandingkan](#model-yang-dibandingkan) |
 
 Akibatnya, skema silver lama (P1: IndoBERTweet dilatih dengan label LLM
 tanpa verifikasi; P2: silver lalu gold) tidak dipakai. Ulasan di luar set
@@ -41,8 +41,8 @@ Pertanyaan penelitian setelah perubahan ini (menggantikan RQ1 dan RQ2 di
 - RQ1: Seberapa sesuai label LLM dengan label manual set uji (Cohen's kappa,
   F1), dan berapa persen label LLM dikoreksi saat verifikasi?
 - RQ2: Bila dilatih pada data terverifikasi yang sama, model mana yang
-  terbaik secara keseluruhan dan per aspek: TF-IDF (LR, SVM, NB), IndoBERT,
-  atau LLM yang dipakai langsung?
+  terbaik secara keseluruhan dan per aspek: TF-IDF (LR, SVM, NB), BiLSTM,
+  IndoBERT base dan large, atau LLM yang dipakai langsung?
 - RQ3: Tidak berubah.
 
 ## Bentuk tugas
@@ -73,6 +73,10 @@ pasangan. LLM mengeluarkan keenam label sekaligus dalam JSON.
    hanya dipakai sebagai prediksi pembanding, tidak ditunjukkan ke anotator.
 3. Verifikasi: setiap ulasan latih dan validasi diperiksa satu anggota. Label
    LLM disetujui atau dikoreksi. Label LLM asli dan label akhir disimpan.
+   Lembar verifikasi memakai dua langkah per aspek: tandai `setuju` atau
+   `salah`, lalu isi label pengganti hanya untuk yang `salah`. Penelitian
+   menunjukkan pemeriksa lebih jarang mengoreksi bila setiap koreksi wajib
+   langsung disertai pengganti. Waktu verifikasi per ulasan juga dicatat.
 4. Set uji: dua anggota melabeli setiap ulasan uji secara mandiri tanpa label
    LLM. Perbedaan diselesaikan anggota ketiga. Cohen's kappa dihitung sebelum
    adjudikasi.
@@ -82,7 +86,8 @@ yang sudah tersedia (anchoring). Jika set uji diturunkan dari label LLM,
 evaluasi akan menguntungkan LLM dan model yang dilatih dari label LLM.
 
 Tingkat koreksi, yaitu persentase sel latih dan validasi yang diubah
-pemeriksa, dilaporkan per aspek sebagai ukuran kualitas label LLM. Ukuran
+pemeriksa, dilaporkan per aspek sebagai ukuran kualitas label LLM, bersama
+persentase ulasan yang diterima utuh dan waktu verifikasi. Ukuran
 utama kualitas LLM tetap skornya pada set uji manual.
 
 ## Spesifikasi laptop acuan
@@ -204,7 +209,9 @@ Model ini tetap menjadi kandidat jika tim berhasil memasangnya.
 
 `indobenchmark/indobert-base-p1` dengan klasifikasi sentence-pair. Masukan
 berupa pasangan (teks ulasan, deskripsi aspek), keluaran salah satu dari
-empat label. Satu ulasan menghasilkan enam pasangan.
+empat label. Satu ulasan menghasilkan enam pasangan. Versi large
+(`indobenchmark/indobert-large-p1`, B2-L) dilatih dengan cara yang sama
+sebagai pembanding; lihat [model yang dibandingkan](#model-yang-dibandingkan).
 
 Alasan memilih IndoBERT-p1:
 
@@ -229,18 +236,66 @@ ulasan.
 
 ## Model yang dibandingkan
 
+Diputuskan 6 November 2026 dari perbandingan penelitian di
+[tinjauan pustaka](literature-review.md#4-perbandingan-algoritma).
+
 Semua model dilatih pada 400 ulasan latih terverifikasi yang sama, memakai
 set validasi yang sama untuk memilih konfigurasi, dan diuji pada 300 ulasan
 uji manual yang sama.
 
-| Kode | Model | Masukan | Data latih |
-|---|---|---|---|
-| B1-LR | TF-IDF + Logistic Regression | `text_model` + normalisasi slang | Latih terverifikasi (400) |
-| B1-SVM | TF-IDF + Linear SVM | `text_model` + normalisasi slang | Latih terverifikasi (400) |
-| B1-NB | TF-IDF + Multinomial Naive Bayes | `text_model` + normalisasi slang | Latih terverifikasi (400) |
-| B2 | IndoBERT-p1 sentence-pair | `text_model` | Latih terverifikasi (400) |
-| B3-Gemini | Gemini Flash, few-shot | `text_llm` | Tanpa pelatihan; contoh dari kalibrasi |
-| B3-Qwen | `qwen3.5:4b` lokal, few-shot | `text_llm` | Tanpa pelatihan; contoh dari kalibrasi |
+| Kode | Kelompok | Model | Masukan | Data latih |
+|---|---|---|---|---|
+| B1-LR | Klasik | TF-IDF + Logistic Regression | `text_model` + normalisasi slang | Latih terverifikasi (400) |
+| B1-SVM | Klasik | TF-IDF + Linear SVM | `text_model` + normalisasi slang | Latih terverifikasi (400) |
+| B1-NB | Klasik | TF-IDF + Multinomial Naive Bayes | `text_model` + normalisasi slang | Latih terverifikasi (400) |
+| B4 | Deep learning tanpa pretraining bahasa | BiLSTM + embedding fastText `cc.id.300` | `text_model` | Latih terverifikasi (400) |
+| B2 | Transformer (utama) | IndoBERT-p1 base sentence-pair | `text_model` | Latih terverifikasi (400) |
+| B2-L | Transformer | IndoBERT-p1 large sentence-pair | `text_model` | Latih terverifikasi (400) |
+| B3-Gemini | LLM | Gemini Flash, few-shot | `text_llm` | Tanpa pelatihan; contoh dari kalibrasi |
+| B3-Qwen | LLM | `qwen3.5:4b` lokal, few-shot | `text_llm` | Tanpa pelatihan; contoh dari kalibrasi |
+
+Kode B4 diberikan setelah B1-B3 agar kode lama tidak berubah.
+
+### Alasan pemilihan
+
+1. Empat kelompok menjawab pertanyaan berbeda: seberapa jauh pendekatan
+   kata (B1), deep learning tanpa model bahasa (B4), model bahasa pretrained
+   (B2), dan LLM tanpa pelatihan (B3) dapat bekerja dengan 400 ulasan latih
+   yang sama.
+2. IndoBERT-p1 base menjadi model utama. Pada benchmark multi-aspek IndoNLU
+   (CASA, 810 ulasan latih), IndoBERT base mendapat F1 93,23, di atas XLM-R
+   base (91,71) dan mBERT (72,23). Pada studi aplikasi Indonesia, IndoBERT
+   juga terbaik untuk Access by KAI (2026) dan Mobile JKN (2025).
+3. IndoBERT-p1 large mendapat skor tertinggi pada CASA (95,69). Model ini
+   memakai kode training yang sama, jadi tambahan kerjanya kecil. Ukurannya
+   sekitar 335 juta parameter dan tidak muat untuk training di 6 GB VRAM,
+   sehingga dijalankan di Google Colab (GPU T4 16 GB).
+4. BiLSTM sering dipakai di studi sentimen ulasan Indonesia (Shopee, Spotify,
+   pembanding pada Access by KAI). Embedding fastText `cc.id.300` dilatih
+   pada Common Crawl bahasa Indonesia dan memuat slang. Pada IndoNLU, model
+   dengan embedding ini tertinggal 14 poin dari IndoBERT base pada CASA.
+   Selisih antara B4 dan B2 menunjukkan manfaat pretraining.
+5. TF-IDF + SVM tetap wajib. Pada ulasan Tokopedia 2025, Linear SVM
+   mengalahkan IndoBERT (macro-F1 0,5510 vs 0,5088) ketika IndoBERT dilatih
+   dengan data lebih sedikit. LR dan NB dipakai karena umum di studi
+   sentimen SATUSEHAT dan sangat cepat.
+6. LLM langsung: Hellwig dkk. (2025) menemukan LLM few-shot mendekati model
+   fine-tuned pada tugas berbasis kategori aspek.
+
+### Kandidat yang tidak dipakai
+
+| Kandidat | Alasan |
+|---|---|
+| IndoBERTweet | Masukan dosen: khusus Twitter |
+| XLM-R base | Di bawah IndoBERT base pada CASA dan HoASA; dosen meminta IndoBERT |
+| XLM-R large | Sekitar 560 juta parameter; tidak muat di laptop dan berat di Colab gratis. Selisih dengan IndoBERT large kecil dan tidak konsisten (CASA lebih rendah, HoASA lebih tinggi) |
+| mBERT | Jauh di bawah IndoBERT pada CASA (72,23) |
+| IndoBERT-lite | Di bawah IndoBERT base pada CASA dan HoASA |
+| NusaBERT | Fokus pada bahasa daerah; keunggulan atas IndoBERT kecil dan tidak konsisten pada klasifikasi |
+| SetFit | Dirancang untuk 8-16 contoh per kelas; dengan 400 ulasan fine-tuning biasa cukup; belum ada bukti untuk ABSA |
+| BiLSTM dengan embedding IndoBERT | Mencampur pretraining Transformer ke kelompok B4, sehingga perbandingan antarkelompok tidak bersih |
+
+### Pengaturan model klasik
 
 Model TF-IDF memakai satu classifier empat kelas per aspek. Fitur TF-IDF
 kata 1-2 gram dengan `sublinear_tf`. Logistic Regression dan Linear SVM
@@ -248,27 +303,54 @@ memakai `class_weight="balanced"` karena label positif dan netral jarang.
 Parameter regularisasi (`C` untuk LR dan SVM, `alpha` untuk NB) dipilih
 dari {0,1; 1; 10} dan {0,1; 0,5; 1} dengan F1 pasangan pada set validasi.
 
-Alasan tiga algoritma klasik: ketiganya umum dipakai pada studi sentimen
-bahasa Indonesia, cepat, dan menunjukkan seberapa besar keuntungan IndoBERT
-dan LLM dibanding pendekatan kata.
-
-Catatan: B3-Gemini juga membuat pra-label data latih. Perbandingan yang adil
-tetap terjaga karena skornya diukur pada set uji yang dilabeli tanpa label
-LLM.
-
-### Hiperparameter IndoBERT
+### Pengaturan BiLSTM
 
 | Parameter | Nilai | Alasan |
 |---|---|---|
-| Panjang maksimum | 160 token, pemotongan hanya pada teks ulasan | Persentil 99,9 ulasan 113 token ditambah deskripsi aspek |
-| Learning rate | 2e-5 | Nilai umum untuk fine-tuning BERT base |
-| Batch | 16 | Muat di 6 GB VRAM dengan fp16 |
-| Epoch | Maksimal 10, early stopping patience 2 | Data kecil, 2.400 pasangan |
-| Warmup / weight decay | 10% / 0,01 | Pengaturan standar |
-| Kriteria early stopping | F1 pasangan pada set validasi | Sama dengan metrik utama |
-| Seed | 42, 43, 44 | Data kecil; laporkan rata-rata dan simpangan baku |
+| Token | Kata dan tanda baca dari `text_model`, maksimal 128 token | Diukur pada pool: median 14, persentil 99 sebanyak 78, persentil 99,9 sebanyak 102; hanya 7 ulasan lebih dari 128 |
+| Embedding | fastText `cc.id.300.vec`, 300 dimensi, dibekukan; kata di luar kosakata memakai satu vektor `[UNK]` yang dilatih | 400 ulasan terlalu sedikit untuk melatih embedding. Hanya kata yang muncul di pool yang dimuat, agar RAM cukup |
+| Encoder | BiLSTM 1 lapis, 128 unit per arah, dropout 0,5 | Ukuran kecil untuk data kecil |
+| Keluaran | Max-pooling, lalu enam kepala linear, masing-masing empat kelas | Multi-aspek: encoder dipakai bersama, setiap aspek diklasifikasi sendiri |
+| Loss | Cross-entropy berbobot kelas per aspek, dijumlah untuk enam aspek | Label positif dan netral jarang |
+| Optimizer | Adam, learning rate 1e-3, batch 32 | Pengaturan umum untuk LSTM |
+| Epoch | Maksimal 30, early stopping patience 3 dengan F1 pasangan validasi | Training cepat; berhenti saat validasi tidak naik |
+| Seed | 42, 43, 44 | Sama dengan IndoBERT |
 
-Training dapat dijalankan di laptop acuan atau Google Colab.
+Persentase kata di luar kosakata fastText dihitung dan dilaporkan saat
+embedding dimuat.
+
+### Hiperparameter IndoBERT
+
+| Parameter | B2 (base) | B2-L (large) | Alasan |
+|---|---|---|---|
+| Panjang maksimum | 160 token, pemotongan hanya pada teks ulasan | Sama | Persentil 99,9 ulasan 113 token ditambah deskripsi aspek |
+| Learning rate | 2e-5 | 1e-5 | Nilai umum; model large lebih tidak stabil pada data kecil |
+| Batch | 16 | 8, akumulasi gradien 2 (efektif 16) | B2 muat di 6 GB VRAM dengan fp16; B2-L di Colab T4 |
+| Epoch | Maksimal 10, early stopping patience 2 | Sama | Data kecil, 2.400 pasangan |
+| Warmup / weight decay | 10% / 0,01 | Sama | Pengaturan standar |
+| Kriteria early stopping | F1 pasangan pada set validasi | Sama | Sama dengan metrik utama |
+| Seed | 42, 43, 44 | Sama | Data kecil; laporkan rata-rata dan simpangan baku |
+
+B2 dapat dijalankan di laptop acuan atau Google Colab. B2-L dijalankan di
+Google Colab.
+
+### Penentuan model terbaik
+
+1. Skor utama: F1 pasangan pada set uji. Untuk model dengan tiga seed,
+   pakai rata-rata ketiganya. Model TF-IDF dan LLM (temperature 0)
+   dijalankan sekali.
+2. Uji beda: paired bootstrap 1.000 kali atas ulasan uji, seed 42. Pada
+   setiap sampel ulang, hitung F1 pasangan setiap model (rata-rata seed bila
+   ada tiga). Hitung interval 95% selisih antara model teratas dan setiap
+   model lain. Selisih dianggap nyata jika interval tidak memuat nol. Dengan
+   300 ulasan uji, selisih kecil kemungkinan tidak nyata, dan hal itu
+   dilaporkan apa adanya.
+3. Per aspek: laporkan model terbaik untuk setiap aspek berdasarkan
+   macro-F1 sentimen dan F1 deteksi aspek.
+4. Untuk analisis per versi (RQ3), pakai model dengan F1 pasangan uji
+   tertinggi. Jika model itu LLM, Gemini dipakai bila kuota cukup untuk
+   sekitar 1.600 permintaan. Jika tidak, pakai model terlatih terbaik.
+   Pilihan dan alasannya dicatat.
 
 ## Preprocessing
 
@@ -351,7 +433,7 @@ Enam kolom aspek: `akun_login`, `registrasi_data`, `fitur_kesehatan`,
   pemeriksa, per aspek dan keseluruhan.
 - Efisiensi: detik per 1.000 ulasan saat inferensi.
 - Semua metrik dihitung keseluruhan dan per aspek untuk setiap model. Tabel
-  utama berisi F1 pasangan dan macro-F1 sentimen per aspek untuk keenam model.
+  utama berisi F1 pasangan dan macro-F1 sentimen per aspek untuk kedelapan model.
 
 ## Analisis per versi dan konsistensi rating
 
@@ -391,13 +473,18 @@ python -m pip install torch --index-url https://download.pytorch.org/whl/cu130
 | 3 Nov 2026 | Keputusan awal | Topik disetujui kelompok | - |
 | 4 Nov 2026 | Dataset final: semua ulasan sejak 1 Maret 2023 (39.995 baris, pool 32.035), menggantikan 15.000 ulasan uji | Permintaan kelompok untuk memakai seluruh data era SATUSEHAT | Belum ada eksperimen. Angka pool dan beban LLM di dokumen ini masih berdasarkan uji 15.000 ulasan; silver menjadi sekitar 31.000 ulasan (perkiraan sekitar 1.600 permintaan Gemini atau sekitar 20 jam dengan model lokal) |
 | 6 Nov 2026 | Masukan dosen: data latih sama untuk semua model dari label LLM terverifikasi; IndoBERT-p1 menggantikan IndoBERTweet; tugas dinyatakan multi-aspek; tambahan Linear SVM, Naive Bayes, dan dua LLM; hasil per aspek. P1, P2, dan pelabelan silver dihapus | Masukan dosen | Belum ada eksperimen. Panjang token diukur ulang dengan tokenizer IndoBERT-p1 |
+| 6 Nov 2026 | Susunan akhir delapan model: B1-LR, B1-SVM, B1-NB, B4 BiLSTM + fastText, B2 IndoBERT-p1 base, B2-L IndoBERT-p1 large, B3-Gemini, B3-Qwen; aturan penentuan model terbaik dengan paired bootstrap | Perbandingan penelitian di [tinjauan pustaka](literature-review.md) | Belum ada eksperimen |
 
 ## Rujukan
+
+Daftar lengkap beserta temuan dan status pemeriksaan ada di
+[tinjauan pustaka](literature-review.md).
 
 - Zero-shot multilingual ABSA dengan LLM: https://arxiv.org/abs/2412.12564
 - LA-ABSA, LREC 2026: https://aclanthology.org/2026.lrec-1.632/
 - IndoNLU dan IndoBERT: https://arxiv.org/abs/2009.05387
-- Model IndoBERT-p1: https://huggingface.co/indobenchmark/indobert-base-p1
+- Model IndoBERT-p1: https://huggingface.co/indobenchmark/indobert-base-p1 dan https://huggingface.co/indobenchmark/indobert-large-p1
+- Vektor fastText `cc.id.300`: https://fasttext.cc/docs/en/crawl-vectors.html
 - IndoBERTweet (keputusan awal): https://arxiv.org/abs/2109.04607
 - ABSA ulasan Indonesia sentence-pair (BEEI): https://beei.org/index.php/EEI/article/view/8032
 - SEA-LION v4: https://huggingface.co/collections/aisingapore/sea-lion-v4

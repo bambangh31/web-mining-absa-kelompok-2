@@ -48,8 +48,8 @@ Mengikuti [usulan week 10](../week-10/README.md) dan
 | 11 | Jap | Kunci API Gemini, prompt v1 dari contoh kalibrasi, label Gemini dan `qwen3.5:4b` untuk 800 ulasan latih, validasi, dan uji | `llm_<model>.csv` tersimpan; JSON valid |
 | 11 | Geraldyn | Fungsi evaluasi (F1 aspek, F1 pasangan, macro-F1, kappa) dan uji dengan label buatan | Fungsi memberi hasil benar pada contoh kecil yang dihitung manual |
 | 11 | Semua | Label manual 150 ulasan uji per orang tanpa label LLM; verifikasi 125 label LLM latih dan validasi per orang | `gold.csv` 300 ulasan uji dan `verified.csv` 500 ulasan lengkap |
-| 12 | Jap | Latih B1-LR, B1-SVM, B1-NB, dan B2 (IndoBERT-p1) pada data latih terverifikasi; simpan prediksi B3-Gemini dan B3-Qwen | Prediksi set uji untuk keenam model tersimpan |
-| 12 | Geraldyn | Skor semua model keseluruhan dan per aspek, tingkat koreksi verifikasi, grafik, analisis kesalahan, analisis per versi | Tabel metrik dan grafik di `results/` |
+| 12 | Jap | Latih B1-LR, B1-SVM, B1-NB, B4 (BiLSTM + fastText), B2 (IndoBERT-p1 base), dan B2-L (IndoBERT-p1 large, di Colab) pada data latih terverifikasi; simpan prediksi B3-Gemini dan B3-Qwen | Prediksi set uji untuk kedelapan model tersimpan |
+| 12 | Geraldyn | Skor semua model keseluruhan dan per aspek, paired bootstrap, tingkat koreksi verifikasi, grafik, analisis kesalahan, analisis per versi | Tabel metrik dan grafik di `results/` |
 | 12 | Efraim | Statistik per versi dan konsistensi rating dari prediksi model terbaik | Grafik dan tabel per versi |
 | 12 | Bambang | Penyelesaian perbedaan anotasi set uji, kappa per aspek | Kappa per aspek dicatat |
 

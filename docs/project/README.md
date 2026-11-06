@@ -6,6 +6,7 @@
 |---|---|
 | [collaboration-plan.md](collaboration-plan.md) | Paket kontribusi, ketergantungan, review dan pencatatan tugas |
 | [method-decisions.md](method-decisions.md) | Keputusan LLM, encoder, preprocessing, pembagian data, format file dan metrik beserta alasannya |
+| [literature-review.md](literature-review.md) | Penelitian terkait, perbandingan algoritma, dan posisi kebaruan proyek |
 | [annotation-workflow.md](annotation-workflow.md) | Lembar kalibrasi/gold, audit kesepakatan, adjudikasi, dan ekspor label manusia |
 | [timeline.md](timeline.md) | Tahap week 10-16, keluaran, bukti dan target internal |
 | [publication-checklist.md](publication-checklist.md) | Pemeriksaan sebelum penyerahan dan publikasi jika diperlukan |

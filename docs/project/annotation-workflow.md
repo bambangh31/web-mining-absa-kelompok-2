@@ -17,6 +17,16 @@ dari nol. Rinciannya ada di
 | `gold_test` (300) | Manual oleh dua anggota tanpa label LLM, tidak berubah | Siap |
 | `gold_train` (400), `gold_val` (100) | LLM memberi label, lalu satu anggota memverifikasi dan mengoreksi | Belum ada; perlu lembar berisi label LLM |
 
+Kebutuhan alat verifikasi, dari [tinjauan pustaka](literature-review.md#1-pelabelan-dengan-bantuan-llm):
+
+- Untuk setiap aspek ada kolom label LLM, kolom `setuju`/`salah`, dan kolom
+  label pengganti yang hanya diisi bila `salah`.
+- Catat waktu mulai dan selesai per lembar, agar waktu verifikasi per ulasan
+  bisa dilaporkan.
+- Ekspor `verified.csv` dan ringkasan: tingkat koreksi per aspek dan
+  persentase ulasan yang diterima utuh.
+- Lembar `gold_test` tidak boleh berisi label LLM.
+
 Sampai alat verifikasi tersedia, isi hanya baris `gold_test` pada lembar
 `gold_<nama>.csv`. Baris latih dan validasi menunggu label LLM. Beban per
 orang tetap: 100 latih dan 25 validasi untuk diverifikasi, serta 150 uji
