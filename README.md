@@ -10,8 +10,13 @@ Topik (disetujui kelompok 3 November 2026, menunggu konfirmasi dosen): ABSA
 ulasan Google Play SATUSEHAT Mobile, dengan perbandingan label manual dan
 label LLM serta pelacakan sentimen aspek per versi aplikasi. Rincian ada di
 [usulan week 10](docs/week-10/README.md) dan
-[keputusan metode](docs/project/method-decisions.md). Skrip scraping sudah
-tersedia; belum ada hasil eksperimen.
+[keputusan metode](docs/project/method-decisions.md). Masukan dosen
+6 November 2026 sudah diterapkan: data latih sama untuk semua model (label
+LLM yang diverifikasi anggota), set uji manual tanpa label LLM, IndoBERT-p1,
+tugas multi-aspek dengan delapan kategori, dan delapan model yang
+dilaporkan per aspek. Kode pipeline lengkap tersedia (lihat
+[cara menjalankan dan menguji](docs/project/pipeline.md)); hasil akhir
+menunggu verifikasi label latih dan label uji dua anotator.
 
 | Anggota | NRP | Peran awal |
 |---|---|---|
@@ -92,6 +97,21 @@ Pengambilan ulasan:
 python src/scrape_reviews.py --app com.telkom.tracencare --count 15000
 ```
 
+Pipeline ABSA (10 November 2026):
+
+| Langkah | Kode |
+|---|---|
+| Skema delapan aspek dan aturan agregasi | [`src/absa_schema.py`](src/absa_schema.py) |
+| Normalisasi slang dan tokenisasi | [`src/text_features.py`](src/text_features.py) |
+| Lembar Excel label rinci (manual dan LLM) | [`src/label_excel.py`](src/label_excel.py) |
+| Pelabelan Gemini/Ollama | [`src/llm_label.py`](src/llm_label.py) |
+| Verifikasi dua langkah | [`src/verification.py`](src/verification.py) |
+| B1-LR/SVM/NB, B4 BiLSTM, B2/B2-L IndoBERT-p1 | [`src/models_classic.py`](src/models_classic.py), [`src/model_bilstm.py`](src/model_bilstm.py), [`src/model_indobert.py`](src/model_indobert.py) |
+| Evaluasi per aspek dan paired bootstrap | [`src/evaluate.py`](src/evaluate.py) |
+| Perbandingan lembar manual vs LLM, pratinjau | [`src/compare_labels.py`](src/compare_labels.py), [`src/preview_cv.py`](src/preview_cv.py) |
+
+Tes: `python -m unittest discover -s tests -v`.
+
 Perangkat kalibrasi dan anotasi manusia sudah tersedia di
 [`src/annotation.py`](src/annotation.py). Ikuti
 [alur anotasi](docs/project/annotation-workflow.md) setelah clean + split
@@ -109,7 +129,7 @@ memprediksi atau mengklaim label gold sudah tersedia.
 CI berjalan saat push ke `main`, pull request, atau melalui pemicu manual.
 Pemeriksaannya: memasang `requirements.txt`, memeriksa kompatibilitas
 dependensi, sintaks `.py` di `src/`, serta tes alur anotasi dengan data buatan.
-CI belum menjalankan scraping, notebook, atau menguji kualitas model ABSA.
+CI menjalankan tes pipeline dengan data buatan; CI tidak menjalankan scraping, notebook, pemanggilan API, atau pelatihan IndoBERT.
 
 Dependabot memeriksa library Python dan GitHub Actions setiap bulan.
 Pembaruan dibuat sebagai PR untuk diperiksa sebelum digabung; auto-merge

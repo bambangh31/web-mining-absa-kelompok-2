@@ -6,7 +6,10 @@
   BOD mengikuti CRISP-DM business understanding, empat grafik eksplorasi
   dari dataset final (39.995 ulasan sejak 1 Maret 2023, diambil 4 November
   2026), alasan pemilihan algoritma, dan daftar
-  pustaka APA 7. Grafik dibuat ulang dengan `src/eda_charts.py`.
+  pustaka APA 7. Grafik dibuat ulang dengan `src/eda_charts.py`. Direvisi
+  10 November 2026 mengikuti masukan dosen (bagian 1.4): RQ1/RQ2 baru,
+  delapan aspek multi-aspek dengan contoh, label LLM terverifikasi, IndoBERT-p1,
+  delapan model, dan metrik per aspek.
 - [Week 10 PDF ringkas](Week_10_Dataset_BOD_Algoritma_ABSA.pdf): versi awal, digantikan
   oleh .docx di atas.
 
@@ -15,7 +18,10 @@
 - [Laporan week 11 (.docx)](Week_11_Laporan_ABSA_SATUSEHAT.docx): versi
   terbaru, mengikuti cover, format bab, dan daftar isi otomatis week 10.
   Memuat hasil preprocessing dataset lengkap, split aktual, persiapan
-  anotasi, dan 15 tes yang lulus. Label manusia dan skor model belum tersedia.
+  anotasi, dan revisi 10 November 2026 (bab 6): skema delapan aspek,
+  pemeriksaan 354 ulasan berlabel manual, perbandingan dengan Gemini, lembar
+  verifikasi, kode delapan model, pratinjau per aspek, dan 30 tes yang lulus.
+  Skor set uji belum tersedia.
 - [Week 11 PDF awal](Week_11_Coding_Preprocessing_Anotasi_ABSA.pdf): versi
   sebelum implementasi preprocessing lengkap; gunakan DOCX terbaru untuk
   status hasil terkini.

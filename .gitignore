@@ -25,3 +25,7 @@ data/processed/*.csv
 
 # Lembar anotasi berisi teks ulasan dan catatan; dibagikan secara privat.
 /data/annotation_workspace/
+
+# Sumber eksternal besar atau tanpa lisensi distribusi ulang (lihat data/external/README.md)
+data/external/*
+!data/external/README.md

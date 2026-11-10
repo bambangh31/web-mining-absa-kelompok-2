@@ -1,0 +1,2 @@
+﻿Model,F1 pasangan,Presisi,Recall,F1 deteksi micro,F1 deteksi macro,Macro-F1 sentimen rata-rata,Ulasan persis sama
+Gemini vs manual,0.828,0.828,0.828,0.885,0.808,0.706,0.686

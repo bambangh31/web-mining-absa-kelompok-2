@@ -15,11 +15,11 @@ from datetime import datetime, timezone
 from fractions import Fraction
 from pathlib import Path
 
-ASPECTS = (
-    "akun_login", "registrasi_data", "fitur_kesehatan", "performa",
-    "kemudahan_penggunaan", "umum",
-)
-LABELS = ("tidak_disebut", "positif", "negatif", "netral")
+try:  # dijalankan sebagai modul (tes, notebook) atau sebagai skrip
+    from src.absa_schema import ASPECTS, LABELS
+except ImportError:  # python src/annotation.py
+    from absa_schema import ASPECTS, LABELS
+
 MEMBERS = ("bambang", "efraim", "jap", "geraldyn")
 COUNTS = {"kalibrasi": 50, "gold_train": 400, "gold_val": 100, "gold_test": 300}
 LABEL_FIELDS = ["reviewId", "annotator", *ASPECTS]
@@ -83,6 +83,24 @@ def cohen_kappa(left, right):
     return None if expected == 1 else float((observed - expected) / (1 - expected))
 
 
+def assign(selected):
+    """Pembagian deterministik (seed 42); dipakai juga oleh lembar verifikasi."""
+    rng = random.Random(42)
+    assignments = {"kalibrasi": {m: [] for m in MEMBERS}, "gold": {m: [] for m in MEMBERS}}
+    pairs = list(itertools.combinations(MEMBERS, 2))
+    for name in COUNTS:
+        ids = sorted(key for key, row in selected.items() if row["split"] == name)
+        rng.shuffle(ids)
+        phase = "kalibrasi" if name == "kalibrasi" else "gold"
+        for index, key in enumerate(ids):
+            owners = MEMBERS if phase == "kalibrasi" else (
+                pairs[index % len(pairs)] if name == "gold_test" else (MEMBERS[index % len(MEMBERS)],)
+            )
+            for member in owners:
+                assignments[phase][member].append(key)
+    return assignments
+
+
 def prepare(reviews_path, split_path, workspace):
     reviews_path, split_path, workspace = map(Path, (reviews_path, split_path, workspace))
     reviews = unique_rows(read_csv(reviews_path, ["reviewId", "text_llm"]), reviews_path)
@@ -97,19 +115,7 @@ def prepare(reviews_path, split_path, workspace):
     selected = {key: row for key, row in split.items() if row["split"] != "silver"}
     if any(not reviews[key]["text_llm"].strip() for key in selected):
         raise ValueError("Teks ulasan untuk anotasi tidak boleh kosong")
-    rng = random.Random(42)
-    assignments = {"kalibrasi": {m: [] for m in MEMBERS}, "gold": {m: [] for m in MEMBERS}}
-    pairs = list(itertools.combinations(MEMBERS, 2))
-    for name in COUNTS:
-        ids = sorted(key for key, row in selected.items() if row["split"] == name)
-        rng.shuffle(ids)
-        phase = "kalibrasi" if name == "kalibrasi" else "gold"
-        for index, key in enumerate(ids):
-            owners = MEMBERS if phase == "kalibrasi" else (
-                pairs[index % len(pairs)] if name == "gold_test" else (MEMBERS[index % len(MEMBERS)],)
-            )
-            for member in owners:
-                assignments[phase][member].append(key)
+    assignments = assign(selected)
     # Semua pemeriksaan input selesai sebelum membuat keluaran.
     workspace.mkdir(parents=True, exist_ok=False)
     text_hashes = {}

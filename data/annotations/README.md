@@ -1,7 +1,8 @@
 # Panduan aspek dan label acuan
 
-Draf awal, 3 November 2026. Kategori final ditetapkan setelah kalibrasi
-anotasi pada week 11.
+Draf awal 3 November 2026; diperbarui 10 November 2026 menjadi delapan
+kategori berdasarkan pelabelan manual 354 ulasan. Kategori final tetap
+dikonfirmasi saat kalibrasi.
 
 ## Bentuk anotasi
 
@@ -31,11 +32,16 @@ kunci pada 2.000 ulasan, bukan label.
 | `fitur_kesehatan` | Cek kesehatan gratis, hasil pemeriksaan, vaksin, sertifikat, faskes | "hasil CKG tidak keluar" | 12% |
 | `performa` | Error, force close, lambat, server, bug | "force close setelah input PIN" | 8% |
 | `kemudahan_penggunaan` | Tampilan, alur, mudah atau sulit dipakai | "ribet untuk orang tua" | 17% |
+| `pembaruan_aplikasi` | Update, versi, diminta update terus, gagal update, peralihan atau ganti nama dari PeduliLindungi, perbandingan dengan aplikasi lama | "udah diupdate malah gak bisa dibuka", "enakan peduli lindungi" | 26% |
+| `layanan_pelanggan` | CS, helpdesk, aduan lewat email/WA, tanggapan pengembang | "wa nggk pernah dibalas", "ditangani dengan cepat" | 4% |
 | `umum` | Penilaian keseluruhan tanpa aspek khusus | "aplikasi bagus", "tidak berguna" | sisa |
 
-Kandidat tambahan bila cukup sering setelah pilot: `dukungan_layanan`
-(respon CS/aduan) dan `privasi_data` (data disalahgunakan). Saat ini
-masing-masing di bawah 2% dan sementara digolongkan ke `umum`.
+Dua kategori terakhir sebelum `umum` ditambahkan 10 November 2026. Pada
+lembar manual 354 ulasan terdapat 121 penyebutan pembaruan aplikasi dan 24
+penyebutan layanan pelanggan. Perkiraan persentase keduanya memakai daftar
+kata kunci `src/aspect_keywords.py` pada pool 32.035 ulasan, bukan label.
+`privasi_data` tetap digolongkan ke `umum` karena belum ditemukan cukup
+contoh.
 
 ## Aturan
 
@@ -50,6 +56,33 @@ masing-masing di bawah 2% dan sementara digolongkan ke `umum`.
 - `kemudahan_penggunaan` hanya diisi bila pengguna menilai alur atau
   tampilan (ribet, bingung, mudah dipakai), bukan setiap kali ada fitur
   yang gagal.
+- `pembaruan_aplikasi` diisi bila update/versi/peralihan aplikasi disebut.
+  "Setelah update tidak bisa dibuka" adalah `pembaruan_aplikasi` negatif dan
+  `performa` negatif. Mengubah nomor telepon atau email di profil adalah
+  `registrasi_data`, bukan `akun_login`.
+- `layanan_pelanggan` diisi bila CS, helpdesk, admin, atau tanggapan aduan
+  dinilai. Sapaan "min" saja tanpa penilaian tidak dihitung.
+
+## Anotasi rinci dan label per ulasan
+
+Lembar Excel ("Label Manual Sentimen Komentar Satu Sehat.xlsx") mencatat
+satu baris per penyebutan aspek: Kata Aspek (persis dari ulasan), Aspek
+(seragam), Kategori Aspek, Label, dan Bukti dari komentar. Kata aspek dan
+bukti harus potongan persis dari komentar. reviewId, tanggal, versi
+aplikasi, rating, dan komentar harus sama persis dengan data asli; versi
+kosong tetap kosong.
+
+Label per ulasan (delapan kolom) diturunkan otomatis, di lembar "Label per
+Ulasan" dan di `src/absa_schema.py`:
+
+1. Aspek tanpa penyebutan: `tidak_disebut`.
+2. Semua penyebutan netral: `netral`.
+3. Selain itu label mayoritas positif/negatif; jumlah sama dihitung
+   `negatif`.
+4. `umum` dikosongkan bila ada aspek khusus.
+
+Lembar versi LLM memakai format yang sama sehingga keduanya bisa
+dibandingkan dengan `src/compare_labels.py`.
 
 ## Proses
 
@@ -79,13 +112,14 @@ boleh diunggah.
 | File | Isi |
 |---|---|
 | `split.csv` | `reviewId`, `split` (`kalibrasi`, `gold_train`, `gold_val`, `gold_test`, `silver`) |
-| `gold_<nama>.csv` | Label satu anotator: `reviewId`, `annotator`, enam kolom aspek |
+| `gold_<nama>.csv` | Label satu anotator: `reviewId`, `annotator`, delapan kolom aspek |
 | `gold.csv` | Label manual final setelah perbedaan diselesaikan, kolom sama tanpa `annotator` |
-| `llm_<model>.csv` | Label LLM: `reviewId`, `model`, `prompt_version`, enam kolom aspek |
-| `verified.csv` | Label latih dan validasi setelah verifikasi: `reviewId`, `verifier`, `model`, `prompt_version`, enam kolom aspek |
+| `llm_<model>.csv` | Label LLM untuk 800 ulasan latih/validasi/uji: `reviewId`, `model`, `prompt_version`, delapan kolom aspek |
+| `verified.csv` | Label latih dan validasi setelah verifikasi: `reviewId`, `verifier`, `model`, `prompt_version`, delapan kolom aspek |
 
-Enam kolom aspek memakai nama kategori di atas dan berisi salah satu dari
-empat label.
+Delapan kolom aspek memakai nama kategori di atas dan berisi salah satu dari
+empat label. Respons mentah LLM dan daftar penyebutan (berisi potongan
+teks) disimpan di `data/annotation_workspace/llm/` yang tidak diunggah.
 
 ## Perangkat kalibrasi dan anotasi
 

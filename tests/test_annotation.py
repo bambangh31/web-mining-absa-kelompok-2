@@ -133,7 +133,7 @@ class AnnotationWorkflowTests(unittest.TestCase):
         self.change_row("gold", a, key, akun_login="positif")
         report = tool.audit(self.workspace, "gold", self.root / "audit")
         self.assertEqual(report["conflict_cells"], 1)
-        self.assertEqual(len(report["agreement"]), 36)
+        self.assertEqual(len(report["agreement"]), 6 * len(tool.ASPECTS))  # 6 pasangan anotator
         with self.assertRaisesRegex(ValueError, "belum diselesaikan"):
             tool.finalize(self.workspace, "gold", None, self.root / "final")
         decisions = self.root / "audit/resolutions.csv"

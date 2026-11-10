@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
   python-check:
-    name: Dependencies, annotation tests and Python syntax
+    name: Dependencies, pipeline tests and Python syntax
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -33,10 +33,10 @@ jobs:
       - name: Check dependency compatibility
         run: python -m pip check
 
-      - name: Test human annotation workflow (synthetic data only)
+      - name: Test preprocessing, annotation, LLM parsing, metrics and B1 models (synthetic data only)
         run: python -m unittest discover -s tests -v
 
       - name: Check Python syntax
         run: |
           python -m compileall -q src
-          python -c "from pathlib import Path; files = list(Path('src').rglob('*.py')); print(f'Checked {len(files)} Python files in src/. Model and notebook execution checks will be added when the pipeline is available.')"
+          python -c "from pathlib import Path; files = list(Path('src').rglob('*.py')); print(f'Checked {len(files)} Python files in src/. BiLSTM/IndoBERT tests are skipped when torch is not installed.')"
