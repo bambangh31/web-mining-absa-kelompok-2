@@ -120,7 +120,7 @@ memprediksi atau mengklaim label gold sudah tersedia.
 
 ## Laporan PDF
 
-- [Week 10: laporan lengkap (.docx)](docs/laporan/Week_10_Laporan_ABSA_SATUSEHAT.docx);
+- [Week 10-11: laporan lengkap (.docx)](docs/laporan/Laporan_Week_10-11_ABSA_SATUSEHAT.docx);
   [versi PDF ringkas awal](docs/laporan/Week_10_Dataset_BOD_Algoritma_ABSA.pdf).
 - [Week 11: progres coding, preprocessing, dan anotasi](docs/laporan/Week_11_Coding_Preprocessing_Anotasi_ABSA.pdf).
 
