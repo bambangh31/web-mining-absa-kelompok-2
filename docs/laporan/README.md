@@ -2,7 +2,7 @@
 
 ## Week 10-11
 
-- [Laporan week 10-11 (.docx)](Laporan_Week_10-11_ABSA_SATUSEHAT.docx): satu
+- [Laporan week 10-11 (.docx)](<Laporan ABSA SATUSEHAT.docx>): satu
   laporan lengkap. Bab 1-5 (week 10): latar belakang, revisi masukan dosen,
   BOD CRISP-DM, dataset 39.995 ulasan, karakteristik data, dan rancangan
   delapan model. Bab 6-11 (week 11): preprocessing, pembagian data, anotasi,
