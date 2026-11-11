@@ -1,0 +1,501 @@
+﻿pemeriksa,reviewId,jumlah_alasan,alasan
+bambang,fcdce032-7614-4dd3-8213-45169bd81ba2,4,"kemudahan penggunaan (sering terlewat, kappa 0,559); pembaruan aplikasi positif (pola salah: perbandingan dengan PeduliLindungi); 3 aspek sekaligus; rating 1 tetapi ada label positif"
+bambang,41453dec-95a8-4622-b1cd-26f44f9bc1bd,2,pembaruan aplikasi positif (pola salah: perbandingan dengan PeduliLindungi); rating 1 tetapi ada label positif
+bambang,eec6fc3d-5aa6-4519-aac5-87359807a937,2,"kata/bukti Gemini tidak cocok persis dengan teks; umum (aspek paling sering salah, kappa 0,531)"
+bambang,d1f83ebf-782f-4cda-8af3-ce0899a6fe9b,2,"kemudahan penggunaan (sering terlewat, kappa 0,559); 5 aspek sekaligus"
+bambang,993f750f-40bb-4071-8a87-61f9159e3f4d,2,"kemudahan penggunaan (sering terlewat, kappa 0,559); 3 aspek sekaligus"
+bambang,717db3f6-6ef5-468a-8a90-eb0eab51456b,2,"kata/bukti Gemini tidak cocok persis dengan teks; umum (aspek paling sering salah, kappa 0,531)"
+bambang,72cecfee-1c4d-40b9-85c8-afa1a61b7394,2,"kata/bukti Gemini tidak cocok persis dengan teks; umum (aspek paling sering salah, kappa 0,531)"
+bambang,56fea4dc-e5ea-4d84-a0b7-aa8fba73b5b0,2,pembaruan aplikasi positif (pola salah: perbandingan dengan PeduliLindungi); rating 1 tetapi ada label positif
+bambang,52b1a532-029f-4afc-8b76-4d196b044e7f,2,"kata/bukti Gemini tidak cocok persis dengan teks; umum (aspek paling sering salah, kappa 0,531)"
+bambang,c5093f96-0a6a-4e0c-bbdf-a488017b1424,1,"umum (aspek paling sering salah, kappa 0,531)"
+bambang,a6e0c17d-acd7-4d9a-99c1-1133dbde4080,1,3 aspek sekaligus
+bambang,785f1b73-fae8-4125-9652-ead0ebd5941a,1,"umum (aspek paling sering salah, kappa 0,531)"
+bambang,b8f1cd22-5ae6-412c-b2b0-e5da0c7386d2,1,3 aspek sekaligus
+bambang,19502aed-5f81-4489-9a68-1600c4e5b105,1,"kemudahan penggunaan (sering terlewat, kappa 0,559)"
+bambang,d32c1464-b901-4334-a43c-dd24c21cff35,1,3 aspek sekaligus
+bambang,1b7648f2-e002-49eb-916a-b8607f8767f4,1,3 aspek sekaligus
+bambang,fdfa58e4-8a9d-496b-88e7-14366116824b,1,"umum (aspek paling sering salah, kappa 0,531)"
+bambang,e725d25f-f19d-42d4-afde-08341ae8ff9c,1,"umum (aspek paling sering salah, kappa 0,531)"
+bambang,91ecb15d-ab9d-40b4-8c68-bd83d972dcde,1,kata/bukti Gemini tidak cocok persis dengan teks
+bambang,4128999e-7109-45b7-88f7-582a444e360a,1,"umum (aspek paling sering salah, kappa 0,531)"
+bambang,f9a46a25-8ae6-4956-b459-960158e409ff,1,"umum (aspek paling sering salah, kappa 0,531)"
+bambang,e1fe296e-fda8-4d1c-9f6d-f247ef329456,1,"kemudahan penggunaan (sering terlewat, kappa 0,559)"
+bambang,ed505d57-c1f0-4314-8403-a04e771d8538,1,3 aspek sekaligus
+bambang,a299e3ed-5f8a-4592-adb4-bbe9e39055da,1,"kemudahan penggunaan (sering terlewat, kappa 0,559)"
+bambang,fef0000d-780e-4348-b987-2cc760b45a7e,1,"kemudahan penggunaan (sering terlewat, kappa 0,559)"
+bambang,888c2bc6-c2ff-45d5-8f80-016007332b49,1,"kemudahan penggunaan (sering terlewat, kappa 0,559)"
+bambang,58e6158c-6bc9-4a00-aa39-ef6553077b20,1,3 aspek sekaligus
+bambang,832a7dc3-b0e2-4c38-8f72-8d7cc99205c4,1,"kemudahan penggunaan (sering terlewat, kappa 0,559)"
+bambang,48783fc6-a615-49e7-9980-0d126816610e,1,3 aspek sekaligus
+bambang,c9a8681c-d6e5-4b0f-bb48-79dc8337b0ce,1,"umum (aspek paling sering salah, kappa 0,531)"
+bambang,7909d0ec-c69d-4b56-a2bb-3496a920ffee,1,4 aspek sekaligus
+bambang,4da0c2e0-7bee-40ac-bf3c-68a5e5eae29e,1,3 aspek sekaligus
+bambang,177c9c61-94c1-44de-a173-20ddfd8db92f,1,Gemini tidak menemukan aspek apa pun
+bambang,9ae391c5-4755-4d06-8a39-6d3424e19d5b,1,3 aspek sekaligus
+bambang,062e8933-2327-4dac-bfbd-e271085293c4,1,"rating 5 tetapi semua label negatif (cek, bisa benar)"
+bambang,10dc46f5-2459-4597-94ae-5f12bbb8dd89,1,3 aspek sekaligus
+bambang,95c78829-b996-4e7f-aa79-f825abb45eb6,1,"rating 4 tetapi semua label negatif (cek, bisa benar)"
+bambang,393e1498-2f37-41b3-b189-e440dab6e9be,1,"kemudahan penggunaan (sering terlewat, kappa 0,559)"
+bambang,206fb263-8cab-447c-b26d-6757cbea3bf3,1,3 aspek sekaligus
+bambang,b91aa347-7f4e-4dc0-b3d0-de88e33ea849,1,3 aspek sekaligus
+bambang,9c39f397-e8be-4bf8-a4b0-df7ec4fc8787,1,"rating 5 tetapi semua label negatif (cek, bisa benar)"
+bambang,4be2a455-751a-4f7c-852e-e78f7afdd0b0,1,3 aspek sekaligus
+bambang,d51e9fea-eda7-4453-99a7-bb826d5450d5,1,"umum (aspek paling sering salah, kappa 0,531)"
+bambang,5fede9cd-8491-4420-a514-5b55cadbb851,0,
+bambang,0b6bcc5e-6eda-4471-ad7f-c78360a8f270,0,
+bambang,88756587-c45d-4f1b-aa5d-7677d813e636,0,
+bambang,3c6db4ba-3d6d-42f9-a942-e1ae14bd9269,0,
+bambang,043cbee2-def8-4215-bf7f-e407677f4100,0,
+bambang,32555478-b525-42eb-937c-6c5f3eef1793,0,
+bambang,cae22524-4c52-402b-9f62-4cb17976afb2,0,
+bambang,f06b634d-ae5d-45f1-83b8-9889029b0261,0,
+bambang,f0755e37-4e6b-4e3e-81fe-03668a776831,0,
+bambang,6746bdcd-2556-40e6-8f2f-0ab3fb6bbefb,0,
+bambang,7169b940-f134-4697-851d-74f31f98e2fc,0,
+bambang,8848581c-33c5-4021-bc75-3d1d1c3134ac,0,
+bambang,66cd1fa6-d849-4f3a-9d4b-166a87bc3723,0,
+bambang,799697ba-36e9-4f29-947a-09a4ae7bae91,0,
+bambang,87a30e12-91cf-4fb1-9101-a518460289d9,0,
+bambang,7ad393a9-d140-422d-a5ed-97eac6f2f887,0,
+bambang,79576677-0327-48b8-92ec-90b302b1c41c,0,
+bambang,1592ffe4-c78c-4111-8ba6-8fdb0e7c07ef,0,
+bambang,b84f551c-c227-471c-9067-1cc35176ba98,0,
+bambang,8c6977bb-7e3d-488c-8e41-321871906e33,0,
+bambang,2da00a9e-8a20-4de4-ba93-4095507babe4,0,
+bambang,1aac2f7b-16b0-48ef-88f7-5af14d4d0580,0,
+bambang,a9fa49ae-cfbc-4c4e-8f4f-ef95a9f2d441,0,
+bambang,7d0ee5bd-0795-47d8-a2fc-637400266a53,0,
+bambang,7bc4b52e-d8ca-4d83-9998-1407707362f0,0,
+bambang,8cfb4cb3-4968-44e7-aca0-530c0abc2483,0,
+bambang,0681bed2-943e-4717-a779-a927fe2967c4,0,
+bambang,0a02af33-bc62-469d-9894-082e184ece82,0,
+bambang,cd1e8adf-8d39-4ace-a343-690fa2b6eb2c,0,
+bambang,0e621d0e-9cb9-40f1-a062-302188051d14,0,
+bambang,90fbf435-3900-4000-b4a9-9ca62be0b0c8,0,
+bambang,43e811e3-6b2a-43c0-bb44-fc11604cd033,0,
+bambang,70dbffb9-7849-4cf6-8b77-1587dd557e38,0,
+bambang,42d69352-656b-4909-9ab6-4af15223d004,0,
+bambang,296d1c45-93fa-4f2b-848f-f2e90eeb7291,0,
+bambang,51f85f1b-fde4-4729-86c3-5e0d73ddba7b,0,
+bambang,56942e36-3fe4-45f7-88de-e948e8dcb35d,0,
+bambang,05bfde2b-fa85-4053-ba8e-9be37f9b7c05,0,
+bambang,df1a8d47-b59b-4f7f-8101-60310ab4fa5c,0,
+bambang,cbc64ca5-89e5-4f19-9e3f-6fec71f20322,0,
+bambang,bec9f7d8-3a4a-4cb8-9d6c-7952dc2b365c,0,
+bambang,c0ba78fa-d093-45ca-aa5e-2c284af9c6f6,0,
+bambang,e6c6bc6a-71b6-4040-b7f6-41b315c52a27,0,
+bambang,6ab0b080-423b-4eac-b136-0fc21824146c,0,
+bambang,d814cd9a-553f-409d-b8c2-cb7028d60635,0,
+bambang,2a00f59e-cdab-411a-ad7f-ed3f616794c0,0,
+bambang,f887ddd5-07e8-4d5b-92fd-80ff1d753958,0,
+bambang,69cd30fa-380d-4f4b-bb2e-e8b7c3e55e64,0,
+bambang,9f9ef42f-5d76-47ec-98b8-e3890f2f9a44,0,
+bambang,b02c1b7b-0e75-4f78-9860-01146dcef517,0,
+bambang,425cfc0a-86ea-4154-b9e5-d44d9cddcdd4,0,
+bambang,023a790e-b2d4-4dfb-a60e-d53de5d79bfa,0,
+bambang,539ea75b-d50d-4852-822d-e0863b3d54dd,0,
+bambang,7c669cec-7e38-48ae-92b8-376397783e0d,0,
+bambang,0c8a6a30-4a79-4b0e-8d27-a2b2c17454d6,0,
+bambang,2cd15d64-72d9-457e-b52e-9a599c301e75,0,
+bambang,c02daed9-df73-4739-859f-190c49885f25,0,
+bambang,b01e422f-b42a-46c9-9fef-c99d78d90d14,0,
+bambang,e2f4bada-7957-4e2b-bb75-3c204fba49b6,0,
+bambang,59396606-e096-4be0-93ea-3adb0cfdb543,0,
+bambang,4db4d885-7143-4a17-aab6-e2576f7ed085,0,
+bambang,5a82d72a-a9d4-45e8-8047-4d1ebd3533fc,0,
+bambang,ebc963fd-28fe-4d46-949a-eb287dd904e1,0,
+bambang,d16a595b-3566-4763-8108-1b1a1e15789e,0,
+bambang,1cefeb70-83ec-4339-935f-96036776815a,0,
+bambang,ebf2b986-e86e-4c02-a40e-d17397b480d3,0,
+bambang,ccd4aa3a-8055-46bc-bcae-6445415948df,0,
+bambang,4e634ddc-a942-4154-a96d-c9b3738bab77,0,
+bambang,daeacf99-6c49-4d5e-974f-1f480f47f262,0,
+bambang,9c44a4f9-600c-42e0-8c93-65c43c40521a,0,
+bambang,43a7c52d-1f08-4f01-8214-bca0e5287ee5,0,
+bambang,6cb17b1b-8f04-4c1b-82b7-f34e144812c8,0,
+bambang,f2fdc90b-2af9-4cd8-bdc7-50631ce02663,0,
+bambang,48a93b8b-6da1-4542-b600-82d880f2e685,0,
+bambang,e5f6b473-1ccd-444f-ab72-9d5eb2e20168,0,
+bambang,780d3794-755c-4dda-8133-b760e01a6a99,0,
+bambang,4b56ccb7-e41c-4912-8e1d-e468a2c4f33f,0,
+bambang,b9d87cb7-8cc3-48dd-8839-cb9ea0e9edc4,0,
+bambang,c7b7cee6-100e-4a74-9bb6-c27d944b46ff,0,
+bambang,dac4d702-0547-41b1-92eb-20d4836a24ed,0,
+bambang,5090ffd2-a26a-4ec4-8e07-48c28669309a,0,
+bambang,3c65d9df-8a60-47d1-8883-9efad5713fb3,0,
+efraim,a0585fef-f347-43cc-a437-1db3f0b017aa,4,"kemudahan penggunaan (sering terlewat, kappa 0,559); pembaruan aplikasi positif (pola salah: perbandingan dengan PeduliLindungi); 3 aspek sekaligus; rating 2 tetapi ada label positif"
+efraim,2308c52f-0e73-4be1-b2a1-5b8ff9733d42,4,"kemudahan penggunaan (sering terlewat, kappa 0,559); pembaruan aplikasi positif (pola salah: perbandingan dengan PeduliLindungi); 3 aspek sekaligus; rating 1 tetapi ada label positif"
+efraim,5177dc1b-4a31-4746-8203-416b19e9dbc6,3,"kemudahan penggunaan (sering terlewat, kappa 0,559); pembaruan aplikasi positif (pola salah: perbandingan dengan PeduliLindungi); rating 1 tetapi ada label positif"
+efraim,a1aa9584-51e9-4c17-bb7f-d103a5d3e733,3,"kemudahan penggunaan (sering terlewat, kappa 0,559); pembaruan aplikasi positif (pola salah: perbandingan dengan PeduliLindungi); rating 2 tetapi ada label positif"
+efraim,fa9f34fa-b128-4ae2-951b-eb349cb2bffc,2,"kemudahan penggunaan (sering terlewat, kappa 0,559); 3 aspek sekaligus"
+efraim,ed5aabc8-cf92-4f58-b64e-93c4f0311aae,2,"kata/bukti Gemini tidak cocok persis dengan teks; umum (aspek paling sering salah, kappa 0,531)"
+efraim,43ec2ca2-524e-420e-bbce-c1c3c89ecc33,2,pembaruan aplikasi positif (pola salah: perbandingan dengan PeduliLindungi); rating 1 tetapi ada label positif
+efraim,63dac9a7-8994-4722-9b76-374c478ef297,2,"kata/bukti Gemini tidak cocok persis dengan teks; umum (aspek paling sering salah, kappa 0,531)"
+efraim,47f769bc-5f11-42db-98b5-0fe9215e52b9,2,"kemudahan penggunaan (sering terlewat, kappa 0,559); 3 aspek sekaligus"
+efraim,073f33b4-6820-4dfa-bfd2-fb6cff4bbfd8,2,"kemudahan penggunaan (sering terlewat, kappa 0,559); 3 aspek sekaligus"
+efraim,c112c6d9-ce07-486e-8eff-70d3267ffa98,2,"kemudahan penggunaan (sering terlewat, kappa 0,559); 4 aspek sekaligus"
+efraim,9c76cbd9-871e-467e-be0a-2f2c67fbded5,1,3 aspek sekaligus
+efraim,773c0d9e-491e-4740-b6a4-aa68d553734b,1,"umum (aspek paling sering salah, kappa 0,531)"
+efraim,2929ce32-26fe-4ecf-9b8b-bb72e742da09,1,"umum (aspek paling sering salah, kappa 0,531)"
+efraim,c2e8d043-4f7e-452d-a0fd-2a5e467f11fb,1,rating 2 tetapi ada label positif
+efraim,1253339b-7531-48cd-b3de-472a4b23d304,1,Gemini tidak menemukan aspek apa pun
+efraim,2baa2919-09f2-4e22-8c44-20d648230e7d,1,"rating 5 tetapi semua label negatif (cek, bisa benar)"
+efraim,8000bd4b-8f24-4a23-a776-6000ff7cd1fd,1,"rating 5 tetapi semua label negatif (cek, bisa benar)"
+efraim,b25a4a75-4767-4288-af42-b766e6f9eb0e,1,"kemudahan penggunaan (sering terlewat, kappa 0,559)"
+efraim,3662567e-3bad-4612-a0d6-f0e7e55ba487,1,"kemudahan penggunaan (sering terlewat, kappa 0,559)"
+efraim,30cb3587-e75d-4973-81d6-4cb9686fd0b3,1,3 aspek sekaligus
+efraim,db63d506-1726-4a9d-8709-8ee429760b23,1,3 aspek sekaligus
+efraim,b05a4c1c-f797-4ece-b7d0-8c39b344b8e6,1,kata/bukti Gemini tidak cocok persis dengan teks
+efraim,039e0e26-e42a-46f6-8c96-5444eb924746,1,Gemini tidak menemukan aspek apa pun
+efraim,99f0de38-7478-4f85-8ef1-7fdb09ae9cc8,1,"umum (aspek paling sering salah, kappa 0,531)"
+efraim,0e4323ea-d533-4a3a-905a-466827c669e3,1,kata/bukti Gemini tidak cocok persis dengan teks
+efraim,a271e18f-5a34-4cf4-9eec-f3ccb32379c4,1,Gemini tidak menemukan aspek apa pun
+efraim,f31307e0-9c54-41a5-be24-dd94312cb12b,1,3 aspek sekaligus
+efraim,71ae7114-2800-4c8b-90ca-a936ee19a33d,1,"rating 5 tetapi semua label negatif (cek, bisa benar)"
+efraim,fa1d6c92-22e4-4fc9-82ef-685c7c86b40b,1,3 aspek sekaligus
+efraim,b72ef358-5862-489e-a4fc-9aa68d1e8076,1,"rating 4 tetapi semua label negatif (cek, bisa benar)"
+efraim,2db2db5f-d824-4540-adde-7fef8441ad82,1,"umum (aspek paling sering salah, kappa 0,531)"
+efraim,a14248ef-5580-423c-b85e-39720ff66ad4,1,"rating 5 tetapi semua label negatif (cek, bisa benar)"
+efraim,863389d2-b579-48a4-ac6f-9b1e1a07fedb,1,"umum (aspek paling sering salah, kappa 0,531)"
+efraim,3f7ad79e-10aa-4009-81a2-30390e8b1a02,1,3 aspek sekaligus
+efraim,2dd8b3e7-f6a3-4a7a-bab8-0c9c193b037a,1,"rating 5 tetapi semua label negatif (cek, bisa benar)"
+efraim,3239b66b-dc0d-4bea-8bb9-78e4a9a52e90,1,"umum (aspek paling sering salah, kappa 0,531)"
+efraim,c34706f5-9c7e-42d9-bc28-0f2f0c1e2271,1,Gemini tidak menemukan aspek apa pun
+efraim,5f37287d-30d5-43c6-b27e-27132c785042,1,"umum (aspek paling sering salah, kappa 0,531)"
+efraim,e8d4c4ad-8814-42f8-adef-239589267c15,1,"rating 5 tetapi semua label negatif (cek, bisa benar)"
+efraim,df391113-f54f-4c34-bc3e-51dcb4093b74,0,
+efraim,87e6410a-9eeb-41ff-a715-82561b22b2bd,0,
+efraim,9af583e0-230f-4a7d-af86-b66fe26da6d1,0,
+efraim,f89f356d-e2a7-408e-86ad-91873dbfa223,0,
+efraim,dcec0158-a35f-424a-9954-14780f53a87c,0,
+efraim,39b4cfde-f33c-4231-9b10-8fc222d06fe9,0,
+efraim,6c16692a-2076-41d9-9c00-a6ce0343aa26,0,
+efraim,0aa142c1-2389-4ed1-b36b-e01bd0f77c73,0,
+efraim,f39adcda-17bf-4c1f-9546-4af2c283144d,0,
+efraim,ce9d0db0-1bc4-421f-9930-3affd5c0c7de,0,
+efraim,2c972efc-1230-4a62-aa5d-69c8f5fafbd1,0,
+efraim,a851f21c-cf64-4d5a-943f-d9df585be60a,0,
+efraim,60fb9429-dc90-47ef-922b-43c0d01b5fee,0,
+efraim,3f4633e9-8290-40d5-9632-41985697d8d7,0,
+efraim,2a5852f5-c102-4bc1-854f-24eaccc44838,0,
+efraim,1f3d4be0-f8b1-4e47-b15f-1106c1072e4a,0,
+efraim,741fcb94-2e22-4915-9d81-51f16aea1619,0,
+efraim,c50c57f5-c058-4869-b6b0-981ef00bf969,0,
+efraim,0a61c5b4-ce75-4799-bf62-301f97e6e1a2,0,
+efraim,ce7e5f8a-d270-42c6-b7d7-7ca1f016134f,0,
+efraim,61c5a2f3-dd60-46e4-b49d-cec67c9695b5,0,
+efraim,162e1a12-72fa-4599-a318-4746524d596d,0,
+efraim,a20b8280-2339-4642-a6ff-0ea054e53ad1,0,
+efraim,872b0ecc-51bc-4651-8262-f789d79a17ed,0,
+efraim,fe964355-bdd6-4b79-85e0-8a65fdd1739e,0,
+efraim,7a75b554-c9c1-4b89-a566-3fa85b6c0fab,0,
+efraim,829ea1f7-0931-42d7-8d6c-765a83a0a9c0,0,
+efraim,8679f6bc-a1bd-445e-b8c4-1706dffa5cc4,0,
+efraim,06c8c89e-00b0-4e40-91f6-f84a2ef68aba,0,
+efraim,8773d229-c2bf-41eb-96a6-0086f5297710,0,
+efraim,86457ca5-ea13-4b16-871b-7014b60611df,0,
+efraim,50a3ee9e-1ca2-437a-9873-e68ffcde59e3,0,
+efraim,f230cc09-92a8-4a13-be99-2f3ea5f0ba20,0,
+efraim,db8a8a10-d111-4b16-a024-9719bf2ebf5a,0,
+efraim,08708db6-34ee-492b-b73c-1b3a6d9a160b,0,
+efraim,992e638c-4db9-498b-af52-c2c0c6f1f5a3,0,
+efraim,fec9deb5-9671-49a0-8bf3-503c0effee04,0,
+efraim,90fa76ef-ff7d-4d25-a642-1b72a10168d0,0,
+efraim,427b23cf-ddb1-4810-b49e-b3202f40aabd,0,
+efraim,3623f8d6-c6ad-414d-b001-dac206fe5f7c,0,
+efraim,cf47bec8-0ade-467c-a70a-df2caf7f194c,0,
+efraim,6df1cf1d-3c05-46ac-bb81-ddd85ec15af1,0,
+efraim,33d11534-27d1-418e-8f69-791d6a3ef70c,0,
+efraim,b7e8cfd7-a2a0-490f-838c-7556a74313ad,0,
+efraim,3bcf0281-5ef7-4cb4-a246-b01e32abc928,0,
+efraim,f64363ec-7c0c-441c-ad6e-83d1135abce3,0,
+efraim,25dbf6d3-dd50-43f3-9158-e3d1fb5b4076,0,
+efraim,ac4826a6-9cf6-4ed4-9653-1d24099145c6,0,
+efraim,7d56625f-e03f-4c90-b7b7-114a1efa4aa4,0,
+efraim,33722b75-b024-4547-860c-679691deef7a,0,
+efraim,19cc30b7-234b-47f4-a241-e9168285bf3d,0,
+efraim,e7f29939-293d-4370-b184-c244cf714583,0,
+efraim,8a438ff9-ac83-4ccb-8f30-799071834047,0,
+efraim,b8bff90a-cf66-4826-ab64-fa8f5c4da9c2,0,
+efraim,0ecf1abb-2331-49dd-abf6-493b140123c2,0,
+efraim,b61c415c-5b35-482d-bcde-47f6ddd67317,0,
+efraim,f6913423-7ee0-4ab1-81ca-fbf735d58cc6,0,
+efraim,ae612948-740e-4175-911a-e76423bbf161,0,
+efraim,13be3392-6058-44d1-82cb-04762d0d52c8,0,
+efraim,5919ad71-c297-4fe7-b0f1-798487b2189f,0,
+efraim,7b2665d2-2c3d-4c83-9bad-b79b85b50682,0,
+efraim,91b76f1d-d499-4fa6-a11b-a404cc760850,0,
+efraim,4fa0ac44-ddf1-40f3-80dc-458f6d74a02d,0,
+efraim,dd39f17d-2dba-436b-9977-88751adec015,0,
+efraim,40e7b337-c4c2-4026-84ee-db4e5d17b8b2,0,
+efraim,cf2ada3b-2572-4de9-8d47-2f8344929bc1,0,
+efraim,7c51fcbf-04ec-46ae-b6eb-5c13d810b08a,0,
+efraim,84bc2734-1d0b-4ae3-aa28-4f2ac1eade12,0,
+efraim,2035ae86-98fa-4942-9210-9f124d3195ba,0,
+efraim,b68f2364-2928-4e31-bae5-3b537edd8cfa,0,
+efraim,bdb36f52-d195-4a6a-b249-869d7f8deb35,0,
+efraim,c8e42d3a-d689-47ac-a56f-2b217bb17ca7,0,
+efraim,67a52957-1f60-4040-80d6-4719ea1edff9,0,
+efraim,6e500556-4b90-4b6a-9d06-ede429ef9b5f,0,
+efraim,311da95c-002e-40f0-877d-80d981f5e122,0,
+efraim,612c4b5d-1d5f-420f-8930-a91e919eec3a,0,
+efraim,4daa8ddf-2a6b-433e-bf43-37bcda17dae1,0,
+efraim,c3ce1898-5d0f-4b5f-8c00-eb0d26c3d715,0,
+efraim,75c4bdf9-3d13-49e6-bbd8-575627672673,0,
+efraim,322ca8fc-e770-416c-9a56-3f63ca1d1855,0,
+efraim,d5d5cc25-0d3b-4d7e-86f0-bc77aa17a377,0,
+efraim,57283319-8a12-40f1-9706-2a3764e952fa,0,
+efraim,0c89bb20-ab4d-424a-88c9-901ba50e6546,0,
+efraim,5bd697de-c51c-4a72-9686-8c307f47a0e8,0,
+efraim,874b9967-c9f2-4651-8980-3ed4f2fba01c,0,
+geraldyn,2cd33be0-d0fd-4922-a9d2-b0965172aa67,4,"kemudahan penggunaan (sering terlewat, kappa 0,559); pembaruan aplikasi positif (pola salah: perbandingan dengan PeduliLindungi); 3 aspek sekaligus; rating 1 tetapi ada label positif"
+geraldyn,1124481e-f308-4b5f-9ed1-856b8010bafe,2,"kata/bukti Gemini tidak cocok persis dengan teks; umum (aspek paling sering salah, kappa 0,531)"
+geraldyn,907e919c-7259-4c91-b827-207c16c5d502,2,"umum (aspek paling sering salah, kappa 0,531); rating 5 tetapi semua label negatif (cek, bisa benar)"
+geraldyn,6ac7770f-a3a6-4463-8a0d-28ff8dafeedd,2,"kemudahan penggunaan (sering terlewat, kappa 0,559); 3 aspek sekaligus"
+geraldyn,ca7d67bd-161a-41df-9ba4-8bca428afeeb,2,"kemudahan penggunaan (sering terlewat, kappa 0,559); 3 aspek sekaligus"
+geraldyn,18fe1ca0-011f-456c-bb3a-aa349a25c72c,2,"kemudahan penggunaan (sering terlewat, kappa 0,559); 3 aspek sekaligus"
+geraldyn,f70b06f4-687d-4f7a-9b0c-c16b3f781095,1,"umum (aspek paling sering salah, kappa 0,531)"
+geraldyn,76c1bcc4-d206-48d2-a076-178cae6be0fc,1,"kemudahan penggunaan (sering terlewat, kappa 0,559)"
+geraldyn,067b8a67-1ba3-4d2d-aae3-8da4e3d28919,1,"rating 5 tetapi semua label negatif (cek, bisa benar)"
+geraldyn,d4d498cb-432e-41e1-a182-ef3050eb0018,1,"umum (aspek paling sering salah, kappa 0,531)"
+geraldyn,c5daf545-8184-49ee-ac36-04d3b8cee9aa,1,"kemudahan penggunaan (sering terlewat, kappa 0,559)"
+geraldyn,8deb890f-359a-4d59-a231-f4962a281540,1,"umum (aspek paling sering salah, kappa 0,531)"
+geraldyn,a6ac9be0-dfa1-4e44-96b8-846d1240af1c,1,"kemudahan penggunaan (sering terlewat, kappa 0,559)"
+geraldyn,ce3cf888-1379-43bb-8476-5a903931b6a7,1,"kemudahan penggunaan (sering terlewat, kappa 0,559)"
+geraldyn,427e8080-eeff-4c0b-b666-eed90fc0f51e,1,"umum (aspek paling sering salah, kappa 0,531)"
+geraldyn,f97ad059-e01c-4eef-b549-c4ef3041cb1c,1,"rating 5 tetapi semua label negatif (cek, bisa benar)"
+geraldyn,074f30f0-62a7-4a68-b7ce-870139b7a5c7,1,"kemudahan penggunaan (sering terlewat, kappa 0,559)"
+geraldyn,5f48b505-c52a-4f54-9be1-9272bb06e63d,1,3 aspek sekaligus
+geraldyn,acae52a4-1c45-4985-97d6-26d7a2e8426d,1,"rating 4 tetapi semua label negatif (cek, bisa benar)"
+geraldyn,208f34ce-d68f-4831-8f67-eaf916f7b630,1,pembaruan aplikasi positif (pola salah: perbandingan dengan PeduliLindungi)
+geraldyn,e83d22f5-c75d-4a04-9968-83ccaee12ce5,1,kata/bukti Gemini tidak cocok persis dengan teks
+geraldyn,b440791d-d282-4e71-9d17-fa58ea8f0b84,1,"rating 5 tetapi semua label negatif (cek, bisa benar)"
+geraldyn,ee41bdcd-346a-4238-87f5-cb01286f4246,1,"umum (aspek paling sering salah, kappa 0,531)"
+geraldyn,85a37474-e51d-4080-a0e5-097beb7eb292,1,"umum (aspek paling sering salah, kappa 0,531)"
+geraldyn,57f00330-1c8f-40d3-875f-4ec11d1f1763,1,"umum (aspek paling sering salah, kappa 0,531)"
+geraldyn,df529272-9dea-40fc-abd4-d7b7e53c1a4f,1,"rating 5 tetapi semua label negatif (cek, bisa benar)"
+geraldyn,440dbfdf-ef0f-4ff4-ba24-e1f3c944a2a4,1,3 aspek sekaligus
+geraldyn,7a2fa961-6aa5-4c35-a63a-b595d43c080a,1,"umum (aspek paling sering salah, kappa 0,531)"
+geraldyn,1315b8b4-088f-4950-a74a-53b526043a47,1,"kemudahan penggunaan (sering terlewat, kappa 0,559)"
+geraldyn,b3e10bd1-48ce-47d6-992d-3ce33de5e18d,1,3 aspek sekaligus
+geraldyn,93f8029a-ab2c-4d41-a458-25d298ab8b30,1,3 aspek sekaligus
+geraldyn,b046f887-eec2-4ca6-94a8-70b8162b8edf,1,"umum (aspek paling sering salah, kappa 0,531)"
+geraldyn,2d5cecf9-beb6-4f05-807e-4e34fd003ad1,1,"rating 5 tetapi semua label negatif (cek, bisa benar)"
+geraldyn,4e15a7b0-f94d-47aa-8134-ccfe0a5ce71a,1,Gemini tidak menemukan aspek apa pun
+geraldyn,b32c2e3a-2d48-46d5-8321-383d9a1bda03,1,Gemini tidak menemukan aspek apa pun
+geraldyn,fc28a008-18e1-4121-a5c0-cd6a2be540bf,1,3 aspek sekaligus
+geraldyn,34c15b88-c65e-4c10-977c-3a8aeb5ecb10,1,Gemini tidak menemukan aspek apa pun
+geraldyn,64c83246-7abb-4f5c-8c9f-2df3f945bc53,1,"umum (aspek paling sering salah, kappa 0,531)"
+geraldyn,68da9f5c-8e6b-4d2b-beba-d9624ed8ad64,0,
+geraldyn,b7240d21-f2b0-4ce4-b838-2522a3940851,0,
+geraldyn,13e8ed17-428a-4690-a3b5-fb7bc6dbdc31,0,
+geraldyn,5444ba7d-8844-4082-be72-c7259f084972,0,
+geraldyn,dd11830b-25ab-422a-89e4-d808071d1c74,0,
+geraldyn,046f3ecc-71dd-41c8-9c15-abc40f4054fc,0,
+geraldyn,792834a3-ac8f-4479-9f97-85b3578d4f39,0,
+geraldyn,e98ac504-37a0-4d5e-993f-02cad373b9c2,0,
+geraldyn,031f1df0-126a-4dcc-9f32-4579358a83be,0,
+geraldyn,c81017b3-b32d-49d6-888a-8b91cfa2a00b,0,
+geraldyn,a9c7f6bf-53e0-4b37-9125-2e889a11b845,0,
+geraldyn,84a923fd-613a-4646-a95b-eb1f2a0688a3,0,
+geraldyn,77e741c8-824a-444f-8dab-07b84ea0af0c,0,
+geraldyn,69176db5-f204-49b0-907a-7a9f8b967a81,0,
+geraldyn,57e11f31-716f-4811-9d37-841d05a510d5,0,
+geraldyn,a767ddcb-0e7b-4f84-8ec5-ed08301d9045,0,
+geraldyn,d0c0a456-050e-4621-8da0-0885daf62229,0,
+geraldyn,92a614b6-f08b-4fb6-b345-b47aae3225cc,0,
+geraldyn,9f48274f-4a37-44c2-8d3e-df68027f164b,0,
+geraldyn,b1a26a96-2626-43a2-b409-1032666f5108,0,
+geraldyn,894db204-e48d-4d56-b60a-9af7a5449e9f,0,
+geraldyn,5c5d7f19-d736-4822-b571-2b6d441e13a0,0,
+geraldyn,3308b4d8-81fe-43a2-a49e-9b766e1f7583,0,
+geraldyn,9bb2130f-9c5f-45f9-a982-399193349f74,0,
+geraldyn,c4984f40-2823-4d52-826e-4ee7e868c97f,0,
+geraldyn,b080824c-cbe5-4b6b-8afc-b9b77bc75e27,0,
+geraldyn,2eee2803-fc74-487d-afdf-c487e6914d8c,0,
+geraldyn,f68c7078-d692-40a0-b665-03243384256a,0,
+geraldyn,2b384993-956a-407f-8b26-2efe13e2a05b,0,
+geraldyn,8ac72341-579e-475b-9102-2b8e36e05d70,0,
+geraldyn,abca7b56-5d3f-4adb-96bb-d41b9a55b613,0,
+geraldyn,8bba79ce-5bd0-4819-941c-770e0156728f,0,
+geraldyn,48a20ea7-86d0-4827-9621-87a48effe450,0,
+geraldyn,fb14184a-da7f-489b-9ecc-0d7fae8b092f,0,
+geraldyn,4adb18dd-8c3e-40b5-a51e-af8d38a0884e,0,
+geraldyn,9b4ce80e-f916-4a71-a775-cfac59b3acb0,0,
+geraldyn,7003b144-5f81-4d83-8231-98a9aba0a808,0,
+geraldyn,f885e90a-8204-4f0e-8566-d0249fe34d3e,0,
+geraldyn,47911a68-5164-4d47-ba3f-6786e16b0107,0,
+geraldyn,1ad96c41-7d40-4d13-8b4a-3e74799a9074,0,
+geraldyn,82371533-b5e2-42b9-80c6-98ae095d010f,0,
+geraldyn,620ae8d5-53b6-4432-aaed-5de55fd60f5c,0,
+geraldyn,285d3284-202c-4352-9138-e3263d488e29,0,
+geraldyn,8ac64910-d684-4ceb-9225-7aec5027b9dd,0,
+geraldyn,b8ea3151-f256-4c6b-8432-4b0d891ccd6c,0,
+geraldyn,e3f32176-fb50-40b8-86f5-85af4eb3abb9,0,
+geraldyn,4cd1d9ad-0524-4f3b-9739-90f312037e8f,0,
+geraldyn,3f2e3033-e44e-4856-9c8a-e6dad620ae4d,0,
+geraldyn,cf4f724c-d0c9-4079-9f0a-28b1dbde3987,0,
+geraldyn,2a079fd6-1579-4a74-baa5-3a00113f75e4,0,
+geraldyn,183a5c66-b2b1-4696-899c-f4abe978fcc0,0,
+geraldyn,50da0a79-19c0-467e-a540-a0238ccfdace,0,
+geraldyn,05ef6e77-b216-4e4e-9327-d28b84851255,0,
+geraldyn,cb4623c0-4960-4fb8-9bf7-f34eafcc9fe8,0,
+geraldyn,8b5a6312-1af8-4dcc-90ed-c95e77ca888a,0,
+geraldyn,f195a77f-c749-4dcf-911c-6a070a88ec10,0,
+geraldyn,c41f3f29-d9d5-4fac-858e-4704ec7afef2,0,
+geraldyn,21d46825-7647-4540-be95-7962c26747d7,0,
+geraldyn,a49029c4-661a-4749-8708-3ea26766fda4,0,
+geraldyn,d36b6934-2e73-4e89-ad4d-79ee3c9273b5,0,
+geraldyn,12200419-6743-4083-9da9-ca6700b521da,0,
+geraldyn,0803d7b6-2f7b-4e4a-a942-bec288cae99c,0,
+geraldyn,e5978596-5545-4dde-8b9a-953bb77122ae,0,
+geraldyn,d2b04949-2a39-47fc-ab90-803f0b097910,0,
+geraldyn,f3b766c5-559c-4a5a-af95-82c13f431913,0,
+geraldyn,f489f51d-30fc-4f13-a426-0d0b9b930a52,0,
+geraldyn,e535af33-ba7b-480f-81c0-875ef54f1589,0,
+geraldyn,7c551da1-607d-41e1-b695-22e5a7e77674,0,
+geraldyn,63d7c552-3182-44de-bcc0-d6942e288e65,0,
+geraldyn,79b2624d-82f8-4a08-84e7-23b31bf679a8,0,
+geraldyn,ae94a8a0-3adc-41d3-989c-01a8300edfdc,0,
+geraldyn,6e716792-6f77-469e-9ce6-bd1250553d23,0,
+geraldyn,cc053963-e115-4011-8e04-c35b0dd3246a,0,
+geraldyn,2b8c25f2-1378-449d-9d8f-81f58bd9f1d1,0,
+geraldyn,d6d57ebe-f27b-4cac-96c3-274ee811ce08,0,
+geraldyn,2ebb2e57-c029-4b28-aafc-68d6762b4b73,0,
+geraldyn,bedb7181-f74b-4d7d-8f1e-58a279f259d6,0,
+geraldyn,5a4231ab-1844-4e1f-85a6-61f867605835,0,
+geraldyn,0261c55f-1b30-41a7-9ba9-3642e7e469f5,0,
+geraldyn,2bad1d2e-240f-4344-a82a-299148204931,0,
+geraldyn,66398cf5-615e-4979-aa82-79b0cff54191,0,
+geraldyn,5241b25c-c1e2-4aa4-b3b7-b00e666b4377,0,
+geraldyn,2acbe54d-2245-4dc1-9d3f-9675569c2086,0,
+geraldyn,d6294c0a-711d-4ab4-892c-8c8736f9d0e3,0,
+geraldyn,15689cc2-3e19-48b1-8ea0-8e4d41887f0a,0,
+geraldyn,3dda2c28-f8f8-422a-a346-7a0b4247beaf,0,
+geraldyn,35af93e8-67b3-4ae6-ad05-9bde4de594d1,0,
+jap,69bae704-84c3-47ce-ae05-16f392cdafeb,3,kata/bukti Gemini tidak cocok persis dengan teks; pembaruan aplikasi positif (pola salah: perbandingan dengan PeduliLindungi); rating 1 tetapi ada label positif
+jap,b8c99723-17dd-4738-a539-d515ba9089e2,2,"kata/bukti Gemini tidak cocok persis dengan teks; umum (aspek paling sering salah, kappa 0,531)"
+jap,87bbbd99-f30b-4a47-a412-c64edb0e7556,2,pembaruan aplikasi positif (pola salah: perbandingan dengan PeduliLindungi); rating 1 tetapi ada label positif
+jap,04029582-573e-4c4f-9423-25637e9ca79a,2,"kemudahan penggunaan (sering terlewat, kappa 0,559); 3 aspek sekaligus"
+jap,7d32f465-ad44-4f85-a8b5-c45aaad86900,2,"kata/bukti Gemini tidak cocok persis dengan teks; rating 4 tetapi semua label negatif (cek, bisa benar)"
+jap,3a86fa90-094b-405c-9c3d-4be35eaba33c,1,"rating 5 tetapi semua label negatif (cek, bisa benar)"
+jap,1ef5d488-a10f-4d20-af8c-4b0b62bf16c7,1,"umum (aspek paling sering salah, kappa 0,531)"
+jap,72ea7efd-4b73-4f01-8751-7cba57b0ebed,1,"rating 4 tetapi semua label negatif (cek, bisa benar)"
+jap,265f5f8d-d522-4cf6-a9f4-fd63f99550de,1,4 aspek sekaligus
+jap,e429b4d3-64ce-428f-b6c2-f2d329030af6,1,"rating 5 tetapi semua label negatif (cek, bisa benar)"
+jap,adee805d-daab-4be3-8d0a-2e5bc4fa17d1,1,"kemudahan penggunaan (sering terlewat, kappa 0,559)"
+jap,3cfb8d5d-5927-4b86-9bff-bc3a3e620a99,1,4 aspek sekaligus
+jap,7643b8a5-d9ac-495d-bc4a-55858ef639e0,1,kata/bukti Gemini tidak cocok persis dengan teks
+jap,6a078d55-e466-4578-a750-37b1d220df90,1,4 aspek sekaligus
+jap,b9c8360a-c65b-4311-9017-b2911cdc801c,1,"kemudahan penggunaan (sering terlewat, kappa 0,559)"
+jap,6d058658-46ee-4895-aab1-e83bcc27b05e,1,3 aspek sekaligus
+jap,181c6a29-cf32-457b-b7ce-2c70950b81b8,1,pembaruan aplikasi positif (pola salah: perbandingan dengan PeduliLindungi)
+jap,4e53648a-7dd6-4f6f-acac-0b68143131aa,1,"umum (aspek paling sering salah, kappa 0,531)"
+jap,7dbb0133-ddd7-4916-a4fe-83dcffb8bbd0,1,"umum (aspek paling sering salah, kappa 0,531)"
+jap,b057e326-0417-4f8f-9ca0-bc2f5c8258b3,1,3 aspek sekaligus
+jap,63a32084-12b2-469c-891c-7e5019dd6e92,1,3 aspek sekaligus
+jap,efb9f7b2-630b-43dc-8515-1699da7eae83,1,"kemudahan penggunaan (sering terlewat, kappa 0,559)"
+jap,c0c25aa1-4069-4e63-af22-8f75f2226368,1,3 aspek sekaligus
+jap,a0fa0f09-7d7b-47a8-a39f-11b576f06cc1,1,3 aspek sekaligus
+jap,9e42ec23-0e81-4c30-ab83-2fa933b5ebcf,1,"umum (aspek paling sering salah, kappa 0,531)"
+jap,0ee5eebd-107c-4666-9644-de1764ab99ad,1,3 aspek sekaligus
+jap,a16c9a22-83c6-474f-a7f9-9d52730147c2,1,rating 2 tetapi ada label positif
+jap,c0b57d48-94d6-4968-bbb9-56882e954ae1,1,"kemudahan penggunaan (sering terlewat, kappa 0,559)"
+jap,6ed3a9fb-cb0f-42c4-a795-85845c8379ca,1,3 aspek sekaligus
+jap,df701518-da77-42bd-819f-bbb44055db56,1,"kemudahan penggunaan (sering terlewat, kappa 0,559)"
+jap,5fb466c1-70f8-42da-b296-38824882bf0a,1,"rating 5 tetapi semua label negatif (cek, bisa benar)"
+jap,eab9846c-df9b-469d-a59a-13acb6e56cca,1,3 aspek sekaligus
+jap,3766ee7b-22ba-49b5-8731-692ddccb52e7,1,3 aspek sekaligus
+jap,fe7cdf29-21f7-45fe-b2d8-5872c3841fe5,1,3 aspek sekaligus
+jap,60357d07-f30e-4ca2-bb23-58601bba4630,1,"kemudahan penggunaan (sering terlewat, kappa 0,559)"
+jap,b590f1a9-e039-488f-b984-2e150e9158ea,1,3 aspek sekaligus
+jap,6b5eeab3-ac00-463a-87a6-1ecbdc3d2a4b,1,"kemudahan penggunaan (sering terlewat, kappa 0,559)"
+jap,e2364d9e-b71f-45ed-b647-6c1d753fcdfc,0,
+jap,17f58f38-2e6b-4f9b-939e-0de4572e033c,0,
+jap,3c7d571d-3cd3-4043-8083-6ba8a1847ed9,0,
+jap,8c45a26b-9cd5-4ffa-9bfe-9c9a7b745598,0,
+jap,039f0a07-ba3d-4835-847c-0e6725493f3d,0,
+jap,7b342c4f-6363-480c-9d38-dfbfcc5bbe39,0,
+jap,b55a8da0-e6f0-41bb-bae1-69a3b302013d,0,
+jap,fac8db11-8876-4264-9f6f-e0463d924376,0,
+jap,19553e5a-b414-4e1a-b74b-9a8e36851401,0,
+jap,9fc21ba4-1af1-474f-90b4-e7cd216da334,0,
+jap,ea7376df-4fd4-422c-bd4a-1c66df107ba4,0,
+jap,6c618b1f-eafb-47d7-a6a9-3532ee34ba53,0,
+jap,f3072ce4-98e6-4dd3-acc5-61cb6a2a2aad,0,
+jap,44fff392-0999-48cd-a8aa-625a61e73c4a,0,
+jap,52ccb262-a472-4fe2-a98a-26d3ebe7f7af,0,
+jap,0e52895f-badc-43f7-969a-d382418a7fb8,0,
+jap,936b44a3-26ff-44bd-9dd9-7869dea202e5,0,
+jap,064f1a03-0db2-4c10-815b-b62216f26e1f,0,
+jap,2e45e00c-7d67-42cd-b8ac-5b4a6c788fe0,0,
+jap,4fb2c88b-5cb2-4667-88d1-a5716a4f5150,0,
+jap,8c2c68b8-0490-4a50-be2d-3853d7d6b6d5,0,
+jap,55e8bd67-80ed-498d-881e-5e4d466b30df,0,
+jap,c4034264-3b81-4d8b-b5ab-13d905b68513,0,
+jap,21bad95b-96d2-4947-be8b-8ca589d2f42a,0,
+jap,f95fb231-2d27-459c-80ca-df2f985f7261,0,
+jap,40a064c1-1b00-409b-a4c5-9562c1316e2f,0,
+jap,ed85efc8-44ad-4a79-b681-28ab46820c6b,0,
+jap,8a1b414a-9ae2-4091-bd5f-2b61daf12051,0,
+jap,5ccca4e8-aac0-469e-b4c2-9f0441026a77,0,
+jap,a76eaeb7-3d90-45d6-85c6-5412201f16ab,0,
+jap,1b0c8829-cf1e-4d8c-a0d5-07fb69f51bee,0,
+jap,f478d258-c451-41fc-9193-2b45cd878157,0,
+jap,3ac3ce5f-0fb0-4dee-8894-c05cb7544b7d,0,
+jap,fb6715fd-e1f1-4cd2-a290-9f441f0650a6,0,
+jap,88471431-ba19-4fb7-8aa0-eeab236bdd6e,0,
+jap,e9747e23-cb95-4ed5-bf10-218bd91df6cf,0,
+jap,a5651ac3-fea5-4a85-9c31-5a5bf726800d,0,
+jap,9879b062-caf6-4783-966c-e4abf70d1598,0,
+jap,0987e55c-4e48-4315-9cf4-65874462ce39,0,
+jap,376782bb-6d4a-454c-94c6-5cba1f77ab7e,0,
+jap,0f4314dd-b0d0-408e-81b0-c2a51d8681a6,0,
+jap,fcd8eafa-4582-4b95-8592-02d3ee8fb357,0,
+jap,ddfbcc57-237d-4042-b047-31b934e17c0b,0,
+jap,9a10da6b-1e8d-4acf-82a8-2c764333ef46,0,
+jap,c015d479-7426-4bae-8c17-f4deac6642a5,0,
+jap,00cf3452-8010-4425-8fc6-b9bda2155d59,0,
+jap,7b474bb2-16b4-41b4-8b9e-2738399eeb7f,0,
+jap,67117708-d500-4616-877a-819ff5ac3963,0,
+jap,330c5a0b-0fbb-4fdb-ae96-23f8b19aa14a,0,
+jap,72f20a14-41ad-495a-a212-cd40ee3c1abe,0,
+jap,9910e696-fcda-4515-9c98-9cea9df44060,0,
+jap,115fd079-3195-42ce-842c-c0459ab8826e,0,
+jap,32a864ef-6322-4161-a09c-7ee497e7bf85,0,
+jap,a02be56c-9360-43f1-abe3-24b3d6e9ad7f,0,
+jap,fb66b057-51b7-418f-a7e8-9f1f17b1d510,0,
+jap,52c2c22f-a67f-4d96-9b21-92cd842b573f,0,
+jap,92416a70-25a5-433a-bfb8-7781e421cdfc,0,
+jap,dce52084-c9f7-4adb-8426-1f3c95983ccc,0,
+jap,447e36f3-443a-4f66-9035-d0cb0508955d,0,
+jap,6b73a21c-3195-42bc-abaf-1bedca954d30,0,
+jap,e720708a-c3a2-4b66-8aa4-211f0d187e96,0,
+jap,92b0244d-e523-4468-b479-4c16500ed68f,0,
+jap,3970dcb1-9777-4430-a8ad-dc15732b8dfa,0,
+jap,d6073142-72e8-4027-a90b-ccd0bfb560eb,0,
+jap,33f1fda7-3f8b-479c-94be-3bfa1f383f16,0,
+jap,fe31ef5e-43eb-44f4-b329-cc6a1cdf4070,0,
+jap,0be4b477-947f-4c5f-9f54-ed73faaafff8,0,
+jap,bdd02524-35ae-4dac-8ec7-312873b946da,0,
+jap,652422da-158b-4f61-9bba-67d80fd411c0,0,
+jap,29fec25e-48aa-49e6-823d-20e7ad50f073,0,
+jap,c09cebfa-1c27-4135-a9f7-20df58bd30cc,0,
+jap,20653d70-5d36-4bb3-a267-7506ba36a870,0,
+jap,de0df209-9c2a-4714-88ea-2e77fe97a27b,0,
+jap,92da2c6c-9e44-4ccc-be55-4c511e0ea513,0,
+jap,0f71b975-5476-44b2-9a80-c10d5896a24c,0,
+jap,52c24562-32ab-4eb2-a36a-6ee75b8f30d6,0,
+jap,2d144887-3f73-4709-8c46-4cb8cc96302e,0,
+jap,1332dc2d-78ef-40b4-9934-ded3df1db429,0,
+jap,fc254dd5-609f-4c82-afdf-03426cc12597,0,
+jap,08283b38-d513-459e-b22a-124da35df909,0,
+jap,ae955106-a6e9-4243-bbfc-a9d49ae9cd6c,0,
+jap,2380da10-bd50-430c-91e2-c39284f1384a,0,
+jap,4abc751a-6ad1-40dd-90cb-127c86a33957,0,
+jap,aa207012-8bd3-49ae-a86a-a7cdf4ec3238,0,
+jap,da755dee-7acd-4a72-8c8e-840f7bfdbd39,0,
+jap,f8a0c861-3586-4eed-9473-2185a6e9dd20,0,
+jap,7efe1889-1abf-4132-b7df-63039b9a102e,0,
+jap,0e435996-3d83-4c40-96af-9ed5b1f11a3b,0,
