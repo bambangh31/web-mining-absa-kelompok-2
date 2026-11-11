@@ -91,10 +91,10 @@ Bagikan satu lembar kepada masing-masing anggota secara privat. Buka di
 Excel/Sheets atau editor CSV. Simpan kembali sebagai CSV UTF-8, pemisah koma,
 dengan nama yang sama (UTF-8 dengan/tanpa BOM diterima).
 
-- Hanya isi enam aspek dan `catatan`. Jangan ubah ID, anotator, atau teks;
+- Hanya isi delapan aspek dan `catatan`. Jangan ubah ID, anotator, atau teks;
   jangan mengurutkan satu kolom tanpa kolom lainnya.
 - Isi setiap aspek dengan `tidak_disebut`, `positif`, `negatif`, atau `netral`.
-- Aspek: `akun_login`, `registrasi_data`, `fitur_kesehatan`, `performa`,
+- Aspek: `akun_login`, `registrasi_data`, `fitur_kesehatan`, `performa`, `pembaruan_aplikasi`, `layanan_pelanggan`,
   `kemudahan_penggunaan`, `umum`. Umum tidak boleh bersama aspek khusus.
 - Catat kasus ambigu untuk diskusi. Jangan mengisi kalibrasi atau
   `gold_test` memakai prediksi LLM; set uji harus dilabeli tanpa label LLM.
@@ -143,7 +143,7 @@ konflik belum selesai, atau label awal yang berubah sesudah audit ditolak.
 Buat audit baru jika anotasi awal diubah. Kontradiksi umum/aspek khusus
 pada label akhir juga ditolak dan perlu dibahas ulang.
 
-Ekspor berisi `gold.csv` (800 ID, enam label), `gold_<nama>.csv` (label awal
+Ekspor berisi `gold.csv` (800 ID, delapan label), `gold_<nama>.csv` (label awal
 tanpa teks), `provenance.csv` (asal keputusan tiap sel), dan `report.json`
 (metrik sebelum adjudikasi, hash input/keputusan). Teks dan catatan bebas
 tidak ikut diekspor. Simpan lembar dan alasan asli di workspace privat.

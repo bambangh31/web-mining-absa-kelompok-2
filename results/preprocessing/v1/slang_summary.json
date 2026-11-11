@@ -1,0 +1,178 @@
+{
+  "lexicon_entries": 4350,
+  "pool_reviews": 32035,
+  "pool_tokens": 604707,
+  "reviews_changed": 24066,
+  "reviews_changed_pct": 75.1,
+  "tokens_replaced": 76838,
+  "tokens_replaced_pct": 12.7,
+  "top_replacements": [
+    {
+      "slang": "gak",
+      "baku": "tidak",
+      "jumlah": 6336
+    },
+    {
+      "slang": "ga",
+      "baku": "tidak",
+      "jumlah": 5877
+    },
+    {
+      "slang": "aja",
+      "baku": "saja",
+      "jumlah": 3504
+    },
+    {
+      "slang": "yg",
+      "baku": "yang",
+      "jumlah": 3430
+    },
+    {
+      "slang": "udah",
+      "baku": "sudah",
+      "jumlah": 3366
+    },
+    {
+      "slang": "apk",
+      "baku": "aplikasi",
+      "jumlah": 2806
+    },
+    {
+      "slang": "gk",
+      "baku": "tidak",
+      "jumlah": 2473
+    },
+    {
+      "slang": "gimana",
+      "baku": "bagaimana",
+      "jumlah": 2111
+    },
+    {
+      "slang": "gabisa",
+      "baku": "tidak bisa",
+      "jumlah": 1384
+    },
+    {
+      "slang": "pake",
+      "baku": "pakai",
+      "jumlah": 1186
+    },
+    {
+      "slang": "udh",
+      "baku": "sudah",
+      "jumlah": 1157
+    },
+    {
+      "slang": "minta",
+      "baku": "meminta",
+      "jumlah": 1033
+    },
+    {
+      "slang": "d",
+      "baku": "di",
+      "jumlah": 1009
+    },
+    {
+      "slang": "tdk",
+      "baku": "tidak",
+      "jumlah": 908
+    },
+    {
+      "slang": "bener",
+      "baku": "benar",
+      "jumlah": 836
+    },
+    {
+      "slang": "g",
+      "baku": "tidak",
+      "jumlah": 830
+    },
+    {
+      "slang": "tp",
+      "baku": "tapi",
+      "jumlah": 819
+    },
+    {
+      "slang": "in",
+      "baku": "ini",
+      "jumlah": 810
+    },
+    {
+      "slang": "wa",
+      "baku": "whatsapp",
+      "jumlah": 806
+    },
+    {
+      "slang": "sdh",
+      "baku": "sudah",
+      "jumlah": 718
+    },
+    {
+      "slang": "gini",
+      "baku": "begini",
+      "jumlah": 704
+    },
+    {
+      "slang": "nggak",
+      "baku": "tidak",
+      "jumlah": 651
+    },
+    {
+      "slang": "app",
+      "baku": "aplikasi",
+      "jumlah": 628
+    },
+    {
+      "slang": "ngga",
+      "baku": "tidak",
+      "jumlah": 594
+    },
+    {
+      "slang": "bs",
+      "baku": "bisa",
+      "jumlah": 585
+    }
+  ],
+  "examples": [
+    {
+      "reviewId": "901de008-6384-4376-bb8e-2f4cc37e0f55",
+      "text_model": "habis di update kenapa jadi gabisa masuk",
+      "text_b1": "habis di update kenapa jadi tidak bisa masuk"
+    },
+    {
+      "reviewId": "247e2408-c73c-42e3-9e42-6b6da6dcd932",
+      "text_model": "belum 100% bisa berjalan,pdhl sdh update...perbaiki bug...loading lambat,jaringan internet pdhl sangat baik.",
+      "text_b1": "belum 100 % bisa berjalan , padahal sudah update . . . perbaiki bug . . . loading lambat , jaringan internet padahal sangat baik ."
+    },
+    {
+      "reviewId": "5f701c1a-3f01-450e-a3ea-959a38385e30",
+      "text_model": "kok abis di update malah login lagi",
+      "text_b1": "kok habis di update malah login lagi"
+    },
+    {
+      "reviewId": "95722f3a-293a-4717-acf2-a2193ccd0d62",
+      "text_model": "buruk sekali. abis di update malah ga bisa di buka... mana mau naik pesawat",
+      "text_b1": "buruk sekali . habis di update malah tidak bisa di buka . . . mana mau naik pesawat"
+    },
+    {
+      "reviewId": "ae2b4872-a4e0-41f9-aaa5-e282b8ebb7c1",
+      "text_model": "kenapa setelah update jdi ga bisa login",
+      "text_b1": "kenapa setelah update jadi tidak bisa login"
+    },
+    {
+      "reviewId": "0e435996-3d83-4c40-96af-9ed5b1f11a3b",
+      "text_model": "maaf sebelum nya ko abis di perbaruan cara mau melihat sertifikat vaksin semua nya ko tidak bisa",
+      "text_b1": "maaf sebelum nya kok habis di perbaruan cara mau melihat sertifikat vaksin semua nya kok tidak bisa"
+    },
+    {
+      "reviewId": "23da4344-07a0-4fef-8e43-f5e41592b112",
+      "text_model": "tolong dong kenapa mau download sertifikat vaksin kok gak bisa ya? gagal terus",
+      "text_b1": "tolong dong kenapa mau download sertifikat vaksin kok tidak bisa ya ? gagal terus"
+    },
+    {
+      "reviewId": "e6c36b51-572f-4509-ad41-6a733269c1cf",
+      "text_model": "setelah updte malah ga bagus",
+      "text_b1": "setelah update malah tidak bagus"
+    }
+  ]
+}

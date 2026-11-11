@@ -1,6 +1,9 @@
 # Python 3.14. Tambahkan library dan versi yang sudah digunakan serta diuji.
-# Library model ditambahkan saat kodenya tersedia; daftar rencana ada di
-# docs/project/method-decisions.md.
+# Pengambilan data, preprocessing, anotasi, pelabelan LLM, model TF-IDF (B1),
+# evaluasi, dan lembar Excel. Model neural ada di requirements-model.txt.
 google-play-scraper==1.2.7
 emoji==2.15.0
 matplotlib==3.11.2
+numpy==2.4.2
+scikit-learn==1.9.1
+openpyxl==3.1.5

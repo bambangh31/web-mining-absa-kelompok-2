@@ -1,0 +1,7 @@
+# Model neural: B4 BiLSTM dan B2/B2-L IndoBERT-p1.
+# GPU NVIDIA: pasang torch dari indeks PyTorch lebih dulu, misalnya
+#   python -m pip install torch --index-url https://download.pytorch.org/whl/cu130
+# Google Colab sudah memiliki torch; cukup pasang transformers.
+-r requirements.txt
+torch>=2.12
+transformers==5.22.2

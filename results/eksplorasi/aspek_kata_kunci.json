@@ -1,0 +1,20 @@
+{
+  "pool": 32035,
+  "per_aspek_pct": {
+    "akun_login": 33.3,
+    "registrasi_data": 12.9,
+    "fitur_kesehatan": 24.3,
+    "performa": 16.0,
+    "kemudahan_penggunaan": 14.7,
+    "pembaruan_aplikasi": 26.4,
+    "layanan_pelanggan": 4.1
+  },
+  "jumlah_aspek_khusus_pct": {
+    "0": 21.0,
+    "1": 40.5,
+    "2": 27.2,
+    "3+": 11.3
+  },
+  "dua_aspek_atau_lebih_pct": 38.5,
+  "catatan": "Perkiraan kata kunci pada text_model pool, bukan label."
+}

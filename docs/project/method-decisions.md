@@ -1,7 +1,8 @@
 # Keputusan metode
 
 Ditetapkan 3 November 2026 setelah topik disetujui kelompok, lalu diubah
-6 November 2026 mengikuti [masukan dosen](#masukan-dosen-6-november-2026).
+6 November 2026 mengikuti [masukan dosen](#masukan-dosen-6-november-2026)
+dan 10 November 2026 saat [implementasi](#implementasi-10-november-2026).
 Setiap keputusan disertai alasan dan bukti. Jika keputusan berubah, catat di
 bagian [Riwayat](#riwayat) beserta eksperimen yang perlu diulang.
 
@@ -9,15 +10,15 @@ bagian [Riwayat](#riwayat) beserta eksperimen yang perlu diulang.
 
 | Bagian | Keputusan |
 |---|---|
-| Bentuk tugas | ACSA multi-aspek: satu ulasan bisa memuat beberapa aspek, masing-masing dengan sentimennya sendiri |
+| Bentuk tugas | ACSA multi-aspek dengan delapan kategori: satu ulasan bisa memuat beberapa aspek, masing-masing dengan sentimennya sendiri. Anotasi rinci mencatat kata aspek, kategori, sentimen, dan bukti per penyebutan |
 | Label latih dan validasi | 400 + 100 ulasan diberi label oleh LLM, lalu diverifikasi dan dikoreksi manusia |
 | Label uji | 300 ulasan dilabeli manual oleh dua orang tanpa melihat label LLM |
 | Data latih | Sama untuk semua model: 400 ulasan latih terverifikasi |
-| LLM pra-label | Gemini Flash melalui kuota gratis Gemini API; cadangan model lokal `qwen3.5:4b` lewat Ollama |
+| LLM pra-label | Gemini melalui kuota gratis Gemini API (`gemini-3.5-flash-lite`, prompt v1); cadangan model lokal `qwen3.5:4b` lewat Ollama |
 | Model yang dibandingkan | TF-IDF + Logistic Regression, Linear SVM, Naive Bayes; BiLSTM + fastText; IndoBERT-p1 base dan large; Gemini dan `qwen3.5:4b` langsung |
 | Encoder | `indobenchmark/indobert-base-p1` (utama) dan `indobenchmark/indobert-large-p1`, klasifikasi sentence-pair (ulasan, aspek) |
 | Pelaporan | Semua metrik dilaporkan keseluruhan dan per aspek untuk setiap model |
-| Preprocessing | 13 aturan di bawah; tanpa stopword removal, tanpa stemming |
+| Preprocessing | 13 aturan di bawah, semuanya sudah diterapkan (aturan 12 di `src/text_features.py`); tanpa stopword removal, tanpa stemming |
 | Pembagian data | 50 kalibrasi, 400 latih, 100 validasi, 300 uji, sisanya tanpa label; seed 42 |
 | Python | 3.14; PyTorch CUDA dari indeks PyTorch |
 
@@ -45,24 +46,49 @@ Pertanyaan penelitian setelah perubahan ini (menggantikan RQ1 dan RQ2 di
   IndoBERT base dan large, atau LLM yang dipakai langsung?
 - RQ3: Tidak berubah.
 
+## Implementasi 10 November 2026
+
+| Bagian | Keputusan | Alasan |
+|---|---|---|
+| Kategori aspek | Ditambah `pembaruan_aplikasi` dan `layanan_pelanggan`, jadi delapan kategori | Pelabelan manual 354 ulasan (674 penyebutan) menemukan 121 penyebutan tentang update, versi, dan peralihan dari PeduliLindungi serta 24 tentang CS, helpdesk, dan respons aduan. Enam kategori lama tidak menampung keduanya tanpa memaksakan ke `umum`, padahal `umum` tidak boleh bersama aspek khusus |
+| Anotasi rinci | Lembar Excel satu baris per penyebutan: kata aspek persis dari ulasan, aspek seragam, kategori, label, bukti | Bukti dan kata aspek membuat label bisa diperiksa ulang; label per ulasan diturunkan otomatis dengan aturan yang sama untuk manusia dan LLM |
+| Agregasi ke label per ulasan | Netral bila semua penyebutan netral; selain itu mayoritas positif/negatif, seri dihitung negatif; `umum` dikosongkan bila ada aspek khusus | Menjawab pertanyaan kalibrasi "pujian dan keluhan pada aspek yang sama"; keluhan adalah informasi utama ulasan aplikasi. Fungsi `aggregate_mentions` di `src/absa_schema.py` dan rumus lembar "Label per Ulasan" |
+| Model Gemini | `gemini-3.5-flash-lite` untuk semua label LLM (ID versi pada respons dicatat di `raw.jsonl`), 30 ulasan per permintaan | Kuota gratis ternyata 20 permintaan per hari per model (`GenerateRequestsPerDayPerProjectPerModel-FreeTier`, nilai 20), dan permintaan yang gagal 503 ikut terhitung. `gemini-3.8-flash`, `3.7-flash`, dan `3.6-flash` membalas 503 saat diuji 10 November 2026; kuota `gemini-3.5-flash` habis setelah 7 batch berhasil. Kelompok memilih satu model untuk semua label agar perbandingan konsisten; hasil 7 batch `gemini-3.5-flash` disimpan tetapi tidak dipakai |
+| Prompt v1 | Panduan delapan aspek, delapan aturan, dan 12 contoh few-shot buatan tim (bukan ulasan dataset) | Label kalibrasi belum tersedia. Contoh dari ulasan yang dievaluasi akan membocorkan jawaban. Contoh mencakup pola kesalahan uji lokal: menambah performa pada "susah login", `umum` bersama aspek khusus, dan netral untuk aspek yang tidak disebut |
+| Keluaran LLM | JSON dengan skema: daftar penyebutan per ulasan (kata, seragam, kategori, label, bukti); kata dan bukti disejajarkan ke teks asli | Format sama dengan lembar manual sehingga bisa dibandingkan per penyebutan dan per ulasan |
+| Normalisasi slang (aturan 12) | Kamus Salsabila dkk. (2018), bentuk paling sering bila ganda, ditambah sekitar 50 penyesuaian proyek: negasi `gak/ga/gk/enggak/ndak` menjadi `tidak`, `apk/app` menjadi `aplikasi`, istilah domain (PIN, OTP, NIK, login) dipertahankan, `in` tidak diubah | Kamus memetakan `ga` ke `enggak` dan `tdk` ke `tidak`, sehingga negasi tetap dua fitur; `in` dipetakan ke `ini` dan merusak "log in". Diukur pada pool: 75,1% ulasan dan 12,7% token berubah |
+| Verifikasi | Lembar Excel per anggota (100 latih + 25 validasi, pembagian sama dengan `annotation.py`), kolom LLM, Cek (setuju/salah), Pengganti, serta Mulai/Selesai | Dua langkah sesuai tinjauan pustaka; tingkat koreksi dan waktu per ulasan dihitung otomatis saat ekspor |
+
+Label manual pada lembar Excel 354 ulasan bukan set uji: hanya 5 ulasan
+termasuk `gold_test`, 7 `gold_train`, 3 `gold_val`, 1 `kalibrasi`, dan 338
+`silver`. Lembar ini dipakai sebagai pembanding awal label LLM dan uji
+pratinjau model, bukan pengganti 300 ulasan uji yang dilabeli dua orang.
+
 ## Bentuk tugas
 
 Tugasnya aspect category sentiment analysis (ACSA) multi-aspek. Setiap ulasan
-mendapat label untuk keenam aspek sekaligus. Satu ulasan bisa memuat
+mendapat label untuk kedelapan aspek sekaligus. Satu ulasan bisa memuat
 beberapa aspek dengan sentimen berbeda, dan aspek yang tidak dibahas diberi
 `tidak_disebut`.
 
 Contoh: "setiap mau login gangguan trus! sertifikat gabisa di download!"
-memuat `akun_login` negatif dan `fitur_kesehatan` negatif.
+memuat `akun_login` negatif dan `fitur_kesehatan` negatif. Contoh dari lembar
+manual: "Diupdate, malah gak bisa dibuka...nge close terus.." memuat
+`pembaruan_aplikasi` negatif dan `performa` negatif.
 
 Bukti dari data: pada pool 32.035 ulasan, 14,5% memuat kata kunci dari dua
 aspek khusus atau lebih (12,3% dua aspek, 2,2% tiga aspek atau lebih). Ini
-perkiraan kata kunci, bukan label.
+perkiraan kata kunci, bukan label. Dengan daftar kata kunci yang lebih luas
+untuk tujuh aspek khusus (`src/aspect_keywords.py`), 38,5% ulasan pool memuat
+dua aspek khusus atau lebih; angka ini batas atas yang berisik. Pada label
+manual 354 ulasan, 164 ulasan (46,3%) memuat dua aspek khusus atau lebih.
 
 Semua model menangani multi-aspek dengan cara yang sama: setiap aspek
 diklasifikasi ke empat label. Model TF-IDF memakai satu classifier per aspek.
-IndoBERT memakai sentence-pair (ulasan, aspek), jadi satu ulasan menjadi enam
-pasangan. LLM mengeluarkan keenam label sekaligus dalam JSON.
+IndoBERT memakai sentence-pair (ulasan, aspek), jadi satu ulasan menjadi delapan
+pasangan. BiLSTM memakai satu encoder dan delapan kepala keluaran. LLM
+mengeluarkan daftar penyebutan aspek dalam JSON, lalu diubah ke delapan label.
+Semua model terlatih menerapkan aturan `umum` yang sama pada keluarannya.
 
 ## Alur label
 
@@ -157,7 +183,7 @@ menguntungkan LLM itu. Kedua LLM hanya dibandingkan pada set uji manual.
 
 | Risiko | Penanganan |
 |---|---|
-| Batas kuota gratis berubah atau tidak cukup | Simpan progres per batch; lanjutkan dengan model lokal |
+| Batas kuota gratis berubah atau tidak cukup | Terjadi: 20 permintaan/hari per model. Batch diperbesar menjadi 30-60 ulasan (bawaan 60: 14 permintaan untuk 800 ulasan); progres per batch disimpan; skrip berhenti saat kuota harian habis dan melanjutkan besok tanpa mengirim ulang |
 | Pemeriksa mengikuti label LLM yang salah (anchoring) | Set uji dilabeli tanpa label LLM; tingkat koreksi dilaporkan; sebagian ulasan latih diperiksa ulang anggota lain jika waktu cukup |
 | Teks kuota gratis dapat dibaca dan dipakai Google | Hanya teks ulasan publik yang sudah disamarkan; tanpa nama pengguna. Disebutkan di laporan |
 | Model tertutup bisa berubah | Simpan respons mentah (`llm_<model>.jsonl`), ID model, tanggal, dan versi prompt |
@@ -168,8 +194,10 @@ menguntungkan LLM itu. Kedua LLM hanya dibandingkan pada set uji manual.
 - Temperature 0.
 - Prompt sistem: panduan anotasi ringkas dan 8-12 contoh dari set kalibrasi
   (bukan dari ulasan latih, validasi, atau uji). Versi prompt dicatat (`prompt_version`, mulai `v1`).
-- Gemini: 20 ulasan per permintaan, keluaran array JSON berisi `reviewId`
-  dan enam label.
+- Gemini: 20 ulasan per permintaan dengan ID pendek `r1`-`r20`, keluaran JSON
+  berisi daftar penyebutan aspek per ulasan (skema `RESPONSE_SCHEMA` di
+  `src/llm_label.py`). Permintaan yang gagal (503/429) diulang dengan jeda
+  bertambah; batch yang sudah berhasil tidak dikirim ulang.
 - Ollama: satu ulasan per permintaan, `format` berisi JSON schema,
   `think: false`, `num_ctx` 2048.
 - Kunci API disimpan di `.env` (`GEMINI_API_KEY`), lihat `.env.example`.
@@ -209,7 +237,7 @@ Model ini tetap menjadi kandidat jika tim berhasil memasangnya.
 
 `indobenchmark/indobert-base-p1` dengan klasifikasi sentence-pair. Masukan
 berupa pasangan (teks ulasan, deskripsi aspek), keluaran salah satu dari
-empat label. Satu ulasan menghasilkan enam pasangan. Versi large
+empat label. Satu ulasan menghasilkan delapan pasangan. Versi large
 (`indobenchmark/indobert-large-p1`, B2-L) dilatih dengan cara yang sama
 sebagai pembanding; lihat [model yang dibandingkan](#model-yang-dibandingkan).
 
@@ -310,8 +338,8 @@ dari {0,1; 1; 10} dan {0,1; 0,5; 1} dengan F1 pasangan pada set validasi.
 | Token | Kata dan tanda baca dari `text_model`, maksimal 128 token | Diukur pada pool: median 14, persentil 99 sebanyak 78, persentil 99,9 sebanyak 102; hanya 7 ulasan lebih dari 128 |
 | Embedding | fastText `cc.id.300.vec`, 300 dimensi, dibekukan; kata di luar kosakata memakai satu vektor `[UNK]` yang dilatih | 400 ulasan terlalu sedikit untuk melatih embedding. Hanya kata yang muncul di pool yang dimuat, agar RAM cukup |
 | Encoder | BiLSTM 1 lapis, 128 unit per arah, dropout 0,5 | Ukuran kecil untuk data kecil |
-| Keluaran | Max-pooling, lalu enam kepala linear, masing-masing empat kelas | Multi-aspek: encoder dipakai bersama, setiap aspek diklasifikasi sendiri |
-| Loss | Cross-entropy berbobot kelas per aspek, dijumlah untuk enam aspek | Label positif dan netral jarang |
+| Keluaran | Max-pooling, lalu delapan kepala linear, masing-masing empat kelas | Multi-aspek: encoder dipakai bersama, setiap aspek diklasifikasi sendiri |
+| Loss | Cross-entropy berbobot kelas per aspek, dijumlah untuk delapan aspek | Label positif dan netral jarang |
 | Optimizer | Adam, learning rate 1e-3, batch 32 | Pengaturan umum untuk LSTM |
 | Epoch | Maksimal 30, early stopping patience 3 dengan F1 pasangan validasi | Training cepat; berhenti saat validasi tidak naik |
 | Seed | 42, 43, 44 | Sama dengan IndoBERT |
@@ -409,15 +437,17 @@ jarang.
 | `data/raw/com.telkom.tracencare_reviews.csv` | Keluaran `src/scrape_reviews.py` |
 | `data/processed/reviews_clean.csv` | `reviewId`, `at`, `score`, `reviewCreatedVersion`, `text_llm`, `text_model`, `n_words`, `in_pool` |
 | `data/annotations/split.csv` | `reviewId`, `split` |
-| `data/annotations/gold_<nama>.csv`, `gold.csv` | `reviewId`, (`annotator`), enam kolom aspek; label manual set uji |
-| `data/annotations/llm_<model>.csv` | `reviewId`, `model`, `prompt_version`, enam kolom aspek |
-| `data/annotations/verified.csv` | `reviewId`, `verifier`, `model`, `prompt_version`, enam kolom aspek akhir; label LLM asli tetap di `llm_<model>.csv` |
-| `results/predictions/<model>_<seed>.csv` | `reviewId`, `model_code`, `seed`, enam kolom aspek |
+| `data/annotations/gold_<nama>.csv`, `gold.csv` | `reviewId`, (`annotator`), delapan kolom aspek; label manual set uji |
+| `data/annotations/llm_<model>.csv` | `reviewId`, `model`, `prompt_version`, delapan kolom aspek |
+| `data/annotations/verified.csv` | `reviewId`, `verifier`, `model`, `prompt_version`, delapan kolom aspek akhir; label LLM asli tetap di `llm_<model>.csv` |
+| `results/predictions/<model>_<seed>.csv` | `reviewId`, `model_code`, `seed`, delapan kolom aspek |
 | `results/metrics/<model>_<seed>.json` | Nilai metrik dan konfigurasi run |
 
-Enam kolom aspek: `akun_login`, `registrasi_data`, `fitur_kesehatan`,
-`performa`, `kemudahan_penggunaan`, `umum`. Nilainya `tidak_disebut`,
-`positif`, `negatif`, atau `netral`.
+Delapan kolom aspek: `akun_login`, `registrasi_data`, `fitur_kesehatan`,
+`performa`, `kemudahan_penggunaan`, `pembaruan_aplikasi`, `layanan_pelanggan`,
+`umum`. Nilainya `tidak_disebut`, `positif`, `negatif`, atau `netral`. Lembar
+Excel memakai nama tanpa garis bawah (misalnya "Akun Login", "tidak disebut");
+kode menerima kedua bentuk.
 
 ## Definisi metrik
 
@@ -473,6 +503,7 @@ python -m pip install torch --index-url https://download.pytorch.org/whl/cu130
 | 3 Nov 2026 | Keputusan awal | Topik disetujui kelompok | - |
 | 4 Nov 2026 | Dataset final: semua ulasan sejak 1 Maret 2023 (39.995 baris, pool 32.035), menggantikan 15.000 ulasan uji | Permintaan kelompok untuk memakai seluruh data era SATUSEHAT | Belum ada eksperimen. Angka pool dan beban LLM di dokumen ini masih berdasarkan uji 15.000 ulasan; silver menjadi sekitar 31.000 ulasan (perkiraan sekitar 1.600 permintaan Gemini atau sekitar 20 jam dengan model lokal) |
 | 6 Nov 2026 | Masukan dosen: data latih sama untuk semua model dari label LLM terverifikasi; IndoBERT-p1 menggantikan IndoBERTweet; tugas dinyatakan multi-aspek; tambahan Linear SVM, Naive Bayes, dan dua LLM; hasil per aspek. P1, P2, dan pelabelan silver dihapus | Masukan dosen | Belum ada eksperimen. Panjang token diukur ulang dengan tokenizer IndoBERT-p1 |
+| 10 Nov 2026 | Delapan kategori aspek (tambah `pembaruan_aplikasi`, `layanan_pelanggan`); anotasi rinci per penyebutan; aturan agregasi; normalisasi slang diterapkan; prompt v1 dan pelabelan Gemini `gemini-3.5-flash-lite` (kuota gratis 20 permintaan/hari); alat verifikasi dua langkah; kode delapan model dan evaluasi | Bukti dari pelabelan manual 354 ulasan; implementasi week 12 | Lembar kalibrasi/gold yang sudah dibuat dengan enam kolom perlu dibuat ulang (`annotation.py prepare` pada workspace baru) sebelum diisi |
 | 6 Nov 2026 | Susunan akhir delapan model: B1-LR, B1-SVM, B1-NB, B4 BiLSTM + fastText, B2 IndoBERT-p1 base, B2-L IndoBERT-p1 large, B3-Gemini, B3-Qwen; aturan penentuan model terbaik dengan paired bootstrap | Perbandingan penelitian di [tinjauan pustaka](literature-review.md) | Belum ada eksperimen |
 
 ## Rujukan

@@ -90,7 +90,7 @@ Nama dan foto profil pengguna tidak disimpan.
 
 Angka berikut berasal dari scraping uji 3 November 2026, sebelum dataset
 final diambil. Ke-15.000 ulasan itu adalah bagian dari dataset final di atas.
-[Laporan week 10](../docs/laporan/Week_10_Laporan_ABSA_SATUSEHAT.docx)
+[Laporan week 10-11](../docs/laporan/Laporan_Week_10-11_ABSA_SATUSEHAT.docx)
 memakai angka dataset final.
 
 | Ukuran | 2.000 terbaru | 15.000 terbaru |
