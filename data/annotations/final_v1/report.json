@@ -1,0 +1,25 @@
+{
+  "anotator": "jap",
+  "catatan": "Satu anotator: tidak ada kappa antar-manusia dan tidak ada adjudikasi. gold.csv berisi 150 ulasan uji milik anotator ini; 150 ulasan uji lain tidak berlabel manusia.",
+  "jumlah": {
+    "kalibrasi": 50,
+    "gold_total": 275,
+    "gold_per_split": {
+      "gold_train": 100,
+      "gold_val": 25,
+      "gold_test": 150
+    },
+    "gold_csv_uji": 150,
+    "verifikasi": 125
+  },
+  "sha256": {
+    "kalibrasi": "ada889d3cbc49d0af261dd9c478c9f44620bde8464692e1ee3197bf4b6f669ad",
+    "gold": "c792732c73407fca7813be27fe011d4178a6f1a20c5f11bb457149e1b7b987c1",
+    "llm": "d05eedb5223c9be00ef5576973e1e9b54ad4e3f4423c3573f53b6caf4596bc5b",
+    "verified": "f934e866b8f6c834405d817464cfa190785ac220b06b23ab7ef77385ce20e1f6"
+  },
+  "source_sha256": {
+    "reviews_clean": "98c187400bc1e415ef9882c11286cfc2c4650e289d73db0a5dc83b14852fa0cb",
+    "split": "67036c5db3ceb2188e4c06c76df4eb1b48199aaa3802c1f323dc14e1b04254ea"
+  }
+}

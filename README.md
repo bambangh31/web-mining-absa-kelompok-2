@@ -16,7 +16,7 @@ LLM yang diverifikasi anggota), set uji manual tanpa label LLM, IndoBERT-p1,
 tugas multi-aspek dengan delapan kategori, dan delapan model yang
 dilaporkan per aspek. Kode pipeline lengkap tersedia (lihat
 [cara menjalankan dan menguji](docs/project/pipeline.md)); hasil akhir
-menunggu verifikasi label latih dan label uji dua anotator.
+untuk B1 dan Gemini tersedia sejak 11 November 2026 dengan label satu anotator (Jap): 150 ulasan uji, 125 ulasan latih/validasi terverifikasi (lihat [status implementasi](docs/project/implementation-status.md)).
 
 | Anggota | NRP | Peran awal |
 |---|---|---|
@@ -108,6 +108,8 @@ Pipeline ABSA (10 November 2026):
 | Verifikasi dua langkah | [`src/verification.py`](src/verification.py) |
 | B1-LR/SVM/NB, B4 BiLSTM, B2/B2-L IndoBERT-p1 | [`src/models_classic.py`](src/models_classic.py), [`src/model_bilstm.py`](src/model_bilstm.py), [`src/model_indobert.py`](src/model_indobert.py) |
 | Evaluasi per aspek dan paired bootstrap | [`src/evaluate.py`](src/evaluate.py) |
+| Ekspor satu anotator dan kesepakatan dengan Gemini | [`src/single_annotator.py`](src/single_annotator.py) |
+| Keluhan per aspek dan per versi | [`src/version_analysis.py`](src/version_analysis.py) |
 | Perbandingan lembar manual vs LLM, pratinjau | [`src/compare_labels.py`](src/compare_labels.py), [`src/preview_cv.py`](src/preview_cv.py) |
 
 Tes: `python -m unittest discover -s tests -v`.

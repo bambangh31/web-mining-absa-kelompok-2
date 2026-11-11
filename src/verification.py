@@ -140,7 +140,14 @@ def parse_time(value):
     return None
 
 
-def export(llm_path, split_path, raw_path, workspace, output, summary_path):
+def export(llm_path, split_path, raw_path, workspace, output, summary_path, members=MEMBERS,
+           fill_unverified=False):
+    """Gabungkan lembar verifikasi menjadi verified.csv.
+
+    `members`: pemeriksa yang lembarnya dibaca. Dengan `fill_unverified`, ulasan
+    latih/validasi milik anggota lain tetap memakai label LLM apa adanya dengan
+    kolom `verifier` kosong (dipakai bila hanya sebagian anggota memverifikasi).
+    """
     import openpyxl
 
     llm, split, raw, owned = load_inputs(llm_path, split_path, raw_path)
@@ -149,7 +156,10 @@ def export(llm_path, split_path, raw_path, workspace, output, summary_path):
     changed = Counter()
     accepted_whole = 0
     seconds, reviews_timed = 0.0, 0
-    for member in MEMBERS:
+    unknown = set(members) - set(MEMBERS)
+    if unknown or not members:
+        raise SystemExit(f"Pemeriksa tidak dikenal: {sorted(unknown)}")
+    for member in members:
         wb = openpyxl.load_workbook(workspace / f"verifikasi_{member}.xlsx", data_only=True)
         info = {wb["Info"].cell(r, 1).value: wb["Info"].cell(r, 2).value for r in range(1, 7)}
         start, end = parse_time(info.get("Mulai")), parse_time(info.get("Selesai"))
@@ -199,14 +209,24 @@ def export(llm_path, split_path, raw_path, workspace, output, summary_path):
         raise SystemExit("Lembar verifikasi belum lengkap/valid:\n- " + "\n- ".join(errors[:40]))
     model = next(iter(llm.values())).get("model", "")
     prompt = next(iter(llm.values())).get("prompt_version", "")
+    verified = dict(final)
+    if fill_unverified:
+        for member in MEMBERS:
+            for rid in owned[member]:
+                if rid not in final:
+                    final[rid] = {"verifier": "", **{a: llm[rid][a] for a in ASPECTS}}
+    elif set(members) != set(MEMBERS):
+        raise SystemExit("Hanya sebagian lembar dibaca; tambahkan --fill-unverified agar sisanya memakai label LLM")
     output = Path(output)
     with output.open("x", encoding="utf-8-sig", newline="") as stream:
         writer = csv.DictWriter(stream, fieldnames=["reviewId", "verifier", "model", "prompt_version", *ASPECTS])
         writer.writeheader()
         for rid in sorted(final):
             writer.writerow({"reviewId": rid, "model": model, "prompt_version": prompt, **final[rid]})
-    n = len(final)
+    n = len(verified)
     summary = {
+        "pemeriksa": sorted(members), "ulasan_di_verified_csv": len(final),
+        "ulasan_tanpa_verifikasi": len(final) - n,
         "ulasan": n, "sel": n * len(ASPECTS),
         "tingkat_koreksi_keseluruhan": sum(changed.values()) / (n * len(ASPECTS)),
         "tingkat_koreksi_per_aspek": {a: changed[a] / n for a in ASPECTS},
@@ -215,7 +235,7 @@ def export(llm_path, split_path, raw_path, workspace, output, summary_path):
         "koreksi_dari_ke": {},
     }
     transitions = Counter()
-    for rid, row in final.items():
+    for rid, row in verified.items():
         for a in ASPECTS:
             if row[a] != llm[rid][a]:
                 transitions[f"{a}: {llm[rid][a]} -> {row[a]}"] += 1
@@ -240,12 +260,17 @@ def main():
         else:
             p.add_argument("--output", type=Path, default=Path("data/annotations/verified.csv"))
             p.add_argument("--summary", type=Path, default=Path("results/verifikasi/ringkasan.json"))
+            p.add_argument("--members", default=",".join(MEMBERS),
+                           help="pemeriksa yang lembarnya dibaca, dipisah koma (mis. jap)")
+            p.add_argument("--fill-unverified", action="store_true",
+                           help="ulasan yang tidak diverifikasi tetap memakai label LLM (verifier kosong)")
     args = parser.parse_args()
     if args.command == "prepare":
         print(json.dumps(prepare(args.llm, args.split, args.raw, args.mentions, args.workspace), indent=2))
     else:
-        print(json.dumps(export(args.llm, args.split, args.raw, args.workspace, args.output, args.summary),
-                         indent=2, ensure_ascii=False))
+        members = tuple(m.strip() for m in args.members.split(",") if m.strip())
+        print(json.dumps(export(args.llm, args.split, args.raw, args.workspace, args.output, args.summary,
+                                members, args.fill_unverified), indent=2, ensure_ascii=False))
 
 
 if __name__ == "__main__":

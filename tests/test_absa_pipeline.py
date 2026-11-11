@@ -290,6 +290,52 @@ class VerificationTests(unittest.TestCase):
         self.assertAlmostEqual(summary["detik_per_ulasan"], 4 * 75 * 60 / 500)
         self.assertNotEqual(first, None)
 
+    @unittest.skipUnless(__import__("importlib").util.find_spec("openpyxl"), "openpyxl belum terpasang")
+    def test_single_verifier_fills_rest_with_llm(self):
+        import csv
+        import openpyxl
+        from src import verification
+        with tempfile.TemporaryDirectory() as tmp:
+            paths, gold = synthetic_project(tmp)
+            llm = {rid: dict(row) for rid, row in gold.items()}
+            label_excel.write_label_csv(Path(tmp) / "llm.csv", llm, {"model": "uji", "prompt_version": "v1"})
+            ws_dir = Path(tmp) / "ver"
+            verification.prepare(Path(tmp) / "llm.csv", paths["split"], paths["raw"], None, ws_dir)
+            path = ws_dir / "verifikasi_jap.xlsx"
+            wb = openpyxl.load_workbook(path)
+            ws = wb["Verifikasi"]
+            for r in range(2, ws.max_row + 1):
+                for k in range(len(schema.ASPECTS)):
+                    ws.cell(r, 7 + 3 * k, "setuju")
+            wb.save(path)
+            out = Path(tmp) / "verified.csv"
+            with self.assertRaises(SystemExit):  # sebagian lembar tanpa izin eksplisit ditolak
+                verification.export(Path(tmp) / "llm.csv", paths["split"], paths["raw"], ws_dir, out,
+                                    Path(tmp) / "r.json", members=("jap",))
+            summary = verification.export(Path(tmp) / "llm.csv", paths["split"], paths["raw"], ws_dir, out,
+                                          Path(tmp) / "r.json", members=("jap",), fill_unverified=True)
+            with out.open(encoding="utf-8-sig", newline="") as stream:
+                rows = list(csv.DictReader(stream))
+        self.assertEqual(len(rows), 500)
+        self.assertEqual(sum(r["verifier"] == "jap" for r in rows), 125)
+        self.assertEqual(sum(r["verifier"] == "" for r in rows), 375)
+        self.assertEqual(summary["ulasan"], 125)
+        self.assertEqual(summary["tingkat_koreksi_keseluruhan"], 0)
+        self.assertIsNone(summary["detik_per_ulasan"])
+
+
+class SingleAnnotatorTests(unittest.TestCase):
+    def test_compare_counts_agreement_and_kappa(self):
+        from src.single_annotator import compare
+        base = {a: NONE for a in schema.ASPECTS}
+        left = {"a": {**base, "performa": "negatif"}, "b": {**base, "umum": "positif"}}
+        right = {"a": {**base, "performa": "negatif"}, "b": {**base, "umum": "netral"}}
+        result = compare(left, right, ["a", "b"])
+        self.assertAlmostEqual(result["agreement_sel"], 15 / 16)
+        self.assertAlmostEqual(result["ulasan_persis_sama"], 0.5)
+        self.assertEqual(result["per_aspek"]["performa"]["kappa"], 1.0)
+        self.assertEqual(result["beda_terbanyak"], {"umum: positif -> netral": 1})
+
 
 if __name__ == "__main__":
     unittest.main()

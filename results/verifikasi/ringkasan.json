@@ -1,0 +1,42 @@
+{
+  "pemeriksa": [
+    "jap"
+  ],
+  "ulasan_di_verified_csv": 500,
+  "ulasan_tanpa_verifikasi": 375,
+  "ulasan": 125,
+  "sel": 1000,
+  "tingkat_koreksi_keseluruhan": 0.025,
+  "tingkat_koreksi_per_aspek": {
+    "akun_login": 0.016,
+    "registrasi_data": 0.008,
+    "fitur_kesehatan": 0.0,
+    "performa": 0.048,
+    "kemudahan_penggunaan": 0.008,
+    "pembaruan_aplikasi": 0.064,
+    "layanan_pelanggan": 0.016,
+    "umum": 0.04
+  },
+  "ulasan_diterima_utuh": 0.84,
+  "detik_per_ulasan": null,
+  "koreksi_dari_ke": {
+    "pembaruan_aplikasi: netral -> negatif": 3,
+    "performa: tidak_disebut -> negatif": 3,
+    "pembaruan_aplikasi: positif -> negatif": 2,
+    "umum: negatif -> tidak_disebut": 2,
+    "performa: negatif -> tidak_disebut": 2,
+    "layanan_pelanggan: netral -> tidak_disebut": 1,
+    "layanan_pelanggan: positif -> tidak_disebut": 1,
+    "umum: netral -> tidak_disebut": 1,
+    "pembaruan_aplikasi: tidak_disebut -> negatif": 1,
+    "pembaruan_aplikasi: positif -> tidak_disebut": 1,
+    "umum: tidak_disebut -> positif": 1,
+    "pembaruan_aplikasi: negatif -> tidak_disebut": 1,
+    "akun_login: tidak_disebut -> negatif": 1,
+    "registrasi_data: netral -> tidak_disebut": 1,
+    "kemudahan_penggunaan: tidak_disebut -> negatif": 1,
+    "performa: positif -> tidak_disebut": 1,
+    "umum: tidak_disebut -> negatif": 1,
+    "akun_login: negatif -> tidak_disebut": 1
+  }
+}
