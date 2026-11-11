@@ -1,0 +1,25 @@
+﻿Aspek,Model,Jumlah disebut (acuan),F1 pasangan,F1 deteksi,Macro-F1 sentimen,Akurasi 4 label,Kappa
+Akun Login,B1-LR,46,0.822,0.844,0.301,0.900,0.764
+Akun Login,B1-SVM,46,0.851,0.874,0.301,0.920,0.808
+Akun Login,B1-NB,46,0.723,0.747,0.267,0.853,0.638
+Registrasi Data,B1-LR,26,0.653,0.694,0.381,0.893,0.611
+Registrasi Data,B1-SVM,26,0.638,0.681,0.366,0.893,0.599
+Registrasi Data,B1-NB,26,0.432,0.486,0.235,0.867,0.399
+Fitur Kesehatan,B1-LR,27,0.692,0.808,0.440,0.913,0.708
+Fitur Kesehatan,B1-SVM,27,0.640,0.760,0.358,0.900,0.650
+Fitur Kesehatan,B1-NB,27,0.653,0.776,0.274,0.907,0.668
+Performa,B1-LR,47,0.826,0.826,0.894,0.893,0.749
+Performa,B1-SVM,47,0.831,0.831,0.881,0.900,0.761
+Performa,B1-NB,47,0.795,0.795,0.825,0.887,0.719
+Kemudahan Penggunaan,B1-LR,11,0.000,0.000,0.000,0.913,-0.019
+Kemudahan Penggunaan,B1-SVM,11,0.000,0.000,0.000,0.913,-0.019
+Kemudahan Penggunaan,B1-NB,11,0.000,0.000,0.000,0.920,-0.010
+Pembaruan Aplikasi,B1-LR,43,0.806,0.806,0.408,0.907,0.748
+Pembaruan Aplikasi,B1-SVM,43,0.806,0.806,0.408,0.907,0.748
+Pembaruan Aplikasi,B1-NB,43,0.618,0.618,0.333,0.827,0.517
+Layanan Pelanggan,B1-LR,4,0.000,0.000,0.000,0.973,0.000
+Layanan Pelanggan,B1-SVM,4,0.000,0.000,0.000,0.973,0.000
+Layanan Pelanggan,B1-NB,4,0.000,0.000,0.000,0.973,0.000
+Umum,B1-LR,12,0.000,0.000,0.000,0.913,-0.008
+Umum,B1-SVM,12,0.000,0.000,0.000,0.913,-0.008
+Umum,B1-NB,12,0.000,0.000,0.000,0.920,0.000

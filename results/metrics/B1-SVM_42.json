@@ -1,0 +1,222 @@
+{
+  "model_code": "B1-SVM",
+  "seed": 42,
+  "config": {
+    "param": "C",
+    "nilai_terpilih": 10.0,
+    "pencarian": [
+      {
+        "nilai": 0.1,
+        "f1_pasangan_validasi": 0.5315315315315315
+      },
+      {
+        "nilai": 1.0,
+        "f1_pasangan_validasi": 0.6996197718631179
+      },
+      {
+        "nilai": 10.0,
+        "f1_pasangan_validasi": 0.7211895910780669
+      }
+    ],
+    "fitur_tfidf": 5717,
+    "masukan": "text_model + normalisasi slang",
+    "label_latih": "data\\annotations\\verified.csv",
+    "n_latih": 400,
+    "n_validasi": 100
+  },
+  "python": "3.14.2",
+  "validasi": {
+    "n_ulasan": 100,
+    "f1_pasangan": 0.7211895910780669,
+    "presisi_pasangan": 0.8660714285714286,
+    "recall_pasangan": 0.6178343949044586,
+    "f1_deteksi_micro": 0.7732342007434944,
+    "f1_deteksi_macro": 0.561068273308424,
+    "macro_f1_sentimen_rata2": 0.3637054102441477,
+    "ulasan_persis_sama": 0.47,
+    "per_aspek": {
+      "akun_login": {
+        "n_gold_disebut": 30,
+        "n_pred_disebut": 28,
+        "f1_pasangan": 0.8275862068965518,
+        "presisi_pasangan": 0.8571428571428571,
+        "recall_pasangan": 0.8,
+        "f1_deteksi": 0.8620689655172413,
+        "presisi_deteksi": 0.8928571428571429,
+        "recall_deteksi": 0.8333333333333334,
+        "macro_f1_sentimen": 0.4444444444444445,
+        "akurasi_sentimen": 0.8,
+        "akurasi_4_label": 0.91,
+        "kappa": 0.7830279652844745,
+        "distribusi_gold": {
+          "tidak_disebut": 70,
+          "netral": 1,
+          "negatif": 29
+        },
+        "distribusi_pred": {
+          "tidak_disebut": 72,
+          "negatif": 28
+        }
+      },
+      "registrasi_data": {
+        "n_gold_disebut": 19,
+        "n_pred_disebut": 12,
+        "f1_pasangan": 0.6451612903225806,
+        "presisi_pasangan": 0.8333333333333334,
+        "recall_pasangan": 0.5263157894736842,
+        "f1_deteksi": 0.6451612903225806,
+        "presisi_deteksi": 0.8333333333333334,
+        "recall_deteksi": 0.5263157894736842,
+        "macro_f1_sentimen": 0.38461538461538464,
+        "akurasi_sentimen": 0.5263157894736842,
+        "akurasi_4_label": 0.89,
+        "kappa": 0.5895522388059702,
+        "distribusi_gold": {
+          "tidak_disebut": 81,
+          "negatif": 16,
+          "netral": 3
+        },
+        "distribusi_pred": {
+          "tidak_disebut": 88,
+          "negatif": 12
+        }
+      },
+      "fitur_kesehatan": {
+        "n_gold_disebut": 27,
+        "n_pred_disebut": 20,
+        "f1_pasangan": 0.7659574468085106,
+        "presisi_pasangan": 0.9,
+        "recall_pasangan": 0.6666666666666666,
+        "f1_deteksi": 0.851063829787234,
+        "presisi_deteksi": 1.0,
+        "recall_deteksi": 0.7407407407407407,
+        "macro_f1_sentimen": 0.4285714285714286,
+        "akurasi_sentimen": 0.6666666666666666,
+        "akurasi_4_label": 0.91,
+        "kappa": 0.7580645161290324,
+        "distribusi_gold": {
+          "tidak_disebut": 73,
+          "negatif": 22,
+          "netral": 5
+        },
+        "distribusi_pred": {
+          "tidak_disebut": 80,
+          "negatif": 20
+        }
+      },
+      "performa": {
+        "n_gold_disebut": 39,
+        "n_pred_disebut": 29,
+        "f1_pasangan": 0.8529411764705882,
+        "presisi_pasangan": 1.0,
+        "recall_pasangan": 0.7435897435897436,
+        "f1_deteksi": 0.8529411764705882,
+        "presisi_deteksi": 1.0,
+        "recall_deteksi": 0.7435897435897436,
+        "macro_f1_sentimen": 0.8529411764705882,
+        "akurasi_sentimen": 0.7435897435897436,
+        "akurasi_4_label": 0.9,
+        "kappa": 0.7796386073159983,
+        "distribusi_gold": {
+          "negatif": 39,
+          "tidak_disebut": 61
+        },
+        "distribusi_pred": {
+          "negatif": 29,
+          "tidak_disebut": 71
+        }
+      },
+      "kemudahan_penggunaan": {
+        "n_gold_disebut": 5,
+        "n_pred_disebut": 2,
+        "f1_pasangan": 0.5714285714285715,
+        "presisi_pasangan": 1.0,
+        "recall_pasangan": 0.4,
+        "f1_deteksi": 0.5714285714285715,
+        "presisi_deteksi": 1.0,
+        "recall_deteksi": 0.4,
+        "macro_f1_sentimen": 0.5714285714285715,
+        "akurasi_sentimen": 0.4,
+        "akurasi_4_label": 0.97,
+        "kappa": 0.5588235294117639,
+        "distribusi_gold": {
+          "tidak_disebut": 95,
+          "negatif": 5
+        },
+        "distribusi_pred": {
+          "tidak_disebut": 98,
+          "negatif": 2
+        }
+      },
+      "pembaruan_aplikasi": {
+        "n_gold_disebut": 30,
+        "n_pred_disebut": 21,
+        "f1_pasangan": 0.5490196078431373,
+        "presisi_pasangan": 0.6666666666666666,
+        "recall_pasangan": 0.4666666666666667,
+        "f1_deteksi": 0.7058823529411764,
+        "presisi_deteksi": 0.8571428571428571,
+        "recall_deteksi": 0.6,
+        "macro_f1_sentimen": 0.22764227642276424,
+        "akurasi_sentimen": 0.4666666666666667,
+        "akurasi_4_label": 0.81,
+        "kappa": 0.523451216453474,
+        "distribusi_gold": {
+          "tidak_disebut": 70,
+          "negatif": 23,
+          "netral": 6,
+          "positif": 1
+        },
+        "distribusi_pred": {
+          "tidak_disebut": 79,
+          "negatif": 21
+        }
+      },
+      "layanan_pelanggan": {
+        "n_gold_disebut": 2,
+        "n_pred_disebut": 0,
+        "f1_pasangan": 0.0,
+        "presisi_pasangan": 0.0,
+        "recall_pasangan": 0.0,
+        "f1_deteksi": 0.0,
+        "presisi_deteksi": 0.0,
+        "recall_deteksi": 0.0,
+        "macro_f1_sentimen": 0.0,
+        "akurasi_sentimen": 0.0,
+        "akurasi_4_label": 0.98,
+        "kappa": 0.0,
+        "distribusi_gold": {
+          "tidak_disebut": 98,
+          "negatif": 2
+        },
+        "distribusi_pred": {
+          "tidak_disebut": 100
+        }
+      },
+      "umum": {
+        "n_gold_disebut": 5,
+        "n_pred_disebut": 0,
+        "f1_pasangan": 0.0,
+        "presisi_pasangan": 0.0,
+        "recall_pasangan": 0.0,
+        "f1_deteksi": 0.0,
+        "presisi_deteksi": 0.0,
+        "recall_deteksi": 0.0,
+        "macro_f1_sentimen": 0.0,
+        "akurasi_sentimen": 0.0,
+        "akurasi_4_label": 0.95,
+        "kappa": 0.0,
+        "distribusi_gold": {
+          "tidak_disebut": 95,
+          "negatif": 4,
+          "positif": 1
+        },
+        "distribusi_pred": {
+          "tidak_disebut": 100
+        }
+      }
+    }
+  },
+  "detik_per_1000_ulasan": 0.49811566675392294,
+  "dibuat": "2026-11-11 10:42:27"
+}

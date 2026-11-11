@@ -61,6 +61,22 @@ hasil ABSA. Status CI perubahan berikutnya diperiksa pada commit terkait.
 Cara menjalankan setiap langkah dan keluarannya ada di
 [pipeline](pipeline.md).
 
+## Label satu anotator, verifikasi, dan evaluasi (11 November 2026)
+
+Keputusan kelompok: kalibrasi, gold, dan verifikasi hanya dikerjakan Jap.
+Lembar anggota lain dihapus; rancangan disesuaikan, bukan diisi otomatis.
+
+| Bagian | Hasil | Batas |
+|---|---|---|
+| Kalibrasi | 50 ulasan lengkap (`data/annotations/kalibrasi_v1/`) | Tidak ada kappa antar-anggota |
+| Set uji | 150 ulasan `gold_test` milik Jap, tanpa label LLM (`data/annotations/final_v1/gold.csv`) | 150 ulasan uji lain tidak berlabel manusia; tanpa adjudikasi |
+| Verifikasi | 125 ulasan, 2,5% sel dikoreksi, 84,0% diterima utuh (`results/verifikasi/ringkasan.json`); `verified.csv` berisi 500 ulasan, 375 tetap label Gemini (`verifier` kosong) | Waktu Mulai/Selesai tidak diisi |
+| Kesepakatan | Manual vs Gemini pada 150 uji: 94,6% sel, kappa rata-rata 0,777; verifikasi vs Gemini 0,850 (`results/kesepakatan/`) | Pengganti kappa antar-manusia. Baris latih/validasi lembar gold identik dengan verifikasi |
+| Model | B1-LR 0,727, B1-SVM 0,705, B1-NB 0,621, B3-Gemini 0,842 F1 pasangan uji; Gemini nyata lebih baik (bootstrap) (`results/metrics/uji/`) | B4, B2, B2-L, B3-Qwen belum dijalankan |
+| Ablasi | B1 dari label Gemini mentah: selisih paling besar 0,010 (`results/ablasi_tanpa_verifikasi/`) | Hanya 25 sel yang berubah |
+| Analisis versi | Keluhan per aspek (275 ulasan diperiksa manusia) dan per versi dengan B1-LR (`results/analisis_versi/`, `results/figures/keluhan_per_versi.png`) | Per versi bersifat indikatif |
+| Laporan | `docs/laporan/Laporan ABSA SATUSEHAT.docx` bagian 10.7-10.12 | Perbarui daftar isi di Word (klik kanan, Update Field) |
+
 ## Menunggu pengerjaan
 
 - Konfirmasi topik dan format BOD dari dosen.

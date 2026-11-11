@@ -1,0 +1,260 @@
+{
+  "manusia": {
+    "n_ulasan": 275,
+    "sumber": "150 uji manual + 125 latih/validasi terverifikasi",
+    "keluhan_per_aspek": {
+      "pembaruan_aplikasi": {
+        "negatif": 85,
+        "disebut": 88,
+        "porsi_negatif": 0.3090909090909091,
+        "ci95": [
+          0.2574159368340785,
+          0.36602618944837007
+        ]
+      },
+      "akun_login": {
+        "negatif": 80,
+        "disebut": 84,
+        "porsi_negatif": 0.2909090909090909,
+        "ci95": [
+          0.2404021829345187,
+          0.34717728870816295
+        ]
+      },
+      "performa": {
+        "negatif": 80,
+        "disebut": 80,
+        "porsi_negatif": 0.2909090909090909,
+        "ci95": [
+          0.2404021829345187,
+          0.34717728870816295
+        ]
+      },
+      "fitur_kesehatan": {
+        "negatif": 53,
+        "disebut": 67,
+        "porsi_negatif": 0.19272727272727272,
+        "ci95": [
+          0.15046977491692148,
+          0.2434513616710195
+        ]
+      },
+      "registrasi_data": {
+        "negatif": 49,
+        "disebut": 52,
+        "porsi_negatif": 0.1781818181818182,
+        "ci95": [
+          0.13748164498368348,
+          0.2277493678924441
+        ]
+      },
+      "kemudahan_penggunaan": {
+        "negatif": 16,
+        "disebut": 20,
+        "porsi_negatif": 0.05818181818181818,
+        "ci95": [
+          0.03612652507223014,
+          0.09241096718143646
+        ]
+      },
+      "umum": {
+        "negatif": 10,
+        "disebut": 16,
+        "porsi_negatif": 0.03636363636363636,
+        "ci95": [
+          0.019869619744910933,
+          0.06563268694103551
+        ]
+      },
+      "layanan_pelanggan": {
+        "negatif": 5,
+        "disebut": 7,
+        "porsi_negatif": 0.01818181818181818,
+        "ci95": [
+          0.007790450499376173,
+          0.04184920154680345
+        ]
+      }
+    },
+    "konsistensi_rating": {
+      "bintang_4_5": 36,
+      "bintang_4_5_hanya_negatif": 11,
+      "bintang_1_2": 226,
+      "bintang_1_2_hanya_positif": 0,
+      "porsi_bertentangan": 0.04
+    },
+    "ulasan_multi_aspek": 0.4109090909090909
+  },
+  "model": {
+    "model": "B1-LR",
+    "config": {
+      "nilai_terpilih": 10.0,
+      "label_latih": "data\\annotations\\verified.csv",
+      "n_latih": 400
+    },
+    "n_ulasan": 32843,
+    "tanpa_versi": 6889,
+    "versi_dianalisis": 66,
+    "min_ulasan_per_versi": 50,
+    "aspek_andal": [
+      "akun_login",
+      "registrasi_data",
+      "fitur_kesehatan",
+      "performa",
+      "pembaruan_aplikasi"
+    ],
+    "f1_pasangan_uji": {
+      "akun_login": 0.8181818181818182,
+      "registrasi_data": 0.693877551020408,
+      "fitur_kesehatan": 0.6923076923076923,
+      "performa": 0.8387096774193549,
+      "kemudahan_penggunaan": 0.0,
+      "pembaruan_aplikasi": 0.8219178082191781,
+      "layanan_pelanggan": 0.0,
+      "umum": 0.0
+    },
+    "keluhan_per_aspek": {
+      "akun_login": {
+        "negatif": 9646,
+        "disebut": 9656,
+        "porsi_negatif": 0.29370033188198397,
+        "ci95": [
+          0.28879883636245385,
+          0.2986500829272474
+        ]
+      },
+      "performa": {
+        "negatif": 8890,
+        "disebut": 8903,
+        "porsi_negatif": 0.2706817282221478,
+        "ci95": [
+          0.26590343025117186,
+          0.2755136659971324
+        ]
+      },
+      "pembaruan_aplikasi": {
+        "negatif": 8535,
+        "disebut": 8657,
+        "porsi_negatif": 0.25987272782632526,
+        "ci95": [
+          0.2551578412903572,
+          0.2646437824980317
+        ]
+      },
+      "fitur_kesehatan": {
+        "negatif": 6569,
+        "disebut": 6787,
+        "porsi_negatif": 0.20001217915537559,
+        "ci95": [
+          0.1957211950816143,
+          0.2043733333372155
+        ]
+      },
+      "registrasi_data": {
+        "negatif": 3974,
+        "disebut": 3980,
+        "porsi_negatif": 0.12099990865633468,
+        "ci95": [
+          0.11751703089127526,
+          0.12457143827831456
+        ]
+      },
+      "kemudahan_penggunaan": {
+        "negatif": 726,
+        "disebut": 728,
+        "porsi_negatif": 0.022105167006668088,
+        "ci95": [
+          0.020570058382326242,
+          0.0237520599427428
+        ]
+      },
+      "umum": {
+        "negatif": 329,
+        "disebut": 1023,
+        "porsi_negatif": 0.010017355296410194,
+        "ci95": [
+          0.008996177565497894,
+          0.011153144797356013
+        ]
+      },
+      "layanan_pelanggan": {
+        "negatif": 230,
+        "disebut": 232,
+        "porsi_negatif": 0.007003014340955455,
+        "ci95": [
+          0.0061569992620771185,
+          0.007964346273927171
+        ]
+      }
+    },
+    "konsistensi_rating": {
+      "bintang_4_5": 4266,
+      "bintang_4_5_hanya_negatif": 1844,
+      "bintang_1_2": 26961,
+      "bintang_1_2_hanya_positif": 68,
+      "porsi_bertentangan": 0.05821636269524708
+    },
+    "puncak_per_aspek": {
+      "akun_login": {
+        "tertinggi": [
+          "5.14.1",
+          0.5544303797468354,
+          790
+        ],
+        "terendah": [
+          "5.3.2",
+          0.08963001563314227,
+          1919
+        ]
+      },
+      "registrasi_data": {
+        "tertinggi": [
+          "6.4.0",
+          0.32386363636363635,
+          176
+        ],
+        "terendah": [
+          "4.5.4",
+          0.015384615384615385,
+          65
+        ]
+      },
+      "fitur_kesehatan": {
+        "tertinggi": [
+          "5.5.2",
+          0.47680890538033394,
+          539
+        ],
+        "terendah": [
+          "8.8.2",
+          0.04680851063829787,
+          235
+        ]
+      },
+      "performa": {
+        "tertinggi": [
+          "5.3.2",
+          0.5784262636789995,
+          1919
+        ],
+        "terendah": [
+          "8.5.0",
+          0.04,
+          50
+        ]
+      },
+      "pembaruan_aplikasi": {
+        "tertinggi": [
+          "5.3.2",
+          0.46534653465346537,
+          1919
+        ],
+        "terendah": [
+          "5.11.1",
+          0.024691358024691357,
+          81
+        ]
+      }
+    }
+  }
+}

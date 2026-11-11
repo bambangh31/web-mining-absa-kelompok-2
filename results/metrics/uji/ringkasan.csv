@@ -1,0 +1,5 @@
+﻿Model,F1 pasangan,Presisi,Recall,F1 deteksi micro,F1 deteksi macro,Macro-F1 sentimen rata-rata,Ulasan persis sama
+B1-LR,0.727,0.828,0.648,0.753,0.505,0.307,0.520
+B1-SVM,0.705,0.817,0.620,0.732,0.488,0.291,0.493
+B1-NB,0.621,0.807,0.505,0.650,0.427,0.244,0.420
+B3-Gemini,0.842,0.811,0.875,0.869,0.816,0.765,0.673

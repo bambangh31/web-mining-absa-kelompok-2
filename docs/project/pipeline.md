@@ -131,7 +131,29 @@ ulasan diterima utuh, detik per ulasan, dan pola koreksi). Ekspor menolak
 lembar yang belum lengkap, Pengganti yang kosong atau sama dengan label LLM,
 dan `umum` yang bertabrakan dengan aspek khusus.
 
+### Satu pemeriksa (keputusan 11 November 2026)
+
+Hanya lembar `verifikasi_jap.xlsx` yang diisi. Sisa ulasan tetap memakai
+label LLM dengan kolom `verifier` kosong:
+
+```text
+python src/verification.py export --llm data/annotations/llm_gemini-3.5-flash-lite.csv --members jap --fill-unverified
+```
+
 ## 6. Label uji manual (dua orang, tanpa label LLM)
+
+Pelaksanaan 11 November 2026 hanya satu anotator. Ekspor kalibrasi, 150
+label uji, dan kesepakatan dengan Gemini:
+
+```text
+python src/single_annotator.py --annotator jap
+```
+
+Keluaran: `data/annotations/kalibrasi_v1/kalibrasi.csv`,
+`data/annotations/final_v1/` (`gold.csv` 150 ulasan uji, `gold_jap.csv`,
+`provenance.csv`, `report.json`), dan `results/kesepakatan/`.
+
+Rancangan awal dua anotator:
 
 Ikuti [alur anotasi](annotation-workflow.md). Karena kategori menjadi
 delapan, buat workspace baru:
@@ -175,6 +197,15 @@ python src/evaluate.py --gold data/annotations/final_v1/gold.csv --ids-split gol
   hasil sebagai uji asap.
 - B3-Qwen: `python src/llm_label.py --backend ollama --model qwen3.5:4b --set split`
   setelah Ollama terpasang.
+
+Analisis keluhan per aspek, per versi, dan konsistensi rating (RQ3):
+
+```text
+python src/version_analysis.py
+```
+
+Hasil 11 November 2026 (150 ulasan uji): B3-Gemini 0,842, B1-LR 0,727,
+B1-SVM 0,705, B1-NB 0,621 F1 pasangan.
 
 ## Pratinjau sebelum verifikasi selesai
 

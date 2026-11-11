@@ -1,0 +1,303 @@
+{
+  "anotator": "jap",
+  "catatan": "Satu anotator: tidak ada kappa antar-manusia dan tidak ada adjudikasi. gold.csv berisi 150 ulasan uji milik anotator ini; 150 ulasan uji lain tidak berlabel manusia.",
+  "jumlah": {
+    "kalibrasi": 50,
+    "gold_total": 275,
+    "gold_per_split": {
+      "gold_train": 100,
+      "gold_val": 25,
+      "gold_test": 150
+    },
+    "gold_csv_uji": 150,
+    "verifikasi": 125
+  },
+  "sha256": {
+    "kalibrasi": "ada889d3cbc49d0af261dd9c478c9f44620bde8464692e1ee3197bf4b6f669ad",
+    "gold": "c792732c73407fca7813be27fe011d4178a6f1a20c5f11bb457149e1b7b987c1",
+    "llm": "d05eedb5223c9be00ef5576973e1e9b54ad4e3f4423c3573f53b6caf4596bc5b",
+    "verified": "f934e866b8f6c834405d817464cfa190785ac220b06b23ab7ef77385ce20e1f6"
+  },
+  "source_sha256": {
+    "reviews_clean": "98c187400bc1e415ef9882c11286cfc2c4650e289d73db0a5dc83b14852fa0cb",
+    "split": "67036c5db3ceb2188e4c06c76df4eb1b48199aaa3802c1f323dc14e1b04254ea"
+  },
+  "distribusi": {
+    "kalibrasi": {
+      "akun_login": {
+        "tidak_disebut": 32,
+        "positif": 0,
+        "negatif": 18,
+        "netral": 0
+      },
+      "registrasi_data": {
+        "tidak_disebut": 37,
+        "positif": 0,
+        "negatif": 12,
+        "netral": 1
+      },
+      "fitur_kesehatan": {
+        "tidak_disebut": 43,
+        "positif": 0,
+        "negatif": 7,
+        "netral": 0
+      },
+      "performa": {
+        "tidak_disebut": 36,
+        "positif": 1,
+        "negatif": 13,
+        "netral": 0
+      },
+      "kemudahan_penggunaan": {
+        "tidak_disebut": 47,
+        "positif": 1,
+        "negatif": 2,
+        "netral": 0
+      },
+      "pembaruan_aplikasi": {
+        "tidak_disebut": 30,
+        "positif": 0,
+        "negatif": 20,
+        "netral": 0
+      },
+      "layanan_pelanggan": {
+        "tidak_disebut": 48,
+        "positif": 0,
+        "negatif": 2,
+        "netral": 0
+      },
+      "umum": {
+        "tidak_disebut": 43,
+        "positif": 1,
+        "negatif": 6,
+        "netral": 0
+      }
+    },
+    "gold_uji": {
+      "akun_login": {
+        "tidak_disebut": 104,
+        "positif": 1,
+        "negatif": 44,
+        "netral": 1
+      },
+      "registrasi_data": {
+        "tidak_disebut": 124,
+        "positif": 0,
+        "negatif": 25,
+        "netral": 1
+      },
+      "fitur_kesehatan": {
+        "tidak_disebut": 123,
+        "positif": 6,
+        "negatif": 20,
+        "netral": 1
+      },
+      "performa": {
+        "tidak_disebut": 103,
+        "positif": 0,
+        "negatif": 47,
+        "netral": 0
+      },
+      "kemudahan_penggunaan": {
+        "tidak_disebut": 139,
+        "positif": 3,
+        "negatif": 7,
+        "netral": 1
+      },
+      "pembaruan_aplikasi": {
+        "tidak_disebut": 107,
+        "positif": 1,
+        "negatif": 42,
+        "netral": 0
+      },
+      "layanan_pelanggan": {
+        "tidak_disebut": 146,
+        "positif": 1,
+        "negatif": 2,
+        "netral": 1
+      },
+      "umum": {
+        "tidak_disebut": 138,
+        "positif": 3,
+        "negatif": 9,
+        "netral": 0
+      }
+    }
+  },
+  "kesepakatan": {
+    "uji_manual_vs_gemini": {
+      "n_ulasan": 150,
+      "agreement_sel": 0.9458333333333333,
+      "ulasan_persis_sama": 0.6733333333333333,
+      "kappa_rata2_aspek": 0.7767376059957198,
+      "beda_terbanyak": {
+        "performa: negatif -> tidak_disebut": 6,
+        "registrasi_data: tidak_disebut -> negatif": 5,
+        "kemudahan_penggunaan: tidak_disebut -> negatif": 5,
+        "fitur_kesehatan: tidak_disebut -> negatif": 5,
+        "akun_login: tidak_disebut -> negatif": 4,
+        "registrasi_data: negatif -> tidak_disebut": 4,
+        "pembaruan_aplikasi: tidak_disebut -> negatif": 3,
+        "performa: tidak_disebut -> negatif": 3,
+        "umum: tidak_disebut -> positif": 3,
+        "layanan_pelanggan: tidak_disebut -> negatif": 2
+      },
+      "per_aspek": {
+        "akun_login": {
+          "n": 150,
+          "agreement": 0.9533333333333334,
+          "kappa": 0.8926380368098159,
+          "kappa_deteksi": 0.9070631970260223,
+          "disebut_kiri": 46,
+          "disebut_kanan": 48
+        },
+        "registrasi_data": {
+          "n": 150,
+          "agreement": 0.9333333333333333,
+          "kappa": 0.7768189257550959,
+          "kappa_deteksi": 0.7742323901264299,
+          "disebut_kiri": 26,
+          "disebut_kanan": 28
+        },
+        "fitur_kesehatan": {
+          "n": 150,
+          "agreement": 0.9333333333333333,
+          "kappa": 0.7996527314010953,
+          "kappa_deteksi": 0.81044650379107,
+          "disebut_kiri": 27,
+          "disebut_kanan": 32
+        },
+        "performa": {
+          "n": 150,
+          "agreement": 0.9333333333333333,
+          "kappa": 0.8440262035977956,
+          "kappa_deteksi": 0.8432601880877743,
+          "disebut_kiri": 47,
+          "disebut_kanan": 45
+        },
+        "kemudahan_penggunaan": {
+          "n": 150,
+          "agreement": 0.9266666666666666,
+          "kappa": 0.4910549043800123,
+          "kappa_deteksi": 0.4821092278719397,
+          "disebut_kiri": 11,
+          "disebut_kanan": 12
+        },
+        "pembaruan_aplikasi": {
+          "n": 150,
+          "agreement": 0.9466666666666667,
+          "kappa": 0.8747651847213526,
+          "kappa_deteksi": 0.9356913183279743,
+          "disebut_kiri": 43,
+          "disebut_kanan": 45
+        },
+        "layanan_pelanggan": {
+          "n": 150,
+          "agreement": 0.9866666666666667,
+          "kappa": 0.7953615279672579,
+          "kappa_deteksi": 0.7933884297520661,
+          "disebut_kiri": 4,
+          "disebut_kanan": 6
+        },
+        "umum": {
+          "n": 150,
+          "agreement": 0.9533333333333334,
+          "kappa": 0.7395833333333334,
+          "kappa_deteksi": 0.7336377473363774,
+          "disebut_kiri": 12,
+          "disebut_kanan": 17
+        }
+      }
+    },
+    "latih_validasi_verifikasi_vs_gemini": {
+      "n_ulasan": 125,
+      "agreement_sel": 0.975,
+      "ulasan_persis_sama": 0.84,
+      "kappa_rata2_aspek": 0.8496534981403084,
+      "beda_terbanyak": {
+        "pembaruan_aplikasi: negatif -> netral": 3,
+        "performa: negatif -> tidak_disebut": 3,
+        "umum: tidak_disebut -> negatif": 2,
+        "pembaruan_aplikasi: negatif -> positif": 2,
+        "performa: tidak_disebut -> negatif": 2,
+        "kemudahan_penggunaan: negatif -> tidak_disebut": 1,
+        "pembaruan_aplikasi: tidak_disebut -> positif": 1,
+        "umum: positif -> tidak_disebut": 1,
+        "layanan_pelanggan: tidak_disebut -> netral": 1,
+        "akun_login: tidak_disebut -> negatif": 1
+      },
+      "per_aspek": {
+        "akun_login": {
+          "n": 125,
+          "agreement": 0.984,
+          "kappa": 0.96299585553582,
+          "kappa_deteksi": 0.9621899576527526,
+          "disebut_kiri": 38,
+          "disebut_kanan": 38
+        },
+        "registrasi_data": {
+          "n": 125,
+          "agreement": 0.992,
+          "kappa": 0.9765961430443737,
+          "kappa_deteksi": 0.9760582263934112,
+          "disebut_kiri": 26,
+          "disebut_kanan": 27
+        },
+        "fitur_kesehatan": {
+          "n": 125,
+          "agreement": 1.0,
+          "kappa": 1.0,
+          "kappa_deteksi": 1.0,
+          "disebut_kiri": 40,
+          "disebut_kanan": 40
+        },
+        "performa": {
+          "n": 125,
+          "agreement": 0.952,
+          "kappa": 0.8771498771498771,
+          "kappa_deteksi": 0.8764822134387352,
+          "disebut_kiri": 33,
+          "disebut_kanan": 33
+        },
+        "kemudahan_penggunaan": {
+          "n": 125,
+          "agreement": 0.992,
+          "kappa": 0.9369005552751136,
+          "kappa_deteksi": 0.9369005552751136,
+          "disebut_kiri": 9,
+          "disebut_kanan": 8
+        },
+        "pembaruan_aplikasi": {
+          "n": 125,
+          "agreement": 0.936,
+          "kappa": 0.8694687377626942,
+          "kappa_deteksi": 0.9481686247408431,
+          "disebut_kiri": 45,
+          "disebut_kanan": 46
+        },
+        "layanan_pelanggan": {
+          "n": 125,
+          "agreement": 0.984,
+          "kappa": 0.7438524590163934,
+          "kappa_deteksi": 0.7422680412371134,
+          "disebut_kiri": 3,
+          "disebut_kanan": 5
+        },
+        "umum": {
+          "n": 125,
+          "agreement": 0.96,
+          "kappa": 0.43026435733819507,
+          "kappa_deteksi": 0.423963133640553,
+          "disebut_kiri": 4,
+          "disebut_kanan": 5
+        }
+      }
+    }
+  },
+  "lembar_gold_latih_validasi": {
+    "n_ulasan": 125,
+    "identik_dengan_verifikasi": true,
+    "agreement_sel": 1.0,
+    "catatan": "Baris latih/validasi pada lembar gold dibandingkan dengan hasil verifikasi anotator yang sama. Jika identik, bukan ukuran konsistensi independen."
+  }
+}

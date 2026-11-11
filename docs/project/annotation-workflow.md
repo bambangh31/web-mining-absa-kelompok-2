@@ -5,6 +5,16 @@ Disiapkan 3 November 2026 untuk week 11-12. Mengikuti
 [panduan aspek](../../data/annotations/README.md). Ini perangkat kerja,
 bukan klaim bahwa kalibrasi atau anotasi manusia sudah dilakukan.
 
+## Perubahan 11 November 2026: satu anotator
+
+Kalibrasi, gold, dan verifikasi hanya dikerjakan Jap. Lembar anggota lain
+dihapus. Yang dipakai: 50 kalibrasi, 150 ulasan uji (label tanpa LLM), dan
+125 ulasan latih/validasi terverifikasi. `annotation.py audit/finalize`
+tetap memerlukan empat lembar; untuk satu anotator gunakan
+`python src/single_annotator.py --annotator jap`, yang memeriksa ID dan hash
+teks yang sama. Kappa antar-manusia diganti kesepakatan dengan Gemini
+(`results/kesepakatan/`). Rincian ada di [pipeline](pipeline.md).
+
 ## Perubahan 6 November 2026
 
 Mengikuti masukan dosen, label latih dan validasi tidak lagi dibuat manual
