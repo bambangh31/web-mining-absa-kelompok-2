@@ -34,7 +34,8 @@ curl -L -o data/external/colloquial-indonesian-lexicon.csv https://raw.githubuse
 python -m unittest discover -s tests -v
 ```
 
-Keluaran yang diharapkan: `Ran 30 tests … OK`. Tes memakai data buatan dan
+Keluaran revisi week 13: `Ran 34 tests … OK` (satu tes BiLSTM dilewati jika
+PyTorch belum terpasang). Tes memakai data buatan dan
 memeriksa preprocessing, alat anotasi, skema delapan aspek, agregasi
 penyebutan, baca/tulis Excel (header tanpa garis bawah, komentar tidak
 berubah), pelabelan LLM dengan respons tiruan (retry dan lanjut dari
@@ -167,7 +168,20 @@ anotasi. Hasil akhir: `data/annotations/final_v1/gold.csv`.
 
 ## 7. Model dan evaluasi
 
-Setelah `verified.csv` dan `gold.csv` tersedia:
+Untuk empat model yang sudah tersedia sampai laporan pertama week 13:
+
+```text
+python src/evaluate.py --gold data/annotations/final_v1/gold.csv --ids-split gold_test --out results/metrics/uji --pred B1-LR=results/predictions/B1-LR_42.csv --pred B1-SVM=results/predictions/B1-SVM_42.csv --pred B1-NB=results/predictions/B1-NB_42.csv --pred B3-Gemini=data/annotations/llm_gemini-3.5-flash-lite.csv
+```
+
+Keluaran mencakup `confusion_matrix/gabungan.png` (empat model),
+`model_01.png` sampai `model_04.png` (delapan aspek per model), dan
+`matriks.csv`. Baris = acuan manual, kolom = prediksi, dengan urutan label
+`tidak_disebut`, `positif`, `negatif`, `netral`. Matriks gabungan memuat
+150 × 8 keputusan; setiap matriks aspek memuat 150 keputusan.
+
+Perintah di bawah merupakan rencana perluasan setelah semua model berikut
+selesai dilatih; berkas B4, B2, dan B2-L belum tersedia pada laporan week 13:
 
 ```text
 python src/models_classic.py --labels data/annotations/verified.csv --predict-split gold_test

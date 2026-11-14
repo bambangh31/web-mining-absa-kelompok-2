@@ -1,0 +1,47 @@
+{
+  "tanggal": "2026-11-14",
+  "commit_sumber": "2d72bafec050a6db5049ebc106f82f1a28396664",
+  "dasar_sha256": "Byte berkas tersimpan di Git; gunakan git show HEAD:path untuk memeriksa, bukan byte checkout CRLF Windows.",
+  "n_ulasan_uji": 150,
+  "n_aspek": 8,
+  "n_keputusan_per_model": 1200,
+  "urutan_label": [
+    "tidak_disebut",
+    "positif",
+    "negatif",
+    "netral"
+  ],
+  "jumlah_label_acuan_gabungan": [
+    984,
+    15,
+    196,
+    5
+  ],
+  "prediksi": {
+    "B1-LR": "results/predictions/B1-LR_42.csv",
+    "B1-SVM": "results/predictions/B1-SVM_42.csv",
+    "B1-NB": "results/predictions/B1-NB_42.csv",
+    "B3-Gemini": "data/annotations/llm_gemini-3.5-flash-lite.csv"
+  },
+  "sha256_sumber": {
+    "data/annotations/final_v1/gold.csv": "8dcea7e41a58d3ac79baa019a5b17c25b173e3094bd0bc9d29a6d3e6a017bade",
+    "data/annotations/split.csv": "67036c5db3ceb2188e4c06c76df4eb1b48199aaa3802c1f323dc14e1b04254ea",
+    "results/predictions/B1-LR_42.csv": "6b85570bc4a82b234c7534a211a77ee37e34283090c3d594c86a629c40e2a3b8",
+    "results/predictions/B1-SVM_42.csv": "68de61bdc0559106a89062abc59bd58eb20afea56a587a5e05c1ef7f37f5d701",
+    "results/predictions/B1-NB_42.csv": "0974465a78909928c744857a5c2e35e6c19d53a6f3e7e9cbd93f8ca5c7e136e1",
+    "data/annotations/llm_gemini-3.5-flash-lite.csv": "7a72c7107772e720a67dd78003da54073b06d15c1cdec7d173da678951511ae9"
+  },
+  "sha256_hasil": {
+    "results/metrics/uji/metrik.json": "0086c1444caab21ba6ade2a8d1d7804873f8d2796bd71a7035bd1fbb169ba9e0",
+    "results/metrics/uji/confusion_matrix/matriks.csv": "ea77f53bef615bf17b6d85a5d4a7830a0838e5686bc5dca10a34cf966c03f6bf",
+    "docs/laporan/Week_13_Laporan_Pertama_ABSA_SATUSEHAT.docx": "cf2b605c9525e63058719ca2b05ea2075453a7f808041caf194fe1bcaaf16248",
+    "docs/laporan/Week_13_Laporan_Pertama_ABSA_SATUSEHAT.pdf": "e336397b28046a2e91389b6a4f9bc14b605ea9cee9ebd7e052c6662a40a5fead"
+  },
+  "pemeriksaan": {
+    "penghitungan_ulang_sama_dengan_json": true,
+    "metrik_lama_dan_bootstrap_tidak_berubah": true,
+    "csv_512_sel_matriks_sesuai": true,
+    "skor_dan_judul_laporan_sesuai": true
+  },
+  "batas": "Satu anotator, tanpa adjudikasi; tidak ada pelatihan atau label baru. Belum menyatakan pengumpulan ke dosen."
+}

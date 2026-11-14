@@ -29,7 +29,67 @@ from pathlib import Path
 if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from src.absa_schema import ASPECT_TITLES, ASPECTS, NONE, POLAR  # noqa: E402
+from src.absa_schema import ASPECT_TITLES, ASPECTS, LABELS, NONE, POLAR  # noqa: E402
+
+
+def confusion_matrix(gold, pred):
+    """Baris = acuan, kolom = prediksi, urutan LABELS tetap (empat label)."""
+    if len(gold) != len(pred):
+        raise ValueError("Jumlah label acuan dan prediksi harus sama")
+    matrix = [[0 for _ in LABELS] for _ in LABELS]
+    for actual, predicted in zip(gold, pred):
+        matrix[LABELS.index(actual)][LABELS.index(predicted)] += 1
+    return matrix
+
+
+def write_confusion_matrices(out_dir, results):
+    """CSV seluruh matriks dan satu gambar delapan panel per model."""
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+
+    out_dir = Path(out_dir) / "confusion_matrix"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    labels = [label.replace("_", " ") for label in LABELS]
+    with (out_dir / "matriks.csv").open("w", encoding="utf-8-sig", newline="") as stream:
+        writer = csv.writer(stream)
+        writer.writerow(["Model", "Aspek", "Acuan", "Prediksi", "Jumlah"])
+        for number, (model, result) in enumerate(results.items(), 1):
+            fig, axes = plt.subplots(2, 4, figsize=(15, 8), layout="constrained")
+            for axis, aspect in zip(axes.flat, ASPECTS):
+                matrix = result["per_aspek"][aspect]["confusion_matrix"]
+                for i, actual in enumerate(LABELS):
+                    for j, predicted in enumerate(LABELS):
+                        writer.writerow([model, aspect, actual, predicted, matrix[i][j]])
+                axis.imshow(matrix, cmap="Greys", vmin=0, vmax=result["n_ulasan"])
+                for i in range(len(LABELS)):
+                    for j in range(len(LABELS)):
+                        axis.text(j, i, str(matrix[i][j]), ha="center", va="center",
+                                  color="white" if matrix[i][j] > result["n_ulasan"] / 2 else "black")
+                axis.set_xticks(range(len(LABELS)), labels, rotation=40, ha="right", fontsize=8)
+                axis.set_yticks(range(len(LABELS)), labels, fontsize=8)
+                axis.set_title(ASPECT_TITLES[aspect], fontsize=11)
+                axis.set_xlabel("Prediksi")
+                axis.set_ylabel("Acuan manual")
+            fig.suptitle(f"{model} | {result['n_ulasan']} ulasan uji | jumlah absolut", fontsize=14)
+            fig.savefig(out_dir / f"model_{number:02}.png", dpi=180)
+            plt.close(fig)
+    fig, axes = plt.subplots(2, 2, figsize=(9, 9), layout="constrained", squeeze=False)
+    if len(results) == 4:
+        for axis, (model, result) in zip(axes.flat, results.items()):
+            matrix = result["confusion_matrix_gabungan"]
+            axis.imshow(matrix, cmap="Greys", vmin=0, vmax=result["n_ulasan"] * len(ASPECTS))
+            for i in range(len(LABELS)):
+                for j in range(len(LABELS)):
+                    axis.text(j, i, str(matrix[i][j]), ha="center", va="center",
+                              color="white" if matrix[i][j] > result["n_ulasan"] * len(ASPECTS) / 2 else "black")
+            axis.set_xticks(range(len(LABELS)), labels, rotation=30, ha="right", fontsize=10)
+            axis.set_yticks(range(len(LABELS)), labels, fontsize=10)
+            axis.set_title(model)
+            axis.set_xlabel("Prediksi")
+            axis.set_ylabel("Acuan manual")
+        fig.savefig(out_dir / "gabungan.png", dpi=200)
+    plt.close(fig)
 
 
 def prf(tp, n_pred, n_gold):
@@ -75,6 +135,8 @@ def pair_f1(gold, pred, ids, aspects=ASPECTS):
 def evaluate(gold, pred, ids=None):
     """Semua metrik untuk satu model. `gold`/`pred`: {reviewId: {aspek: label}}."""
     ids = sorted(ids if ids is not None else gold)
+    if not ids:
+        raise ValueError("Set evaluasi tidak boleh kosong")
     missing = [rid for rid in ids if rid not in pred]
     if missing:
         raise ValueError(f"Prediksi tidak lengkap: {len(missing)} ulasan tidak ada")
@@ -94,6 +156,7 @@ def evaluate(gold, pred, ids=None):
         sent = macro_f1([x for x, _ in mentioned], [y for _, y in mentioned], classes) if mentioned else None
         sp, sr, sf = prf(*pair_counts(gold, pred, ids, (a,)))
         per_aspect[a] = {
+            "confusion_matrix": confusion_matrix(g, q),
             "n_gold_disebut": sum(x != NONE for x in g),
             "n_pred_disebut": sum(y != NONE for y in q),
             "f1_pasangan": sf, "presisi_pasangan": sp, "recall_pasangan": sr,
@@ -109,6 +172,11 @@ def evaluate(gold, pred, ids=None):
     sentiments = [v["macro_f1_sentimen"] for v in per_aspect.values() if v["macro_f1_sentimen"] is not None]
     return {
         "n_ulasan": len(ids),
+        "confusion_matrix_labels": list(LABELS),
+        "confusion_matrix_gabungan": [
+            [sum(v["confusion_matrix"][i][j] for v in per_aspect.values()) for j in range(len(LABELS))]
+            for i in range(len(LABELS))
+        ],
         "f1_pasangan": f, "presisi_pasangan": p, "recall_pasangan": r,
         "f1_deteksi_micro": det_micro,
         "f1_deteksi_macro": sum(defined) / len(defined) if defined else None,
@@ -235,6 +303,7 @@ def main():
         preds[name] = load_labels(path)
     results = {name: evaluate(gold, pred, ids) for name, pred in preds.items()}
     write_tables(args.out, results)
+    write_confusion_matrices(args.out, results)
     report = {"gold": str(args.gold), "n_ulasan": len(ids), "hasil": results}
     if len(preds) > 1 and args.bootstrap:
         report["bootstrap"] = paired_bootstrap(gold, preds, ids, args.bootstrap)
