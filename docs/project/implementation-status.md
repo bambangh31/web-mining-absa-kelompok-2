@@ -77,16 +77,34 @@ Lembar anggota lain dihapus; rancangan disesuaikan, bukan diisi otomatis.
 | Analisis versi | Keluhan per aspek (275 ulasan diperiksa manusia) dan per versi dengan B1-LR (`results/analisis_versi/`, `results/figures/keluhan_per_versi.png`) | Per versi bersifat indikatif |
 | Laporan | `docs/laporan/Laporan ABSA SATUSEHAT.docx` bagian 10.7-10.12 | Perbarui daftar isi di Word (klik kanan, Update Field) |
 
-## Menunggu pengerjaan
+## Laporan pertama week 13 (14 November 2026)
 
-- Konfirmasi topik dan format BOD dari dosen.
-- Kode preprocessing dan pembagian data, kalibrasi anotasi, serta label gold.
-- Label Gemini untuk 500 ulasan latih/validasi (lanjut setelah kuota harian pulih; 300 uji sudah selesai), verifikasi anggota, label uji dua anotator.
-- Pelatihan IndoBERT base/large di Colab, unduh fastText untuk B4, Ollama untuk B3-Qwen.
-- Eksperimen aktual, hasil per aspek bila relevan, serta analisis kesalahan.
-- Laporan pertama, artikel, slide, dan ketentuan tenggat pengumpulan dari dosen.
+Status terbaru ini menggantikan daftar pekerjaan awal yang belum tersedia
+pada 3 November. Hasil sebelumnya tetap dicatat pada bagian bertanggal di atas.
 
-Belum ada klaim bahwa pengumpulan data, eksperimen, atau laporan selesai.
+| Tahap | Bukti yang tersedia | Batas |
+|---|---|---|
+| Week 10 | Dataset 39.995 ulasan, contoh dan karakteristik data, BOD, rancangan algoritma; bab 1-5 | Penggunaan data dan BOD dijelaskan dalam lingkup proyek |
+| Week 11-12 | Preprocessing dan split; label manual/LLM; verifikasi; kode dan prediksi LR, SVM, NB, Gemini | 150 ulasan uji dilabeli satu anotator; 375 label latih/validasi belum diverifikasi |
+| Evaluasi | F1 pasangan LR 0,727, SVM 0,705, NB 0,621, Gemini 0,842; per aspek, bootstrap, dan analisis versi | Skor dihitung ulang dari prediksi yang sudah ada; tanpa pelatihan baru |
+| Revisi dosen | Confusion matrix empat label gabungan dan delapan aspek per model; tabel kesalahan dan perbandingan empat model | Matriks gabungan berisi 1.200 keputusan aspek dari 150 ulasan, bukan 1.200 ulasan |
+| Week 13 | [Laporan pertama DOCX](../laporan/Week_13_Laporan_Pertama_ABSA_SATUSEHAT.docx) dan [PDF](../laporan/Week_13_Laporan_Pertama_ABSA_SATUSEHAT.pdf), 45 halaman; daftar isi diperbarui dan tata letak diperiksa | Dokumen siap untuk review kelompok dan pengumpulan; tidak ada bukti pengumpulan ke dosen |
+| Pengujian revisi | 34 tes: 33 lulus, 1 tes BiLSTM dilewati karena PyTorch tidak terpasang; sintaks dan konsistensi matriks diperiksa | Pemeriksaan lokal memakai Python 3.12; CI memakai Python 3.14 |
+
+Cara menghitung ulang dan definisi confusion matrix ada di
+[hasil evaluasi](../../results/metrics/README.md). Nilai mentah berada di
+`results/metrics/uji/metrik.json` dan `confusion_matrix/matriks.csv`.
+
+## Tahap berikutnya
+
+- Review kelompok dan penyerahan laporan pertama ke dosen melalui kanal kelas.
+- Week 14: percobaan tambahan jika diminta dosen. IndoBERT, BiLSTM, dan Qwen
+  masih berupa kandidat eksperimen lanjutan, bukan hasil yang sudah tersedia.
+- Week 15: artikel bahasa Indonesia berdasarkan hasil aktual dan template dosen.
+- Week 16: slide dan latihan presentasi.
+
+Ketentuan tugas tidak mencantumkan batas tanggal dan waktu pengumpulan.
+Tanggal kelas pada timeline merupakan acuan kerja, bukan tenggat resmi.
 
 ## Format pembaruan status
 

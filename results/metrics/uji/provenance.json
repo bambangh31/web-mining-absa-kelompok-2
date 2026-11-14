@@ -1,0 +1,46 @@
+{
+  "tanggal": "2026-11-14",
+  "commit_sumber": "2d72bafec050a6db5049ebc106f82f1a28396664",
+  "n_ulasan_uji": 150,
+  "n_aspek": 8,
+  "n_keputusan_per_model": 1200,
+  "urutan_label": [
+    "tidak_disebut",
+    "positif",
+    "negatif",
+    "netral"
+  ],
+  "jumlah_label_acuan_gabungan": [
+    984,
+    15,
+    196,
+    5
+  ],
+  "prediksi": {
+    "B1-LR": "results/predictions/B1-LR_42.csv",
+    "B1-SVM": "results/predictions/B1-SVM_42.csv",
+    "B1-NB": "results/predictions/B1-NB_42.csv",
+    "B3-Gemini": "data/annotations/llm_gemini-3.5-flash-lite.csv"
+  },
+  "sha256_sumber": {
+    "data/annotations/final_v1/gold.csv": "92cbbf779ccd5eae08da35b38db4e56270b902f3cb4d91638f909784168d5503",
+    "data/annotations/split.csv": "67036c5db3ceb2188e4c06c76df4eb1b48199aaa3802c1f323dc14e1b04254ea",
+    "results/predictions/B1-LR_42.csv": "bb86c7cc262bd0271ded0b0411eb7eb65bbfecc9ae54844af7a53af300343528",
+    "results/predictions/B1-SVM_42.csv": "0b8d6d8c39eb1135772f17c5750d34ea1dd738e571c299afe3a01e1bb11c4a8b",
+    "results/predictions/B1-NB_42.csv": "87a94c55312687d6e6ec8a688c1f98dcb386b0904d96971581cf9bb8e2d55b97",
+    "data/annotations/llm_gemini-3.5-flash-lite.csv": "d05eedb5223c9be00ef5576973e1e9b54ad4e3f4423c3573f53b6caf4596bc5b"
+  },
+  "sha256_hasil": {
+    "results/metrics/uji/metrik.json": "1113043c0f77f19d2e472eac294e0e7496e400fb193d0032e6a99f0bf023f438",
+    "results/metrics/uji/confusion_matrix/matriks.csv": "a1e7e8aea37ebbd5f8fecd88ae3af0a39b31daa007a161d8910de62572b9ad3b",
+    "docs/laporan/Week_13_Laporan_Pertama_ABSA_SATUSEHAT.docx": "cf2b605c9525e63058719ca2b05ea2075453a7f808041caf194fe1bcaaf16248",
+    "docs/laporan/Week_13_Laporan_Pertama_ABSA_SATUSEHAT.pdf": "e336397b28046a2e91389b6a4f9bc14b605ea9cee9ebd7e052c6662a40a5fead"
+  },
+  "pemeriksaan": {
+    "penghitungan_ulang_sama_dengan_json": true,
+    "metrik_lama_dan_bootstrap_tidak_berubah": true,
+    "csv_512_sel_matriks_sesuai": true,
+    "skor_dan_judul_laporan_sesuai": true
+  },
+  "batas": "Satu anotator, tanpa adjudikasi; tidak ada pelatihan atau label baru. Belum menyatakan pengumpulan ke dosen."
+}

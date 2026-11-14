@@ -120,11 +120,22 @@ Perangkat kalibrasi dan anotasi manusia sudah tersedia di
 dibagikan Efraim. Alat ini membuat lembar kosong dan memeriksa label, bukan
 memprediksi atau mengklaim label gold sudah tersedia.
 
-## Laporan PDF
+## Laporan pertama week 13
 
-- [Week 10-11: laporan lengkap (.docx)](docs/laporan/Laporan_Week_10-11_ABSA_SATUSEHAT.docx);
-  [versi PDF ringkas awal](docs/laporan/Week_10_Dataset_BOD_Algoritma_ABSA.pdf).
-- [Week 11: progres coding, preprocessing, dan anotasi](docs/laporan/Week_11_Coding_Preprocessing_Anotasi_ABSA.pdf).
+- [Laporan pertama week 13 (.docx)](docs/laporan/Week_13_Laporan_Pertama_ABSA_SATUSEHAT.docx)
+  dan [PDF untuk pengumpulan](docs/laporan/Week_13_Laporan_Pertama_ABSA_SATUSEHAT.pdf).
+  Satu laporan merangkum pekerjaan week 10-12: dataset, karakteristik data,
+  BOD, algoritma, preprocessing, pemodelan, dan evaluasi.
+- Revisi dosen: hasil LR, SVM, Naive Bayes, dan Gemini diperjelas pada
+  bagian 10.9.1; confusion matrix dan pembahasannya pada bagian 10.9.2.
+  [Hasil evaluasi](results/metrics/README.md) memuat skor pada 150 ulasan uji,
+  matriks delapan aspek per model, dan CSV sumber gambar.
+- [Status sampai week 13](docs/project/implementation-status.md#laporan-pertama-week-13-14-november-2026)
+  menjelaskan hasil yang tersedia dan batasnya. Hasil berasal dari satu
+  anotator; model neural dan Qwen belum dievaluasi. Pengumpulan ke dosen
+  tidak ditandai selesai.
+- Berkas week 10-11 dan laporan gabungan lama dipertahankan sebagai arsip;
+  lihat [daftar laporan](docs/laporan/README.md).
 
 ## CI dan Dependabot
 
