@@ -30,6 +30,10 @@ menyimpan urutan label, matriks gabungan dan per aspek, serta metrik sebelumnya.
 Macro-F1 sentimen dihitung pada aspek yang disebut di acuan, sesuai definisi
 di `src/evaluate.py`; sel `tidak_disebut` tidak menjadi kelas sentimen.
 
+`uji/provenance.json` mencatat SHA-256 sumber dan hasil. Hash mengacu pada
+byte berkas yang tersimpan di Git (`git show HEAD:path`), sehingga perubahan
+newline pada checkout Windows tidak mengubah acuan pemeriksaan.
+
 Jalankan dari akar repository (PowerShell atau terminal lain), setelah
 memasang `requirements.txt`:
 
