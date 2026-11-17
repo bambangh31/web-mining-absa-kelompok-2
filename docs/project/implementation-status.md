@@ -95,10 +95,26 @@ Cara menghitung ulang dan definisi confusion matrix ada di
 [hasil evaluasi](../../results/metrics/README.md). Nilai mentah berada di
 `results/metrics/uji/metrik.json` dan `confusion_matrix/matriks.csv`.
 
+## Hasil IndoBERT base diterima (17 November 2026)
+
+- Pelatihan base selesai di Colab Tesla T4 untuk seed 42, 43, dan 44:
+  F1 pasangan uji 0,774194; 0,763636; dan 0,788546. Rata-rata ± SD:
+  **0,775459 ± 0,012503** pada 150 ulasan manual yang sama.
+- Input 400 latih, 100 validasi, 150 uji; hash empat sumber cocok dengan
+  commit `f8f8f2b`. Prediksi dan seluruh skor tujuh run diverifikasi ulang.
+  [Bukti dan ringkasan](../../results/indobert/README.md) membedakan hasil
+  setiap seed, rata-rata, dan pemilihan matriks seed 44 berdasarkan validasi.
+- Kini ada hasil lima jenis model. Gemini tetap tertinggi secara F1 pasangan;
+  IndoBERT base tertinggi di antara model terlatih. Tidak menyatakan
+  signifikansi perbandingan rata-rata tiga seed tanpa pengujian khusus.
+- Laporan week 12 dan 13 diperbarui berikut tabel keseluruhan/per aspek,
+  matriks lima model, dan batas eksperimen. IndoBERT large, BiLSTM, dan Qwen
+  tetap belum dievaluasi; label uji masih berasal dari satu anotator.
+
 ## Tahap berikutnya
 
 - Review kelompok dan penyerahan laporan pertama ke dosen melalui kanal kelas.
-- Week 14: percobaan tambahan jika diminta dosen. IndoBERT, BiLSTM, dan Qwen
+- Week 14: percobaan tambahan jika diminta dosen. IndoBERT large, BiLSTM, dan Qwen
   masih berupa kandidat eksperimen lanjutan, bukan hasil yang sudah tersedia.
 - Week 15: artikel bahasa Indonesia berdasarkan hasil aktual dan template dosen.
 - Week 16: slide dan latihan presentasi.
