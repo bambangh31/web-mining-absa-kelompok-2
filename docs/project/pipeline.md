@@ -185,7 +185,7 @@ selesai dilatih; berkas B4, B2, dan B2-L belum tersedia pada laporan week 13:
 
 ```text
 python src/models_classic.py --labels data/annotations/verified.csv --predict-split gold_test
-python src/model_bilstm.py   --labels data/annotations/verified.csv --predict-split gold_test
+python src/model_bilstm.py   --labels data/annotations/verified.csv --predict-from data/annotations/final_v1/gold.csv --device cuda
 python src/model_indobert.py --variant base  --labels data/annotations/verified.csv --predict-split gold_test
 python src/model_indobert.py --variant large --labels data/annotations/verified.csv --predict-split gold_test
 python src/evaluate.py --gold data/annotations/final_v1/gold.csv --ids-split gold_test --out results/metrics/uji ^
@@ -206,9 +206,13 @@ python src/evaluate.py --gold data/annotations/final_v1/gold.csv --ids-split gol
   jalankan di Google Colab (T4) seperti B2-L. Uji 10 November 2026: model
   `indobenchmark/indobert-base-p1` berhasil diunduh dan dimuat dengan kepala
   empat label, lalu proses berhenti karena RAM laptop habis.
-- B4 butuh `data/external/cc.id.300.vec` (unduh dari fastText, sekitar
-  1,2 GB terkompresi). Tanpa file itu skrip tetap jalan tetapi menandai
-  hasil sebagai uji asap.
+- B4 butuh `data/external/cc.id.300.vec` (unduh dari fastText). CLI berhenti
+  jika file tidak ada; `--allow-no-vectors` hanya untuk uji asap.
+  [Notebook Colab B4](../../notebooks/05_bilstm_colab.ipynb) mengunduh arsip
+  text fastText Indonesia otomatis, memeriksa gzip/dimensi/jumlah baris,
+  dan menyimpan subset kata latih. Jalankan tiga seed, lalu simpan
+  `hasil_bilstm_lengkap.zip`. Kosakata dipelajari hanya dari data latih.
+  Perangkat GPU dipilih dengan `--device cuda`; default CLI adalah CPU.
 - B3-Qwen: `python src/llm_label.py --backend ollama --model qwen3.5:4b --set split`
   setelah Ollama terpasang.
 

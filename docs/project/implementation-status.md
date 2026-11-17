@@ -133,3 +133,17 @@ dan status aktual setelah implementasinya tersedia.
 ## Hasil IndoBERT large diterima (17 November 2026)
 
 Tiga seed 42/43/44 telah selesai pada T4: F1 0,742857; 0,781553; 0,770642. Rata-rata ± SD sampel **0,765018 ± 0,019952**, pada 150 ulasan yang sama. Hash input, ID, label, konfigurasi, dan skor dihitung ulang. Micro-batch 4 × akumulasi 4 = batch efektif 16. [Audit](../../results/indobert_large/README.md) mencatat seed 43 sebagai matriks perwakilan berdasarkan validasi. Kini tersedia enam jenis model; laporan Week 12/13 dan matriks enam model telah diperbarui. Selisih dengan base tidak diklaim signifikan. BiLSTM dan Qwen belum dievaluasi.
+
+## Persiapan BiLSTM Colab (17 November 2026)
+
+- [Notebook 05](../../notebooks/05_bilstm_colab.ipynb) menyiapkan unduhan
+  fastText Indonesia, subset kata latih, pelatihan tiga seed, evaluasi pada
+  150 ID manual yang sama, dan ekspor ZIP kemajuan/akhir.
+- Kosakata B4 diperbaiki menjadi hanya dari latih. CPU/CUDA dipilih secara
+  eksplisit dan dicatat; fastText wajib untuk hasil eksperimen.
+- Sebanyak 41 tes lulus pada Python 3.12.14/PyTorch 2.15.0 CPU. Alur notebook
+  juga diuji menggunakan fixture sintetis 400/100/150: tiga seed satu epoch,
+  pemulihan antar-seed lengkap, simulasi gagal, evaluasi 13 run, dan ZIP.
+- Sel koneksi Colab dan unduhan internet tidak dijalankan dalam uji fixture.
+  Pelatihan GPU dan eksperimen B4 aktual belum dijalankan; laporan tidak
+  ditambah skor sintetis. Qwen tetap belum dievaluasi.
