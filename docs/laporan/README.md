@@ -14,6 +14,17 @@
   ekspor dari DOCX yang sama, 45 halaman, sudah diperiksa tata letaknya.
   Gunakan versi ini untuk penyerahan setelah kelompok meninjau isinya.
 
+## Laporan progres week 12 terpisah
+
+- [Week 12 pemodelan dan evaluasi (.docx)](Week_12_Pemodelan_Evaluasi_ABSA_SATUSEHAT.docx)
+  dan [PDF](Week_12_Pemodelan_Evaluasi_ABSA_SATUSEHAT.pdf): laporan progres
+  9 halaman yang berfokus pada implementasi model, metrik, hasil empat model
+  keseluruhan dan per aspek, confusion matrix, analisis kesalahan, serta
+  keterbatasan. Disusun terpisah pada 17 November 2026 dari hasil yang sama
+  dengan laporan week 13; tanpa pelatihan atau perubahan prediksi.
+- Berkas ini melengkapi arsip progres. Untuk tugas laporan pertama Sesi 13,
+  laporan week 13 tetap menjadi dokumen gabungan acuan.
+
 ## Arsip laporan week 10-12
 
 - [Laporan gabungan week 10-12 (.docx)](<Laporan ABSA SATUSEHAT.docx>): bahan
