@@ -110,3 +110,9 @@ setelah satu batch, ZIP parsial, pemulihan ZIP melalui unggahan, melanjutkan
 148 ID tersisa, melewati 150 hasil lengkap, evaluasi 14 run, dan ZIP akhir.
 Pemasangan binary/unduhan model serta inferensi GPU aktual belum dijalankan.
 **Skor Qwen aktual belum tersedia**; skor fixture tidak masuk laporan.
+
+Perbaikan respons ID: notebook terbaru mewajibkan ID dan jumlah objek sesuai
+batch pada schema Ollama. Untuk notebook lama yang berhenti setelah enam
+ulasan, gunakan [panduan pemulihan](../docs/project/qwen-pemulihan-id.md).
+Patch mempertahankan checkpoint dan konfigurasi lama, serta mencatat perubahan
+format respons. ZIP sumber lama tidak digabung otomatis ke notebook baru.
