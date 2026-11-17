@@ -160,3 +160,20 @@ diperiksa ulang secara lokal. [Audit dan hasil](../../results/bilstm/README.md).
 Laporan Week 12/13 kini memuat tujuh jenis model dan confusion matrix terbaru.
 Prediksi BiLSTM hanya negatif/tidak disebut; hasil rendah tetap dilaporkan
 tanpa mengubah parameter berdasarkan uji. Qwen belum dievaluasi.
+
+## Persiapan Qwen Colab (17 November 2026)
+
+[Notebook 06](../../notebooks/06_qwen_colab.ipynb) menyiapkan inferensi
+qwen3.5:4b melalui Ollama di VM Colab T4, hanya pada 150 ulasan uji manual
+yang sama. Prompt v1 dan agregasi sama dengan Gemini; batch dua ulasan,
+temperature 0, seed 42, thinking diminta nonaktif, konteks 8.192 token.
+Ini satu run inferensi tanpa pelatihan. Versi Ollama, digest model, hash
+input/kode/prompt, respons mentah, serta penggunaan VRAM dicatat.
+
+Checkpoint disimpan setiap batch dan ZIP kemajuan ditawarkan setiap 30
+ulasan. ZIP dapat dipulihkan pada runtime baru jika konfigurasi identik.
+Evaluasi akhir membandingkan 14 run (delapan jenis model jika Qwen selesai).
+Sebanyak 47 tes kode lulus; notebook diuji dengan fixture sintetis dan API
+tiruan sampai ekspor ZIP, termasuk kegagalan/resume/pemulihan ZIP. Pemasangan
+Ollama, unduhan model, dan inferensi GPU aktual belum dieksekusi dalam uji
+lokal. Belum ada skor Qwen aktual; laporan tetap memuat tujuh jenis model.

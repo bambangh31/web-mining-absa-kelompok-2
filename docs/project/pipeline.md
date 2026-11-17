@@ -214,7 +214,10 @@ python src/evaluate.py --gold data/annotations/final_v1/gold.csv --ids-split gol
   `hasil_bilstm_lengkap.zip`. Kosakata dipelajari hanya dari data latih.
   Perangkat GPU dipilih dengan `--device cuda`; default CLI adalah CPU.
 - B3-Qwen: `python src/llm_label.py --backend ollama --model qwen3.5:4b --set split`
-  setelah Ollama terpasang.
+  setelah Ollama terpasang. Perintah umum ini mengikuti seluruh split bawaan.
+  Untuk pembanding final 150 ID manual, gunakan
+  [notebook Colab 06](../../notebooks/06_qwen_colab.ipynb), yang memilih
+  tepat ID pada `final_v1/gold.csv` tanpa memasukkan sentimen uji ke prompt.
 
 Analisis keluhan per aspek, per versi, dan konsistensi rating (RQ3):
 
