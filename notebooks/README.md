@@ -100,10 +100,10 @@ dicatat. Jika GPU tidak tersedia atau model tidak memakai VRAM, alur berhenti.
 
 Simpan **hasil_qwen_lengkap.zip** setelah evaluasi. Checkpoint dan CSV parsial
 disimpan setiap batch; ZIP kemajuan ditawarkan setiap 30 ulasan. Notebook
-kini secara default melanjutkan ZIP (`RESTORE_ZIP = True` pada sel pertama).
-Unggah `hasil_qwen_parsial.zip` ketika diminta. Jika checkpoint sudah tersedia
-di runtime, notebook memakainya langsung. Untuk run baru tanpa ZIP, ubah flag
-tersebut menjadi False. Identitas input, prompt, versi Ollama, serta digest
+kini secara default memakai `RESTORE_ZIP = False` pada sel pertama: run baru
+tanpa unggahan ZIP. Untuk melanjutkan ZIP parsial, ubah menjadi True lalu
+unggah `hasil_qwen_parsial.zip` ketika diminta. Jika checkpoint sudah tersedia
+di runtime, notebook memakainya langsung. Identitas input, prompt, versi Ollama, serta digest
 model harus cocok; bobot model tidak masuk ZIP.
 
 Pemeriksaan: 47 tes kode lulus. Notebook valid menurut nbformat dan sintaks

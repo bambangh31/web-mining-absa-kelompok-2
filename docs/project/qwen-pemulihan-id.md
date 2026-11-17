@@ -3,7 +3,8 @@
 ## Melalui notebook GitHub terbaru
 
 Buka [notebook 06 di Colab](https://colab.research.google.com/github/bambangh31/web-mining-absa-kelompok-2/blob/main/notebooks/06_qwen_colab.ipynb),
-klik Copy to Drive, pilih T4 GPU, lalu Run all. Saat diminta memilih berkas,
+klik Copy to Drive, ubah `RESTORE_ZIP = True` di sel pertama, pilih T4 GPU,
+lalu Run all. Nilai bawaan False memulai run baru tanpa unggahan. Saat diminta memilih berkas,
 unggah `hasil_qwen_parsial.zip`. Notebook otomatis memilih sumber yang cocok
 dan memasang patch ID untuk ZIP lama. Enam ulasan yang sudah selesai tidak
 diprediksi ulang. Tidak perlu menyalin sel perbaikan manual.
