@@ -53,7 +53,7 @@ Python pada CI terpisah dari eksekusi notebook.
 ## Tahap berikutnya
 
 Notebook pengumpulan/eksplorasi dan pelabelan LLM belum dibuat. File Python
-scraping/eksplorasi tetap ada. Notebook 03–05 menangani model neural;
+scraping/eksplorasi tetap ada. Notebook 03–06 menangani model neural dan Qwen;
 status hasil aktual dibedakan dari ketersediaan notebook.
 
 ## IndoBERT large
@@ -81,3 +81,32 @@ Hasil B4 aktual tiga seed telah diterima dari Colab T4 dan
 [diverifikasi](../results/bilstm/README.md): F1 pasangan 0,373 ± 0,016.
 Pengujian sintetis tetap dibedakan dari skor laporan.
 Hasil base/large tidak dijalankan ulang oleh notebook ini.
+
+## Qwen melalui Ollama di Colab
+
+[06_qwen_colab.ipynb](06_qwen_colab.ipynb) memasang Ollama di VM Colab,
+mengunduh `qwen3.5:4b`, lalu memprediksi **150 ID uji manual yang sama**.
+Pilih T4 GPU, **Copy to Drive**, lalu **Run all**. Tidak memerlukan pemasangan
+Ollama di laptop, akun Ollama, atau kunci API. Ini inferensi langsung satu
+run, bukan pelatihan tiga seed.
+
+Prompt v1/contoh buatan tim serta agregasi aspek sama dengan Gemini.
+Batch berisi dua ulasan, temperature 0, seed 42, `think=false`, konteks 8.192,
+dan batas keluaran 4.096 token. Ukuran batch berbeda dari Gemini dan dicatat.
+Label sentimen uji dipakai hanya pada evaluasi akhir, bukan sebagai masukan.
+Versi Ollama 0.40.16 dan SHA-256 arsip rilis dikunci; digest model, versi,
+hash input/kode/prompt, respons, kutipan bermasalah, dan penggunaan VRAM
+dicatat. Jika GPU tidak tersedia atau model tidak memakai VRAM, alur berhenti.
+
+Simpan **hasil_qwen_lengkap.zip** setelah evaluasi. Checkpoint dan CSV parsial
+disimpan setiap batch; ZIP kemajuan ditawarkan setiap 30 ulasan. Jika runtime
+dihapus, ubah `RESTORE_ZIP = True` pada sel data dan unggah ZIP kemajuan.
+Identitas input, prompt, versi Ollama, serta digest model harus cocok agar
+prediksi dari konfigurasi berbeda tidak tercampur. Bobot model tidak masuk ZIP.
+
+Pemeriksaan: 47 tes kode lulus. Notebook valid menurut nbformat dan sintaks
+Python; alur fixture sintetis/API tiruan menguji pemilihan 150 ID, kegagalan
+setelah satu batch, ZIP parsial, pemulihan ZIP melalui unggahan, melanjutkan
+148 ID tersisa, melewati 150 hasil lengkap, evaluasi 14 run, dan ZIP akhir.
+Pemasangan binary/unduhan model serta inferensi GPU aktual belum dijalankan.
+**Skor Qwen aktual belum tersedia**; skor fixture tidak masuk laporan.

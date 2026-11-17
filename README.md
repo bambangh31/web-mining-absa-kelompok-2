@@ -171,3 +171,8 @@ menjalankan tiga seed dengan unduhan fastText otomatis. Pilih GPU T4 lalu
 **Run all**, dan simpan `hasil_bilstm_lengkap.zip`. Hasil B4 tiga seed telah diterima dan [diverifikasi](results/bilstm/README.md):
 F1 pasangan rata-rata **0,373 ± 0,016**. Kini tersedia hasil tujuh jenis model;
 Qwen belum dievaluasi.
+
+Qwen dapat dijalankan melalui [notebook Colab 06](notebooks/06_qwen_colab.ipynb):
+pilih GPU T4 dan **Run all**. Ollama dipasang di VM Colab, lalu Qwen
+memprediksi 150 ulasan uji yang sama. Simpan `hasil_qwen_lengkap.zip`.
+Notebook tersedia; hasil Qwen aktual belum ada.
