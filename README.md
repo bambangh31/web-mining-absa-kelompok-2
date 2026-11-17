@@ -136,6 +136,10 @@ memprediksi atau mengklaim label gold sudah tersedia.
   tidak ditandai selesai.
 - Berkas week 10-11 dan laporan gabungan lama dipertahankan sebagai arsip;
   lihat [daftar laporan](docs/laporan/README.md).
+- [Laporan progres week 12 terpisah (PDF)](docs/laporan/Week_12_Pemodelan_Evaluasi_ABSA_SATUSEHAT.pdf)
+  dan [Word](docs/laporan/Week_12_Pemodelan_Evaluasi_ABSA_SATUSEHAT.docx)
+  memuat pemodelan dan evaluasi empat model dalam 9 halaman. Laporan week 13
+  tetap merangkum seluruh pekerjaan week 10-12.
 
 ## CI dan Dependabot
 
