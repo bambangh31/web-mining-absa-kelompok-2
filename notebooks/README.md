@@ -77,5 +77,7 @@ Notebook diperiksa dengan nbformat dan diuji memakai fixture sintetis:
 ekstraksi vektor, tiga seed satu epoch pada CPU, melewati seed lengkap,
 ekspor parsial ketika gagal, evaluasi 13 run, serta ZIP akhir. Sel koneksi
 Colab/unduhan internet dan GPU tidak dieksekusi dalam pemeriksaan lokal.
-**Belum ada hasil eksperimen B4 aktual**; pengujian sintetis bukan skor laporan.
+Hasil B4 aktual tiga seed telah diterima dari Colab T4 dan
+[diverifikasi](../results/bilstm/README.md): F1 pasangan 0,373 ± 0,016.
+Pengujian sintetis tetap dibedakan dari skor laporan.
 Hasil base/large tidak dijalankan ulang oleh notebook ini.

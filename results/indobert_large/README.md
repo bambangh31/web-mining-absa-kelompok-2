@@ -14,4 +14,4 @@ Konfigurasi: IndoBERT large-p1, 400 ulasan latih (3.200 pasangan), 100 validasi,
 
 Prediksi `results/predictions/B2-L_<seed>.csv`; konfigurasi/riwayat `results/metrics/B2-L_<seed>.json`; notebook `notebooks/04_indobert_large_colab.ipynb`. Evaluasi gabungan terbaru di `results/metrics/uji_indobert_lengkap/` berisi empat pembanding, tiga base, dan tiga large. Matriks enam model menggunakan large seed 43 dan base seed 44, dipilih dari validasi, bukan skor uji. Setiap panel berjumlah 1.200 keputusan, bukan 450 ulasan.
 
-Urutan F1 pasangan: Gemini 0,842; base 0,775; large 0,765; LR 0,727; SVM 0,705; NB 0,621. BiLSTM dan Qwen belum dievaluasi. Keterbatasan satu anotator dan 375 label latih/validasi belum diverifikasi tetap berlaku. Laporan Week 12 dan 13 diperbarui; arsip laporan sebelumnya tetap tersedia.
+Urutan F1 pasangan: Gemini 0,842; base 0,775; large 0,765; LR 0,727; SVM 0,705; NB 0,621. Hasil [BiLSTM](../bilstm/README.md) telah tersedia (0,373 ± 0,016); Qwen belum dievaluasi. Keterbatasan satu anotator dan 375 label latih/validasi belum diverifikasi tetap berlaku. Laporan Week 12 dan 13 diperbarui; arsip laporan sebelumnya tetap tersedia.

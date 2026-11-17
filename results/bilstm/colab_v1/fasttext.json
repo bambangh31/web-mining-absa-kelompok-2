@@ -1,0 +1,13 @@
+{
+  "n_source_vectors": 2000000,
+  "n_train_words": 1508,
+  "n_matched": 1419,
+  "coverage": 0.9409814323607427,
+  "dim": 300,
+  "subset_sha256": "5539c3d43cfa1ed3f402d19ad52042d6cedd8b7b30f2ad7259a5bfcbc259719b",
+  "archive_sha256": "797c0691be8c4fa7269da558e53f455b86c2bbe6faa2af0944c7b55a3e1bc53d",
+  "url": "https://dl.fbaipublicfiles.com/fasttext/vectors-crawl/cc.id.300.vec.gz",
+  "vocab_sha256": "e70bb7a3777aaacf8060a17fb53cbd3c1ae0c2d4b3bb5754c4e7866e95ec6355",
+  "source": "fastText Common Crawl Indonesian text vectors",
+  "license": "CC BY-SA 3.0"
+}
