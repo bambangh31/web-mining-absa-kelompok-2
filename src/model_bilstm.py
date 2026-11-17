@@ -105,40 +105,56 @@ def predict(model, seqs, ids_order, batch=128):
     import torch
 
     model.eval()
+    device = next(model.parameters()).device
     rows = {}
     with torch.no_grad():
         for i in range(0, len(seqs), batch):
             ids, lengths = collate(seqs[i:i + batch])
-            outs = model(ids, lengths)
+            outs = model(ids.to(device), lengths)
             for j in range(ids.shape[0]):
                 rid = ids_order[i + j]
                 rows[rid] = enforce_umum({a: LABELS[int(outs[k][j].argmax())] for k, a in enumerate(ASPECTS)})
     return rows
 
 
-def train_one(dataset, seed, predict_ids, vectors, max_epochs=30, patience=3, log=print):
+def train_one(dataset, seed, predict_ids, vectors, max_epochs=30, patience=3, log=print, device="cpu"):
     import random
 
     import numpy as np
     import torch
     from torch import nn
 
+    if max_epochs < 1 or patience < 1:
+        raise ValueError("max_epochs dan patience harus positif")
+    if not dataset.train_ids or not dataset.val_ids:
+        raise ValueError("Data latih dan validasi tidak boleh kosong")
+    if device == "cuda" and not torch.cuda.is_available():
+        raise RuntimeError("CUDA tidak tersedia; pilih runtime GPU atau --device cpu secara eksplisit")
+    device = torch.device(device)
+    predict_ids = list(predict_ids)
     random.seed(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
+    if device.type == "cuda":
+        torch.cuda.manual_seed_all(seed)
+        torch.backends.cudnn.benchmark = False
+        torch.backends.cudnn.deterministic = True
     all_ids = list(dict.fromkeys(dataset.train_ids + dataset.val_ids + list(predict_ids)))
     texts = {rid: dataset.text(rid) for rid in all_ids}
-    vocab = build_vocab(texts.values())
+    # Kosakata dipelajari hanya dari latih; kata baru validasi/uji menjadi UNK.
+    vocab = build_vocab(dataset.text(rid) for rid in dataset.train_ids)
     matrix, known, coverage = load_vectors(vectors, vocab, seed=seed)
+    if vectors and Path(vectors).exists() and not known:
+        raise ValueError("Tidak ada vektor fastText yang cocok dengan kosakata latih")
     word_index = {w: i for i, w in enumerate(vocab)}
     seq = {rid: encode(texts[rid], word_index, known) for rid in all_ids}
-    model = build_model(matrix)
+    model = build_model(matrix).to(device)
     optimizer = torch.optim.Adam([p for p in model.parameters() if p.requires_grad], lr=1e-3)
     losses = []
     for a in ASPECTS:  # bobot kelas per aspek: kebalikan frekuensi pada data latih
         counts = Counter(dataset.labels[r][a] for r in dataset.train_ids)
         weights = [len(dataset.train_ids) / (len(LABELS) * counts[label]) if counts[label] else 0.0 for label in LABELS]
-        losses.append(nn.CrossEntropyLoss(weight=torch.tensor(weights, dtype=torch.float)))
+        losses.append(nn.CrossEntropyLoss(weight=torch.tensor(weights, dtype=torch.float, device=device)))
     targets = {rid: [LABELS.index(dataset.labels[rid][a]) for a in ASPECTS] for rid in dataset.train_ids}
     rng = random.Random(seed)
     best, best_state, wait, history = -1.0, None, 0, []
@@ -149,9 +165,15 @@ def train_one(dataset, seed, predict_ids, vectors, max_epochs=30, patience=3, lo
         for i in range(0, len(order), 32):
             chunk = order[i:i + 32]
             ids, lengths = collate([seq[r] for r in chunk])
-            outs = model(ids, lengths)
-            y = torch.tensor([targets[r] for r in chunk])
-            loss = sum(losses[k](outs[k], y[:, k]) for k in range(len(ASPECTS)))
+            outs = model(ids.to(device), lengths)
+            y = torch.tensor([targets[r] for r in chunk], device=device)
+            # Kelas langka dapat memenuhi satu batch ketika kelas lain tidak ada.
+            # Abaikan aspek dengan jumlah bobot target nol agar CE tidak NaN.
+            terms = [losses[k](outs[k], y[:, k]) for k in range(len(ASPECTS))
+                     if losses[k].weight[y[:, k]].sum().item() > 0]
+            loss = sum(terms)
+            if not torch.isfinite(loss):
+                raise RuntimeError("Loss BiLSTM tidak finite; pelatihan dihentikan")
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
@@ -161,7 +183,7 @@ def train_one(dataset, seed, predict_ids, vectors, max_epochs=30, patience=3, lo
         log(f"  B4 seed {seed} epoch {epoch}: F1 pasangan validasi {f1:.3f}")
         if f1 > best:
             best, wait = f1, 0
-            best_state = {k: v.detach().clone() for k, v in model.state_dict().items()}
+            best_state = {k: v.detach().cpu().clone() for k, v in model.state_dict().items()}
         else:
             wait += 1
             if wait >= patience:
@@ -171,8 +193,15 @@ def train_one(dataset, seed, predict_ids, vectors, max_epochs=30, patience=3, lo
     began = time.perf_counter()
     test_pred = predict(model, [seq[r] for r in predict_ids], list(predict_ids))
     seconds = (time.perf_counter() - began) / max(len(predict_ids), 1) * 1000
+    import hashlib
     config = {"seed": seed, "vectors": str(vectors) if vectors and Path(vectors).exists() else None,
               "kosakata": len(vocab) - 2, "cakupan_fasttext": coverage,
+              "vocab_source": "train_only", "vocab_sha256": hashlib.sha256("\n".join(vocab).encode()).hexdigest(),
+              "n_latih": len(dataset.train_ids), "n_validasi": len(dataset.val_ids), "n_uji": len(predict_ids),
+              "device": str(device), "torch": torch.__version__, "max_epochs": max_epochs,
+              "patience": patience, "batch": 32, "max_tokens": MAX_TOKENS, "embedding_dim": 300,
+              "hidden_per_direction": 128, "dropout": 0.5, "learning_rate": 1e-3,
+              "epoch_terbaik": max(history, key=lambda r: r["f1_pasangan_validasi"])["epoch"],
               "catatan": None if vectors and Path(vectors).exists() else
               "TANPA fastText: embedding nol + [UNK] dilatih; hanya uji asap, bukan hasil B4",
               "riwayat": history, "label_latih": dataset.labels_path}
@@ -190,14 +219,19 @@ def main():
     group.add_argument("--predict-split")
     group.add_argument("--predict-from", type=Path)
     parser.add_argument("--max-epochs", type=int, default=30)
+    parser.add_argument("--device", choices=("cpu", "cuda"), default="cpu")
+    parser.add_argument("--allow-no-vectors", action="store_true", help="uji asap saja, bukan hasil B4")
     parser.add_argument("--out", type=Path, default=Path("results"))
     args = parser.parse_args()
     if not args.vectors.exists():
+        if not args.allow_no_vectors:
+            parser.error("fastText tidak ditemukan; unduh vektor atau gunakan --allow-no-vectors untuk uji asap")
         print(f"Peringatan: {args.vectors} tidak ada; model berjalan tanpa fastText (uji asap saja)")
     dataset = Dataset(args.clean, args.split, args.labels)
     ids = prediction_ids(dataset, args.predict_split, args.predict_from)
     for seed in map(int, args.seeds.split(",")):
-        predictions, config, val_metrics, seconds = train_one(dataset, seed, ids, args.vectors, args.max_epochs)
+        predictions, config, val_metrics, seconds = train_one(
+            dataset, seed, ids, args.vectors, args.max_epochs, device=args.device)
         write_predictions(args.out / "predictions" / f"B4_{seed}.csv", "B4", seed, predictions)
         write_run(args.out / "metrics", "B4", seed, config, val_metrics, seconds)
         print(f"B4 seed {seed}: F1 pasangan validasi {val_metrics['f1_pasangan']:.3f}, "
