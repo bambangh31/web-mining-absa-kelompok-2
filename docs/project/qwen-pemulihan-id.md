@@ -1,5 +1,19 @@
 # Melanjutkan Qwen setelah respons kehilangan ID
 
+## Melalui notebook GitHub terbaru
+
+Buka [notebook 06 di Colab](https://colab.research.google.com/github/bambangh31/web-mining-absa-kelompok-2/blob/main/notebooks/06_qwen_colab.ipynb),
+klik Copy to Drive, pilih T4 GPU, lalu Run all. Saat diminta memilih berkas,
+unggah `hasil_qwen_parsial.zip`. Notebook otomatis memilih sumber yang cocok
+dan memasang patch ID untuk ZIP lama. Enam ulasan yang sudah selesai tidak
+diprediksi ulang. Tidak perlu menyalin sel perbaikan manual.
+
+Pada runtime baru, Ollama/model perlu dipasang kembali; checkpoint hasil
+tetap dapat dilanjutkan dari ZIP. Jika checkpoint masih ada di runtime yang
+sama, notebook mendeteksinya tanpa unggahan. Simpan ZIP sebelum mengakhiri VM.
+
+## Memasang patch pada notebook lama yang masih terbuka
+
 Pada notebook lama bersumber commit 574fddc, schema hasil belum mewajibkan
 jumlah objek dan ID sesuai batch. Model dapat mengembalikan JSON sah yang
 kurang dari dua ulasan. Validator menghentikan proses; ulasan yang belum
@@ -31,8 +45,9 @@ Jika masih gagal, respons yang ditolak disimpan di `rejected_responses.jsonl`.
 Sumber patch dan SHA dikunci ke commit yang telah diuji. Patch menolak versi
 runtime lain. Jika runtime lama terhapus, buka salinan notebook lama di Drive,
 pulihkan ZIP parsial menggunakan `RESTORE_ZIP = True`, jalankan sampai server
-siap, lalu pasang patch ini sebelum sel prediksi. Notebook terbaru memakai
-sumber yang telah diperbaiki; ZIP lama tidak dicampur otomatis dengan konfigurasi baru.
+siap, lalu pasang patch ini sebelum sel prediksi. Notebook terbaru dapat
+memilih sumber ZIP lama dan memasang patch ini secara otomatis; sumber,
+konfigurasi, serta audit patch tetap dibedakan dari run baru.
 
 Pemeriksaan: sembilan tes Qwen lulus. Replay checkpoint asli enam ulasan
 mempertahankan tiga batch awal dan menyelesaikan 144 ID tersisa menggunakan
