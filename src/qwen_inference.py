@@ -6,6 +6,7 @@ asli untuk audit kutipan. Evaluasi dilakukan setelah seluruh prediksi selesai.
 import csv
 import hashlib
 import json
+import re
 import time
 import urllib.error
 import urllib.request
@@ -40,8 +41,18 @@ def api_json(host, path, payload=None, timeout=30):
 
 
 def chat(host, model, system, user, options, timeout=300):
+    # Prompt lama dan checkpoint tetap berlaku. Perubahan ini hanya
+    # membatasi format ID/jumlah objek, bukan memilih label sentimen.
+    keys = re.findall(r"^(r[0-9]+): ", user, flags=re.MULTILINE)
+    schema = schema_json(llm_label.RESPONSE_SCHEMA)
+    if keys:
+        if len(set(keys)) != len(keys):
+            raise ValueError("ID masukan batch duplikat")
+        array = schema["properties"]["hasil"]
+        array.update(minItems=len(keys), maxItems=len(keys))
+        array["items"]["properties"]["id"]["enum"] = keys
     data = api_json(host, "/api/chat", {"model": model, "stream": False, "think": False,
-                    "keep_alive": "30m", "format": schema_json(llm_label.RESPONSE_SCHEMA),
+                    "keep_alive": "30m", "format": schema,
                     "options": options, "messages": [{"role": "system", "content": system},
                                                         {"role": "user", "content": user}]}, timeout)
     if data.get("done") is not True or data.get("done_reason") != "stop":
@@ -54,6 +65,7 @@ def chat(host, model, system, user, options, timeout=300):
     meta = {k: data.get(k) for k in ["model", "created_at", "done_reason", "prompt_eval_count",
                                     "eval_count", "total_duration", "load_duration",
                                     "prompt_eval_duration", "eval_duration"]}
+    meta["response_schema"] = {"revision": "ids-count-v2", "expected_ids": keys}
     return text, meta
 
 
@@ -76,7 +88,7 @@ def parse_response(text, keys):
                 raise ValueError("Kategori atau label sentimen tidak valid")
         result[key] = row["aspek"]
     if set(result) != set(keys):
-        raise ValueError("ID respons belum lengkap")
+        raise ValueError(f"ID respons belum lengkap: hilang {sorted(set(keys)-set(result))}")
     return {keys[k]: result[k] for k in keys}
 
 
@@ -147,13 +159,14 @@ def infer(items, originals, out, identity, host="http://127.0.0.1:11435", model=
         user = llm_label.batch_prompt([(f"r{i+1}", text) for i, (_, text) in enumerate(chunk)])
         for attempt in range(max_retries + 1):
             began = time.perf_counter()
+            text = None
             try:
                 text, meta = chat(host, model, llm_label.system_prompt(), user, options, timeout)
                 parsed = parse_response(text, keys)
             except (ValueError, KeyError, TypeError, urllib.error.URLError, TimeoutError) as exc:
                 with (out / "errors.jsonl").open("a", encoding="utf-8") as stream:
                     stream.write(json.dumps({"ids": list(keys.values()), "attempt": attempt + 1,
-                                             "error": str(exc)}, ensure_ascii=False) + "\n")
+                                             "error": str(exc), "response": text}, ensure_ascii=False) + "\n")
                 if attempt == max_retries:
                     raise RuntimeError("Batch Qwen gagal; progres sebelumnya tersimpan") from exc
                 log(f"Batch gagal, mencoba ulang ({attempt+1}/{max_retries}): {exc}", flush=True)

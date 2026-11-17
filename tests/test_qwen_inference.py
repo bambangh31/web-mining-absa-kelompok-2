@@ -21,12 +21,25 @@ class QwenTests(unittest.TestCase):
             return io.BytesIO(json.dumps({"done": True, "done_reason": "stop", "model": "qwen3.5:4b",
                             "message": {"content": answer(["r1"])}, "prompt_eval_count": 300}).encode())
         with patch.object(q.urllib.request, "urlopen", urlopen):
-            text, meta = q.chat("http://localhost:11435", "qwen3.5:4b", "system", "user", {"num_ctx": 8192})
+            text, meta = q.chat("http://localhost:11435", "qwen3.5:4b", "system", "r1: gagal login", {"num_ctx": 8192})
         self.assertFalse(calls[0]["think"])
         self.assertEqual(calls[0]["format"]["type"], "object")
         self.assertEqual(calls[0]["messages"][0]["content"], "system")
         self.assertEqual(meta["prompt_eval_count"], 300)
+        self.assertEqual(calls[0]["format"]["properties"]["hasil"]["minItems"], 1)
+        self.assertEqual(calls[0]["format"]["properties"]["hasil"]["maxItems"], 1)
+        self.assertEqual(calls[0]["format"]["properties"]["hasil"]["items"]["properties"]["id"]["enum"], ["r1"])
         self.assertEqual(set(q.parse_response(text, {"r1": "id1"})), {"id1"})
+
+    def test_two_review_batch_requires_two_ids_without_changing_prompt(self):
+        response={"done":True,"done_reason":"stop","message":{"content":answer(['r1','r2'])}}
+        with patch.object(q,'api_json',return_value=response) as api:
+            q.chat('local','qwen','same system','r1: login gagal\nr2: login gagal',{'num_ctx':8192})
+        payload=api.call_args.args[2]
+        self.assertEqual(payload['messages'][0]['content'],'same system')
+        arr=payload['format']['properties']['hasil']
+        self.assertEqual((arr['minItems'],arr['maxItems']),(2,2))
+        self.assertEqual(arr['items']['properties']['id']['enum'],['r1','r2'])
 
     def test_rejects_truncated_output_and_context_exhaustion(self):
         for response in [{"done": True, "done_reason": "length"},
@@ -76,3 +89,5 @@ class QwenTests(unittest.TestCase):
             self.assertEqual(call.call_count,2)
             self.assertEqual(labels['a']['akun_login'],'negatif')
             self.assertEqual(json.loads((Path(tmp)/'checkpoint.json').read_text())['batches'][0]['attempt'],2)
+            errors=[json.loads(x) for x in (Path(tmp)/'errors.jsonl').read_text().splitlines()]
+            self.assertEqual(errors[0]['response'],'{"hasil":[]}')
