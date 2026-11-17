@@ -110,8 +110,10 @@ Pemeriksaan: 47 tes kode lulus. Notebook valid menurut nbformat dan sintaks
 Python; alur fixture sintetis/API tiruan menguji pemilihan 150 ID, kegagalan
 setelah satu batch, ZIP parsial, pemulihan ZIP melalui unggahan, melanjutkan
 148 ID tersisa, melewati 150 hasil lengkap, evaluasi 14 run, dan ZIP akhir.
-Pemasangan binary/unduhan model serta inferensi GPU aktual belum dijalankan.
-**Skor Qwen aktual belum tersedia**; skor fixture tidak masuk laporan.
+Hasil aktual Qwen telah diterima dari Colab Tesla T4 pada 17 November 2026:
+150 ulasan, 75 batch penuh, F1 pasangan **0,741** dan macro-F1 sentimen
+**0,664**. [Audit](../results/qwen/README.md) mencocokkan respons, checkpoint,
+prediksi, serta seluruh 14 metrik. Skor fixture tetap terpisah dari laporan.
 
 Perbaikan respons ID: notebook mendeteksi ZIP sumber lama 574fddc atau sumber
 perbaikan 30fdae6 sebelum mengambil kode. Untuk ZIP lama, patch terverifikasi

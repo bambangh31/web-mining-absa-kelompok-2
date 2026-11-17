@@ -1,0 +1,7 @@
+{
+  "status": "completed",
+  "n_test": 150,
+  "model": "qwen3.5:4b",
+  "model_digest": "d8b0f5e9760cd1682034f292d7ef72ec46f432149be0df7574bf2d6e92e38c04",
+  "finished_utc": "2026-11-17T15:13:18.322069+00:00"
+}

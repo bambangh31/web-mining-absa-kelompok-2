@@ -1,0 +1,43 @@
+{
+  "model_code": "B3-Qwen",
+  "source_commit": "30fdae6931f251d174fd4af314722cb3973eced5",
+  "n_test": 150,
+  "n_train_used": 0,
+  "n_validation_used": 0,
+  "sha256_sources": {
+    "data/processed/reviews_clean.csv": "8186e667f08515ca886f42da2fd5d848659f501b5551a6946401c6c68b43af00",
+    "data/annotations/split.csv": "67036c5db3ceb2188e4c06c76df4eb1b48199aaa3802c1f323dc14e1b04254ea",
+    "data/annotations/verified.csv": "bb3421985df973a57a05f636bc26e60dac68097bf0898a9dbe778ce983fa1df2",
+    "data/annotations/final_v1/gold.csv": "8dcea7e41a58d3ac79baa019a5b17c25b173e3094bd0bc9d29a6d3e6a017bade",
+    "data/raw/com.telkom.tracencare_reviews.csv": "0a66aeb9650aee9cacdb603f36030c54d686b583d455302f244f762c4b337c38"
+  },
+  "sha256_code": {
+    "src/absa_schema.py": "925a55bb8e07bbcb3536884db93542ce7166e8e01aed2c57231e6fc56425cf99",
+    "src/annotation.py": "a91118d6123837d5ef3867cad39675caa217118d1e842a8af40d20596b8f3f20",
+    "src/aspect_keywords.py": "0df69e777a10c2f6930cc934d63d0f910d2bec63bff7297b67c76202f93c757f",
+    "src/compare_labels.py": "b19ab4e1bd004eb9b58c05f9c0b0613874e15d47bc975399a354dd40eb05f151",
+    "src/eda_charts.py": "5a1c1387919543243b79d3d0a9959de177bdf5f44cdd59b07346e89f1959a3f3",
+    "src/evaluate.py": "938def8f75fd57115bcd3c62cac576518bfe6ac473936131665791a24252f3d1",
+    "src/fasttext_vectors.py": "ebc9321af56188e4a9e6ddff8514b324b9cf8cbfc11e4b654174b452e25d32dd",
+    "src/flow_diagram.py": "e610515175759703611bcfeca7bc9c9de326027d10ea32e1d3acde3c6ef53f29",
+    "src/label_excel.py": "36765a0b961238fe14d6c4e53b9b103f95abc26e7d072eee187b718c5796ce3e",
+    "src/llm_label.py": "f22077ceb9af8a2b3ea772ad5d6ac0d7b58d2df0b6d613aba3117ed8765191ed",
+    "src/model_bilstm.py": "5cd31acbffb8a5189293833fb76aec0177f71e578ff5b14ff3607181b7c7c024",
+    "src/model_data.py": "a06c89262f94077b22b977c6d3fc43eae96156ba5608a51917a5e1eca1876fd3",
+    "src/model_indobert.py": "b3836cc57d1587c3fe978d0d69208206f3ab2dc187338b3cf7debc13535eb06e",
+    "src/models_classic.py": "fcfdcefd63065782940697b4456fe341c13de60744da99d78f9800f6f52aee95",
+    "src/pilot_stats.py": "ee40c9e6c354a997756a8e82f8390a3fa61ceeb9176443c33c365227d3a5a7ab",
+    "src/preprocess.py": "c23190b7645f1d7d0e366c948837b6915a28cc70f20f3a686851b9fdfe3b509e",
+    "src/preview_cv.py": "6d0b57ed7144f3199d563c0f43bcdac688fbbfb9a54113ef3ea6fe879676947b",
+    "src/qwen_inference.py": "c7d6f602e8f817c6b15f57fcce33b0a91f3a8cb9c147b25fff8a391addb8ed6f",
+    "src/qwen_resume_patch.py": "55a2e617cff78a4349febfe64f03c8a33391520fbcac4a849a932f176cc45df5",
+    "src/scrape_reviews.py": "3ec51b944b99dec838ae3a4c9f00f6fd9d2c4f8957dff151ae0f1cf37adc8e99",
+    "src/single_annotator.py": "a5d30082c3e338e8c34ef7ae30a9c65859cd3602ab814aad44bb8db6ed2d9af0",
+    "src/text_features.py": "dbab54614fe237e67df5b6d9c4decd0829bccb00aee90a2825dfe2ec39b1c305",
+    "src/verification.py": "fc8acd684464dbb2a3999026ab4dea8b81ae953658421f2da8bb2bcdf0d1a9be",
+    "src/version_analysis.py": "2028194941c321082e22ca0fc93a9bbfeb3a3e0076bf0b436c6c69f868680792"
+  },
+  "gpu": "Tesla T4",
+  "python": "3.13.16 (main, Oct  1 2026, 15:40:24) [GCC 13.3.0]",
+  "started_utc": "2026-11-17T15:01:32.174201+00:00"
+}

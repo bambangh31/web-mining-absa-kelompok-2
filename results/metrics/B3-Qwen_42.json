@@ -1,0 +1,510 @@
+{
+  "model_code": "B3-Qwen",
+  "seed": 42,
+  "type": "inferensi langsung tanpa pelatihan",
+  "config": {
+    "identity": {
+      "source_commit": "30fdae6931f251d174fd4af314722cb3973eced5",
+      "sha256_sources": {
+        "data/processed/reviews_clean.csv": "8186e667f08515ca886f42da2fd5d848659f501b5551a6946401c6c68b43af00",
+        "data/annotations/split.csv": "67036c5db3ceb2188e4c06c76df4eb1b48199aaa3802c1f323dc14e1b04254ea",
+        "data/annotations/verified.csv": "bb3421985df973a57a05f636bc26e60dac68097bf0898a9dbe778ce983fa1df2",
+        "data/annotations/final_v1/gold.csv": "8dcea7e41a58d3ac79baa019a5b17c25b173e3094bd0bc9d29a6d3e6a017bade",
+        "data/raw/com.telkom.tracencare_reviews.csv": "0a66aeb9650aee9cacdb603f36030c54d686b583d455302f244f762c4b337c38"
+      },
+      "sha256_code": {
+        "src/absa_schema.py": "925a55bb8e07bbcb3536884db93542ce7166e8e01aed2c57231e6fc56425cf99",
+        "src/annotation.py": "a91118d6123837d5ef3867cad39675caa217118d1e842a8af40d20596b8f3f20",
+        "src/aspect_keywords.py": "0df69e777a10c2f6930cc934d63d0f910d2bec63bff7297b67c76202f93c757f",
+        "src/compare_labels.py": "b19ab4e1bd004eb9b58c05f9c0b0613874e15d47bc975399a354dd40eb05f151",
+        "src/eda_charts.py": "5a1c1387919543243b79d3d0a9959de177bdf5f44cdd59b07346e89f1959a3f3",
+        "src/evaluate.py": "938def8f75fd57115bcd3c62cac576518bfe6ac473936131665791a24252f3d1",
+        "src/fasttext_vectors.py": "ebc9321af56188e4a9e6ddff8514b324b9cf8cbfc11e4b654174b452e25d32dd",
+        "src/flow_diagram.py": "e610515175759703611bcfeca7bc9c9de326027d10ea32e1d3acde3c6ef53f29",
+        "src/label_excel.py": "36765a0b961238fe14d6c4e53b9b103f95abc26e7d072eee187b718c5796ce3e",
+        "src/llm_label.py": "f22077ceb9af8a2b3ea772ad5d6ac0d7b58d2df0b6d613aba3117ed8765191ed",
+        "src/model_bilstm.py": "5cd31acbffb8a5189293833fb76aec0177f71e578ff5b14ff3607181b7c7c024",
+        "src/model_data.py": "a06c89262f94077b22b977c6d3fc43eae96156ba5608a51917a5e1eca1876fd3",
+        "src/model_indobert.py": "b3836cc57d1587c3fe978d0d69208206f3ab2dc187338b3cf7debc13535eb06e",
+        "src/models_classic.py": "fcfdcefd63065782940697b4456fe341c13de60744da99d78f9800f6f52aee95",
+        "src/pilot_stats.py": "ee40c9e6c354a997756a8e82f8390a3fa61ceeb9176443c33c365227d3a5a7ab",
+        "src/preprocess.py": "c23190b7645f1d7d0e366c948837b6915a28cc70f20f3a686851b9fdfe3b509e",
+        "src/preview_cv.py": "6d0b57ed7144f3199d563c0f43bcdac688fbbfb9a54113ef3ea6fe879676947b",
+        "src/qwen_inference.py": "c7d6f602e8f817c6b15f57fcce33b0a91f3a8cb9c147b25fff8a391addb8ed6f",
+        "src/qwen_resume_patch.py": "55a2e617cff78a4349febfe64f03c8a33391520fbcac4a849a932f176cc45df5",
+        "src/scrape_reviews.py": "3ec51b944b99dec838ae3a4c9f00f6fd9d2c4f8957dff151ae0f1cf37adc8e99",
+        "src/single_annotator.py": "a5d30082c3e338e8c34ef7ae30a9c65859cd3602ab814aad44bb8db6ed2d9af0",
+        "src/text_features.py": "dbab54614fe237e67df5b6d9c4decd0829bccb00aee90a2825dfe2ec39b1c305",
+        "src/verification.py": "fc8acd684464dbb2a3999026ab4dea8b81ae953658421f2da8bb2bcdf0d1a9be",
+        "src/version_analysis.py": "2028194941c321082e22ca0fc93a9bbfeb3a3e0076bf0b436c6c69f868680792"
+      },
+      "ollama_version": "0.40.16",
+      "model_digest": "d8b0f5e9760cd1682034f292d7ef72ec46f432149be0df7574bf2d6e92e38c04"
+    },
+    "model": "qwen3.5:4b",
+    "prompt_version": "v1",
+    "prompt_sha256": "fdffc4bca120bcc7cb26d50b193c915062fb7ad14063a0f9cc4455da5df4cc0f",
+    "items_sha256": "add15b6320351206b198fd9d8aa82890cd882404339b280df0896725b40b8a83",
+    "originals_sha256": "c0c349dff80b8f2632e11aac6a7814fd22353f7a1d123e55e8836058561ad40b",
+    "batch_size": 2,
+    "think": false,
+    "options": {
+      "temperature": 0.0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "num_predict": 4096
+    }
+  },
+  "hasil_uji": {
+    "n_ulasan": 150,
+    "confusion_matrix_labels": [
+      "tidak_disebut",
+      "positif",
+      "negatif",
+      "netral"
+    ],
+    "confusion_matrix_gabungan": [
+      [
+        918,
+        5,
+        56,
+        5
+      ],
+      [
+        3,
+        12,
+        0,
+        0
+      ],
+      [
+        31,
+        4,
+        158,
+        3
+      ],
+      [
+        0,
+        0,
+        3,
+        2
+      ]
+    ],
+    "f1_pasangan": 0.7413793103448276,
+    "presisi_pasangan": 0.6935483870967742,
+    "recall_pasangan": 0.7962962962962963,
+    "f1_deteksi_micro": 0.7844827586206897,
+    "f1_deteksi_macro": 0.704931745726043,
+    "macro_f1_sentimen_rata2": 0.663589481934059,
+    "ulasan_persis_sama": 0.52,
+    "per_aspek": {
+      "akun_login": {
+        "confusion_matrix": [
+          [
+            97,
+            0,
+            7,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            4,
+            0,
+            39,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ]
+        ],
+        "n_gold_disebut": 46,
+        "n_pred_disebut": 48,
+        "f1_pasangan": 0.8297872340425533,
+        "presisi_pasangan": 0.8125,
+        "recall_pasangan": 0.8478260869565217,
+        "f1_deteksi": 0.8723404255319149,
+        "presisi_deteksi": 0.8541666666666666,
+        "recall_deteksi": 0.8913043478260869,
+        "macro_f1_sentimen": 0.3095238095238095,
+        "akurasi_sentimen": 0.8478260869565217,
+        "akurasi_4_label": 0.9066666666666666,
+        "kappa": 0.7862160236180392,
+        "distribusi_gold": {
+          "negatif": 44,
+          "tidak_disebut": 104,
+          "positif": 1,
+          "netral": 1
+        },
+        "distribusi_pred": {
+          "negatif": 47,
+          "tidak_disebut": 102,
+          "netral": 1
+        }
+      },
+      "registrasi_data": {
+        "confusion_matrix": [
+          [
+            115,
+            0,
+            8,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            4,
+            0,
+            21,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ]
+        ],
+        "n_gold_disebut": 26,
+        "n_pred_disebut": 31,
+        "f1_pasangan": 0.7368421052631579,
+        "presisi_pasangan": 0.6774193548387096,
+        "recall_pasangan": 0.8076923076923077,
+        "f1_deteksi": 0.7719298245614036,
+        "presisi_deteksi": 0.7096774193548387,
+        "recall_deteksi": 0.8461538461538461,
+        "macro_f1_sentimen": 0.4468085106382979,
+        "akurasi_sentimen": 0.8076923076923077,
+        "akurasi_4_label": 0.9066666666666666,
+        "kappa": 0.6996996996996995,
+        "distribusi_gold": {
+          "tidak_disebut": 124,
+          "negatif": 25,
+          "netral": 1
+        },
+        "distribusi_pred": {
+          "tidak_disebut": 119,
+          "negatif": 30,
+          "netral": 1
+        }
+      },
+      "fitur_kesehatan": {
+        "confusion_matrix": [
+          [
+            114,
+            0,
+            8,
+            1
+          ],
+          [
+            2,
+            4,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            17,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "n_gold_disebut": 27,
+        "n_pred_disebut": 33,
+        "f1_pasangan": 0.7333333333333333,
+        "presisi_pasangan": 0.6666666666666666,
+        "recall_pasangan": 0.8148148148148148,
+        "f1_deteksi": 0.7999999999999999,
+        "presisi_deteksi": 0.7272727272727273,
+        "recall_deteksi": 0.8888888888888888,
+        "macro_f1_sentimen": 0.7709527709527709,
+        "akurasi_sentimen": 0.8148148148148148,
+        "akurasi_4_label": 0.9066666666666666,
+        "kappa": 0.7228088701161561,
+        "distribusi_gold": {
+          "tidak_disebut": 123,
+          "negatif": 20,
+          "positif": 6,
+          "netral": 1
+        },
+        "distribusi_pred": {
+          "tidak_disebut": 117,
+          "negatif": 25,
+          "positif": 5,
+          "netral": 3
+        }
+      },
+      "performa": {
+        "confusion_matrix": [
+          [
+            92,
+            2,
+            9,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            12,
+            0,
+            35,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "n_gold_disebut": 47,
+        "n_pred_disebut": 46,
+        "f1_pasangan": 0.7526881720430109,
+        "presisi_pasangan": 0.7608695652173914,
+        "recall_pasangan": 0.7446808510638298,
+        "f1_deteksi": 0.7526881720430109,
+        "presisi_deteksi": 0.7608695652173914,
+        "recall_deteksi": 0.7446808510638298,
+        "macro_f1_sentimen": 0.8536585365853657,
+        "akurasi_sentimen": 0.7446808510638298,
+        "akurasi_4_label": 0.8466666666666667,
+        "kappa": 0.6450617283950618,
+        "distribusi_gold": {
+          "tidak_disebut": 103,
+          "negatif": 47
+        },
+        "distribusi_pred": {
+          "tidak_disebut": 104,
+          "negatif": 44,
+          "positif": 2
+        }
+      },
+      "kemudahan_penggunaan": {
+        "confusion_matrix": [
+          [
+            133,
+            0,
+            4,
+            2
+          ],
+          [
+            0,
+            3,
+            0,
+            0
+          ],
+          [
+            3,
+            0,
+            4,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "n_gold_disebut": 11,
+        "n_pred_disebut": 14,
+        "f1_pasangan": 0.64,
+        "presisi_pasangan": 0.5714285714285714,
+        "recall_pasangan": 0.7272727272727273,
+        "f1_deteksi": 0.64,
+        "presisi_deteksi": 0.5714285714285714,
+        "recall_deteksi": 0.7272727272727273,
+        "macro_f1_sentimen": 0.9090909090909092,
+        "akurasi_sentimen": 0.7272727272727273,
+        "akurasi_4_label": 0.94,
+        "kappa": 0.61734693877551,
+        "distribusi_gold": {
+          "tidak_disebut": 139,
+          "negatif": 7,
+          "positif": 3,
+          "netral": 1
+        },
+        "distribusi_pred": {
+          "tidak_disebut": 136,
+          "negatif": 8,
+          "positif": 3,
+          "netral": 3
+        }
+      },
+      "pembaruan_aplikasi": {
+        "confusion_matrix": [
+          [
+            106,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            2,
+            3,
+            36,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "n_gold_disebut": 43,
+        "n_pred_disebut": 42,
+        "f1_pasangan": 0.8705882352941177,
+        "presisi_pasangan": 0.8809523809523809,
+        "recall_pasangan": 0.8604651162790697,
+        "f1_deteksi": 0.9647058823529412,
+        "presisi_deteksi": 0.9761904761904762,
+        "recall_deteksi": 0.9534883720930233,
+        "macro_f1_sentimen": 0.6615384615384615,
+        "akurasi_sentimen": 0.8604651162790697,
+        "akurasi_4_label": 0.9533333333333334,
+        "kappa": 0.8881312593223951,
+        "distribusi_gold": {
+          "negatif": 42,
+          "tidak_disebut": 107,
+          "positif": 1
+        },
+        "distribusi_pred": {
+          "negatif": 37,
+          "tidak_disebut": 108,
+          "positif": 4,
+          "netral": 1
+        }
+      },
+      "layanan_pelanggan": {
+        "confusion_matrix": [
+          [
+            136,
+            0,
+            9,
+            1
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ]
+        ],
+        "n_gold_disebut": 4,
+        "n_pred_disebut": 13,
+        "f1_pasangan": 0.23529411764705882,
+        "presisi_pasangan": 0.15384615384615385,
+        "recall_pasangan": 0.5,
+        "f1_deteksi": 0.3529411764705882,
+        "presisi_deteksi": 0.23076923076923078,
+        "recall_deteksi": 0.75,
+        "macro_f1_sentimen": 0.5,
+        "akurasi_sentimen": 0.5,
+        "akurasi_4_label": 0.92,
+        "kappa": 0.2724333063864193,
+        "distribusi_gold": {
+          "tidak_disebut": 146,
+          "negatif": 2,
+          "netral": 1,
+          "positif": 1
+        },
+        "distribusi_pred": {
+          "tidak_disebut": 137,
+          "negatif": 11,
+          "netral": 1,
+          "positif": 1
+        }
+      },
+      "umum": {
+        "confusion_matrix": [
+          [
+            125,
+            3,
+            10,
+            0
+          ],
+          [
+            0,
+            3,
+            0,
+            0
+          ],
+          [
+            4,
+            0,
+            5,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "n_gold_disebut": 12,
+        "n_pred_disebut": 21,
+        "f1_pasangan": 0.4848484848484849,
+        "presisi_pasangan": 0.38095238095238093,
+        "recall_pasangan": 0.6666666666666666,
+        "f1_deteksi": 0.4848484848484849,
+        "presisi_deteksi": 0.38095238095238093,
+        "recall_deteksi": 0.6666666666666666,
+        "macro_f1_sentimen": 0.8571428571428572,
+        "akurasi_sentimen": 0.6666666666666666,
+        "akurasi_4_label": 0.8866666666666667,
+        "kappa": 0.43894389438943904,
+        "distribusi_gold": {
+          "tidak_disebut": 138,
+          "positif": 3,
+          "negatif": 9
+        },
+        "distribusi_pred": {
+          "tidak_disebut": 129,
+          "negatif": 15,
+          "positif": 6
+        }
+      }
+    }
+  },
+  "n_batches": 75
+}

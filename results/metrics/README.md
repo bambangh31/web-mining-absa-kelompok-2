@@ -58,3 +58,7 @@ aspek terlewat/tambahan, subset evaluasi, dan jumlah keputusan gabungan.
 ## Tujuh jenis model termasuk BiLSTM — 17 November 2026
 
 `uji_tujuh_model/` memuat evaluasi 13 run: empat pembanding, tiga base, tiga large, dan tiga BiLSTM. Semua memakai 150 ID uji yang sama. `confusion_matrix/tujuh_model.png` memakai base seed 44, large 43, BiLSTM 44, dipilih dari validasi. Skor utama model tiga seed tetap rata-rata ± SD sampel. [Audit BiLSTM](../bilstm/README.md). Folder evaluasi sebelumnya dipertahankan sebagai arsip.
+
+## Delapan jenis model termasuk Qwen — 17 November 2026
+
+`uji_delapan_model/` memuat evaluasi 14 run: empat pembanding, tiga base, tiga large, tiga BiLSTM, dan satu Qwen. Semua pada 150 ID uji yang sama. `confusion_matrix/delapan_model.png` memakai base seed 44, large 43, dan BiLSTM 44 berdasarkan validasi; Gemini/Qwen satu run. Skor utama ketiga model neural tetap rata-rata ± SD sampel. [Audit Qwen](../qwen/README.md). Folder evaluasi terdahulu dipertahankan sebagai arsip.
