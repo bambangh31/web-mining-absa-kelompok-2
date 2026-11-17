@@ -99,10 +99,12 @@ hash input/kode/prompt, respons, kutipan bermasalah, dan penggunaan VRAM
 dicatat. Jika GPU tidak tersedia atau model tidak memakai VRAM, alur berhenti.
 
 Simpan **hasil_qwen_lengkap.zip** setelah evaluasi. Checkpoint dan CSV parsial
-disimpan setiap batch; ZIP kemajuan ditawarkan setiap 30 ulasan. Jika runtime
-dihapus, ubah `RESTORE_ZIP = True` pada sel data dan unggah ZIP kemajuan.
-Identitas input, prompt, versi Ollama, serta digest model harus cocok agar
-prediksi dari konfigurasi berbeda tidak tercampur. Bobot model tidak masuk ZIP.
+disimpan setiap batch; ZIP kemajuan ditawarkan setiap 30 ulasan. Notebook
+kini secara default melanjutkan ZIP (`RESTORE_ZIP = True` pada sel pertama).
+Unggah `hasil_qwen_parsial.zip` ketika diminta. Jika checkpoint sudah tersedia
+di runtime, notebook memakainya langsung. Untuk run baru tanpa ZIP, ubah flag
+tersebut menjadi False. Identitas input, prompt, versi Ollama, serta digest
+model harus cocok; bobot model tidak masuk ZIP.
 
 Pemeriksaan: 47 tes kode lulus. Notebook valid menurut nbformat dan sintaks
 Python; alur fixture sintetis/API tiruan menguji pemilihan 150 ID, kegagalan
@@ -111,8 +113,10 @@ setelah satu batch, ZIP parsial, pemulihan ZIP melalui unggahan, melanjutkan
 Pemasangan binary/unduhan model serta inferensi GPU aktual belum dijalankan.
 **Skor Qwen aktual belum tersedia**; skor fixture tidak masuk laporan.
 
-Perbaikan respons ID: notebook terbaru mewajibkan ID dan jumlah objek sesuai
-batch pada schema Ollama. Untuk notebook lama yang berhenti setelah enam
-ulasan, gunakan [panduan pemulihan](../docs/project/qwen-pemulihan-id.md).
-Patch mempertahankan checkpoint dan konfigurasi lama, serta mencatat perubahan
-format respons. ZIP sumber lama tidak digabung otomatis ke notebook baru.
+Perbaikan respons ID: notebook mendeteksi ZIP sumber lama 574fddc atau sumber
+perbaikan 30fdae6 sebelum mengambil kode. Untuk ZIP lama, patch terverifikasi
+dipasang otomatis sebelum prediksi. Enam hasil lama dipertahankan; konfigurasi
+dan identitas sumber tetap dicatat sebagai versi lama dengan audit patch.
+Tidak ada penggabungan diam-diam ke konfigurasi baru. Uji ZIP parsial asli
+memastikan enam hasil/tiga batch awal tetap sama; 144 ID sisanya, evaluasi
+14 run, serta ZIP akhir diuji memakai respons tiruan.
