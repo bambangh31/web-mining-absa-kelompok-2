@@ -165,3 +165,8 @@ Panduan kerja dan tahapan ada di [docs/project/README.md](docs/project/README.md
 Ringkasan pemeriksaan setup ada di [review setup](docs/project/review-setup.md).
 
 IndoBERT large juga telah selesai untuk tiga seed: **0,765 ± 0,020** F1 pasangan, dibanding base **0,775 ± 0,013**. [Audit large](results/indobert_large/README.md) dan laporan Week 12/13 memuat pembaruan enam model; BiLSTM dan Qwen belum dievaluasi.
+
+Tahap BiLSTM: [notebook Colab 05](notebooks/05_bilstm_colab.ipynb) siap
+menjalankan tiga seed dengan unduhan fastText otomatis. Pilih GPU T4 lalu
+**Run all**, dan simpan `hasil_bilstm_lengkap.zip`. Kode serta alur notebook
+telah diuji dengan data sintetis; hasil B4 aktual belum tersedia.

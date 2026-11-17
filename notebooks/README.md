@@ -52,10 +52,30 @@ Python pada CI terpisah dari eksekusi notebook.
 
 ## Tahap berikutnya
 
-Notebook pengumpulan/eksplorasi, pelabelan LLM, pemodelan ABSA, dan evaluasi
-belum dibuat pada perubahan ini. File Python scraping/eksplorasi tetap ada.
-Notebook ini tidak menyatakan mining/evaluasi model atau label gold selesai.
+Notebook pengumpulan/eksplorasi dan pelabelan LLM belum dibuat. File Python
+scraping/eksplorasi tetap ada. Notebook 03–05 menangani model neural;
+status hasil aktual dibedakan dari ketersediaan notebook.
 
 ## IndoBERT large
 
 [04_indobert_large_colab.ipynb](04_indobert_large_colab.ipynb) menjalankan large saja pada GPU Colab, seed 42/43/44. Hasil aktual telah diterima dan [diverifikasi](../results/indobert_large/README.md). Micro-batch 4 dan akumulasi gradien 4 mempertahankan batch efektif 16. Unduh ZIP hasil sebelum mengakhiri runtime. Notebook dibagikan tanpa output.
+
+## BiLSTM + fastText
+
+[05_bilstm_colab.ipynb](05_bilstm_colab.ipynb) siap untuk pelatihan B4 seed
+42/43/44, 400 latih, 100 validasi, dan 150 uji manual yang sama. Pilih T4 GPU
+lalu **Run all**. Vektor fastText Indonesia diunduh otomatis; hanya kata latih
+disimpan dalam subset embedding. Kosakata tidak memuat teks validasi/uji.
+Jika memilih CPU, ubah `DEVICE = "cpu"` pada sel pertama secara eksplisit.
+
+Simpan **hasil_bilstm_lengkap.zip** setelah evaluasi selesai. ZIP kemajuan
+ditawarkan setiap seed dan saat pelatihan gagal. Unduhan browser harus
+diizinkan. Folder `/content` sementara; belum ada pemulihan tengah epoch.
+Kode sumber dikunci pada commit di notebook dan hash input diperiksa.
+
+Notebook diperiksa dengan nbformat dan diuji memakai fixture sintetis:
+ekstraksi vektor, tiga seed satu epoch pada CPU, melewati seed lengkap,
+ekspor parsial ketika gagal, evaluasi 13 run, serta ZIP akhir. Sel koneksi
+Colab/unduhan internet dan GPU tidak dieksekusi dalam pemeriksaan lokal.
+**Belum ada hasil eksperimen B4 aktual**; pengujian sintetis bukan skor laporan.
+Hasil base/large tidak dijalankan ulang oleh notebook ini.
