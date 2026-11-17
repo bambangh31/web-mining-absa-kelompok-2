@@ -54,3 +54,7 @@ aspek terlewat/tambahan, subset evaluasi, dan jumlah keputusan gabungan.
 ## IndoBERT base dan large — 17 November 2026
 
 `uji_indobert_lengkap/` memuat evaluasi ulang sepuluh run (empat pembanding + tiga base + tiga large), pada 150 ID uji yang sama. `confusion_matrix/enam_model.png` memakai base seed 44 dan large seed 43 berdasarkan validasi. Skor utama kedua varian tetap rata-rata ± SD sampel tiga seed. [Audit large](../indobert_large/README.md). Folder `uji/` dan `uji_indobert/` dipertahankan sebagai versi empat dan lima model.
+
+## Tujuh jenis model termasuk BiLSTM — 17 November 2026
+
+`uji_tujuh_model/` memuat evaluasi 13 run: empat pembanding, tiga base, tiga large, dan tiga BiLSTM. Semua memakai 150 ID uji yang sama. `confusion_matrix/tujuh_model.png` memakai base seed 44, large 43, BiLSTM 44, dipilih dari validasi. Skor utama model tiga seed tetap rata-rata ± SD sampel. [Audit BiLSTM](../bilstm/README.md). Folder evaluasi sebelumnya dipertahankan sebagai arsip.

@@ -132,13 +132,13 @@ memprediksi atau mengklaim label gold sudah tersedia.
   matriks delapan aspek per model, dan CSV sumber gambar.
 - [Status sampai week 13](docs/project/implementation-status.md#laporan-pertama-week-13-14-november-2026)
   menjelaskan hasil yang tersedia dan batasnya. Hasil berasal dari satu
-  anotator; BiLSTM dan Qwen belum dievaluasi. Pengumpulan ke dosen
+  anotator; Qwen belum dievaluasi. Pengumpulan ke dosen
   tidak ditandai selesai.
 - Berkas week 10-11 dan laporan gabungan lama dipertahankan sebagai arsip;
   lihat [daftar laporan](docs/laporan/README.md).
 - [Laporan progres week 12 terpisah (PDF)](docs/laporan/Week_12_Pemodelan_Evaluasi_ABSA_SATUSEHAT.pdf)
   dan [Word](docs/laporan/Week_12_Pemodelan_Evaluasi_ABSA_SATUSEHAT.docx)
-  memuat pemodelan dan evaluasi enam jenis model. Laporan week 13
+  memuat pemodelan dan evaluasi tujuh jenis model. Laporan week 13
   tetap merangkum seluruh pekerjaan week 10-12.
 
 Pembaruan 17 November 2026: [IndoBERT base sudah selesai](results/indobert/README.md)
@@ -164,9 +164,10 @@ issue kosong tetap tersedia untuk tugas lain. Isi template saat membuat PR.
 Panduan kerja dan tahapan ada di [docs/project/README.md](docs/project/README.md).
 Ringkasan pemeriksaan setup ada di [review setup](docs/project/review-setup.md).
 
-IndoBERT large juga telah selesai untuk tiga seed: **0,765 ± 0,020** F1 pasangan, dibanding base **0,775 ± 0,013**. [Audit large](results/indobert_large/README.md) dan laporan Week 12/13 memuat pembaruan enam model; BiLSTM dan Qwen belum dievaluasi.
+IndoBERT large juga telah selesai untuk tiga seed: **0,765 ± 0,020** F1 pasangan, dibanding base **0,775 ± 0,013**. [Audit large](results/indobert_large/README.md) dan laporan Week 12/13 memuat pembaruan enam model; Qwen belum dievaluasi.
 
 Tahap BiLSTM: [notebook Colab 05](notebooks/05_bilstm_colab.ipynb) siap
 menjalankan tiga seed dengan unduhan fastText otomatis. Pilih GPU T4 lalu
-**Run all**, dan simpan `hasil_bilstm_lengkap.zip`. Kode serta alur notebook
-telah diuji dengan data sintetis; hasil B4 aktual belum tersedia.
+**Run all**, dan simpan `hasil_bilstm_lengkap.zip`. Hasil B4 tiga seed telah diterima dan [diverifikasi](results/bilstm/README.md):
+F1 pasangan rata-rata **0,373 ± 0,016**. Kini tersedia hasil tujuh jenis model;
+Qwen belum dievaluasi.

@@ -132,9 +132,9 @@ dan status aktual setelah implementasinya tersedia.
 
 ## Hasil IndoBERT large diterima (17 November 2026)
 
-Tiga seed 42/43/44 telah selesai pada T4: F1 0,742857; 0,781553; 0,770642. Rata-rata ± SD sampel **0,765018 ± 0,019952**, pada 150 ulasan yang sama. Hash input, ID, label, konfigurasi, dan skor dihitung ulang. Micro-batch 4 × akumulasi 4 = batch efektif 16. [Audit](../../results/indobert_large/README.md) mencatat seed 43 sebagai matriks perwakilan berdasarkan validasi. Kini tersedia enam jenis model; laporan Week 12/13 dan matriks enam model telah diperbarui. Selisih dengan base tidak diklaim signifikan. BiLSTM dan Qwen belum dievaluasi.
+Tiga seed 42/43/44 telah selesai pada T4: F1 0,742857; 0,781553; 0,770642. Rata-rata ± SD sampel **0,765018 ± 0,019952**, pada 150 ulasan yang sama. Hash input, ID, label, konfigurasi, dan skor dihitung ulang. Micro-batch 4 × akumulasi 4 = batch efektif 16. [Audit](../../results/indobert_large/README.md) mencatat seed 43 sebagai matriks perwakilan berdasarkan validasi. Kini tersedia enam jenis model; laporan Week 12/13 dan matriks enam model telah diperbarui. Selisih dengan base tidak diklaim signifikan. BiLSTM dibahas pada pembaruan berikutnya; Qwen belum dievaluasi.
 
-## Persiapan BiLSTM Colab (17 November 2026)
+## Arsip persiapan BiLSTM Colab sebelum hasil diterima
 
 - [Notebook 05](../../notebooks/05_bilstm_colab.ipynb) menyiapkan unduhan
   fastText Indonesia, subset kata latih, pelatihan tiga seed, evaluasi pada
@@ -147,3 +147,16 @@ Tiga seed 42/43/44 telah selesai pada T4: F1 0,742857; 0,781553; 0,770642. Rata-
 - Sel koneksi Colab dan unduhan internet tidak dijalankan dalam uji fixture.
   Pelatihan GPU dan eksperimen B4 aktual belum dijalankan; laporan tidak
   ditambah skor sintetis. Qwen tetap belum dievaluasi.
+
+## Hasil BiLSTM diterima (17 November 2026)
+
+BiLSTM + fastText selesai pada Colab T4 untuk seed 42/43/44. F1 pasangan uji
+0,355062; 0,380841; 0,383901, rata-rata ± SD sampel **0,373268 ± 0,015841**.
+Input tetap 400 latih, 100 validasi, dan 150 uji manual. Hash empat input,
+seluruh kode sumber, dan kosakata train-only cocok; semua 13 metrik dalam
+paket dihitung ulang dari prediksi. Cakupan fastText tercatat 1.419/1.508 kata
+latih (94,1%). ZIP tidak memuat vektor, sehingga hash byte vektor tidak
+diperiksa ulang secara lokal. [Audit dan hasil](../../results/bilstm/README.md).
+Laporan Week 12/13 kini memuat tujuh jenis model dan confusion matrix terbaru.
+Prediksi BiLSTM hanya negatif/tidak disebut; hasil rendah tetap dilaporkan
+tanpa mengubah parameter berdasarkan uji. Qwen belum dievaluasi.
