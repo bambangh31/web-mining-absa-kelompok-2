@@ -49,6 +49,6 @@ BiLSTM seed 44 karena F1 validasi tertinggi, bukan dipilih dari uji.
 Setiap matriks gabungan memuat 1.200 keputusan; tiga seed bukan 450 ulasan independen.
 
 Urutan F1 pasangan: Gemini 0,842; base 0,775; large 0,765; LR 0,727;
-SVM 0,705; NB 0,621; BiLSTM 0,373. Qwen belum dievaluasi. Batas satu
+SVM 0,705; NB 0,621; BiLSTM 0,373. Hasil [Qwen](../qwen/README.md) juga telah tersedia (F1 pasangan 0,741). Batas satu
 anotator dan 375 label latih/validasi yang belum diverifikasi tetap berlaku.
 Laporan Week 12 dan 13 telah diperbarui.

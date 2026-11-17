@@ -1432,7 +1432,7 @@
   "alasan_pemilihan": "F1 pasangan validasi tertinggi; bukan dipilih dari skor uji.",
   "pemeriksaan": "Hash empat input dan seluruh berkas kode cocok dengan commit sumber; hash kosakata train-only dihitung ulang; ID/label/seed valid; semua 13 metrik dihitung ulang dan identik dengan ZIP.",
   "batas_verifikasi_fasttext": "ZIP memuat metadata hash arsip/subset, bukan berkas vektor. Cakupan dan hash vektor dicatat oleh runtime Colab; hash byte arsip/subset tidak diverifikasi ulang secara lokal.",
-  "sha256_laporan_terbaru": {
+  "sha256_laporan_versi_bilstm": {
     "docs/laporan/Week_12_Pemodelan_Evaluasi_ABSA_SATUSEHAT.docx": "bd2346595faabc1511b951ebbb2483fd127dfec50066de16095df672649d06d5",
     "docs/laporan/Week_12_Pemodelan_Evaluasi_ABSA_SATUSEHAT.pdf": "9a2e6aa7d946bdd335cb135ee803c4a68cbb30f7e9cbc689be3327849e2bb0cc",
     "docs/laporan/Week_13_Laporan_Pertama_ABSA_SATUSEHAT.docx": "1b9535d5f3eccacf9db5039aa4a2346ec14bfd32723970dff89df4863b4a4ec7",

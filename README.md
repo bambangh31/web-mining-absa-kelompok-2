@@ -132,13 +132,13 @@ memprediksi atau mengklaim label gold sudah tersedia.
   matriks delapan aspek per model, dan CSV sumber gambar.
 - [Status sampai week 13](docs/project/implementation-status.md#laporan-pertama-week-13-14-november-2026)
   menjelaskan hasil yang tersedia dan batasnya. Hasil berasal dari satu
-  anotator; Qwen belum dievaluasi. Pengumpulan ke dosen
+  anotator; seluruh delapan jenis model kini memiliki hasil pada 150 ulasan. Pengumpulan ke dosen
   tidak ditandai selesai.
 - Berkas week 10-11 dan laporan gabungan lama dipertahankan sebagai arsip;
   lihat [daftar laporan](docs/laporan/README.md).
 - [Laporan progres week 12 terpisah (PDF)](docs/laporan/Week_12_Pemodelan_Evaluasi_ABSA_SATUSEHAT.pdf)
   dan [Word](docs/laporan/Week_12_Pemodelan_Evaluasi_ABSA_SATUSEHAT.docx)
-  memuat pemodelan dan evaluasi tujuh jenis model. Laporan week 13
+  memuat pemodelan dan evaluasi delapan jenis model. Laporan week 13
   tetap merangkum seluruh pekerjaan week 10-12.
 
 Pembaruan 17 November 2026: [IndoBERT base sudah selesai](results/indobert/README.md)
@@ -164,15 +164,26 @@ issue kosong tetap tersedia untuk tugas lain. Isi template saat membuat PR.
 Panduan kerja dan tahapan ada di [docs/project/README.md](docs/project/README.md).
 Ringkasan pemeriksaan setup ada di [review setup](docs/project/review-setup.md).
 
-IndoBERT large juga telah selesai untuk tiga seed: **0,765 ± 0,020** F1 pasangan, dibanding base **0,775 ± 0,013**. [Audit large](results/indobert_large/README.md) dan laporan Week 12/13 memuat pembaruan enam model; Qwen belum dievaluasi.
+IndoBERT large juga telah selesai untuk tiga seed: **0,765 ± 0,020** F1 pasangan, dibanding base **0,775 ± 0,013**. [Audit large](results/indobert_large/README.md) memuat konfigurasi dan verifikasinya. Laporan Week 12/13 mencakup delapan model pada ringkasan di bawah.
 
 Tahap BiLSTM: [notebook Colab 05](notebooks/05_bilstm_colab.ipynb) siap
 menjalankan tiga seed dengan unduhan fastText otomatis. Pilih GPU T4 lalu
 **Run all**, dan simpan `hasil_bilstm_lengkap.zip`. Hasil B4 tiga seed telah diterima dan [diverifikasi](results/bilstm/README.md):
-F1 pasangan rata-rata **0,373 ± 0,016**. Kini tersedia hasil tujuh jenis model;
-Qwen belum dievaluasi.
+F1 pasangan rata-rata **0,373 ± 0,016**. Hasil ini tercakup dalam perbandingan delapan model di bawah.
 
 Qwen dapat dijalankan melalui [notebook Colab 06](notebooks/06_qwen_colab.ipynb):
 pilih GPU T4 dan **Run all**. Ollama dipasang di VM Colab, lalu Qwen
 memprediksi 150 ulasan uji yang sama. Simpan `hasil_qwen_lengkap.zip`.
-Notebook tersedia; hasil Qwen aktual belum ada.
+Hasil Qwen telah [diverifikasi](results/qwen/README.md): F1 pasangan 0,741 dan macro-F1 sentimen 0,664.
+
+## Hasil delapan model pada 17 November 2026
+
+Seluruh model dinilai pada 150 ulasan uji manual yang sama. F1 pasangan:
+Gemini **0,842**; IndoBERT base **0,775 ± 0,013**; large **0,765 ± 0,020**;
+Qwen **0,741**; LR **0,727**; SVM **0,705**; NB **0,621**; BiLSTM **0,373 ± 0,016**.
+SD sampel hanya untuk tiga model neural yang dijalankan tiga seed; Qwen
+adalah satu run inferensi langsung. [Audit Qwen](results/qwen/README.md)
+dan [evaluasi 14 run](results/metrics/uji_delapan_model/) memuat metrik,
+confusion matrix, serta 38 masalah kutipan pada 28 ulasan. Label tetap berasal
+dari satu anotator dan 375 label latih/validasi belum diverifikasi.
+Laporan Week 12/13 diperbarui; pengumpulan ke dosen tidak dilakukan otomatis.

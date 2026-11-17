@@ -1,0 +1,336 @@
+﻿reviewId,kata,seragam,aspek,label,bukti
+00007aa7-d0f3-40a4-8ca7-04594757fce9,perbarui,update,pembaruan_aplikasi,negatif,Udah diperbarui malah gag bisa log in
+00007aa7-d0f3-40a4-8ca7-04594757fce9,log in,login,akun_login,negatif,gag bisa log in
+00007aa7-d0f3-40a4-8ca7-04594757fce9,app,aplikasi,umum,negatif,hapus aja gag usah bikin app kyk gini
+00d027bc-01d7-4cdc-991a-c7ba9898db2d,instal,instal,performa,negatif,Udh brpa kali instal ttp gabisa d buka
+00d027bc-01d7-4cdc-991a-c7ba9898db2d,buka,buka aplikasi,performa,negatif,
+00d027bc-01d7-4cdc-991a-c7ba9898db2d,masuk,login,akun_login,negatif,Susah ini aing kerja kalo masuk k area tertentu
+0384cf7f-f923-42a1-9cfb-49d5fd0d152f,login,login,akun_login,negatif,Susah buat login
+0384cf7f-f923-42a1-9cfb-49d5fd0d152f,update,update,pembaruan_aplikasi,negatif,Knp harus update dan dipersulit kek gini!!!!
+0384cf7f-f923-42a1-9cfb-49d5fd0d152f,Apk,aplikasi,umum,negatif,Apk gk guna!!!
+05fa964d-b73f-4fad-b432-adcd7ca2de16,buka,buka aplikasi,performa,negatif,Ngak bisa buka
+0c8b5493-9b46-46a6-b4b3-be53285a9533,daftar,pendaftaran,registrasi_data,negatif,Ga bisa daftar
+0c8b5493-9b46-46a6-b4b3-be53285a9533,NIK,NIK,registrasi_data,negatif,
+0c8b5493-9b46-46a6-b4b3-be53285a9533,admin,customer service,layanan_pelanggan,negatif,Ini gimana sih adminnya?
+0c9f1828-a89b-47f1-950b-e64c3a3b11d5,lag,lemot,performa,negatif,Tetap lag d tulisan/logo satu sehat
+0c9f1828-a89b-47f1-950b-e64c3a3b11d5,tulisan/logo,logo,performa,negatif,Tetap lag d tulisan/logo satu sehat
+0c9f1828-a89b-47f1-950b-e64c3a3b11d5,Kecewa,kecewa,umum,negatif,Kecewa. Kasih bintang 1
+0d1edbbe-a168-41c1-9438-5808a0157158,apk,aplikasi,umum,negatif,"apk ga guna mau daftar akun permintaan di tolak trus, padahal udah bener semua"
+0f9a3c6e-788e-4863-afc0-037a626a64b4,Aplikasi,aplikasi,umum,negatif,Aplikasi gak bisa dipakai sama sekali
+0fc5188c-7494-4626-be53-49f696347b25,download,download,performa,negatif,susah di download aplikasinya
+12c9f2c4-3835-4919-8302-4b01979aaaaf,Aplikasinya,aplikasi,umum,negatif,Aplikasinya ga bisa dibuka
+12c9f2c4-3835-4919-8302-4b01979aaaaf,stak,stuck,performa,negatif,cm stak di logo ajh
+14f8cef9-cb34-412e-9891-d48a8de77a55,buka akun,login,akun_login,negatif,Saya tidak bisa buka akun saya di satu sehat
+15572b14-2bc9-424c-a185-571ebbd9b12e,pin,PIN,akun_login,negatif,pin udah sesuai dg yg dibuat tp pindah hp gagal dg alasan pin belum sesuai
+15572b14-2bc9-424c-a185-571ebbd9b12e,pindah hp,nomor telepon,registrasi_data,negatif,tp pindah hp gagal dg alasan pin belum sesuai
+17fd8d2e-67eb-472f-9dcf-e21ccbc05c44,terbuka,buka aplikasi,performa,negatif,"Aplikasi tidak mau terbuka, udah beberapa kli instal dan uninstall tetap tidak bisa buka aplikasinya"
+1e26cdb1-ca95-4943-a115-9c46a46bcefe,masuk,masuk,akun_login,negatif,Ga bisa masuk stag di logo
+1e26cdb1-ca95-4943-a115-9c46a46bcefe,logo,logo,performa,negatif,stag di logo
+1f03d23d-7da7-4eb5-a1e5-302a082fa75d,rating,rating,umum,netral,Kalo ada rating 0 milih 0
+1f03d23d-7da7-4eb5-a1e5-302a082fa75d,log in,login,akun_login,positif,Pernah log in
+1f03d23d-7da7-4eb5-a1e5-302a082fa75d,email,email,akun_login,negatif,skrg email gak terdaftar
+1f0c6508-7722-4d21-ae67-8cec43336801,Sertifikat booster,sertifikat,fitur_kesehatan,negatif,Sertifikat booster tidak bisa didownload
+207fec3c-d92b-46bc-b21c-e5f5b4bf7992,dibuka,buka aplikasi,performa,negatif,gabisa di buka
+207fec3c-d92b-46bc-b21c-e5f5b4bf7992,error,error,performa,negatif,makin error dan gajelas
+209cdb74-6e13-49c7-ae70-dd297a4703c0,perangkat bertaut alamatnya,perangkat bertaut alamatnya,fitur_kesehatan,negatif,pas mau buat perangkat bertaut alamatnya malah di aceh
+209cdb74-6e13-49c7-ae70-dd297a4703c0,wilayah,wilayah,fitur_kesehatan,negatif,tidak ada wilayah saya
+209cdb74-6e13-49c7-ae70-dd297a4703c0,nik,NIK,registrasi_data,negatif,isi kolom nik tidaak bisa di isi
+21a2e1f2-b8cc-4aac-badf-79112d7f1b0c,error,error,performa,negatif,Makin error aplikasi ya
+24709463-8dcb-458c-92e6-336565636099,sangat membantu,membantu,umum,positif,sangat membantu
+24709463-8dcb-458c-92e6-336565636099,informatif,informatif,umum,positif,informatif
+24993ee5-0c56-43e9-ba92-a40f2bf2347a,menilai kesehatan diri,cek kesehatan,fitur_kesehatan,positif,Baik dalam membantu menilai kesehatan diri
+25994a82-1186-47c6-bfdf-e247e7ccb1dd,update,update,pembaruan_aplikasi,negatif,setelah update malah susah login
+25994a82-1186-47c6-bfdf-e247e7ccb1dd,login,login,akun_login,negatif,susah login dgn sesuai data terdaftar
+25994a82-1186-47c6-bfdf-e247e7ccb1dd,email,email,akun_login,negatif,susah pakai email sama aja
+25994a82-1186-47c6-bfdf-e247e7ccb1dd,kode,kode verifikasi,akun_login,negatif,kode 6 digit dikirimnya lama
+25994a82-1186-47c6-bfdf-e247e7ccb1dd,terima,respon,layanan_pelanggan,negatif,dikirimnya lama
+270bab5e-8630-46d7-8b41-86c56581b17e,update,update,pembaruan_aplikasi,negatif,
+270bab5e-8630-46d7-8b41-86c56581b17e,login,login,akun_login,negatif,aplikasi tak boleh logh in
+29210c8a-4e13-4860-b77c-650ac099110f,login,login,akun_login,negatif,udah login kemaren dan berhasil; giliran mau login gabisa
+29210c8a-4e13-4860-b77c-650ac099110f,vaksin,vaksin,fitur_kesehatan,positif,status vaksin juga bener
+29210c8a-4e13-4860-b77c-650ac099110f,log out,log out,performa,negatif,tau2 ke log out sendiri
+29210c8a-4e13-4860-b77c-650ac099110f,daftar,daftar,registrasi_data,negatif,nyoba daftar lagi gabisa
+29210c8a-4e13-4860-b77c-650ac099110f,barcode,barcode,fitur_kesehatan,negatif,harus disuru scan barcode terus
+295e4e15-678a-409f-b3cf-a14a9dafecf9,vaksin,vaksin,fitur_kesehatan,positif,Telah vasksin 1; telah vaskin
+295e4e15-678a-409f-b3cf-a14a9dafecf9,satusehat,satusehat,umum,negatif,Tapi saat di aplikasi satusehat keterang belum pernah vaskin. Ini aplikasi bego atau apa ya
+295e4e15-678a-409f-b3cf-a14a9dafecf9,peduli lindungi,PeduliLindungi,pembaruan_aplikasi,positif,Lebih bagus peduli lindungi yang dulu
+29c3efd2-cfd1-4110-a83f-e197c0851484,Aplikasi,aplikasi,umum,negatif,Aplikasi paling 👎
+29ffd828-21e1-4ec0-bd2a-da2d35626b84,Update,update,pembaruan_aplikasi,negatif,Update mulu.. ketika mau dipake menyusahkan
+2ac78b92-b15e-4943-bb10-28203c1b063e,profil,profil,registrasi_data,negatif,ngedit profil ngga muncul muncul
+2ac78b92-b15e-4943-bb10-28203c1b063e,perbaiki,perbaiki,layanan_pelanggan,negatif,tolong perbaiki
+2b288406-5315-4fea-a48c-55472893396c,update,update,pembaruan_aplikasi,negatif,"setelah di-update, sertifikat vaksin dan tiket vaksin booster kedua saya hilang semua"
+2b288406-5315-4fea-a48c-55472893396c,sertifikat vaksin,sertifikat,fitur_kesehatan,negatif,"setelah di-update, sertifikat vaksin dan tiket vaksin booster kedua saya hilang semua"
+2b288406-5315-4fea-a48c-55472893396c,tiket vaksin booster,tiket,fitur_kesehatan,negatif,sertifikat vaksin dan tiket vaksin booster kedua saya hilang semua
+2b288406-5315-4fea-a48c-55472893396c,hilang,hilang,performa,negatif,sertifikat vaksin dan tiket vaksin booster kedua saya hilang semua
+2b288406-5315-4fea-a48c-55472893396c,status,status,fitur_kesehatan,negatif,Dan status malah merah
+2b58ff8a-ec3c-4aa5-bdf5-f2fb00c96a3d,nomor,nomor telepon,akun_login,negatif,"kalau nomor sudah tidak aktif, gabisa login lagi"
+2b58ff8a-ec3c-4aa5-bdf5-f2fb00c96a3d,nik,NIK,registrasi_data,negatif,gabisa gara gara nik sudah terdaftar
+2b58ff8a-ec3c-4aa5-bdf5-f2fb00c96a3d,wa,WhatsApp,layanan_pelanggan,negatif,saya kirim keluhan via wa dan email ga ada solusi sama sekali
+2b58ff8a-ec3c-4aa5-bdf5-f2fb00c96a3d,email,respon,layanan_pelanggan,negatif,saya kirim keluhan via wa dan email ga ada solusi sama sekali
+2b58ff8a-ec3c-4aa5-bdf5-f2fb00c96a3d,Aplikasi,aplikasi,umum,negatif,Aplikasi sampah
+303b6e5b-b4c5-4796-b6da-33a66b36405c,masuk,login,akun_login,negatif,
+303b6e5b-b4c5-4796-b6da-33a66b36405c,kode otp,OTP,akun_login,negatif,katanya mau ngirim kode otp ke WA tpi dicoba berulangkali ga masuk2 kodenya
+303b6e5b-b4c5-4796-b6da-33a66b36405c,WA,WhatsApp,layanan_pelanggan,negatif,
+3068d221-38f1-40fe-a3c0-a56e1192b131,perbarui,update,pembaruan_aplikasi,negatif,Saya tidak bisa perbarui aplikasi ini kenapa yah; di playstore tidak mau; ???
+334aa28f-7157-4411-9bf4-55d0ef18ac1c,daftar,pendaftaran,registrasi_data,negatif,Mau daftar sudah terdaftar
+334aa28f-7157-4411-9bf4-55d0ef18ac1c,masuk,login,akun_login,negatif,
+334aa28f-7157-4411-9bf4-55d0ef18ac1c,lama2 ribet,ribet,kemudahan_penggunaan,negatif,lama2 ribet ya aplikasi nya ini
+36648c5f-25fa-4233-a926-ddd1a7b31e6d,App,aplikasi,umum,negatif,Very poor App
+36648c5f-25fa-4233-a926-ddd1a7b31e6d,beta file,beta file,performa,negatif,corrupted beta file
+36a0b77c-371a-4765-b1c4-665a81d6dcda,OTP,OTP,akun_login,negatif,Menyusahkan OTP pake WA
+37fa7ce0-22f0-48dc-9a9b-7de16c7615aa,login,login,akun_login,negatif,GK bisa login di satu sehat
+37fa7ce0-22f0-48dc-9a9b-7de16c7615aa,hepsek,customer service,layanan_pelanggan,negatif,di suruh hubungi hepsek
+3c0dd6bc-5f33-42a3-a56c-e5839c89858f,daftar,registrasi data,registrasi_data,negatif,Mau daftar ada notif permintaan ditolak
+3c418cd1-9843-4313-ab07-e7ee166c87ec,kebuka,buka aplikasi,performa,negatif,Gabisa kebuka sama sekali gajelas
+3e4bb001-9e15-465e-a73c-dc86090d8e52,bug,bug,performa,negatif,Terjadi bug
+3e4bb001-9e15-465e-a73c-dc86090d8e52,tidak bisa digunakan,tidak bisa dibuka,performa,negatif,"aplikasi tidak bisa digunakan, tertera gsmbar menu"
+3ec37c0f-1007-483a-8918-254989bea7c0,masuk,masuk,akun_login,negatif,Kok gak bisa masuk dalam aplikasi ini?
+3ec37c0f-1007-483a-8918-254989bea7c0,update,update,pembaruan_aplikasi,negatif,Sudah di update tapi pas buka eh disuruh update lagi habis itu buka lagi dan seterusnya seperti begitu-begitu terus
+3ec37c0f-1007-483a-8918-254989bea7c0,buka,buka aplikasi,performa,negatif,pas buka eh disuruh update lagi habis itu buka lagi dan seterusnya seperti begitu-begitu terus
+4bc92fe4-383b-4bf2-9dc2-f5600d8084ac,daftar,pendaftaran akun,registrasi_data,negatif,Kenapa tidak bisa mendaftar
+4bcac2a6-ba46-454c-ab20-9935c39c790b,Mudah,mudah,kemudahan_penggunaan,positif,Mudah dan gampang di akses
+4bcac2a6-ba46-454c-ab20-9935c39c790b,gampang,mudah,kemudahan_penggunaan,positif,Mudah dan gampang di akses
+4bcac2a6-ba46-454c-ab20-9935c39c790b,akses,buka aplikasi,performa,positif,gampang di akses
+4bcac2a6-ba46-454c-ab20-9935c39c790b,Lebih simpel,simpel,kemudahan_penggunaan,positif,Lebih simpel
+4c52f430-df59-455a-868c-0a0912569efd,update,update,pembaruan_aplikasi,negatif,Di update tapi tidak bisa akses masuk
+4c52f430-df59-455a-868c-0a0912569efd,akses masuk,buka aplikasi,performa,negatif,tidak bisa akses masuk
+4c96ab14-b039-4575-9d91-56e9baf2dfc6,perbarui,update,pembaruan_aplikasi,negatif,Setelh s perbaruhui malah data data w hilang
+4c96ab14-b039-4575-9d91-56e9baf2dfc6,data,data diri,registrasi_data,negatif,
+4c96ab14-b039-4575-9d91-56e9baf2dfc6,masuk akun,login,akun_login,netral,gimana cara masuk akun w lg
+4d2a4f13-a092-4eb2-ab8d-32d32d344e5d,update,update,pembaruan_aplikasi,negatif,Kenapa setiap saat update tp tidak menjadi lebih baik
+4d2a4f13-a092-4eb2-ab8d-32d32d344e5d,login,login,akun_login,negatif,"Ga bisa login, habis itu suruh daftar lagi"
+4d2a4f13-a092-4eb2-ab8d-32d32d344e5d,bug,bug,performa,negatif,Habis itu ada notification bug
+4fe34661-9890-4452-a935-eade76e1c4a0,buka aplikasi,buka aplikasi,performa,negatif,Buat buka aplikasinya aja gabisa
+51b358d6-87e2-4dec-8c28-7ecc6a8453c4,Pembaruan,pembaruan aplikasi,pembaruan_aplikasi,negatif,Pembaruan sekarang kurang bagus
+51b358d6-87e2-4dec-8c28-7ecc6a8453c4,pembaca layar,pembaca layar,kemudahan_penggunaan,negatif,tidak bisa di baca oleh pembaca layar
+51b358d6-87e2-4dec-8c28-7ecc6a8453c4,peduli lindungi,PeduliLindungi,pembaruan_aplikasi,positif,Masih bagus peduli lindungi
+52001cee-f9e5-4990-af8a-5b37aaecf764,Aplikasi,aplikasi,umum,negatif,Apliksi RUWET
+52001cee-f9e5-4990-af8a-5b37aaecf764,Login,login,akun_login,negatif,Login di tolak trs
+5217acff-faab-432c-a245-f93ed262b628,informasi,informasi,fitur_kesehatan,positif,Banyak sekali informasi dan edukasi penting dalam aplikasi ini
+5217acff-faab-432c-a245-f93ed262b628,edukasi,edukasi,fitur_kesehatan,positif,Banyak sekali informasi dan edukasi penting dalam aplikasi ini
+5217acff-faab-432c-a245-f93ed262b628,aplikasi,aplikasi,umum,positif,sangat recommended sekali
+52242a74-47d4-4be0-bdfd-d34e51d6c275,buka,buka aplikasi,performa,negatif,total g bisa di buka ya
+52242a74-47d4-4be0-bdfd-d34e51d6c275,sandai,kata sandi,akun_login,negatif,adahal sandi sudah di ubah trus tetep saja ga valid
+52242a74-47d4-4be0-bdfd-d34e51d6c275,masuk akun,masuk aplikasi,akun_login,negatif,skarang mah masuk akun nya aja g bisa
+53c3b0ae-b28d-4e03-a015-830b612f868f,register,registrasi,registrasi_data,negatif,Pas register keterangan sudah terdaftar
+53c3b0ae-b28d-4e03-a015-830b612f868f,login,login,akun_login,negatif,pas login user belum terdaftar
+53c3b0ae-b28d-4e03-a015-830b612f868f,Membingungkan,bingung,kemudahan_penggunaan,negatif,Membingungkan
+546e10f8-5463-40d9-b164-52e8340c0f2e,daftar,daftar,registrasi_data,negatif,Saat daftar sudah terdaftar
+546e10f8-5463-40d9-b164-52e8340c0f2e,masuk,masuk aplikasi,akun_login,negatif,saat masuk kok tidak terdaftar
+546e10f8-5463-40d9-b164-52e8340c0f2e,terdaftar,data sudah terdaftar,registrasi_data,negatif,Saat daftar sudah terdaftar tetapi saat masuk kok tidak terdaftar
+546e10f8-5463-40d9-b164-52e8340c0f2e,bingung,bingung,kemudahan_penggunaan,negatif,Hedehhh bingunggg
+5793667b-14ac-40ca-a69e-f1afe5889c8f,no hp,nomor telepon,akun_login,negatif,Login pake no hp : akun tidak ditemukan
+5793667b-14ac-40ca-a69e-f1afe5889c8f,akun,akun,akun_login,negatif,Login pake no hp : akun tidak ditemukan
+5793667b-14ac-40ca-a69e-f1afe5889c8f,nomer,nomor telepon,registrasi_data,negatif,Daftar pake no hp : nomer sudah terdaftar
+5793667b-14ac-40ca-a69e-f1afe5889c8f,email,email,akun_login,negatif,Login pake email : akun tidak ditemukan
+5793667b-14ac-40ca-a69e-f1afe5889c8f,ditolak,error,performa,negatif,
+5793667b-14ac-40ca-a69e-f1afe5889c8f,sertifikat vaksin,sertifikat,fitur_kesehatan,negatif,mo liat sertifikat vaksinku ga bisa jadinya
+5793667b-14ac-40ca-a69e-f1afe5889c8f,ESDM,server,performa,negatif,Perbaiki dulu ESDM nya woi
+5793667b-14ac-40ca-a69e-f1afe5889c8f,apk,aplikasi,umum,negatif,bikin apk ga jelas
+583c8666-ccf8-418e-9370-8adc571c06d0,otp,OTP,akun_login,negatif,otp dikirim benar ga sesuai
+583c8666-ccf8-418e-9370-8adc571c06d0,cara masuk,masuk aplikasi,akun_login,netral,cara masuk nya gmna?
+583c8666-ccf8-418e-9370-8adc571c06d0,gejelas,jelas,kemudahan_penggunaan,negatif,gejelas
+59a16e5a-fef1-4d43-a7a4-c1749e61001c,Aplikasi,aplikasi,umum,negatif,"Aplikasi Apa lah Ini.. Mau Mencoba tulis Sopan, tapi Ini aplikasi Menyampah. Menyusahkan."
+59a16e5a-fef1-4d43-a7a4-c1749e61001c,PeduliLindungi,PeduliLindungi,pembaruan_aplikasi,positif,Jauuuuuuuuh Lebih Menolong Aplilasi Puduli Lindungi Dulu..
+5b00e707-87a2-45bc-9721-ab8ebefb3c5b,aplikasi,aplikasi,umum,negatif,Makin gak jelas ini aplikasi suruh milih tema tapiga bisa d pilih
+5e9324fc-0b61-4cdf-8d4b-7e628a37955a,vaksin,vaksin,fitur_kesehatan,negatif,Saya sdah vaksin ke 3 ko yg tampil cuman ke 1 nya
+5ee6b12b-5ce0-4ade-bfef-c84b4753a246,login,login,akun_login,negatif,Ga bisa login
+5ee6b12b-5ce0-4ade-bfef-c84b4753a246,daftar,daftar,registrasi_data,negatif,disuruh daftar dulu
+5ee6b12b-5ce0-4ade-bfef-c84b4753a246,respon,respon,layanan_pelanggan,negatif,responnya number already exist
+5ee6b12b-5ce0-4ade-bfef-c84b4753a246,Apk,aplikasi,umum,negatif,Apk aneh!!!
+60af3913-6bc2-4056-aef5-17958ec2c63e,nomor hanphone,nomor telepon,registrasi_data,negatif,
+60af3913-6bc2-4056-aef5-17958ec2c63e,email,email,registrasi_data,negatif,
+65d91d7b-e786-489e-ac01-318245cf7acc,LOGIN,login,akun_login,negatif,GABISA LOGIN!
+65d91d7b-e786-489e-ac01-318245cf7acc,KODE OTP,OTP,akun_login,negatif,KODE OTP GA MASUK²!
+682cccf8-6fe6-4127-9bf5-47f218fcdce6,data vaksin,vaksin,fitur_kesehatan,negatif,Masa sudah 1bulan lebih data vaksin ke-3 belum masuk masuk
+6b746476-642b-462e-96e4-149731299c03,aplikasi,aplikasi,umum,positif,Dengan aplikasi ini membuat segala aktifitas lancar
+6e6672e7-3c59-4139-8b9a-66b1db1b40c1,cek kesehatan,cek kesehatan,fitur_kesehatan,positif,Sangat bermanfaat untuk cek kesehatan dini
+700e358f-65a4-484a-8e18-9968c8f895ba,unduh,unduh,kemudahan_penggunaan,positif,Sangat gampang di unduh
+703035e0-7789-4cff-9415-ec61f522389e,PEDULI LINDUNGI,PeduliLindungi,pembaruan_aplikasi,negatif,dulu PEDULI LINDUNGI
+703035e0-7789-4cff-9415-ec61f522389e,SATU SEHAT,SATUSEHAT,pembaruan_aplikasi,negatif,sekarang SATU SEHAT
+703035e0-7789-4cff-9415-ec61f522389e,perubahan,perubahan,pembaruan_aplikasi,negatif,jauh perubahannya
+703035e0-7789-4cff-9415-ec61f522389e,lemot,lemot,performa,negatif,tambah lemot
+703035e0-7789-4cff-9415-ec61f522389e,error,error,performa,negatif,error
+703035e0-7789-4cff-9415-ec61f522389e,lag,lemot,performa,negatif,lag
+703035e0-7789-4cff-9415-ec61f522389e,bug,bug,performa,negatif,bug
+703035e0-7789-4cff-9415-ec61f522389e,loading,loading,performa,negatif,loading
+703035e0-7789-4cff-9415-ec61f522389e,buruk,jelek,umum,negatif,berubah makin buruk/jelek
+703035e0-7789-4cff-9415-ec61f522389e,aplikasi,aplikasi,umum,netral,aplikasi ini masih legal/sah/berguna tidak ya??? setelah corona hilang
+72a2b1e4-f578-467c-8686-8efe8765354b,login,login,akun_login,negatif,ga bisa login
+72a2b1e4-f578-467c-8686-8efe8765354b,email,email,layanan_pelanggan,negatif,notif nya gak masuk
+73c3201a-93d3-42ce-b0f5-776ee4334cf1,Aplikasi ini,aplikasi,umum,negatif,tidak bisa dibuka di hp saya
+73c3201a-93d3-42ce-b0f5-776ee4334cf1,hp,hp,performa,negatif,tidak bisa dibuka di hp saya
+73c3201a-93d3-42ce-b0f5-776ee4334cf1,update,update,pembaruan_aplikasi,netral,Padahal udah diupdate
+74a220a3-b3b4-4b6e-a06e-7e633ff00cc5,terdaftar,data sudah terdaftar,registrasi_data,netral,Saya sudah terdaftar di peduli lindungi
+74a220a3-b3b4-4b6e-a06e-7e633ff00cc5,Satusehat,SATUSEHAT,pembaruan_aplikasi,negatif,"tapi pindah ke Satusehat ga bisa login gmna mau vaksin, kalo apk belum siap jangan maksa!"
+74a220a3-b3b4-4b6e-a06e-7e633ff00cc5,login,login,akun_login,negatif,ga bisa login
+74a220a3-b3b4-4b6e-a06e-7e633ff00cc5,vaksin,vaksin,fitur_kesehatan,negatif,mau vaksin
+74a220a3-b3b4-4b6e-a06e-7e633ff00cc5,apk,aplikasi,umum,negatif,kalo apk belum siap jangan maksa!
+774c55f1-f6d8-4075-aa9c-910457916362,masuk,login,akun_login,negatif,Nggk bisa masuk ini gimana
+774c55f1-f6d8-4075-aa9c-910457916362,otp,OTP,akun_login,negatif,Selesai ngisi otp langsung keluar lagi
+8122ca04-8886-4c89-a345-6dab25963b94,aplikasi,aplikasi,umum,negatif,Ini gimana si aplikasi makin ga jelas
+8122ca04-8886-4c89-a345-6dab25963b94,masuk kerja,tes masuk kerja,fitur_kesehatan,negatif,Saya mau tes masuk kerja
+8122ca04-8886-4c89-a345-6dab25963b94,sertifikat vaksin,sertifikat vaksin,fitur_kesehatan,negatif,buat bikin sertifikat vaksin di app nya ga ada akun saya
+8122ca04-8886-4c89-a345-6dab25963b94,akun,akun,akun_login,negatif,padahal dulu itu satu nomor bisa 4 akun. Sekarang kok cuma 1 doang
+8122ca04-8886-4c89-a345-6dab25963b94,nomor,nomor telepon,registrasi_data,negatif,padahal dulu itu satu nomor bisa 4 akun
+81a0e7fe-6562-4b68-ada6-b0d3a2f141e5,Aplikasi Satu Sehat Mobile,aplikasi,umum,positif,"Aplikasi Satu Sehat Mobile adalah aplikasi karya anak negeri yang cocok untuk semua orang yang ingin menjalani hidup sehat dan produktif. Kita bisa berkonsultasi dengan dokter secara gratis, Aplikasi ini sangat direkomendasikan untuk diunduh dan digunakan. Saya memberikan bintang lima untuk aplikasi ini! 👍👍👍👍👍"
+82024b49-e3db-4338-a537-6c31ff3b1908,Apk,aplikasi,umum,negatif,"Apk t*i, mempersulit masyarakat jatohnya!"
+82b3a721-e836-4543-9d23-a458107b9c99,no hp,nomor telepon,registrasi_data,negatif,Mau ganti no hp malah ga bs
+82b3a721-e836-4543-9d23-a458107b9c99,upgrade,update,pembaruan_aplikasi,negatif,semakin di upgrade semakin jelek kualitas ini aplikasi
+82d9afa3-6d96-433b-9b17-9fba4a629337,update,update,pembaruan_aplikasi,negatif,Sangat menyesal di update ke satusehat
+82d9afa3-6d96-433b-9b17-9fba4a629337,masuk,masuk aplikasi,akun_login,negatif,saat masuk sangat susah veripikasi smas gak kunjung masuk
+8325552f-545c-48f4-97c4-2304798d12c0,update,update,pembaruan_aplikasi,negatif,masak update tapi nggk ada status update
+8325552f-545c-48f4-97c4-2304798d12c0,Aplikasi,aplikasi,umum,negatif,Aplikasi terlalu memaksa
+834dd216-2324-4b5f-b57a-4a12b981f1c0,masuk,masuk,akun_login,negatif,Kok gak bisa masuk yah?
+841ca6f6-7460-4015-af54-12d920b7da2d,dibuka,buka aplikasi,performa,negatif,Ga bisa dibuka
+844298f5-c13f-4352-a50b-83f8b29ebca9,Aplikasi,aplikasi,umum,negatif,Aplikasi yang sering bikin jengkel; Kebanyakan error
+85e52841-572b-4fa2-a8f8-5a9e7fb11954,Aplikasi,aplikasi,umum,negatif,Aplikasi dobol
+85e52841-572b-4fa2-a8f8-5a9e7fb11954,error,error,performa,negatif,Nama negara tidak ditemukan matamu mangsakne negoro ndi ae. Lagi selangkah wes mbulet.
+871254a7-75de-4b03-88d0-3f62620d0f0e,pembaruan app,update,pembaruan_aplikasi,negatif,setelah pembaruan app selalu crash
+871254a7-75de-4b03-88d0-3f62620d0f0e,crash,error,performa,negatif,selalu crash
+88a5c2e6-9532-4eb4-b67b-1c58c9f362f5,aplikasinya,aplikasi,umum,positif,semoga aplikasinya jg selalu sehat
+88d22767-a0ce-41f0-8b14-17248e3c0f48,Aplikasi,aplikasi,umum,negatif,"Aplikasi payah, kata nya buatan anak bangsa tapi ko seperti ini kualitas aplikasi yg masih dibilang dibawah rata-rata dengan aplikasi lain yg sama fungsi nya dan kualitas lebih bagus"
+8977b5a7-0877-40bc-8bd7-39f180dc0f1b,Nama,nama,registrasi_data,negatif,Nama dan NIK sudah sama tapi di bilang tidak sama
+8977b5a7-0877-40bc-8bd7-39f180dc0f1b,NIK,NIK,registrasi_data,negatif,Nama dan NIK sudah sama tapi di bilang tidak sama
+8cf7fa4b-8510-469c-b711-80c2ea8cab68,perbarui,update,pembaruan_aplikasi,negatif,Setiap d buka perbarui mulu
+8d08184c-dee5-4f8b-898d-b653cb0ea513,Aplikasi,aplikasi,umum,negatif,Aplikasi yang benar-benar tidak bermanfaat. Bukannya memudahkan malah mempersulit.
+8dede072-3d75-4db2-90e9-0d9b6c22fa77,sertifikat vaksin,sertifikat,fitur_kesehatan,netral,Melihat hasil unduhan sertifikat vaksin di mana?
+8dede072-3d75-4db2-90e9-0d9b6c22fa77,"settings', 'help'","settings, help",kemudahan_penggunaan,netral,Tolong tambah opsi 'settings' dan 'help'
+8e160d05-ab9f-4f9b-aa82-0023685bca26,dibuka,buka aplikasi,performa,negatif,Kenapa ga bida dibuka???
+900569f4-82b1-4f27-a0ab-2c0a58239426,update apk,update,pembaruan_aplikasi,negatif,Sata mau komplain lg terkait update apk ini
+900569f4-82b1-4f27-a0ab-2c0a58239426,perbarui,update,pembaruan_aplikasi,negatif,disuruh memperbarui jdi gk bs buka
+900569f4-82b1-4f27-a0ab-2c0a58239426,buka,buka aplikasi,performa,negatif,gk bs buka
+93663aea-77ca-49a8-b0a7-a05716b70229,vaksin,vaksin,fitur_kesehatan,negatif,"dulu udah vaksin 1,2 & boster pas jaman covid"
+93663aea-77ca-49a8-b0a7-a05716b70229,sertifikat,sertifikat,fitur_kesehatan,negatif,"ada sertifikatnya pas masih nama ""pedulilindungi"" sekarang kontrak kerja dah abis mau daftar kerja lagi butuh sertifikat vaksin malah kosong"
+93663aea-77ca-49a8-b0a7-a05716b70229,pedulilindungi,PeduliLindungi,pembaruan_aplikasi,negatif,"pas masih nama ""pedulilindungi"" sekarang kontrak kerja dah abis mau daftar kerja lagi butuh sertifikat vaksin malah kosong"
+93663aea-77ca-49a8-b0a7-a05716b70229,daftar,registrasi data,registrasi_data,negatif,mau daftar kerja lagi butuh sertifikat vaksin malah kosong
+93663aea-77ca-49a8-b0a7-a05716b70229,vaksin ulang,vaksin,fitur_kesehatan,negatif,terus ini gimana? vaksin ulang?
+93663aea-77ca-49a8-b0a7-a05716b70229,masyarakat,aplikasi,umum,negatif,plis lah jangan nyusahin masyarakat
+94527925-7b03-4ed6-b784-1e604842d518,apk,aplikasi,umum,positif,makasih berkat apk ini saya bisa punya kartu vaksin untuk keperluan kerja🥰
+9519da2b-841a-4643-8a1a-7614154f8dd5,update,update,pembaruan_aplikasi,negatif,Minta update terus
+9519da2b-841a-4643-8a1a-7614154f8dd5,Dibuka,buka aplikasi,performa,negatif,
+965b1438-28a8-4684-95e8-c73b10952db2,aplikasi,aplikasi,umum,negatif,aplikasi parah sekali tidak bisa di pake
+9db893c7-f68c-48a4-ba62-1344c766c65d,stak,stuck,performa,negatif,stak di pemilihan tema; gak maju2.
+9dd63c57-f032-4c55-be17-fa0629b523c3,CEK RIWAYAT VAKSIN,cek kesehatan,fitur_kesehatan,negatif,GAK BISA CEK RIWAYAT VAKSIN
+9dd63c57-f032-4c55-be17-fa0629b523c3,APLIKASI,aplikasi,umum,negatif,APLIKASINY JELEK TAMBAH JELEK EMANG JELEK
+9ddacc56-f3e2-47b7-8bf3-b06acc154cd9,update status vaksin,update,pembaruan_aplikasi,negatif,Aneh di update status vaksin saya jadi merah
+9ddacc56-f3e2-47b7-8bf3-b06acc154cd9,vaksin,vaksin,fitur_kesehatan,negatif,Padahal sudah vaksin dosis 3 balikin lagi ke awal parah ini developernya status vaksin orang jadi hilang
+a3a50194-4a9f-4073-982c-e8401d3c059a,apk,aplikasi,umum,positif,Aku sukakk sama apk ini
+a43b4410-f845-46fd-8d5d-0bca025c829b,tidak bisa dibuka,buka aplikasi,performa,negatif,aplikasi tidak bisa dibuka
+a43b4410-f845-46fd-8d5d-0bca025c829b,Admin,customer service,layanan_pelanggan,netral,Admin kenapa
+a48e4087-f7e4-4a2e-832d-94427c37f3b5,booster ke 2,booster,fitur_kesehatan,netral,"Mohon tampilkan booster ke 2 sy, tmksh"
+a5653013-09a5-4d9a-a5dc-e97cae5a91b1,Email,email,layanan_pelanggan,negatif,Email balasan telat
+a5653013-09a5-4d9a-a5dc-e97cae5a91b1,OTP,OTP,akun_login,negatif,Estimasi waktu habis request OTP baru muncul jd ga bs login
+a6d37ffc-2d5f-4964-bb54-8a0c9eb207d4,Stuck,stuck,performa,negatif,Stuck di tampilan awal
+a6d37ffc-2d5f-4964-bb54-8a0c9eb207d4,tampilan awal,tampilan,kemudahan_penggunaan,negatif,Stuck di tampilan awal
+a6d37ffc-2d5f-4964-bb54-8a0c9eb207d4,masuk,masuk aplikasi,akun_login,negatif,tak bisa masuk ke menu login
+a9f8de3d-2db6-410b-9f03-e94539432ea5,Tidak bisa dibuka,buka aplikasi,performa,negatif,Tidak bisa dibuka aplikasinya payah
+a9f8de3d-2db6-410b-9f03-e94539432ea5,aplikasinya,aplikasi,umum,negatif,Tidak bisa dibuka aplikasinya payah
+aa390be8-096f-4403-a4f7-7224aaa7247e,data vaksinasi,sertifikat,fitur_kesehatan,negatif,Tidak bisa mengecek data vaksinasi
+ab1314d1-005d-4854-8438-f97d1910d9b2,migrasi,perubahan dari PeduliLindungi ke SATUSEHAT,pembaruan_aplikasi,negatif,Setelah migrasi dari peduli lindungi
+ab1314d1-005d-4854-8438-f97d1910d9b2,sertifikat boster pertama,sertifikat,fitur_kesehatan,negatif,malah sertifikat boster pertama saya malah hilang
+ab5f6dc2-52da-4b5b-96d2-e96f7041065f,versi terbaru,update,pembaruan_aplikasi,negatif,Dengan versi terbaru saat ini.. Aplikasi peduli lindungi saya gak bisa dibuka atau login
+ab5f6dc2-52da-4b5b-96d2-e96f7041065f,login,login,akun_login,negatif,Aplikasi peduli lindungi saya gak bisa dibuka atau login
+ac6210e9-3b90-477c-a9e4-67c82e118920,tampilan logo,logo,performa,negatif,"Aplikasi aneh dibuka cuma ada tampilan logo, ngga bisa diapa2in"
+ac6210e9-3b90-477c-a9e4-67c82e118920,perbaiki,perbaikan,layanan_pelanggan,negatif,tolong perbaiki lah
+b46be5a8-96ff-418e-a9fe-9d719874bfb5,daftar keluarga,daftar keluarga,registrasi_data,negatif,tambah daftar keluarga masih susah
+b46be5a8-96ff-418e-a9fe-9d719874bfb5,akun,akun,akun_login,negatif,padahal akun sudah terverifikasi
+b50f1d42-712b-4806-87f4-ec7bb9e29c12,ribet,ribet,kemudahan_penggunaan,negatif,makin ribet x
+b50f1d42-712b-4806-87f4-ec7bb9e29c12,masuk akun,login,akun_login,negatif,susah x masuk akun nya
+b50f1d42-712b-4806-87f4-ec7bb9e29c12,reges,registrasi data,registrasi_data,negatif,sudh bolak balik reges
+b50f1d42-712b-4806-87f4-ec7bb9e29c12,buka aplikasi,buka aplikasi,performa,negatif,aplikasi nya susah di buka
+b5cf217f-640a-44f3-9e2c-1ba94ed82660,sertifikat vaksinasi,sertifikat,fitur_kesehatan,negatif,Kenapa sertifikat vaksinasi disini sama vaksin luar negeri saya ko engga terdaftar
+b5cf217f-640a-44f3-9e2c-1ba94ed82660,vaksin,vaksin,fitur_kesehatan,negatif,Kenapa sertifikat vaksinasi disini sama vaksin luar negeri saya ko engga terdaftar
+b5cf217f-640a-44f3-9e2c-1ba94ed82660,aplikasi,aplikasi,umum,negatif,
+b5cf217f-640a-44f3-9e2c-1ba94ed82660,PeduliLindungi,PeduliLindungi,pembaruan_aplikasi,negatif,kan waktu diapk peduli lindungi saya sudah terdaftar
+b65c4484-c911-4b4f-bb5c-b08927ec71df,aplikasi,aplikasi,umum,positif,
+b65c4484-c911-4b4f-bb5c-b08927ec71df,updated,update,pembaruan_aplikasi,positif,
+b65c4484-c911-4b4f-bb5c-b08927ec71df,SATUSEHAT,SATUSEHAT,pembaruan_aplikasi,positif,
+b65c4484-c911-4b4f-bb5c-b08927ec71df,ticket vaksin booster,tiket,fitur_kesehatan,positif,
+b65c4484-c911-4b4f-bb5c-b08927ec71df,sertifikat,sertifikat,fitur_kesehatan,positif,
+b6e35beb-5b98-418f-bfd3-525ae510b466,Update baru,update,pembaruan_aplikasi,negatif,Update baru kok malah ilang akunnya
+b6e35beb-5b98-418f-bfd3-525ae510b466,akun tidak terdaftar,data sudah terdaftar,registrasi_data,negatif,akun tidak terdaftar
+b8ad3dc8-2ca3-4cd6-b11e-ec202b6f8c1a,vaksin booster,booster,fitur_kesehatan,negatif,Saya sudah vaksin booster 1 tp di aplikasi tidak ada sertifikatnya
+b8ad3dc8-2ca3-4cd6-b11e-ec202b6f8c1a,sertifikat,sertifikat,fitur_kesehatan,negatif,di aplikasi tidak ada sertifikatnya
+b8ad3dc8-2ca3-4cd6-b11e-ec202b6f8c1a,aplikasi ini,aplikasi,umum,negatif,gak ada gunanya dong aplikasi ini
+ba847118-0d73-4a28-be74-7b4156af561d,login,login,akun_login,negatif,tolong dong ini permudah untuk login nya
+ba847118-0d73-4a28-be74-7b4156af561d,pin,PIN,akun_login,negatif,ga inget pin nya
+ba847118-0d73-4a28-be74-7b4156af561d,nomor,nomor telepon,akun_login,negatif,mau login pake nomor yg sama jg ttp ga bisa
+ba847118-0d73-4a28-be74-7b4156af561d,daftar,daftar akun,registrasi_data,negatif,pilih daftar munculnya akun udh terdaftar tp ttp ga bisa masuk
+ba847118-0d73-4a28-be74-7b4156af561d,sertifikat vaksin,sertifikat,fitur_kesehatan,negatif,butuh bukti sertif vaksin untuk lamar kerja
+be3b2706-7b66-4dee-8561-21c94d73d105,login,login,akun_login,negatif,Pakai aplikasi ini tidak bisa login
+be3b2706-7b66-4dee-8561-21c94d73d105,daftar ulang,daftar ulang,registrasi_data,negatif,
+be3b2706-7b66-4dee-8561-21c94d73d105,Error,error,performa,negatif,Error
+be3b2706-7b66-4dee-8561-21c94d73d105,sertifikat vaksin,sertifikat,fitur_kesehatan,negatif,download sertifikat vaksin untuk persyaratan kerja karena sertifikat vaksin saya hilang
+be3b2706-7b66-4dee-8561-21c94d73d105,aplikasi,aplikasi,umum,negatif,Kecewa sih buang-buang kuota. Semoga segera bisa di perbaiki aplikasinya
+c27895bf-269e-4fc8-8893-deab84eb7b1d,result,hasil pemeriksaan,fitur_kesehatan,negatif,result belum keluar
+c27895bf-269e-4fc8-8893-deab84eb7b1d,lambat,lambat,performa,negatif,lambat sangatkah?
+c62bfb3f-ab3d-4c80-8da1-fae90ab293b0,verifikasi,kode verifikasi,akun_login,negatif,tidak bisa masuk verifikasi di wa
+ca79bbf0-7d62-46be-84af-878003472ca4,tema,tema,kemudahan_penggunaan,netral,belum memilih tema muluuuuuuu heran
+ca99f6ce-7ebb-40ce-9a82-687f5d50d999,Buka,buka aplikasi,performa,positif,Bukanya makin bagus makin kesini makin pekok
+caba81b9-d507-4b5b-a6cb-aa9614a792c9,daftar online puskesmas,daftar,registrasi_data,negatif,ga bisa daftar online puskesmas
+caba81b9-d507-4b5b-a6cb-aa9614a792c9,diupgrade,update,pembaruan_aplikasi,negatif,Bukannya diupgrade malah downgrade
+cc8e417a-a420-4f95-aba3-784fcb57e34b,bug,bug,performa,negatif,Masih bug nih
+cc8e417a-a420-4f95-aba3-784fcb57e34b,logo doang,logo,performa,negatif,hanya muncul logo doang
+cc8e417a-a420-4f95-aba3-784fcb57e34b,uninstal instal ulang,update,pembaruan_aplikasi,negatif,
+cc8e417a-a420-4f95-aba3-784fcb57e34b,keluar aplikasi,buka aplikasi,performa,negatif,setiap keluar aplikasi dan mau masuk lagi gitu lagi
+cce0db86-024c-4704-8d95-7344d7a5834d,App,aplikasi,umum,negatif,tidak bs dibjka App ini sy binggung
+ce63b49f-6fde-4dc4-beeb-b9237c23d43d,diupdate,update,pembaruan_aplikasi,negatif,Setelah diupdate jadi gak bisa dipakai aplikasinya
+ce63b49f-6fde-4dc4-beeb-b9237c23d43d,aplikasinya,aplikasi,umum,negatif,Setelah diupdate jadi gak bisa dipakai aplikasinya
+d0728350-1e8a-4de2-847f-0c1db953ab29,email,email,akun_login,negatif,malah gabisa ke bukaa email
+d0728350-1e8a-4de2-847f-0c1db953ab29,nomor telepon,nomor telepon,akun_login,negatif,sama nomer telepon dibilang gak terdaftar
+d6a3b281-c2ca-4650-95ed-121120c19909,login,login,akun_login,negatif,tidak bisa login
+d6a3b281-c2ca-4650-95ed-121120c19909,pin,PIN,akun_login,netral,padahal pin benar
+d9a19c73-0255-4cbd-ab81-4af8f895ff84,update,update,pembaruan_aplikasi,positif,Klau update yg bagus donk
+d9a19c73-0255-4cbd-ab81-4af8f895ff84,hbis di-update,di-update,pembaruan_aplikasi,negatif,hbis di-update kok agak sulit
+d9a19c73-0255-4cbd-ab81-4af8f895ff84,sulit,sulit,kemudahan_penggunaan,negatif,kok agak sulit
+d9cc19dc-41ad-45e6-af95-2daaba80694c,update,update,pembaruan_aplikasi,negatif,"Sdh beberapa kali update tetap tdk bisa terbuka, kecewa"
+d9cc19dc-41ad-45e6-af95-2daaba80694c,terbuka,buka aplikasi,performa,negatif,tetap tdk bisa terbuka
+dc027393-90ef-4ed7-bfcd-b0dfa6b001e2,update,update,pembaruan_aplikasi,negatif,Setelah minta update malah gak bisa di buka
+dc027393-90ef-4ed7-bfcd-b0dfa6b001e2,di buka,buka aplikasi,performa,negatif,gak bisa di buka
+dd0be57d-b0c0-4edc-8dc1-edbf5afc5650,update,update,pembaruan_aplikasi,negatif,Ini setelah di update jadi satu sehat
+dd0be57d-b0c0-4edc-8dc1-edbf5afc5650,verifikasi no telpon,nomor telepon,akun_login,negatif,satu sehat minta verifikasi no telpon. Sudah diulang berkali kali tidak dapat no verifikasinya
+e08c73c4-bb6b-48ac-a8a1-d8c9a7a3f4d4,update,update,pembaruan_aplikasi,negatif,Semakin di update semakin gak bisa di buka
+e08c73c4-bb6b-48ac-a8a1-d8c9a7a3f4d4,buka,buka aplikasi,performa,negatif,semakin gak bisa di buka
+e1770cfa-571b-446d-8d9c-3a9f74708a85,aplikasinya,aplikasi,umum,negatif,kaga beres bikin aplikasinya
+e1770cfa-571b-446d-8d9c-3a9f74708a85,remed,lemot,performa,negatif,masih remed
+e1f873c3-0265-45ce-a496-b4163c45a96f,aplikasinya,aplikasi,umum,negatif,Kenapa aplikasinya susah sekali di gunakan
+e28fddf6-f4ec-45f4-931c-b6de502899f7,mcu gratis,cek kesehatan,fitur_kesehatan,netral,mau mcu gratis
+e28fddf6-f4ec-45f4-931c-b6de502899f7,terdaftar,data sudah terdaftar,registrasi_data,negatif,kenapa udh terdaftar ya?
+e28fddf6-f4ec-45f4-931c-b6de502899f7,email,email,akun_login,negatif,2 email yg sering sy pakai di tolak terus
+e28fddf6-f4ec-45f4-931c-b6de502899f7,gmn coba,cara,umum,netral,gmn coba?
+e3dcc45f-4eb7-4f99-85c2-0f10abed1fc3,Sertifikat vaksin,sertifikat,fitur_kesehatan,negatif,Sertifikat vaksin 3 tidak muncul
+ead6d67d-2eb3-4850-955a-ba59700f67d6,login,login,akun_login,negatif,In gmn gx bisa login 😡😡😡
+efa3556a-7208-49da-8169-6f12626123ba,pedulilindungi,PeduliLindungi,pembaruan_aplikasi,negatif,Kenapa semenjak pedulilindungi ganti nama
+efa3556a-7208-49da-8169-6f12626123ba,log out,logout,performa,negatif,tiba tiba ke log out
+efa3556a-7208-49da-8169-6f12626123ba,"Akun tidak ditemukan, silahkan daftar akun",akun,registrasi_data,negatif,"""Akun tidak ditemukan, silahkan daftar akun"""
+efad4375-5bb0-4a26-bf2f-7bc5f6a05624,perbaruan,update,pembaruan_aplikasi,negatif,Ketika ada perbaruan banyak terjadi bug
+efad4375-5bb0-4a26-bf2f-7bc5f6a05624,bug,bug,performa,negatif,banyak terjadi bug
+f10f9ecf-3998-4743-b253-694bd5762854,Jelek,jelek,umum,negatif,"Jelek parah , semua ga bisa"
+f347213d-d608-4438-84bd-aeb6a3ff8d9e,masyarakat,masyarakat,umum,negatif,lebih mempersulit kan masyarakat penggunaan aplikasi tsb
+f347213d-d608-4438-84bd-aeb6a3ff8d9e,aplikasi,aplikasi,umum,negatif,penggunaan aplikasi tsb sehingga tidak bisa cek sertifikat vaksin walaupun sudah di daftarkan
+f347213d-d608-4438-84bd-aeb6a3ff8d9e,sertifikat vaksin,sertifikat,fitur_kesehatan,negatif,tidak bisa cek sertifikat vaksin
+f90c4c0d-d3eb-4e29-baf4-a55c5308cb4d,daftarin,registrasi data,registrasi_data,negatif,Mau daftarin vaksin anak saya aja gak bisa
+f90c4c0d-d3eb-4e29-baf4-a55c5308cb4d,vaksin,vaksin,fitur_kesehatan,negatif,Mau daftarin vaksin anak saya aja gak bisa
+f90c4c0d-d3eb-4e29-baf4-a55c5308cb4d,PeduliLindungi,PeduliLindungi,pembaruan_aplikasi,positif,"Waktu masih peduli lindung,masih ada"
+f9388769-a1e1-419f-9f0c-ee5ea2b25452,praktis,praktis,kemudahan_penggunaan,positif,Sangat praktis
+f9388769-a1e1-419f-9f0c-ee5ea2b25452,hemat,hemat,umum,positif,hemat
+f9e9059f-95fe-4e84-ab3b-08529bcdadba,Aplikasi,aplikasi,umum,negatif,"Aplikasi Rusak, Payah"
+f9e9059f-95fe-4e84-ab3b-08529bcdadba,Sertifikat Vaksin,sertifikat vaksin,fitur_kesehatan,negatif,Sertifikat Vaksin Tidak Keluar
+fb02ce5e-c87a-4940-9433-8acf1393cd30,tampilan,tampilan,kemudahan_penggunaan,netral,Hanya tampilan nya saja
+fb02ce5e-c87a-4940-9433-8acf1393cd30,dibuka,buka aplikasi,performa,negatif,tidak bisa di buka aplikasinya
+fbe94e36-5ff0-4e6f-b613-af842a4f643d,aplikasi,aplikasi,umum,negatif,Ini gimana sih aplikasinya gak bisa di buka sama sekali
+fcfdd831-ac4e-420e-86b9-2bb6776b274d,data vaksin,data vaksin,fitur_kesehatan,negatif,data vaksin yang dari sekolah ga ke detect kocak bgt
+fe2c22e6-c2fb-49c0-973c-72c68925bbae,Aplikasi ini,aplikasi,umum,negatif,Aplikasi ini nggak bisa dibuka.
+fe53c95f-d8fb-4a61-b000-f0dfe83dd933,Aplikasi,aplikasi,umum,negatif,Aplikasi kacau
+fe53c95f-d8fb-4a61-b000-f0dfe83dd933,Pembuat aplikasi,pengembang,layanan_pelanggan,negatif,Pembuat aplikasi kacau tim it kacau bloon
+fe53c95f-d8fb-4a61-b000-f0dfe83dd933,masuk,login,akun_login,negatif,Apa-apaan masuk gak bisa daftar juga gak bisa
+fe53c95f-d8fb-4a61-b000-f0dfe83dd933,daftar,registrasi data,registrasi_data,negatif,Apa-apaan masuk gak bisa daftar juga gak bisa
+fe53c95f-d8fb-4a61-b000-f0dfe83dd933,sertifikat,sertifikat,fitur_kesehatan,negatif,Mau download sertifikat kok kacau begini
+feae3ce6-8652-4ec1-b522-305508f1661c,Aplikasi,aplikasi,umum,negatif,Aplikasi sama sekali tdk nyaman dan nggk bs kebuka
+fec7a759-714e-444a-82ea-53cf4dc6d36c,akses akun,akun login,akun_login,negatif,kok jd gabisa akses akun
+fec7a759-714e-444a-82ea-53cf4dc6d36c,verifikasi,kode verifikasi,akun_login,negatif,"disuruh ganti email, giliran log in ada kode tp gabisa masukin kode verifikasi log in nya"
+ffa127c8-4d83-4a9e-8b37-78655363abb8,login,login,akun_login,negatif,untuk yang tidak bisa login
+ffa127c8-4d83-4a9e-8b37-78655363abb8,no hp,nomor telepon,registrasi_data,negatif,karena no hp yang terdaftar tidak sama dengan no wa
+ffa127c8-4d83-4a9e-8b37-78655363abb8,EMAIL,email,layanan_pelanggan,positif,"maka kirim EMAIL ke satu sehat, dan minta perubahan nomor seperti yang saya lakukan dan itu berhasil"
+ffa127c8-4d83-4a9e-8b37-78655363abb8,perubahan nomor,ubah data,registrasi_data,positif,

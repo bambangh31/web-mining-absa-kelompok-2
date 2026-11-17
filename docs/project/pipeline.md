@@ -261,3 +261,5 @@ python src/models_classic.py --labels data/annotations/llm_gemini-3.5-flash-lite
 Pembaruan large 17 November 2026: notebook `04_indobert_large_colab.ipynb` selesai tiga seed pada GPU T4, micro-batch 4 dan akumulasi 4. F1 pasangan 0,765 ± 0,020; [hasil dan audit](../../results/indobert_large/README.md). Evaluasi gabungan sepuluh run tersedia di `results/metrics/uji_indobert_lengkap/`.
 
 Pembaruan hasil B4, 17 November 2026: tiga seed BiLSTM telah selesai dan [diverifikasi](../../results/bilstm/README.md), F1 pasangan 0,373 ± 0,016. Evaluasi 13 run dan matriks tujuh model ada di `results/metrics/uji_tujuh_model/`. Notebook 05 tetap tersedia untuk reproduksi. Qwen belum dievaluasi.
+
+Pembaruan Qwen 17 November 2026: inferensi 150 ulasan/75 batch selesai, F1 pasangan 0,741 dan macro-F1 sentimen 0,664. [Respons dan audit](../../results/qwen/README.md); [evaluasi 14 run/delapan jenis model](../../results/metrics/uji_delapan_model/). Semua model sudah memiliki hasil.

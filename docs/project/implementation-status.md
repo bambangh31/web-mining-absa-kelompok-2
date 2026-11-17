@@ -114,8 +114,8 @@ Cara menghitung ulang dan definisi confusion matrix ada di
 ## Tahap berikutnya
 
 - Review kelompok dan penyerahan laporan pertama ke dosen melalui kanal kelas.
-- Week 14: percobaan tambahan jika diminta dosen. BiLSTM dan Qwen
-  masih berupa kandidat eksperimen lanjutan, bukan hasil yang sudah tersedia.
+- Week 14: percobaan tambahan jika diminta dosen; seluruh delapan jenis model
+  sudah memiliki hasil pada 150 ulasan yang tersedia.
 - Week 15: artikel bahasa Indonesia berdasarkan hasil aktual dan template dosen.
 - Week 16: slide dan latihan presentasi.
 
@@ -161,7 +161,7 @@ Laporan Week 12/13 kini memuat tujuh jenis model dan confusion matrix terbaru.
 Prediksi BiLSTM hanya negatif/tidak disebut; hasil rendah tetap dilaporkan
 tanpa mengubah parameter berdasarkan uji. Qwen belum dievaluasi.
 
-## Persiapan Qwen Colab (17 November 2026)
+## Arsip persiapan Qwen Colab sebelum hasil diterima
 
 [Notebook 06](../../notebooks/06_qwen_colab.ipynb) menyiapkan inferensi
 qwen3.5:4b melalui Ollama di VM Colab T4, hanya pada 150 ulasan uji manual
@@ -177,3 +177,19 @@ Sebanyak 47 tes kode lulus; notebook diuji dengan fixture sintetis dan API
 tiruan sampai ekspor ZIP, termasuk kegagalan/resume/pemulihan ZIP. Pemasangan
 Ollama, unduhan model, dan inferensi GPU aktual belum dieksekusi dalam uji
 lokal. Belum ada skor Qwen aktual; laporan tetap memuat tujuh jenis model.
+
+## Hasil Qwen diterima dan delapan model lengkap (17 November 2026)
+
+Qwen3.5:4b selesai sebagai satu run inferensi langsung pada Colab T4 melalui
+Ollama 0.40.16: 150 ulasan, 75 batch dua ulasan, schema ids-count-v2.
+F1 pasangan **0,741379**, presisi **0,693548**, recall **0,796296**,
+F1 deteksi micro **0,784483**, macro-F1 sentimen **0,663589**. Ini run baru
+penuh dari sumber 30fdae6, tanpa pencampuran checkpoint parsial sebelumnya.
+
+Hash lima input/kode cocok; 75 respons mentah diparsing ulang, agregasi dan
+CSV prediksi cocok. Semua 14 metrik dihitung ulang dan identik dengan paket.
+Audit kutipan mencatat 38 masalah pada 28 ulasan (17 frasa aspek, 21 bukti).
+Tidak ada perubahan label setelah melihat skor. [Audit lengkap](../../results/qwen/README.md).
+Laporan Week 12/13 serta confusion matrix delapan model telah diperbarui.
+Seluruh model kini memiliki hasil; 375 label latih/validasi, sisa rencana
+150 ulasan uji, anotator kedua, dan waktu verifikasi masih perlu dilengkapi.
