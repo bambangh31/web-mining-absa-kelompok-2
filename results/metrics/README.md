@@ -1,5 +1,11 @@
 # Metrik
 
+Pembaruan 17 November 2026: hasil IndoBERT base tiga seed tersedia di
+[`uji_indobert/`](uji_indobert/tabel.md) dan
+[ringkasan lima model](../indobert/README.md). F1 pasangan B2 rata-rata
+0,775 ± 0,013 pada 150 ulasan yang sama. Folder `uji/` tetap menyimpan
+baseline empat model tanggal 14 November; skor lamanya tidak ditimpa.
+
 Simpan tabel skor beserta konfigurasi dan definisi metriknya. Metrik dipilih
 setelah target ABSA dan label acuan tersedia. Nyatakan set validasi/CV/uji
 final yang dipakai dan jangan menuliskan angka sebelum eksperimen dilakukan.

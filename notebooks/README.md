@@ -8,6 +8,11 @@
 2. [02_kalibrasi_anotasi.ipynb](02_kalibrasi_anotasi.ipynb): menyiapkan lembar
    kosong, menghitung progres pengisian tanpa memperlihatkan label anggota
    lain, dan menyediakan langkah audit/finalisasi setelah anotasi lengkap.
+3. [03_indobert_colab.ipynb](03_indobert_colab.ipynb): pelatihan IndoBERT
+   base pada GPU Colab, seed 42/43/44; opsi large tidak diaktifkan pada run
+   yang diterima. Hasil aktual dan pemeriksaan tercatat di
+   [results/indobert](../results/indobert/README.md). Input 400 latih,
+   100 validasi, dan 150 uji manual; unduh ZIP setelah selesai.
 
 Notebook tetap berbahasa Python. Fungsi bersama di `src/` dipertahankan agar
 aturan notebook sama dengan kode yang sudah diuji. Notebook dibagikan dengan

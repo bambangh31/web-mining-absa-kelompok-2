@@ -132,14 +132,19 @@ memprediksi atau mengklaim label gold sudah tersedia.
   matriks delapan aspek per model, dan CSV sumber gambar.
 - [Status sampai week 13](docs/project/implementation-status.md#laporan-pertama-week-13-14-november-2026)
   menjelaskan hasil yang tersedia dan batasnya. Hasil berasal dari satu
-  anotator; model neural dan Qwen belum dievaluasi. Pengumpulan ke dosen
+  anotator; IndoBERT large, BiLSTM, dan Qwen belum dievaluasi. Pengumpulan ke dosen
   tidak ditandai selesai.
 - Berkas week 10-11 dan laporan gabungan lama dipertahankan sebagai arsip;
   lihat [daftar laporan](docs/laporan/README.md).
 - [Laporan progres week 12 terpisah (PDF)](docs/laporan/Week_12_Pemodelan_Evaluasi_ABSA_SATUSEHAT.pdf)
   dan [Word](docs/laporan/Week_12_Pemodelan_Evaluasi_ABSA_SATUSEHAT.docx)
-  memuat pemodelan dan evaluasi empat model dalam 9 halaman. Laporan week 13
+  memuat pemodelan dan evaluasi lima jenis model dalam 11 halaman. Laporan week 13
   tetap merangkum seluruh pekerjaan week 10-12.
+
+Pembaruan 17 November 2026: [IndoBERT base sudah selesai](results/indobert/README.md)
+untuk seed 42, 43, dan 44 di Colab T4. F1 pasangan pada 150 ulasan uji:
+0,774; 0,764; dan 0,789 (rata-rata 0,775 ± 0,013). Hasilnya telah ditambahkan
+ke laporan week 12 dan week 13. Skor pembanding serta label acuan tetap sama.
 
 ## CI dan Dependabot
 

@@ -221,6 +221,12 @@ python src/version_analysis.py
 Hasil 11 November 2026 (150 ulasan uji): B3-Gemini 0,842, B1-LR 0,727,
 B1-SVM 0,705, B1-NB 0,621 F1 pasangan.
 
+Pembaruan 17 November 2026: IndoBERT base selesai pada seed 42/43/44 dengan
+F1 pasangan uji 0,774/0,764/0,789 (rata-rata 0,775 ± 0,013). Notebook Colab
+ada di `notebooks/03_indobert_colab.ipynb`, bukti di `results/indobert/`,
+dan hasil evaluasi tujuh run di `results/metrics/uji_indobert/`.
+Large, BiLSTM, serta Qwen belum dievaluasi pada paket hasil ini.
+
 ## Pratinjau sebelum verifikasi selesai
 
 Selama label latih terverifikasi dan label uji belum ada, B1 diuji dengan

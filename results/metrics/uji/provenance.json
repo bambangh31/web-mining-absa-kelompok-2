@@ -33,9 +33,7 @@
   },
   "sha256_hasil": {
     "results/metrics/uji/metrik.json": "0086c1444caab21ba6ade2a8d1d7804873f8d2796bd71a7035bd1fbb169ba9e0",
-    "results/metrics/uji/confusion_matrix/matriks.csv": "ea77f53bef615bf17b6d85a5d4a7830a0838e5686bc5dca10a34cf966c03f6bf",
-    "docs/laporan/Week_13_Laporan_Pertama_ABSA_SATUSEHAT.docx": "cf2b605c9525e63058719ca2b05ea2075453a7f808041caf194fe1bcaaf16248",
-    "docs/laporan/Week_13_Laporan_Pertama_ABSA_SATUSEHAT.pdf": "e336397b28046a2e91389b6a4f9bc14b605ea9cee9ebd7e052c6662a40a5fead"
+    "results/metrics/uji/confusion_matrix/matriks.csv": "ea77f53bef615bf17b6d85a5d4a7830a0838e5686bc5dca10a34cf966c03f6bf"
   },
   "pemeriksaan": {
     "penghitungan_ulang_sama_dengan_json": true,
@@ -43,5 +41,10 @@
     "csv_512_sel_matriks_sesuai": true,
     "skor_dan_judul_laporan_sesuai": true
   },
-  "batas": "Satu anotator, tanpa adjudikasi; tidak ada pelatihan atau label baru. Belum menyatakan pengumpulan ke dosen."
+  "batas": "Satu anotator, tanpa adjudikasi; tidak ada pelatihan atau label baru. Belum menyatakan pengumpulan ke dosen.",
+  "sha256_laporan_arsip_14_november_2026": {
+    "docs/laporan/Week_13_Laporan_Pertama_ABSA_SATUSEHAT.docx": "cf2b605c9525e63058719ca2b05ea2075453a7f808041caf194fe1bcaaf16248",
+    "docs/laporan/Week_13_Laporan_Pertama_ABSA_SATUSEHAT.pdf": "e336397b28046a2e91389b6a4f9bc14b605ea9cee9ebd7e052c6662a40a5fead"
+  },
+  "catatan_laporan": "Laporan kini diperbarui dengan IndoBERT base pada 17 November. Hash terbaru berada di results/indobert/verifikasi.json; hash arsip di sini hanya merekam versi 14 November."
 }
