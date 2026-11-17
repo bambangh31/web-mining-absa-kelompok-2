@@ -250,3 +250,5 @@ latih/validasi otomatis dikeluarkan dari prediksi):
 ```text
 python src/models_classic.py --labels data/annotations/llm_gemini-3.5-flash-lite.csv --predict-from "Label Manual Sentimen Komentar Satu Sehat.xlsx" --out results/pratinjau_llm
 ```
+
+Pembaruan large 17 November 2026: notebook `04_indobert_large_colab.ipynb` selesai tiga seed pada GPU T4, micro-batch 4 dan akumulasi 4. F1 pasangan 0,765 ± 0,020; [hasil dan audit](../../results/indobert_large/README.md). Evaluasi gabungan sepuluh run tersedia di `results/metrics/uji_indobert_lengkap/`.

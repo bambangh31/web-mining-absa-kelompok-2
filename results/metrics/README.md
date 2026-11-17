@@ -50,3 +50,7 @@ python src/evaluate.py --gold data/annotations/final_v1/gold.csv --ids-split gol
 Pemeriksaan revisi: 34 tes dijalankan; 33 lulus dan 1 tes BiLSTM dilewati
 karena PyTorch belum terpasang. Dua tes baru memeriksa orientasi matriks,
 aspek terlewat/tambahan, subset evaluasi, dan jumlah keputusan gabungan.
+
+## IndoBERT base dan large — 17 November 2026
+
+`uji_indobert_lengkap/` memuat evaluasi ulang sepuluh run (empat pembanding + tiga base + tiga large), pada 150 ID uji yang sama. `confusion_matrix/enam_model.png` memakai base seed 44 dan large seed 43 berdasarkan validasi. Skor utama kedua varian tetap rata-rata ± SD sampel tiga seed. [Audit large](../indobert_large/README.md). Folder `uji/` dan `uji_indobert/` dipertahankan sebagai versi empat dan lima model.

@@ -52,4 +52,4 @@ Model terbaik pada hasil saat ini adalah Gemini; di antara model terlatih,
 IndoBERT base memiliki F1 pasangan rata-rata tertinggi. Selisih rata-rata
 antar-model tidak diklaim signifikan tanpa pengujian khusus. Batas satu
 anotator dan 375 label latih/validasi yang belum diverifikasi tetap berlaku.
-IndoBERT large, BiLSTM, dan Qwen belum memiliki hasil evaluasi di paket ini.
+Paket ini khusus base. Hasil large telah tersedia terpisah di [indobert_large](../indobert_large/README.md); BiLSTM dan Qwen belum dievaluasi.

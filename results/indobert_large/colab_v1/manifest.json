@@ -1,0 +1,32 @@
+{
+  "source_commit": "f8f8f2b7dbd986788c68acf2a9b0aa246b94c15c",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "max_epochs": 10,
+  "variants": [
+    "large"
+  ],
+  "micro_batch": 4,
+  "grad_accum": 4,
+  "effective_batch": 16,
+  "n_train": 400,
+  "n_validation": 100,
+  "n_test": 150,
+  "started_utc": "2026-11-17T05:57:22.683415+00:00",
+  "gpu": "Tesla T4",
+  "python": "3.13.16 (main, Oct  1 2026, 15:40:24) [GCC 13.3.0]",
+  "packages": {
+    "torch": "2.14.1+cu130",
+    "transformers": "5.22.2",
+    "numpy": "2.4.2"
+  },
+  "sha256_sources": {
+    "data/processed/reviews_clean.csv": "8186e667f08515ca886f42da2fd5d848659f501b5551a6946401c6c68b43af00",
+    "data/annotations/split.csv": "67036c5db3ceb2188e4c06c76df4eb1b48199aaa3802c1f323dc14e1b04254ea",
+    "data/annotations/verified.csv": "bb3421985df973a57a05f636bc26e60dac68097bf0898a9dbe778ce983fa1df2",
+    "data/annotations/final_v1/gold.csv": "8dcea7e41a58d3ac79baa019a5b17c25b173e3094bd0bc9d29a6d3e6a017bade"
+  }
+}

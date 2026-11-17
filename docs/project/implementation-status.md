@@ -104,17 +104,17 @@ Cara menghitung ulang dan definisi confusion matrix ada di
   commit `f8f8f2b`. Prediksi dan seluruh skor tujuh run diverifikasi ulang.
   [Bukti dan ringkasan](../../results/indobert/README.md) membedakan hasil
   setiap seed, rata-rata, dan pemilihan matriks seed 44 berdasarkan validasi.
-- Kini ada hasil lima jenis model. Gemini tetap tertinggi secara F1 pasangan;
+- Saat pembaruan base, tersedia lima jenis model. Gemini tetap tertinggi secara F1 pasangan;
   IndoBERT base tertinggi di antara model terlatih. Tidak menyatakan
   signifikansi perbandingan rata-rata tiga seed tanpa pengujian khusus.
 - Laporan week 12 dan 13 diperbarui berikut tabel keseluruhan/per aspek,
-  matriks lima model, dan batas eksperimen. IndoBERT large, BiLSTM, dan Qwen
-  tetap belum dievaluasi; label uji masih berasal dari satu anotator.
+  matriks lima model, dan batas eksperimen. Pembaruan large tercatat di bawah; BiLSTM dan Qwen
+  belum dievaluasi; label uji masih berasal dari satu anotator.
 
 ## Tahap berikutnya
 
 - Review kelompok dan penyerahan laporan pertama ke dosen melalui kanal kelas.
-- Week 14: percobaan tambahan jika diminta dosen. IndoBERT large, BiLSTM, dan Qwen
+- Week 14: percobaan tambahan jika diminta dosen. BiLSTM dan Qwen
   masih berupa kandidat eksperimen lanjutan, bukan hasil yang sudah tersedia.
 - Week 15: artikel bahasa Indonesia berdasarkan hasil aktual dan template dosen.
 - Week 16: slide dan latihan presentasi.
@@ -129,3 +129,7 @@ hasil pemeriksaan, tautan bukti, keterbatasan, dan ketergantungan yang tersisa.
 Bedakan hasil otomatis, pemeriksaan manual, rencana, serta keputusan kelompok.
 Jika ada demo atau deployment di kemudian hari, dokumentasikan cara akses
 dan status aktual setelah implementasinya tersedia.
+
+## Hasil IndoBERT large diterima (17 November 2026)
+
+Tiga seed 42/43/44 telah selesai pada T4: F1 0,742857; 0,781553; 0,770642. Rata-rata ± SD sampel **0,765018 ± 0,019952**, pada 150 ulasan yang sama. Hash input, ID, label, konfigurasi, dan skor dihitung ulang. Micro-batch 4 × akumulasi 4 = batch efektif 16. [Audit](../../results/indobert_large/README.md) mencatat seed 43 sebagai matriks perwakilan berdasarkan validasi. Kini tersedia enam jenis model; laporan Week 12/13 dan matriks enam model telah diperbarui. Selisih dengan base tidak diklaim signifikan. BiLSTM dan Qwen belum dievaluasi.
