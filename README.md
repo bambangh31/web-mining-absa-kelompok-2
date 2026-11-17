@@ -132,13 +132,13 @@ memprediksi atau mengklaim label gold sudah tersedia.
   matriks delapan aspek per model, dan CSV sumber gambar.
 - [Status sampai week 13](docs/project/implementation-status.md#laporan-pertama-week-13-14-november-2026)
   menjelaskan hasil yang tersedia dan batasnya. Hasil berasal dari satu
-  anotator; IndoBERT large, BiLSTM, dan Qwen belum dievaluasi. Pengumpulan ke dosen
+  anotator; BiLSTM dan Qwen belum dievaluasi. Pengumpulan ke dosen
   tidak ditandai selesai.
 - Berkas week 10-11 dan laporan gabungan lama dipertahankan sebagai arsip;
   lihat [daftar laporan](docs/laporan/README.md).
 - [Laporan progres week 12 terpisah (PDF)](docs/laporan/Week_12_Pemodelan_Evaluasi_ABSA_SATUSEHAT.pdf)
   dan [Word](docs/laporan/Week_12_Pemodelan_Evaluasi_ABSA_SATUSEHAT.docx)
-  memuat pemodelan dan evaluasi lima jenis model dalam 11 halaman. Laporan week 13
+  memuat pemodelan dan evaluasi enam jenis model. Laporan week 13
   tetap merangkum seluruh pekerjaan week 10-12.
 
 Pembaruan 17 November 2026: [IndoBERT base sudah selesai](results/indobert/README.md)
@@ -163,3 +163,5 @@ Gunakan **Issues → New issue** untuk laporan masalah atau usulan perubahan;
 issue kosong tetap tersedia untuk tugas lain. Isi template saat membuat PR.
 Panduan kerja dan tahapan ada di [docs/project/README.md](docs/project/README.md).
 Ringkasan pemeriksaan setup ada di [review setup](docs/project/review-setup.md).
+
+IndoBERT large juga telah selesai untuk tiga seed: **0,765 ± 0,020** F1 pasangan, dibanding base **0,775 ± 0,013**. [Audit large](results/indobert_large/README.md) dan laporan Week 12/13 memuat pembaruan enam model; BiLSTM dan Qwen belum dievaluasi.

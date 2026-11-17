@@ -55,3 +55,7 @@ Python pada CI terpisah dari eksekusi notebook.
 Notebook pengumpulan/eksplorasi, pelabelan LLM, pemodelan ABSA, dan evaluasi
 belum dibuat pada perubahan ini. File Python scraping/eksplorasi tetap ada.
 Notebook ini tidak menyatakan mining/evaluasi model atau label gold selesai.
+
+## IndoBERT large
+
+[04_indobert_large_colab.ipynb](04_indobert_large_colab.ipynb) menjalankan large saja pada GPU Colab, seed 42/43/44. Hasil aktual telah diterima dan [diverifikasi](../results/indobert_large/README.md). Micro-batch 4 dan akumulasi gradien 4 mempertahankan batch efektif 16. Unduh ZIP hasil sebelum mengakhiri runtime. Notebook dibagikan tanpa output.

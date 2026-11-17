@@ -1397,7 +1397,7 @@
   "seed_matriks_perwakilan": 44,
   "alasan_pemilihan": "F1 pasangan validasi tertinggi; bukan dipilih dari skor uji.",
   "pemeriksaan": "Hash keempat input cocok dengan commit sumber; ID/label/seed valid; semua metrik tujuh run dihitung ulang dan identik dengan ZIP.",
-  "sha256_laporan_terbaru": {
+  "sha256_laporan_versi_base": {
     "docs/laporan/Week_12_Pemodelan_Evaluasi_ABSA_SATUSEHAT.pdf": "832e00eb74a3e667cec7a8df30e1febbd4e91909dbc4cc514d2bdb77d71e6b16",
     "docs/laporan/Week_12_Pemodelan_Evaluasi_ABSA_SATUSEHAT.docx": "a574bb2f8894979f6efabfc0861ffdfb1e584ea67ca115afbdba106cf0f720da",
     "docs/laporan/Week_13_Laporan_Pertama_ABSA_SATUSEHAT.pdf": "27e9321cba2b33fedd6178bb1778e586f88873b2a88b0ae127988abd82c25c47",
